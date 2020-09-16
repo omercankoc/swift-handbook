@@ -1,7 +1,7 @@
 import UIKit
 
 // Optional :
-var value : String?
+var value : String = nil
 value = "5"
 
 // Deger dolu ise operasyonu gerceklestir, degil ise gerceklestirme.
