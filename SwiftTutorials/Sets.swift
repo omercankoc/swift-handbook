@@ -1,4 +1,4 @@
-import Foundation
+import UIKit
 
 // Set'lerde indexleme yoktur. (unordered collection)
 // Ayni elemani birden fazla kez tutmaya izin vermez. (unique)
