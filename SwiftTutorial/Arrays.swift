@@ -13,6 +13,7 @@ programmingLanguages.append("Kotlin")
 programmingLanguages.append("Swift")
 
 print("Count:",programmingLanguages.count - 1)
+print("Last",programmingLanguages.last ?? "null")
 print("Best Language is", programmingLanguages[0])
 
 for language in programmingLanguages{
