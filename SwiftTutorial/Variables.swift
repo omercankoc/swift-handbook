@@ -28,9 +28,9 @@ var logic : Bool = true
 
 // String:
 var developer : String = "Ko"
-developer.append("c") // sonuna c harfini ekler.
-developer.lowercased() // string degerinin her bir elemanini kucuk harf yapar.
-developer.uppercased() // string degerinin her bir elemanini buyuk harf yapar.
+developer.append("c") // sonuna c harfini ekle.
+developer.lowercased() // string degerinin her bir elemanini kucuk harf yap.
+developer.uppercased() // string degerinin her bir elemanini buyuk harf yap.
 
 // Typealias: Mevcut bir tipe yeni bir isim atamak icin kullanilir. (typealias newname : type)
 typealias Angle = Double
