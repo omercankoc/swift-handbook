@@ -34,5 +34,5 @@ developer.uppercased() // string degerinin her bir elemanini buyuk harf yapar.
 
 // Typealias: Mevcut bir tipe yeni bir isim atamak icin kullanilir. (typealias newname : type)
 typealias Angle = Double
-var angle : Angle = 60.0;
+var angle : Angle = 30.0;
 print("Angle = " , angle)
