@@ -4,9 +4,9 @@ var str = "Hello, Swift!"
 print(str)
 
 // Degisken Tanimlama Yontemleri:
-// var/let variableName = value
-// var/let variableName : variableType
-// var/let variableName : variableType = value
+// var/let variableName = value -> definition and initialization
+// var/let variableName : variableType -> definition
+// var/let variableName : variableType = value -> definition and initialization
 
 // var : degisken tanimlamak icin kullanilir. (mutable)
 var language : String = "Swift"
@@ -28,9 +28,9 @@ var logic : Bool = true
 
 // String:
 var developer : String = "Ko"
-developer.append("c") // sonuna c harfini ekle.
-developer.lowercased() // string degerinin her bir elemanini kucuk harf yap.
-developer.uppercased() // string degerinin her bir elemanini buyuk harf yap.
+developer.append("c") // sonuna c harfini ekler.
+developer.lowercased() // string degerinin her bir elemanini kucuk harf yapar.
+developer.uppercased() // string degerinin her bir elemanini buyuk harf yapar.
 
 // Typealias: Mevcut bir tipe yeni bir isim atamak icin kullanilir. (typealias newname : type)
 typealias Angle = Double
