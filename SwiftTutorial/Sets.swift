@@ -1,7 +1,7 @@
 import UIKit
 
-// Set'lerde indexleme yoktur. (unordered collection)
-// Ayni elemani birden fazla kez tutmaya izin vermez. (unique)
+// Set'lerde indexleme yoktur. (Unordered Collection)
+// Ayni elemani birden fazla kez tutmaya izin vermez. (Unique)
 var squares : Set = [1,4,9,16,25,36,49,64,81,100]
 var index : Int = 1
 
