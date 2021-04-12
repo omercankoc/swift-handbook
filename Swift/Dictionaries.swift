@@ -1,7 +1,15 @@
 import UIKit
 
 // Index yerine key-value deger eslesmesi ile verileri tutar.
-var numbers : [Int:String] = [1:"One",2:"Two",3:"Three",4:"Four",5:"Five"]
 
-print(numbers)
-print(numbers[2] ?? "Zero")
+var platform : [String:String] = ["Android":"Kotlin","iOS":"Swift","MacOS":"Swift","iPadOS":"Swift","WatchOS":"Swift","tvOS":"Swift"]
+print(platform)
+
+var languages = [String:Int]()
+languages["Kotlin"] = 2011
+languages["Swift"] = 2014
+languages["Go"] = 2009
+languages["Rust"] = 2010
+print(languages)
+
+print(languages["Kotlin"] ?? 0)
