@@ -7,7 +7,7 @@ for s in os{
     print(s)
 }
 
-var programmingLanguages = [String]()
+var programmingLanguages : Array = [String]()
 programmingLanguages.append("C")
 programmingLanguages.append("C++")
 programmingLanguages.append("Rust")
