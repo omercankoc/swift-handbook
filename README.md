@@ -1,6 +1,6 @@
-# Swift Tutorials
-:orange_book: Swift Notes
-
+## :orange_book: Swift
+### Basic
 <ul>
-  <li><a href="https://github.com/omercankoc/KotlinTutorials/blob/master/KotlinTutorials/Variables.kt">Variables</a></li>
+  <li><a href="https://github.com/omercankoc/swift-programming/blob/master/Swift/Variables.swift">Variables</a></li>
+  <li><a href="https://github.com/omercankoc/swift-programming/blob/master/Swift/Arrays.swift">Arrays</a></li>
 </ul>
