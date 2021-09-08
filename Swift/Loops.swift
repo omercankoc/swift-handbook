@@ -6,7 +6,7 @@ var limit : Int = 10
 var iterator : Int = 0
 
 // While Loop:
-while iterator <= limit{
+while iterator <= limit {
     
     //Iterator 10 degerine esit ise donguyu kes.
     if(iterator == 10){
