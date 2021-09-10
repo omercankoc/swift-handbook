@@ -19,5 +19,5 @@
 ### Object-Oriented
 <ul>
   <li><a href="https://github.com/omercankoc/swift-programming/blob/master/Swift/Class.swift">Class</a></li>
-  <li><a href="https://github.com/omercankoc/swift-programming/blob/master/Swift/Inheritence.swift">Inheritence</a></li>
+  <li><a href="https://github.com/omercankoc/swift-programming/blob/master/Swift/Inheritance.swift">Inheritance</a></li>
 </ul>
