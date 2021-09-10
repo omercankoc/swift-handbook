@@ -18,5 +18,5 @@
 
 ### Object-Oriented
 <ul>
-  <li><a href="https://github.com/omercankoc/swift-programming/blob/master/Swift/Arrays.swift">Classes</a></li>
+  <li><a href="https://github.com/omercankoc/swift-programming/blob/master/Swift/Arrays.swift">Class</a></li>
 </ul>
