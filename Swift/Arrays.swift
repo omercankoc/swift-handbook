@@ -1,6 +1,6 @@
 import UIKit
 
-// var/let crossDataTypes = [1,"S",3.14] as [Any]
+// var/let crossDataTypes = [1,"S",3.14] as [Any] // Casting
 
 var os : [String] = ["ios","ipados","watchos","macos","tvos"]
 for s in os{
