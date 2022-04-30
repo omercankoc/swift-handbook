@@ -32,19 +32,6 @@ print("Double to String : \(String(pi))")    // Double to String
 // Bool:
 var logic : Bool = true
 
-// String:
-var developer : String = "Ko"
-
-if(developer.isEmpty){
-    print("String is null!")
-} else {
-    print("String is not null!")
-}
-
-developer.append("c") // sonuna c harfini ekler.
-developer.lowercased() // string degerinin her bir elemanini kucuk harf yapar.
-developer.uppercased() // string degerinin her bir elemanini buyuk harf yapar.
-
 // Typealias: Mevcut bir tipe yeni bir isim atamak icin kullanilir. (typealias newname : type)
 typealias Angle = Double
 var angle : Angle = 30.0;
