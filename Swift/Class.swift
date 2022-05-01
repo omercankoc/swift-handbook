@@ -5,7 +5,7 @@ enum LanguageType {
     // indirect case virtual(language) -> Derleme zamanı çalıştırma, atama sonrası çalıştır. Bu bir değerdir.
 }
 
-class Languages { // Sınıflar bir referans türleridir.    
+class Languages { // Sınıflar bir referans türleridir.
     
     //Properties : Nesne ile oluşturulan bir objenin parçasıdır.
     
@@ -16,15 +16,16 @@ class Languages { // Sınıflar bir referans türleridir.
     var year : Int
     var type : LanguageType
     
-    // Initializer : 
+    // Initializer :
     init(initLanguage : String, initDeveloper : String, initYear : Int, initType : LanguageType) {
-        language = initLanguage
-        developer = initDeveloper
-        year = initYear
-        type = initType
+        // self -> Mevcut örneğe kendi örnek yöntemleri içinde başvurmak için kullanılır.
+        self.language = initLanguage
+        self.developer = initDeveloper
+        self.year = initYear
+        self.type = initType
         
         print("Created Language Object!")
-    }   
+    }
 }
 
 let kotlin = Languages(initLanguage: "Kotlin", initDeveloper: "JetBrains", initYear: 2014, initType: .Compiled)
