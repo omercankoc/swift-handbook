@@ -1,14 +1,16 @@
-import UIKit
-
 // Enum : Bir değişken için bir grup değer tanıma biçimidir. Kalıtım yoluyla özellik alabilir.
 enum LanguageType {
     case Scripting
     case Compiled
-    indirect case virtual(language) // Derleme zamanı çalıştırma, atama sonrası çalıştır. Bu bir değerdir.
+    // indirect case virtual(language) -> Derleme zamanı çalıştırma, atama sonrası çalıştır. Bu bir değerdir.
 }
 
-class Languages {
-    //Properties
+class Languages { // Sınıflar bir referans türleridir.    
+    
+    //Properties : Nesne ile oluşturulan bir objenin parçasıdır.
+    
+    // lazy var value = listener() -> İlk kullanıma kadar değer almaması için "lazy" kullanılır.
+    
     var language : String
     var developer : String
     var year : Int
@@ -22,7 +24,7 @@ class Languages {
         type = initType
         
         print("Created Language Object!")
-    }
+    }   
 }
 
 let kotlin = Languages(initLanguage: "Kotlin", initDeveloper: "JetBrains", initYear: 2014, initType: .Compiled)
