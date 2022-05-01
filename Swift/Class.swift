@@ -1,8 +1,10 @@
 import UIKit
 
+// Enum : Bir değişken için bir grup değer tanıma biçimidir. Kalıtım yoluyla özellik alabilir.
 enum LanguageType {
     case Scripting
     case Compiled
+    indirect case virtual(language) // Derleme zamanı çalıştırma, atama sonrası çalıştır. Bu bir değerdir.
 }
 
 class Languages {
@@ -12,7 +14,7 @@ class Languages {
     var year : Int
     var type : LanguageType
     
-    // Initializer or Constructor
+    // Initializer : 
     init(initLanguage : String, initDeveloper : String, initYear : Int, initType : LanguageType) {
         language = initLanguage
         developer = initDeveloper
