@@ -1,27 +1,47 @@
-## Contents
-### Basics
-<ul>
-  <li><a href="https://github.com/omercankoc/swift-programming/blob/master/Swift/Variables.swift">Variables</a></li>
-  <li><a href="https://github.com/omercankoc/swift-programming/blob/master/Swift/Optionals.swift">Optionals</a></li>
-  <li><a href="https://github.com/omercankoc/swift-programming/blob/master/Swift/Conditionals.swift">Conditionals</a></li>
-  <li><a href="https://github.com/omercankoc/swift-programming/blob/master/Swift/Loops.swift">Loops</a></li>
-  <li><a href="https://github.com/omercankoc/swift-programming/blob/master/Swift/Functions.swift">Functions</a></li>
-  <li><a href="https://github.com/omercankoc/swift-programming/blob/master/Swift/Lets.swift">Lets</a></li>
-  <li><a href="https://github.com/omercankoc/swift-programming/blob/master/Swift/Closures.swift">Closures</a></li>
-  <li><a href="https://github.com/omercankoc/swift-programming/blob/master/Swift/Structs.swift">Structs</a></li>
-</ul>
+## Variable and Value Type
 
-### Collections
-<ul>
-  <li><a href="https://github.com/omercankoc/swift-programming/blob/master/Swift/Arrays.swift">Arrays</a></li>
-  <li><a href="https://github.com/omercankoc/swift-programming/blob/master/Swift/Sets.swift">Sets</a></li>
-  <li><a href="https://github.com/omercankoc/swift-programming/blob/master/Swift/Dictionaries.swift">Dictionaries</a></li>
-  <li><a href="https://github.com/omercankoc/swift-programming/blob/master/Swift/Tuples.swift">Tuples</a></li>
-</ul>
+### Definition and Initialize
 
-### Object-Oriented
-<ul>
-  <li><a href="https://github.com/omercankoc/swift-programming/blob/master/Swift/Class.swift">Class</a></li>
-  <li><a href="https://github.com/omercankoc/swift-programming/blob/master/Swift/Inheritance.swift">Inheritance</a></li>
-  <li><a href="https://github.com/omercankoc/swift-programming/blob/master/Swift/Protocol.swift">Protocol</a></li>
-</ul>
+Definition:
+```swift
+var language : String
+```
+Initialization:
+```swift
+var language = "Swift"
+```
+Definition and Initialization:
+```swift
+var language : String = "Swift"
+```
+
+Mutable Varible:
+```swift
+var platform : String = "iOS"
+```
+
+Inmutable Variable:
+```swift
+let language : String = "Swift"
+```
+
+Integer:
+```swift
+var counter : Int = 0
+```
+
+Float:
+```swift
+var euler : Float = 2.7182818
+```
+
+Double :
+```swift
+var pi : Double = 3.14159265358979
+```
+
+Bool:
+```swift
+var logic : Bool = true
+```
+
