@@ -67,7 +67,7 @@ for item in intersectionSet.sorted(){
 
 
 ## Subtracting : Get the subtacting elements of two Set Objects.
-``` 
+``` swift
 var subtractingSet = second.subtracting(first).sorted();
 print("Substraacting Set : ")
 for item in subtractingSet.sorted(){
