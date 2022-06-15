@@ -4,7 +4,7 @@
 
 2. var/let arrayName = [var1,var2,var3,...] as [Any] -> Casting
 
-```
+```swift
 var os : [String] = ["ios","ipados","watchos","macos","tvos"]
 for s in os{
     print(s)
