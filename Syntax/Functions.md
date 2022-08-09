@@ -16,8 +16,16 @@ func Message(){
 }
 ```
 
-
+Method Overload is the provisioning of different versions of a method. These versions can be used for the same or different purposes or return different types of values.
 ```swift
+func Message(name : String){
+    print("Hello",name)
+}
+```
+```swift
+func Message(name : String, surname : String){
+  print("Hello",name,surname)
+}
 ```
 
 ```swift
