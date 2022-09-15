@@ -1,5 +1,5 @@
 # Sets
-It is a data type that does not allow to keep the same element more than once (Unique) and has no indexing structure (Unordered Collection).
+A set stores distinct values of the same type in a collection with no defined ordering. You can use a set instead of an array when the order of items isn’t important (Unordered Collection), or when you need to ensure that an item only appears once (Unique).
 
 ## Defination and Initialize a Set
 Defining a static set without specifying the type
