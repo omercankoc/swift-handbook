@@ -1,3 +1,2 @@
 Swift
 
-![Swift](swift.jpg)
