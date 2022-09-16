@@ -19,5 +19,18 @@ Swift combines powerful type inference and pattern matching with a modern, light
 
 Swift has been years in the making, and it continues to evolve with new features and capabilities. Our goals for Swift are ambitious. We can’t wait to see what you create with it.
 
-1. Fundamental
+### Fundamental
 - [Veriables](https://github.com/omercankoc/documents-swift/blob/master/Fundamental/Variables.md)
+- [Strings](https://github.com/omercankoc/documents-swift/blob/master/Fundamental/Strings.md)
+- [Optionals](https://github.com/omercankoc/documents-swift/blob/master/Fundamental/Optionals.md)
+- [Operators](https://github.com/omercankoc/documents-swift/blob/master/Fundamental/Operators.md)
+- [Conditionals](https://github.com/omercankoc/documents-swift/blob/master/Fundamental/Conditionals.md)
+- [Lets](https://github.com/omercankoc/documents-swift/blob/master/Fundamental/Lets.md)
+- [Loops](https://github.com/omercankoc/documents-swift/blob/master/Fundamental/Loops.md)
+- [Functions](https://github.com/omercankoc/documents-swift/blob/master/Fundamental/Functions.md)
+- [Closures](https://github.com/omercankoc/documents-swift/blob/master/Fundamental/Closures.md)
+- [Structs](https://github.com/omercankoc/documents-swift/blob/master/Fundamental/Structs.md)
+
+### Collection
+
+### Advanced
