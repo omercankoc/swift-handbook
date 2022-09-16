@@ -1,3 +1,3 @@
 Swift
 
-![Swift](swift.png)
+![Swift](swift.jpg)
