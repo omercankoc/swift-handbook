@@ -6,24 +6,22 @@
 - They are simple and fast.
 - They do not cause memory (RAM) problems.
 - They are Threadsafe.
-### Let's define a Struct
+### Defination
 ```swift
-struct Language {
-    var name : String
-    var country : String
-    var family : String
+struct User {
+    var username : String
+    var password : String
+    var email : String
 }
 ```
-### Let's create a Struct
+### Initialize
 ```swift
-let turkish = Language(name : "Turkish", country: "Turkey", family: "Altai")
+var nicola = User(username : "nicola", password: "acdc", email : "nicola@mail.com")
 ```
-
+Let's take a look at the struct we created.
 ```swift
+print("Username : \(nicola.username) Password : **** E-Mail : \(nicola.email)")
 ```
-
-```swift
 ```
-
-```swift
+Username : nicola Password : **** E-Mail : nicola@mail.com
 ```
