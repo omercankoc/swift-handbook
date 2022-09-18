@@ -75,7 +75,7 @@ func MinMax(array: [Int]) -> (min: Int, max: Int) {
 MinMax(array: [1,1,2,3,5,8,13,21])
 ```
 ## Mutating Function
-It is used when a structural change is desired in a particular method.
+It is used when a structural change is desired in a particular method. It can only be used in Struct.
 ```swift
 struct Mail {
     var address : String
