@@ -74,3 +74,35 @@ func MinMax(array: [Int]) -> (min: Int, max: Int) {
 ```swift
 MinMax(array: [1,1,2,3,5,8,13,21])
 ```
+## Mutating Function
+It is used when a structural change is desired in a particular method.
+```swift
+struct Mail {
+    var address : String
+
+    mutating func mutateEMail(){
+        self.address = "\(address)@mail.com"
+    }
+}
+```
+
+Let's create a Mail Object.
+```swift
+var developer = Mail(address: "developer")
+```
+```swift
+print(developer.address)
+```
+```
+developer
+```
+Now let's look at the Object after the Mutating Function is run.
+```swift
+developer.mutateEMail()
+```
+```swift
+print(developer.address)
+```
+```
+developer@mail.com
+```
