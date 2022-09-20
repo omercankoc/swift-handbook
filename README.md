@@ -30,6 +30,7 @@ Swift has been years in the making, and it continues to evolve with new features
 - [Functions](https://github.com/omercankoc/documents-swift/blob/master/Fundamental/Functions.md)
 - [Closures](https://github.com/omercankoc/documents-swift/blob/master/Fundamental/Closures.md)
 - [Structs](https://github.com/omercankoc/documents-swift/blob/master/Fundamental/Structs.md)
+- [Tuples](https://github.com/omercankoc/documents-swift/blob/master/Fundamental/Tuples.md)
 
 ### Collection
 
