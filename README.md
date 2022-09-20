@@ -1,7 +1,7 @@
 # Swift
 
 Notes I have compiled from various sources about Swift programming language. 
-This warehouse will continue to be updated. 
+This repository will continue to be updated. 
 I am waiting for your support and suggestions.
 
 ### Fundamental
