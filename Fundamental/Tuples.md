@@ -8,10 +8,7 @@ var blue = ("0108FF",[1,8,255],[238,100,50],[100,97,0,0])
 ```
 And let's get the values one by one.
 ```swift
-print("Blue HEX Code : \(blue.0)")
-print("Blue RGB Code : \(blue.1)")
-print("Blue HSL Code : \(blue.2)")
-print("Blue CMYK Code : \(blue.3)")
+print("Blue -> HEX Code : \(blue.0) RGB Code : \(blue.1) HSL Code : \(blue.2) CMYK Code : \(blue.3)")
 ```
 ```
 Blue HEX Code : 0108FF
