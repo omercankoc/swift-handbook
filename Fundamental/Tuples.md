@@ -11,10 +11,7 @@ And let's get the values one by one.
 print("Blue -> HEX Code : \(blue.0) RGB Code : \(blue.1) HSL Code : \(blue.2) CMYK Code : \(blue.3)")
 ```
 ```
-Blue HEX Code : 0108FF
-Blue RGB Code : [1, 8, 255]
-Blue HSL Code : [238, 100, 50]
-Blue CMYK Code : [100, 97, 0, 0]
+Blue -> HEX Code : 0108FF RGB Code : [1, 8, 255] HSL Code : [238, 100, 50] CMYK Code : [100, 97, 0, 0]
 ```
 You can name the individual elements in a tuple when the tuple is defined.
 ```swift
