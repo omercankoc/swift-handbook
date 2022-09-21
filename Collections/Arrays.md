@@ -35,7 +35,7 @@ for iterator in os {
 ```
 
 ## Methods
-1 - Append
+1. Append
 ```swift
 os.append("tvOS")
 ```
