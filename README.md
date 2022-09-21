@@ -18,5 +18,8 @@ I am waiting for your support and suggestions.
 - [Tuples](https://github.com/omercankoc/documents-swift/blob/master/Fundamental/Tuples.md)
 
 ### Collection
+- [Arrays](https://github.com/omercankoc/documents-swift/blob/master/Collections/Arrays.md)
+- [Sets](https://github.com/omercankoc/documents-swift/blob/master/Collections/Sets.md)
+- [Dictionaries](https://github.com/omercankoc/documents-swift/blob/master/Collections/Dictionaries.md)
 
 ### Advanced
