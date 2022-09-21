@@ -37,7 +37,7 @@ for iterator in os {
 ## Methods
 1 - Append
 ```swift
-fos.append("tvOS")
+os.append("tvOS")
 ```
 
 
