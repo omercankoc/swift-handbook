@@ -23,3 +23,6 @@ I am waiting for your support and suggestions.
 - [Dictionaries](https://github.com/omercankoc/documents-swift/blob/master/Collections/Dictionaries.md)
 
 ### Advanced
+- [Class](https://github.com/omercankoc/documents-swift/blob/master/Advanced/Class.md)
+- [Inheritance](https://github.com/omercankoc/documents-swift/blob/master/Advanced/Inheritance.md)
+- [Protocol](https://github.com/omercankoc/documents-swift/blob/master/Advanced/Protocol.md)
