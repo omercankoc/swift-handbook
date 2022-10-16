@@ -65,3 +65,19 @@ print(validatedValue)
 ```
 0
 ```
+```swift
+var value : String? = nil
+var validatedValue = ""
+
+if value != nil {
+    validatedValue = value!
+    print("Hello \(value!)")
+} else {
+    validatedValue = ""
+    print("Name is Nil!")
+}
+
+```
+```
+Value is Nill
+```
