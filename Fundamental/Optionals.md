@@ -55,3 +55,13 @@ print(value?.lowercased())
 ```
 Optional("swift")
 ```
+## Nil Coalescing
+It is used if we want to return a default value for cases where the optional variable is nil.
+```swift
+var value : Int? = nil
+let validatedValue = value ?? 0
+print(validatedValue)
+```
+```
+0
+```
