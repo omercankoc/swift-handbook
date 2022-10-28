@@ -2,6 +2,7 @@
 Classes are general-purpose, flexible constructs that become the building blocks of your program code. 
 You define properties and methods to add functionality to your structures and classes using the same syntax you use to define constants, 
 variables, and methods. Classes are reference types.
+Objects have two properties, state and behavior.
 
 ### Properties
 They are properties of objects. Here language, developer, year and type variables are properties.
