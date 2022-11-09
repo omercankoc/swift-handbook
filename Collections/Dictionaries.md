@@ -58,23 +58,10 @@ languages.count
 ```
 5
 ```
-Sorts Dictionary Elements:
+Is Empty of Dictionary:
 ```swift
-languages.sorted(by: <)
+languages.isEmpty
 ```
 ```
-["Rust": "Mozilla", "Kotlin": "JetBrains", "Go": "Google", "CSharp": "Microsoft", "Swift": "Apple"]
-```
-```swift
-languages.sorted(by: >)
-```
-```
-["Swift": "Apple", "Kotlin": "JetBrains", "CSharp": "Microsoft", "Go": "Google", "Rust": "Mozilla"]
-```
-Changes the order of Dictionary Elements:
-```swift
-languages.shuffled()
-```
-```
-["Rust": "Mozilla", "Swift": "Apple", "Kotlin": "JetBrains", "Go": "Google", "CSharp": "Microsoft"]
+false
 ```
