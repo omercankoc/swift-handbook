@@ -48,7 +48,7 @@ os.append("tvOS")
 ```
 ["macOS", "iOS", "iPadOS", "watchOS", "tvOS"]
 ```
-With this parameter, one array is added to another array.
+With this parameter, one array is added to another Array.
 ```swift
 os.append(contentsOf: os)
 ```
@@ -87,21 +87,21 @@ os.removeAll()
 ```
 []
 ```
-- Returns the count of elements in the Array:
+- Returns the Count of Elements in the Array:
 ```swift
 os.count
 ```
 ```
 4
 ```
-- Returns true if the set is not empty, false otherwise:
+- Returns true if the Array is not empty, false otherwise:
 ```swift
 os.isEmpty
 ```
 ```
 false
 ```
-- The First and Last Element of the Array:
+- The First and Last Element in the Array:
 ```swift
 var first = os.first
 ```
@@ -114,7 +114,7 @@ var last = os.last
 ```
 "watchOS"
 ```
-- Sort elements of Array:
+- Sort of Elements in the Array:
 ```swift
 os.sort()
 ```
@@ -133,7 +133,7 @@ os.sort(by: >)
 ```
 ["watchOS", "macOS", "iPadOS", "iOS"]
 ```
-- Reverses the order of Array Elements:
+- Reverses the order of Elements in the Array:
 ```swift
 os.reverse()
 ```
@@ -154,7 +154,7 @@ var result = os.filter({$0.hasPrefix("i")})
 ```
 ["iOS", "iPadOS"]
 ```
-- Exchanges the position of Array Elements:
+- Exchanges the position of Elements in the Array:
 ```swift
 os.swapAt(1, 2)
 ```
