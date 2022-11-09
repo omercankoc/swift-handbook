@@ -84,12 +84,11 @@ Sorts Dictionary Elements:
 languages.sorted(by: <)
 ```
 ```
-["Rust": "Mozilla", "Go": "Google", "Swift": "Apple", "CSharp": "Microsoft", "Kotlin": "JetBrains"]
+["Rust": "Mozilla", "Kotlin": "JetBrains", "Go": "Google", "CSharp": "Microsoft", "Swift": "Apple"]
 ```
-Sorts Dictionary Elements:
 ```swift
-languages.sorted(by: <)
+languages.sorted(by: >)
 ```
 ```
-["Rust": "Mozilla", "Go": "Google", "Swift": "Apple", "CSharp": "Microsoft", "Kotlin": "JetBrains"]
+["Swift": "Apple", "Kotlin": "JetBrains", "CSharp": "Microsoft", "Go": "Google", "Rust": "Mozilla"]
 ```
