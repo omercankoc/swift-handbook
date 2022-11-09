@@ -7,7 +7,7 @@ The type of a Swift array is written in full as Array<Element>, where Element is
 ```swift
 var os : [String] = ["macOS","iOS","iPadOS","watchOS"]
 ```
- ### Creating an Empty Array with Shortland
+### Creating an Empty Array with Shortland
 ```swift
 var os : [String] = []
 ```
@@ -48,31 +48,73 @@ os.append("tvOS")
 ```
 ["macOS", "iOS", "iPadOS", "watchOS", "tvOS"]
 ```
-This method is also used to append one array to another array.
+With this parameter, one array is added to another array.
 ```swift
 os.append(contentsOf: os)
 ```
 ```
 ["macOS", "iOS", "iPadOS", "watchOS", "macOS", "iOS", "iPadOS", "watchOS"]
 ```
-2. Insert : It is used to insert an element at the specified position of the array.
+- Insert an element to the specified position of the Array:
 ```swift
 os.insert("tvOS", at: 2)
 ```
 ```
 ["macOS", "iOS", "tvOS", "iPadOS", "watchOS"]
 ```
-3. Remove : The method is used to extract items from an array.
+- Remove an item from the Array:
 ```swift
 os.remove(at: 2)
 ```
 ```
 ["macOS", "iOS", "watchOS"]
 ```
-- removeFirst() : to remove the first element.
-- removeLast() :  to remove the last element.
-- removeAll() : to remove all elements of an array
-4. Sort : Sorts array elements.
+```swift
+os.removeFirst()
+```
+```
+["iOS", "iPadOS", "watchOS"]
+```
+```swift
+os.removeLast()
+```
+```
+["macOS", "iOS", "iPadOS"]
+```
+```swift
+os.removeAll()
+```
+```
+[]
+```
+- Returns the count of elements in the Array:
+```swift
+os.count
+```
+```
+4
+```
+- Returns true if the set is not empty, false otherwise:
+```swift
+os.isEmpty
+```
+```
+false
+```
+- The First and Last Element of the Array:
+```swift
+var first = os.first
+```
+```
+"macOS"
+```
+ ```swift
+var last = os.last
+```
+```
+"watchOS"
+```
+- Sort elements of Array:
 ```swift
 os.sort()
 ```
@@ -91,52 +133,39 @@ os.sort(by: >)
 ```
 ["watchOS", "macOS", "iPadOS", "iOS"]
 ```
-5. Shuffle : Changes the order of array elements.
-```swift
-os.shuffle()
-```
-```
-["iPadOS", "iOS", "macOS", "watchOS"]
-```
-6. Contains : Searches for the element in an array.
-```swift
-if os.contains("iOS") { print("TRUE") } else { print(false) }
-```
-```
-TRUE
-```
-7. Swap At : Exchanges the position of array elements.
-```swift
-os.swapAt(1, 2)
-```
-```
-["macOS", "iPadOS", "iOS", "watchOS"]
-```
-8. Reverse : Reverses the order of array elements.
+- Reverses the order of Array Elements:
 ```swift
 os.reverse()
 ```
 ```
 ["watchOS", "iPadOS", "iOS", "macOS"]
 ```
-9. Count : The count property is used to find the number of elements in an array.
+- Searches for the Element in an Array:
 ```swift
-os.count
+if os.contains("iOS") { print("TRUE") } else { print(false) }
 ```
 ```
-4
+TRUE
 ```
-10. Is Empty : Used to check if a directory is empty.
-```swift
-os.isEmpty
-```
-```
-false
-```
-11. Filter : It is used to filter by one or more constraints in the array.
+- Filter by one or more constraints in the Array:
 ```swift
 var result = os.filter({$0.hasPrefix("i")})
 ```
 ```
 ["iOS", "iPadOS"]
+```
+- Exchanges the position of Array Elements:
+```swift
+os.swapAt(1, 2)
+```
+```
+["macOS", "iPadOS", "iOS", "watchOS"]
+```
+
+- Changes the positions of the Elements randomly:
+```swift
+os.shuffle()
+```
+```
+["iPadOS", "iOS", "macOS", "watchOS"]
 ```
