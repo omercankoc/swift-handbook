@@ -63,27 +63,6 @@ Sorts Dictionary Elements:
 languages.sorted(by: <)
 ```
 ```
-["Rust": "Mozilla", "Go": "Google", "Swift": "Apple", "CSharp": "Microsoft", "Kotlin": "JetBrains"]
-```
-Changes the order of Dictionary Elements:
-```swift
-languages.shuffled()
-```
-```
-["Rust": "Mozilla", "Swift": "Apple", "Kotlin": "JetBrains", "Go": "Google", "CSharp": "Microsoft"]
-```
-Checks if the specified Element is present:
-```swift
-languages.shuffled()
-```
-```
-["Rust": "Mozilla", "Go": "Google", "Swift": "Apple", "CSharp": "Microsoft", "Kotlin": "JetBrains"]
-```
-Sorts Dictionary Elements:
-```swift
-languages.sorted(by: <)
-```
-```
 ["Rust": "Mozilla", "Kotlin": "JetBrains", "Go": "Google", "CSharp": "Microsoft", "Swift": "Apple"]
 ```
 ```swift
@@ -91,4 +70,11 @@ languages.sorted(by: >)
 ```
 ```
 ["Swift": "Apple", "Kotlin": "JetBrains", "CSharp": "Microsoft", "Go": "Google", "Rust": "Mozilla"]
+```
+Changes the order of Dictionary Elements:
+```swift
+languages.shuffled()
+```
+```
+["Rust": "Mozilla", "Swift": "Apple", "Kotlin": "JetBrains", "Go": "Google", "CSharp": "Microsoft"]
 ```
