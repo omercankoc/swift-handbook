@@ -17,6 +17,15 @@ var languages: [String: Int] = [:]
 ```swift
 languages["Dart"] = "Google"
 ```
+```
+["Kotlin": "JetBrains", "Swift": "Apple", "Go": "Google", "Rust": "Mozilla", "CSharp": "Microsoft", "Dart": "Google"]
+```
+```swift
+languages.updateValue("Google", forKey: "Dart")
+```
+```
+["Swift": "Apple", "Kotlin": "JetBrains", "Go": "Google", "CSharp": "Microsoft", "Dart": "Google", "Rust": "Mozilla"]
+```
 - Accessing the Keys and Values in the Dictionary:
 ```swift
 for (key,value) in languages {
