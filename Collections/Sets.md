@@ -14,7 +14,7 @@ var odd : Set<Int> = [1,3,5,7,9]
 var even : Set<Int> = [0,2,4,6,8]
 var prime : Set<Int> = [2,3,5,7]
 ``` 
-Creating and Initializing an Empty Set.
+Creating and Initializing an Empty Set:
 ``` swift
 var languages : Set<String> = []
 var numbers : Set<Int> = []
