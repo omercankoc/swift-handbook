@@ -4,11 +4,12 @@ A set stores distinct values of the same type in a collection with no defined or
 ## Defination and Initialize a Set
 Defining a static set without specifying the type
 ``` swift
-var numbers : Set = [1,2,3,4,5,6,7,8,9]
+var numbers : Set = [0,2,4,6,8,1,3,5,7,9]
+var languages : Set = ["C","Objective-C","C++"]
 ``` 
 Define a static set by specifying the type.
 ``` swift
-var numbers : Set<Int> = [2,3,5,1,4,0,6,9,7,8]
+var numbers : Set<Int> = [0,2,4,6,8,1,3,5,7,9]
 var odd : Set<Int> = [1,3,5,7,9]
 var even : Set<Int> = [0,2,4,6,8]
 var prime : Set<Int> = [2,3,5,7]
@@ -16,94 +17,73 @@ var prime : Set<Int> = [2,3,5,7]
 Creating and Initializing an Empty Set.
 ``` swift
 var languages : Set<String> = []
+var numbers : Set<Int> = []
 ```
 ## Methods
-1. Insert : Insert element.
+- Insert element:
 ``` swift
 languages.insert("Swift")
 ```
-2. Remove : Deletes the specified Set element.
+```
+["Objective-C", "C", "C++", "Swift"]
+```
+- Remove the specified Set Element:
 ``` swift
 languages.remove("Swift")
-``` 
-3. Remove All : Deletes all Set elements.
+```
+```
+["Objective-C", "C", "C++"]
+```
+- Remove all Set Elements:
 ``` swift
 languages.removeAll()
-``` 
-4. Remove First : Deletes the first element of the set elements.
+```
+```
+[]
+```
+- Remove the First Element of the Set Elements:
 ``` swift
 languages.removeFirst()
-``` 
-5. Count : Returns the number of elements in the set.
+```
+```
+["C++", "C"]
+```
+- Returns the count of elements in the Set:
 ``` swift
 languages.count()
 ```
 ```
-4
+3
 ```
-6. Max : Returns the maximum numeric value in the set.
+- Add the give item to the Set:
 ``` swift
-odd.max()
+numbers.update(with: 10)
+```
+```
+[9, 6, 3, 8, 2, 7, 10, 1, 0, 4, 5]
+```
+- Returns the maximum numeric value in the Set:
+``` swift
+numbers.max()
 ```
 ```
 9
 ```
-7. Min : Returns the minimum numeric value in the set.
+- Returns the minimum numeric value in the Set:
 ``` swift
-odd.min()
+numbers.min()
 ```
 ```
-1
+0
 ```
-8. Is Empty : Returns true if the Set object is empty, false otherwise.
+- Returns true if the set is not empty, false otherwise:
 ``` swift
-odd.isEmpty
+numbers.isEmpty
 ```
 ```
 false
 ```
-9. Filter : It is a method of obtaining the elements that satisfy the condition in the set.
-``` swift
-numbers.filter({$0>5})
-``` 
-```
-[6,7,8,9]
-```
-```swift
-languages.filter({$0.hasPrefix("S")})
-```
-```
-["Swift"]
-```
-10. Form Union : Combines the elements of two sets and adds the same ones once.
-``` swift
-odd.formUnion(prime)
-``` 
-```
-[2, 3, 5, 7, 1, 9]
-``` 
-11. Is Subset : This method method returns true if all elements of a set are present in another set. If not, it returns false.
-``` swift
-odd.isSubset(of: prime)
-``` 
-```
-false
-``` 
-12. Is Superset : This method method returns true if a set has every element of another set. If not, it returns false.
-``` swift
-odd.isSuperset(of: prime)
-``` 
-```
-false
-``` 
-13. Shuffed : Changes the positions of the elements randomly.
-``` swift
-odd.shuffed()
-``` 
-```
-[5, 9, 7, 3, 1]
-``` 
-14. Sort : This method sorts the items of the set in a specific order (ascending or descending).
+- Sort the elements of the set in a specific order (ascending or descending):
 ``` swift
 numbers.sorted(by: >)
 ``` 
@@ -116,28 +96,67 @@ numbers.sorted(by: <)
 ```
 [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
 ```
-15. Update : This method inserts the given element in the set.
+- Changes the positions of the elements randomly.
 ``` swift
-numbers.update(with: 0)
-```
-16. Union : Combine two Set Objects and subtract identical items.
-``` swift
-var numbers = odd.union(even).sorted()
+numbers.shuffled()
 ``` 
 ```
-[0,1,2,3,4,5,6,7,8,9]
+[8, 5, 0, 3, 6, 2, 9, 7, 4, 1]
 ``` 
-17. Intersection : This method returns the intersection values between two sets.
+- Obtaining the elements in the set that satisfy the condition:
 ``` swift
-var intersection = even.intersection(prime)
+numbers.filter({$0>5})
 ``` 
 ```
-2
-``` 
-18. Subtract : This method returns the set difference between two sets.
+[8, 9, 6, 7]
+```
+```swift
+languages.filter({$0.hasPrefix("C")})
+```
+```
+["C", "C++"]
+```
+- A∪B:
 ``` swift
-var subtract = odd.subtracting(prime)
+var union = odd.union(even)
+``` 
+```
+[2, 9, 4, 3, 5, 1, 7, 6, 0, 8]
+```
+- A∩B:
+``` swift
+var intersection = odd.intersection(prime)
+``` 
+```
+[5, 3, 7]
+```
+- A\B:
+``` swift
+var subtracting = odd.subtracting(prime)
 ``` 
 ```
 [1,9]
+```
+- (A\B)∪(B\A):
+``` swift
+var symmetricDifference = odd.symmetricDifference(prime)
 ``` 
+```
+[1, 2, 9]
+```  
+- B⊂A:
+``` swift
+var subset = even.isSubset(of: numbers)
+``` 
+```
+true
+``` 
+- A⊃B:
+``` swift
+var superset = numbers.isSuperset(of: even)
+``` 
+```
+true
+```
+ 
+
