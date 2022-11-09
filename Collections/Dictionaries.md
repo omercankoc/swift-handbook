@@ -17,14 +17,79 @@ var languages: [String: Int] = [:]
 ```swift
 languages["Swift"] = 2014
 ```
-If you want to access the keys in Dictionary and use it in an array:
+Accessing the Keys and Values in the Dictionary:
+```swift
+for (key,value) in languages {
+  print("\(key): \(value)")
+}
+```
+```
+Rust: Mozilla
+CSharp: Microsoft
+Kotlin: JetBrains
+Swift: Apple
+Go: Google
+```
+Accessing the Keys in the Dictionary:
 ```swift
 let languagesKeys = [String](languages.keys)
 ```
-If you want to access the values in Dictionary and use it in an array:
-```swift
-let languagesValues = [Int](languages.values)
 ```
-
+["Swift", "Kotlin", "Go", "Rust", "CSharp"]
+```
+Accessing the Values in the Dictionary:
 ```swift
+let languagesValues = [String](languages.values)
+```
+```
+["Google", "Apple", "JetBrains", "Mozilla", "Microsoft"]
+```
+Remove an Element from a Dictionary:
+```swift
+languages.removeValue(forKey: "CSharp")
+```
+```
+["Kotlin": "JetBrains", "Go": "Google", "Rust": "Mozilla", "Swift": "Apple"]
+```
+Find Number of Dictionary Elements:
+```swift
+languages.count
+```
+```
+5
+```
+Sorts Dictionary Elements:
+```swift
+languages.sorted(by: <)
+```
+```
+["Rust": "Mozilla", "Go": "Google", "Swift": "Apple", "CSharp": "Microsoft", "Kotlin": "JetBrains"]
+```
+Changes the order of Dictionary Elements:
+```swift
+languages.shuffled()
+```
+```
+["Rust": "Mozilla", "Swift": "Apple", "Kotlin": "JetBrains", "Go": "Google", "CSharp": "Microsoft"]
+```
+Checks if the specified Element is present:
+```swift
+languages.shuffled()
+```
+```
+["Rust": "Mozilla", "Go": "Google", "Swift": "Apple", "CSharp": "Microsoft", "Kotlin": "JetBrains"]
+```
+Sorts Dictionary Elements:
+```swift
+languages.sorted(by: <)
+```
+```
+["Rust": "Mozilla", "Go": "Google", "Swift": "Apple", "CSharp": "Microsoft", "Kotlin": "JetBrains"]
+```
+Sorts Dictionary Elements:
+```swift
+languages.sorted(by: <)
+```
+```
+["Rust": "Mozilla", "Go": "Google", "Swift": "Apple", "CSharp": "Microsoft", "Kotlin": "JetBrains"]
 ```
