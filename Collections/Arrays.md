@@ -27,13 +27,13 @@ var os : Array = ["iOS","iPadOS","macOS","watchOS"]
 ```swift
 var os : Array = [String]()
 ```
-### Iterating Over an Array
+- Iterating Over an Array:
 ```swift
 for iterator in os {
     print(iterator)
 }
 ```
-### Enumerated
+- Enumerated:
 ```swift
 for (index,iterator) in os.enumerated() {
     print("\(index) : \(iterator)")
@@ -41,7 +41,7 @@ for (index,iterator) in os.enumerated() {
 ```
 
 ## Methods
-1. Append : Add an item to the end of the array.
+- Append an item to the end of the Array:
 ```swift
 os.append("tvOS")
 ```
