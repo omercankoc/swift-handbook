@@ -13,9 +13,9 @@ var languages : [String:String] = ["Swift":"Apple","Kotlin":"JetBrains","Go":"Go
 ```swift
 var languages: [String: Int] = [:]
 ```
-### Add Key-Value in Dictionary
+Add Key-Value in Dictionary
 ```swift
-languages["Swift"] = 2014
+languages["Dart"] = "Google"
 ```
 Accessing the Keys and Values in the Dictionary:
 ```swift
