@@ -13,11 +13,11 @@ var languages : [String:String] = ["Swift":"Apple","Kotlin":"JetBrains","Go":"Go
 ```swift
 var languages: [String: Int] = [:]
 ```
-Add Key-Value in Dictionary
+- Add Key-Value in Dictionary
 ```swift
 languages["Dart"] = "Google"
 ```
-Accessing the Keys and Values in the Dictionary:
+- Accessing the Keys and Values in the Dictionary:
 ```swift
 for (key,value) in languages {
   print("\(key): \(value)")
@@ -30,35 +30,35 @@ Kotlin: JetBrains
 Swift: Apple
 Go: Google
 ```
-Accessing the Keys in the Dictionary:
+- Accessing the Keys in the Dictionary:
 ```swift
 let languagesKeys = [String](languages.keys)
 ```
 ```
 ["Swift", "Kotlin", "Go", "Rust", "CSharp"]
 ```
-Accessing the Values in the Dictionary:
+- Accessing the Values in the Dictionary:
 ```swift
 let languagesValues = [String](languages.values)
 ```
 ```
 ["Google", "Apple", "JetBrains", "Mozilla", "Microsoft"]
 ```
-Remove an Element from a Dictionary:
+- Remove an Element from a Dictionary:
 ```swift
 languages.removeValue(forKey: "CSharp")
 ```
 ```
 ["Kotlin": "JetBrains", "Go": "Google", "Rust": "Mozilla", "Swift": "Apple"]
 ```
-Find Number of Dictionary Elements:
+- Find Number of Dictionary Elements:
 ```swift
 languages.count
 ```
 ```
 5
 ```
-Is Empty of Dictionary:
+- Is Empty of Dictionary:
 ```swift
 languages.isEmpty
 ```
