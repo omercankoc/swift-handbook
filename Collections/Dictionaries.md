@@ -5,11 +5,11 @@ Unlike items in an array, items in a dictionary don’t have a specified order.
 You use a dictionary when you need to look up values based on their identifier, 
 in much the same way that a real-world dictionary is used to look up the definition for a particular word.
 
-### Creating an Dictionary
+- Creating an Dictionary
 ```swift
 var languages : [String:String] = ["Swift":"Apple","Kotlin":"JetBrains","Go":"Google","Rust":"Mozilla","CSharp":"Microsoft"]
 ```
-### Creating an Empty Dictionary
+- Creating an Empty Dictionary
 ```swift
 var languages: [String: Int] = [:]
 ```
