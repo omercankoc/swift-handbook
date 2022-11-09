@@ -2,19 +2,19 @@
 A set stores distinct values of the same type in a collection with no defined ordering. You can use a set instead of an array when the order of items isn’t important (Unordered Collection), or when you need to ensure that an item only appears once (Unique).
 
 ## Defination and Initialize a Set
-Defining a static set without specifying the type
+- Defining a static set without specifying the type
 ``` swift
 var numbers : Set = [0,2,4,6,8,1,3,5,7,9]
 var languages : Set = ["C","Objective-C","C++"]
 ``` 
-Define a static set by specifying the type.
+- Define a static set by specifying the type
 ``` swift
 var numbers : Set<Int> = [0,2,4,6,8,1,3,5,7,9]
 var odd : Set<Int> = [1,3,5,7,9]
 var even : Set<Int> = [0,2,4,6,8]
 var prime : Set<Int> = [2,3,5,7]
 ``` 
-Creating and Initializing an Empty Set:
+- Creating and Initializing an Empty Set:
 ``` swift
 var languages : Set<String> = []
 var numbers : Set<Int> = []
@@ -96,7 +96,7 @@ numbers.sorted(by: <)
 ```
 [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
 ```
-- Changes the positions of the elements randomly.
+- Changes the positions of the elements randomly:
 ``` swift
 numbers.shuffled()
 ``` 
