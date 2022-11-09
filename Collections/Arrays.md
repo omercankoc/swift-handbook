@@ -79,6 +79,18 @@ os.sort()
 ```
 ["iOS", "iPadOS", "macOS", "watchOS"]
 ```
+```swift
+os.sort(by: <)
+```
+```
+["iOS", "iPadOS", "macOS", "watchOS"]
+```
+```swift
+os.sort(by: >)
+```
+```
+["watchOS", "macOS", "iPadOS", "iOS"]
+```
 5. Shuffle : Changes the order of array elements.
 ```swift
 os.shuffle()
