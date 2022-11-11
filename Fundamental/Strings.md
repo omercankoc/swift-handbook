@@ -7,15 +7,28 @@ Despite this simplicity of syntax, Swift’s String type is a fast, modern strin
 
 - Definition and Initialize
 ``` swift
-var developer = "developer"
+var language : String
+var language = "Swift"
 var language : String = "Swift"
-var platform = String("iOS")
-var developer : String = """
+```
+- Definition and Initialize
+``` swift
+var language : String
+var language = String("Swift")
+var language : String = String("Swift")
+```
+- Definition and Initialize
+``` swift
+var language : Swift
+var language = """
+    Swift Programming Languages
+    By Apple
+"""
+var language : String = """
     Swift Programming Languages
     By Apple
 """
 ```
-
 - Nullability Control
 ```swift
 var developer : String? = nil
