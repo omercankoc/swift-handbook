@@ -4,7 +4,7 @@ You define properties and methods to add functionality to your structures and cl
 variables, and methods. Classes are reference types.
 Objects have two properties, state and behavior.
 
-### Properties
+- Define the Properties of the Class:
 They are properties of objects. Here language, developer, year and type variables are properties.
 ```swift
 class Languages { 
@@ -21,10 +21,7 @@ class Languages {
     }
 }
 ```
-Properties : They are properties of objects. Here language, developer, year and type variables are properties.
-
-### Instances
-Creates a new instance of the class, with any properties initialized to their default values.
+- Create an Instance of the Class:
 ```swift
 let kotlin = Languages(initLanguage: "Kotlin", initDeveloper: "JetBrains", initYear: 2014)
 ```
