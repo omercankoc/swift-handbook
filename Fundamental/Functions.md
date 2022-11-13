@@ -73,32 +73,47 @@ MinMax(array: [1,1,2,3,5,8,13,21])
 ## Mutating Function
 It is used when a structural change is desired in a particular method. It can only be used in Struct.
 ```swift
-struct Mail {
-    var address : String
+sstruct Person {
+    var name : String
 
-    mutating func mutateEMail(){
-        self.address = "\(address)@mail.com"
+    mutating func uppercasedName(){
+        self.name = name.uppercased()
     }
 }
 ```
 
 Let's create a Mail Object.
 ```swift
-var developer = Mail(address: "developer")
+var developer = Person(name: "developer")
 ```
 ```swift
-print(developer.address)
+print("Name : \(developer.name)")
 ```
 ```
-developer
+Name : developer
 ```
 Now let's look at the Object after the Mutating Function is run.
 ```swift
-developer.mutateEMail()
+developer.uppercasedName()
 ```
 ```swift
-print(developer.address)
+print("Name : \(developer.name)")
 ```
 ```
-developer@mail.com
+Name : DEVELOPER
+```
+## Functions with Variadic Parameters
+It allows to enter as many parameters as desired into the function.
+```swift
+func totalizer(values : Int...) -> Int {
+    var total = 0
+    for value in values {
+        total += value
+    }
+    return total
+}
+```
+```swift
+var sum = totalizer(values: 1,2,3,4,5,6,7,8,9)
+
 ```
