@@ -11,13 +11,11 @@ class Languages {
     var language : String
     var developer : String
     var year : Int
-    var type : LanguageType
     
-    init(initLanguage : String, initDeveloper : String, initYear : Int, initType : LanguageType) {
+    init(initLanguage : String, initDeveloper : String, initYear : Int) {
         self.language = initLanguage
         self.developer = initDeveloper
         self.year = initYear
-        self.type = initType
         
         print("Created Language Object!")
     }
@@ -25,16 +23,8 @@ class Languages {
 ```
 Properties : They are properties of objects. Here language, developer, year and type variables are properties.
 
-### Enum
-It is a form of recognizing a set of values for an object. It can inherit properties.
-```swift
-enum LanguageType {
-    case Scripting
-    case Compiled
-}
-```
 ### Instances
 Creates a new instance of the class, with any properties initialized to their default values.
 ```swift
-let kotlin = Languages(initLanguage: "Kotlin", initDeveloper: "JetBrains", initYear: 2014, initType: .Compiled)
+let kotlin = Languages(initLanguage: "Kotlin", initDeveloper: "JetBrains", initYear: 2014)
 ```
