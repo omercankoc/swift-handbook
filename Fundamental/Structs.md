@@ -11,17 +11,33 @@
 struct User {
     var username : String
     var password : String
-    var email : String
 }
 ```
 ### Initialize
 ```swift
-var nicola = User(username : "nicola", password: "acdc", email : "nicola@mail.com")
+var omer = User(username : "omer", password: "********"
 ```
-Let's take a look at the struct we created.
+```
+omer ********
+```
+## Composition
+A parameter of a class or struct can be another class or variable itself. This situation is called composition.
 ```swift
-print("Username : \(nicola.username) Password : **** E-Mail : \(nicola.email)")
+struct Contact {
+    var email : String
+    var phone : String
+}
+
+struct User {
+    var username : String
+    var password : String
+    var contact : Contact
+}
+```
+```swift
+var omer = User(username: "omer", password: "********", contact: Contact(email: "omer@mail.com", phone: "+19876543210"))
+
 ```
 ```
-Username : nicola Password : **** E-Mail : nicola@mail.com
+omer ******** omer@mail.com +19876543210
 ```
