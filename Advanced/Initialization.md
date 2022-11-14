@@ -8,24 +8,17 @@ Unlike Objective-C initializers, Swift initializers don’t return a value.
 Their primary role is to ensure that new instances of a type are correctly initialized before they’re used for the first time.
 
 
-- Define the Properties of the Class:
-They are properties of objects. Here language, developer, year and type variables are properties.
+- Define the Properties and Methods of the Class:
 ```swift
 class Languages {
     var language : String
     var developer : String
     var year : Int
     
-    init(initLanguage : String, initDeveloper : String, initYear : Int) {
-        self.language = initLanguage
-        self.developer = initDeveloper
-        self.year = initYear
-        
-        print("Created Language Object!")
-    }
-    
-    func message(){
-        print("\(language) programming language started to be developed by \(developer) in \(String(year)).")
+    init(language : String, developer : String, year : Int) {
+        self.language = language
+        self.developer = developer
+        self.year = year
     }
     
     func message(language : String, developer : String, year : Int) -> String {
@@ -33,9 +26,11 @@ class Languages {
     }
 }
 ```
-- Create an Instance of the Class:
+- Instance of the Class:
 ```swift
-let kotlin = Languages(initLanguage: "Kotlin", initDeveloper: "JetBrains", initYear: 2014)
-var message = kotlin.message(language: kotlin.language, developer: kotlin.developer, year: kotlin.year)
-kotlin.message()
+var swift = Languages(language: "Swift", developer: "Apple", year: 2014)
+var message = swift.message(language: swift.language, developer: swift.developer, year: swift.year)
+```
+```
+Swift programming language started to be developed by Apple in 2014.
 ```
