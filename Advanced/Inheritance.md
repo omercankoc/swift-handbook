@@ -70,7 +70,7 @@ class Swift : Language {
     }
 }
 ```
-### Override
+## Override
 A subclass can provide its own custom implementation of an instance method, type method, instance property, type property, 
 or subscript that it would otherwise inherit from a superclass. This is known as overriding.
 
@@ -95,4 +95,26 @@ LLVM Swift Apple 2011 Compiled
 Subclass!
 Superclass!
 Swift Programming Languages
+```
+## Polymorphism
+From two classes with an inheritance relationship, the superclass behaving like a subclass is called polymorphism. It is used to achieve more inclusive results.
+```swift
+class Language {
+    func message(){
+        print("Superclass")
+    }
+}
+
+class Swift : Language {
+    override func message(){
+        print("Subclass")
+    }
+}
+```
+```swift
+var language : Language = Swift()
+language.message()
+```
+```
+Subclass
 ```
