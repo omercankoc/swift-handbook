@@ -26,3 +26,4 @@ I am waiting for your support and suggestions.
 - [Class](https://github.com/omercankoc/documents-swift/blob/master/Advanced/Class.md)
 - [Inheritance](https://github.com/omercankoc/documents-swift/blob/master/Advanced/Inheritance.md)
 - [Protocol](https://github.com/omercankoc/documents-swift/blob/master/Advanced/Protocol.md)
+- [Generic](https://github.com/omercankoc/documents-swift/blob/master/Advanced/Generic.md)
