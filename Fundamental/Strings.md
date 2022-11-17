@@ -17,19 +17,31 @@ var language = "Swift"
 ``` swift
 var language : String = "Swift"
 ```
-- Definition and Initialize
+- Define via the String Class:
 ``` swift
 var language : String
+```
+- Initialize via the String Class:
+``` swift
 var language = String("Swift")
+```
+- Define and Initialize via the String Class:
+``` swift
 var language : String = String("Swift")
 ```
-- Definition and Initialize
+-  Definition via Multiline String Literals:
 ``` swift
 var language : Swift
+```
+-  Initialize via Multiline String Literals:
+``` swift
 var language = """
     Swift Programming Languages
     By Apple
 """
+```
+-  Definition and Initialize via Multiline String Literals:
+``` swift
 var language : String = """
     Swift Programming Languages
     By Apple
