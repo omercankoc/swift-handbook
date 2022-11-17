@@ -10,7 +10,9 @@ by checking that the override definition has a matching superclass definition.
 Classes can also add property observers to inherited properties in order to be notified when the value of a property changes. 
 Property observers can be added to any property, regardless of whether it was originally defined as a stored or computed property.
 
-### Defining a Base Class
+A class cannot be inherited by more than one class.
+
+### Superclass
 Any class that doesn’t inherit from another class is known as a base class.
 ```swift
 enum LanguageType {
@@ -18,44 +20,57 @@ enum LanguageType {
     case Compiled
 }
 
-class Languages {
+class Language {
     var language : String
     var developer : String
     var year : Int
     var type : LanguageType
     
-    init(initLanguage : String, initDeveloper : String, initYear : Int, initType : LanguageType) {
-        language = initLanguage
-        developer = initDeveloper
-        year = initYear
-        type = initType
+    init(language : String, developer : String, year : Int, type : LanguageType) {
+        self.language = language
+        self.developer = developer
+        self.year = year
+        self.type = type
         
         print("Created Language Object!")
     }
     
     func speak() {
-       print("Base Class!")
+       print("Superclass!")
     }
 }
 ```
-### Subclassing
+### Subclass
 Subclassing is the act of basing a new class on an existing class. 
 The subclass inherits characteristics from the existing class, which you can then refine. 
 You can also add new characteristics to the subclass.
+
+The "super" identifier is used to access the properties and methods of the superclass.
 ```swift
-class Swift : Languages {
+class Swift : Language {
+    
+    var compiler : String
+    
+    init(compiler : String, language : String, developer : String, year : Int, type : LanguageType){
+        self.compiler = compiler
+        super.init(language: language, developer: developer, year: year, type: type)
+        print("Created Swift Object!")
+    }
+
+    override func speak() {
+        print("Subclass!")
+    }
+    
+    func superSpeak(){
+        super.speak()
+    }
     
     func message(){
         print("Swift Programming Languages")
     }
-
-    override func speak() {
-        super.speak()
-        print("Subclass!")
-    }
 }
 ```
-### Overriding
+### Override
 A subclass can provide its own custom implementation of an instance method, type method, instance property, type property, 
 or subscript that it would otherwise inherit from a superclass. This is known as overriding.
 
@@ -67,27 +82,17 @@ The override keyword also prompts the Swift compiler to check that your overridi
 has a declaration that matches the one you provided for the override. This check ensures that your overriding definition is correct.
 
 ```swift
-let swift = Swift(initLanguage: "Swift", initDeveloper: "Apple", initYear: 2011, initType: .Compiled)
-```
-
-```swift
-print("\(swift.language) \(swift.developer) \(swift.year) \(swift.type)")
-```
-```
-Swift Apple 2011 Compiled
-```
-
-```swift
+let swift = Swift(compiler: "LLVM", language: "Swift", developer: "Apple", year: 2011 , type: .Compiled)
+print("\(swift.compiler) \(swift.language) \(swift.developer) \(swift.year) \(swift.type)")
 swift.speak()
-```
-```
-Base Class!
-Subclass!
-```
-
-```swift
+swift.superSpeak()
 swift.message()
 ```
 ```
+Created Language Object!
+Created Swift Object!
+LLVM Swift Apple 2011 Compiled
+Subclass!
+Superclass!
 Swift Programming Languages
 ```
