@@ -124,5 +124,3 @@ The conversion of Superclass to Subclass is called Downcasting, conversion of Su
 - as : It is used to convert one type to another.
 - as! (Force Downcasting) : It is used to convert one type to another type. Returns value if successful, error if unsuccessful.
 - as? (For Optinonal Downcasting) : It is used if there is an optional data during the conversion. Returns value if successful, nil if unsuccessful.
-```swift
-```
