@@ -49,11 +49,11 @@ var language : String = """
 ```
 - Nullability Control
 ```swift
-var developer : String? = nil
-if(developer != nil){
-    print(developer!)
+var language : String? = nil
+if(language != nil){
+    print(language!)
 } else {
-    developer = "omercan"
+    print("NIL")
 }
 ```
 
@@ -64,17 +64,29 @@ for character in language {
 }
 ```
 
-- Append the letter C to the End.
+- Append
 ```swift
-developer?.append("koc")
+var language : String = "Swift"
+language.append(" Programming Language")
+```
+```
+Swift Programming Language
+```
+- Insert
+```swift
+var language : String = "Swift"
+language.insert("-", at: language.startIndex)
+```
+```
+-Swift
 ```
 
 - Makes each character of the string value Lowercase.
 ```swift
-developer?.lowercased()
+language.lowercased()
 ```
 
 - Makes each character of the string value Uppercase.
 ```swift
-developer?.uppercased()
+language.uppercased()
 ```
