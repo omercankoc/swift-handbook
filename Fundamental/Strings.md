@@ -63,7 +63,7 @@ for character in language {
     print(character)
 }
 ```
-
+## Methods
 - Append
 ```swift
 var language : String = "Swift"
