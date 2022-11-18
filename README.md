@@ -5,7 +5,7 @@ This repository will continue to be updated.
 I am waiting for your support and suggestions.
 
 ### Fundamental
-- [Veriables](https://github.com/omercankoc/documents-swift/blob/master/Fundamental/Variables.md)
+- [Variables](https://github.com/omercankoc/documents-swift/blob/master/Fundamental/Variables.md)
 - [Strings](https://github.com/omercankoc/documents-swift/blob/master/Fundamental/Strings.md)
 - [Optionals](https://github.com/omercankoc/documents-swift/blob/master/Fundamental/Optionals.md)
 - [Operators](https://github.com/omercankoc/documents-swift/blob/master/Fundamental/Operators.md)
