@@ -80,14 +80,6 @@ language.insert("-", at: language.startIndex)
 ```
 -Swift
 ```
-- Lowercase
-```swift
-language.lowercased()
-```
-- Uppercase
-```swift
-language.uppercased()
-```
 - Remove
 ```swift
 var language : String = "Swift"
@@ -107,24 +99,6 @@ language.removeAll(where: { text.contains($0) })
 ```
 ```
 wift rogramming anguage
-```
-- Elements Equal
-```swift
-var language : String = "Swift"
-var verification : String = "Swift"
-
-var result = language.elementsEqual(verification)
-```
-```
-true
-```
-- Replacing Occurrences
-```swift
-var message = "I came now!"
-var replacedMessage = message.replacingOccurrences(of: "came",with: "just")
-```
-```
-I just now!
 ```
 - Drop First
 ```swift
@@ -146,6 +120,74 @@ print(dropLast)
 ```
 Swif
 ```
+- Count
+```swift
+var language : String = "Swift"
+var result = language.count
+```
+```
+5
+```
+- Reversed
+```Swift
+var language : String = "Swift"
+var result = String(language.reversed())
+```
+```
+tfiwS
+```
+- Contains
+```swift
+var language : String = "Swift"
+var result = language.contains("w")
+```
+```
+true
+```
+- Capitalized
+```swift
+var language : String = "swift"
+var result = language.capitalized
+```
+```
+Swift
+```
+- Lowercase
+```swift
+language.lowercased()
+```
+- Uppercase
+```swift
+language.uppercased()
+```
+- Split
+```swift
+var language : String = "Swift Programming Language"
+var result = language.split(separator: " ")
+```
+```
+["Swift", "Programming", "Language"]
+```
+
+- Elements Equal
+```swift
+var language : String = "Swift"
+var verification : String = "Swift"
+
+var result = language.elementsEqual(verification)
+```
+```
+true
+```
+- Replacing Occurrences
+```swift
+var message = "I came now!"
+var replacedMessage = message.replacingOccurrences(of: "came",with: "just")
+```
+```
+I just now!
+```
+
 - Has Prefix
 ```swift
 var message : String = "I am Swift Developer"
