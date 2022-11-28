@@ -80,13 +80,89 @@ language.insert("-", at: language.startIndex)
 ```
 -Swift
 ```
-
-- Makes each character of the string value Lowercase.
+- Lowercase
 ```swift
 language.lowercased()
 ```
-
-- Makes each character of the string value Uppercase.
+- Uppercase
 ```swift
 language.uppercased()
+```
+- Remove
+```swift
+var language : String = "Swift"
+var index = language.index(language.startIndex, offsetBy: 0)
+
+language.remove(at: index)
+```
+```
+wift
+```
+- Remove All
+```swift
+var language = "Swift Programming Language"
+var text: Set<Character> = ["S","P","L"]
+
+language.removeAll(where: { text.contains($0) })
+```
+```
+wift rogramming anguage
+```
+- Elements Equal
+```swift
+var language : String = "Swift"
+var verification : String = "Swift"
+
+var result = language.elementsEqual(verification)
+```
+```
+true
+```
+- Replacing Occurrences
+```swift
+var message = "I came now!"
+var replacedMessage = message.replacingOccurrences(of: "came",with: "just")
+```
+```
+I just now!
+```
+- Drop First
+```swift
+var language : String = "Swift"
+
+var dropFirst = language.dropFirst()
+print(dropFirst)
+```
+```
+wift
+```
+- Drop Last
+```swift
+var language : String = "Swift"
+
+var dropLast = language.dropLast()
+print(dropLast)
+```
+```
+Swif
+```
+- Has Prefix
+```swift
+var message : String = "I am Swift Developer"
+
+var hasPrefix = message.hasPrefix("I")
+print(hasPrefix)
+```
+```
+true
+```
+- Has Suffix
+```swift
+var message : String = "I am Swift Developer"
+
+var hasSuffix = message.hasSuffix("r")
+print(hasSuffix)
+```
+```
+true
 ```
