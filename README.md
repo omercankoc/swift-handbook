@@ -1,4 +1,4 @@
-# <img src="https://github.com/omercankoc/documents-swift/blob/master/swift.png" alt="Kotlin" width="24" height="24"> Swift
+# <img src="https://github.com/omercankoc/documents-swift/blob/master/swift.png" alt="Swift" width="24" height="24"> Swift
 
 Notes I have compiled from various sources about Swift programming language. 
 This repository will continue to be updated. 
