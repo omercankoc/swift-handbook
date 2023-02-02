@@ -6,14 +6,14 @@
 - They are simple and fast.
 - They do not cause memory (RAM) problems.
 - They are Threadsafe.
-### Defination
+### Definition Syntax
 ```swift
 struct User {
     var username : String
     var password : String
 }
 ```
-### Initialize
+### Instance
 ```swift
 var omer = User(username : "omer", password: "********"
 ```
