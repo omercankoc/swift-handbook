@@ -28,3 +28,8 @@ I am waiting for your support and suggestions.
 - [Inheritance](https://github.com/omercankoc/documents-swift/blob/master/Advanced/Inheritance.md)
 - [Protocol](https://github.com/omercankoc/documents-swift/blob/master/Advanced/Protocol.md)
 - [Generic](https://github.com/omercankoc/documents-swift/blob/master/Advanced/Generic.md)
+
+### References
+- https://docs.swift.org/swift-book/
+- https://www.hackingwithswift.com
+- https://swiftly.dev
