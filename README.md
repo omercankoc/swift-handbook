@@ -1,9 +1,5 @@
 # <img src="https://github.com/omercankoc/documents-swift/blob/master/swift.png" alt="Swift" width="24" height="24"> Swift
 
-Notes I have compiled from various sources about Swift programming language. 
-This repository will continue to be updated. 
-I am waiting for your support and suggestions.
-
 ### Fundamental
 - [Variables](https://github.com/omercankoc/documents-swift/blob/master/Fundamental/Variables.md)
 - [Strings](https://github.com/omercankoc/documents-swift/blob/master/Fundamental/Strings.md)
