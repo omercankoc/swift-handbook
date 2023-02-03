@@ -49,7 +49,7 @@ SWIFT
 The most important advantage over other types of Unwrapping is that even if the variable is nil, your application will continue to work without crashing.
 ```swift
 var value : String? = nil
-value = "SWIFT"
+value = "swift"
 print(value?.lowercased())
 ```
 ```
@@ -57,13 +57,14 @@ Optional("swift")
 ```
 ```swift
 var value : String? = nil
+value = "swift"
 
 if let validatedValue = value {
-    print("Validated Value : \(validatedValue)")
+    print("\(validatedValue)")
 } else { print("Value is Nil!") }
 ```
 ```
-Value is Nil!
+swift
 ```
 ## Nil Coalescing
 It is used if we want to return a default value for cases where the optional variable is nil.
