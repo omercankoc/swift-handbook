@@ -103,3 +103,12 @@ repeat {
 ```
 10 20 30 40 50 60 70 80 90 100 110
 ```
+## ForEach
+It allows you to navigate the array and replace elements in a short time, and in some cases faster than the regular for loop.
+```swift
+var os : [String] = ["iOS","iPadOS","macOS","watchOS","tvOS"]
+os.forEach { item in print("\(item)") }
+```
+```
+iOS iPadOS macOS watchOS tvOS
+```
