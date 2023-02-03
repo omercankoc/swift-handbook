@@ -13,7 +13,7 @@ var score : Float = (midterm + final)/2
 var modulus = Int(score) % 2
 ```
 
-## If - Else If - Else
+## If Else 
 In its simplest form, the "if" works when the desired condition is met. 
 Otherwise, it works when the "else if" conditions are met. 
 The "else" operation runs when no conditions are met.
