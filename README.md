@@ -16,6 +16,7 @@ I am waiting for your support and suggestions.
 - [Closures](https://github.com/omercankoc/documents-swift/blob/master/Fundamental/Closures.md)
 - [Structs](https://github.com/omercankoc/documents-swift/blob/master/Fundamental/Structs.md)
 - [Tuples](https://github.com/omercankoc/documents-swift/blob/master/Fundamental/Tuples.md)
+- [Properties](https://github.com/omercankoc/documents-swift/blob/master/Fundamental/Properties.md)
 
 ### Collection
 - [Arrays](https://github.com/omercankoc/documents-swift/blob/master/Collections/Arrays.md)
