@@ -5,42 +5,42 @@ Swift’s String and Character types provide a fast, Unicode-compliant way to wo
 
 Despite this simplicity of syntax, Swift’s String type is a fast, modern string implementation. Every string is composed of encoding-independent Unicode characters, and provides support for accessing those characters in various Unicode representations.
 
-- Definition a String:
+- Definition a String
 ``` swift
 var language : String
 ```
-- Initialize a String:
+- Initialize a String
 ``` swift
 var language = "Swift"
 ```
-- Definition and Initialize a String:
+- Definition and Initialize a String
 ``` swift
 var language : String = "Swift"
 ```
-- Define via the String Class:
+- Define via the String Class
 ``` swift
 var language : String
 ```
-- Initialize via the String Class:
+- Initialize via the String Class
 ``` swift
 var language = String("Swift")
 ```
-- Define and Initialize via the String Class:
+- Define and Initialize via the String Class
 ``` swift
 var language : String = String("Swift")
 ```
--  Definition via Multiline String Literals:
+-  Definition via Multiline String Literals
 ``` swift
 var language : Swift
 ```
--  Initialize via Multiline String Literals:
+-  Initialize via Multiline String Literals
 ``` swift
 var language = """
     Swift Programming Languages
     By Apple
 """
 ```
--  Definition and Initialize via Multiline String Literals:
+-  Definition and Initialize via Multiline String Literals
 ``` swift
 var language : String = """
     Swift Programming Languages
@@ -57,7 +57,7 @@ if(language != nil){
 }
 ```
 
-- Show each character in the string.
+- Show each character in the string
 ```swift
 for character in language {
     print(character)
