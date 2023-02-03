@@ -25,7 +25,7 @@ var value : String? = nil
 var value = "5"
 var newValue = value!
 print("Value : \(value)")
-print("New Value \(newValue)")
+print("New Value : \(newValue)")
 ```
 ```
 Value : Optional("5")
