@@ -115,5 +115,41 @@ func totalizer(values : Int...) -> Int {
 ```
 ```swift
 var sum = totalizer(values: 1,2,3,4,5,6,7,8,9)
+```
+### Functions in "for" Keyword
+If there is a for keyword in front of the identifier of the parameter of the function, when the function is called from outside, it takes a value with the identifier "for", but is processed with the name of the identifier inside the function.
+```swift
+struct Message {
+    mutating func show(for type : Int) -> String {
+        return "Status Code : \(type)"
+    }
+}
 
+var status = Message()
+var message = status.show(for: 200)
+```
+### Functions in "_" Keyword
+If the parameter identifier of the function has the keyword "_" in front of it, when the function is called from outside, it takes the value without needing the identifier, but is rendered with the name of the identifier inside the function.
+```swift
+struct Messages {
+    func status(_ code : Int) -> String {
+        switch code {
+        case 100 :
+            return "Informational Responses"
+        case 200:
+            return "Successful Responses"
+        case 300:
+            return "Redirection Messages"
+        case 400:
+            return "Client Error Responses"
+        case 500:
+            return "Server Rrror Responses"
+        default:
+            return "Unknown"
+        }
+    }
+}
+
+var response = Messages()
+var message = response.status(200)
 ```
