@@ -154,11 +154,19 @@ Swift
 ```
 - Lowercase
 ```swift
+var language : String = "SWIFT"
 language.lowercased()
+```
+```
+swift
 ```
 - Uppercase
 ```swift
+var language : String = "swift"
 language.uppercased()
+```
+```swift
+SWIFT
 ```
 - Split
 ```swift
