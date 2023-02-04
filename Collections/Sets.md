@@ -14,76 +14,76 @@ var odd : Set<Int> = [1,3,5,7,9]
 var even : Set<Int> = [0,2,4,6,8]
 var prime : Set<Int> = [2,3,5,7]
 ``` 
-- Creating and Initializing an Empty Set:
+- Creating and Initializing an Empty Set
 ``` swift
 var languages : Set<String> = []
 var numbers : Set<Int> = []
 ```
 ## Methods
-- Insert element:
+- Insert element
 ``` swift
 languages.insert("Swift")
 ```
 ```
 ["Objective-C", "C", "C++", "Swift"]
 ```
-- Remove the specified Set Element:
+- Remove the specified Set Element
 ``` swift
 languages.remove("Swift")
 ```
 ```
 ["Objective-C", "C", "C++"]
 ```
-- Remove all Set Elements:
+- Remove all Set Elements
 ``` swift
 languages.removeAll()
 ```
 ```
 []
 ```
-- Remove the First Element of the Set Elements:
+- Remove the First Element of the Set Elements
 ``` swift
 languages.removeFirst()
 ```
 ```
 ["C++", "C"]
 ```
-- Returns the count of elements in the Set:
+- Returns the count of elements in the Set
 ``` swift
 languages.count()
 ```
 ```
 3
 ```
-- Add the give item to the Set:
+- Add the give item to the Set
 ``` swift
 numbers.update(with: 10)
 ```
 ```
 [9, 6, 3, 8, 2, 7, 10, 1, 0, 4, 5]
 ```
-- Returns the maximum numeric value in the Set:
+- Returns the maximum numeric value in the Set
 ``` swift
 numbers.max()
 ```
 ```
 9
 ```
-- Returns the minimum numeric value in the Set:
+- Returns the minimum numeric value in the Set
 ``` swift
 numbers.min()
 ```
 ```
 0
 ```
-- Returns true if the set is not empty, false otherwise:
+- Returns true if the set is not empty, false otherwise
 ``` swift
 numbers.isEmpty
 ```
 ```
 false
 ```
-- Sort the elements of the set in a specific order (ascending or descending):
+- Sort the elements of the set in a specific order (ascending or descending)
 ``` swift
 numbers.sorted(by: >)
 ``` 
@@ -96,14 +96,14 @@ numbers.sorted(by: <)
 ```
 [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
 ```
-- Changes the positions of the elements randomly:
+- Changes the positions of the elements randomly
 ``` swift
 numbers.shuffled()
 ``` 
 ```
 [8, 5, 0, 3, 6, 2, 9, 7, 4, 1]
 ``` 
-- Obtaining the elements in the set that satisfy the condition:
+- Obtaining the elements in the set that satisfy the condition
 ``` swift
 numbers.filter({$0>5})
 ``` 
@@ -116,47 +116,45 @@ languages.filter({$0.hasPrefix("C")})
 ```
 ["C", "C++"]
 ```
-- A∪B:
+- A∪B
 ``` swift
 var union = odd.union(even)
 ``` 
 ```
 [2, 9, 4, 3, 5, 1, 7, 6, 0, 8]
 ```
-- A∩B:
+- A∩B
 ``` swift
 var intersection = odd.intersection(prime)
 ``` 
 ```
 [5, 3, 7]
 ```
-- A\B:
+- A\B
 ``` swift
 var subtracting = odd.subtracting(prime)
 ``` 
 ```
 [1,9]
 ```
-- (A\B)∪(B\A):
+- (A\B)∪(B\A)
 ``` swift
 var symmetricDifference = odd.symmetricDifference(prime)
 ``` 
 ```
 [1, 2, 9]
 ```  
-- B⊂A:
+- B⊂A
 ``` swift
 var subset = even.isSubset(of: numbers)
 ``` 
 ```
 true
 ``` 
-- A⊃B:
+- A⊃B
 ``` swift
 var superset = numbers.isSuperset(of: even)
 ``` 
 ```
 true
 ```
- 
-
