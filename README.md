@@ -24,6 +24,7 @@
 - [Initialization and Deinitialization](https://github.com/omercankoc/documents-swift/blob/master/Advanced/InitializationAndDeinitialization.md)
 - [Enumeration](https://github.com/omercankoc/documents-swift/blob/master/Advanced/Enumeration.md)
 - [Inheritance](https://github.com/omercankoc/documents-swift/blob/master/Advanced/Inheritance.md)
+- [Polymorphism](https://github.com/omercankoc/documents-swift/blob/master/Advanced/Polymorphism.md)
 - [Protocol](https://github.com/omercankoc/documents-swift/blob/master/Advanced/Protocol.md)
 - [Generic](https://github.com/omercankoc/documents-swift/blob/master/Advanced/Generic.md)
 - [Extension](https://github.com/omercankoc/documents-swift/blob/master/Advanced/Extension.md)
