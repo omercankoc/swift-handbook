@@ -29,7 +29,7 @@ var message = swift.message(language: swift.language ?? "Language", developer: s
 ```
 Swift programming language started to be developed by Apple in 2014.
 ```
-### Static Variables and Methods
+## Static Variables and Methods
 Used to access a variable or method without an instance of the class or struct.
 ```swift
 class Message {
@@ -41,10 +41,9 @@ class Message {
 }
 ```
 ```swift
-var code = Message.message(statusCode: "200")
+Message.statusCode = "200"
+var message = Message.message(statusCode: "200")
 ```
 ```
 Status Code : 200
 ```
-
-
