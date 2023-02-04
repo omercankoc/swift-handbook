@@ -21,6 +21,7 @@
 
 ### Advanced
 - [Class](https://github.com/omercankoc/documents-swift/blob/master/Advanced/Class.md)
+- [Initialization and Deinitialization](https://github.com/omercankoc/documents-swift/blob/master/Advanced/InitializationAndDeinitialization.md)
 - [Inheritance](https://github.com/omercankoc/documents-swift/blob/master/Advanced/Inheritance.md)
 - [Protocol](https://github.com/omercankoc/documents-swift/blob/master/Advanced/Protocol.md)
 - [Generic](https://github.com/omercankoc/documents-swift/blob/master/Advanced/Generic.md)
