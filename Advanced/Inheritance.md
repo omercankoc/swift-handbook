@@ -15,28 +15,21 @@ A class cannot be inherited by more than one class.
 ### Superclass
 Any class that doesn’t inherit from another class is known as a base class.
 ```swift
-enum LanguageType {
-    case Scripting
-    case Compiled
-}
-
 class Language {
     var language : String
     var developer : String
     var year : Int
-    var type : LanguageType
     
-    init(language : String, developer : String, year : Int, type : LanguageType) {
+    init(language : String, developer : String, year : Int) {
         self.language = language
         self.developer = developer
         self.year = year
-        self.type = type
         
         print("Created Language Object!")
     }
     
     func speak() {
-       print("Superclass!")
+       print("speak() run in Superclass!")
     }
 }
 ```
@@ -47,26 +40,32 @@ You can also add new characteristics to the subclass.
 
 The "super" identifier is used to access the properties and methods of the superclass.
 ```swift
+enum LanguageType {
+    case Scripting
+    case Compiled
+}
+
 class Swift : Language {
     
-    var compiler : String
+    var type : LanguageType
     
-    init(compiler : String, language : String, developer : String, year : Int, type : LanguageType){
-        self.compiler = compiler
-        super.init(language: language, developer: developer, year: year, type: type)
+    init(type : LanguageType, language : String, developer : String, year : Int){
+        self.type = type
+        super.init(language: language, developer: developer, year: year)
         print("Created Swift Object!")
     }
 
     override func speak() {
-        print("Subclass!")
+        print("Override speak() run in Subclass!")
     }
     
     func superSpeak(){
         super.speak()
+        print("speak() run in Subclass!")
     }
     
-    func message(){
-        print("Swift Programming Languages")
+    func message(language : String, developer : String, year : Int, type : LanguageType){
+        print("\(language) programming language was developed by \(developer) in \(year). (\(type)) ")
     }
 }
 ```
@@ -82,42 +81,21 @@ The override keyword also prompts the Swift compiler to check that your overridi
 has a declaration that matches the one you provided for the override. This check ensures that your overriding definition is correct.
 
 ```swift
-let swift = Swift(compiler: "LLVM", language: "Swift", developer: "Apple", year: 2011 , type: .Compiled)
-print("\(swift.compiler) \(swift.language) \(swift.developer) \(swift.year) \(swift.type)")
-swift.speak()
+let swift = Swift(type: .Compiled, language: "Swift", developer: "Apple", year: 2011)
+
 swift.superSpeak()
-swift.message()
+swift.speak()
+swift.message(language: swift.language, developer: swift.developer, year: swift.year, type: swift.type)
 ```
 ```
 Created Language Object!
 Created Swift Object!
-LLVM Swift Apple 2011 Compiled
-Subclass!
-Superclass!
-Swift Programming Languages
+speak() run in Superclass!
+speak() run in Subclass!
+Override speak() run in Subclass!
+Swift programming language was developed by Apple in 2011. (Compiled)
 ```
-## Polymorphism
-From two classes with an inheritance relationship, the superclass behaving like a subclass is called polymorphism. It is used to achieve more inclusive results.
-```swift
-class Language {
-    func message(){
-        print("Superclass")
-    }
-}
 
-class Swift : Language {
-    override func message(){
-        print("Subclass")
-    }
-}
-```
-```swift
-var language : Language = Swift()
-language.message()
-```
-```
-Subclass
-```
 ## Downcasting and Upcasting
 The conversion of Superclass to Subclass is called Downcasting, conversion of Subclass to superclass is called Upcasting.
 - is : Used for type checking.
