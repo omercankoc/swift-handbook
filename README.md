@@ -22,7 +22,7 @@
 ### Advanced
 - [Class](https://github.com/omercankoc/documents-swift/blob/master/Advanced/Class.md)
 - [Initialization and Deinitialization](https://github.com/omercankoc/documents-swift/blob/master/Advanced/InitializationAndDeinitialization.md)
-- [Enumaration](https://github.com/omercankoc/documents-swift/blob/master/Advanced/Enumaration.md)
+- [Enumeration](https://github.com/omercankoc/documents-swift/blob/master/Advanced/Enumeration.md)
 - [Inheritance](https://github.com/omercankoc/documents-swift/blob/master/Advanced/Inheritance.md)
 - [Protocol](https://github.com/omercankoc/documents-swift/blob/master/Advanced/Protocol.md)
 - [Generic](https://github.com/omercankoc/documents-swift/blob/master/Advanced/Generic.md)
