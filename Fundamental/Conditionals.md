@@ -43,17 +43,17 @@ else {
 CC
 ```
 
-## switch - case Statement
+## switch - case Statements
 It is preferable to use a switch-case statement instead of writing if-else blocks one by one depending on the status of only one variable, 
 according to the value of that variable.
 ```swift
 switch modulus {
     case 0:
         print("Even")
-        break // Bu kosul saglandiginda donguyu kir...
+        break
     case 1:
         print("Odd")
-        break // Bu kosul saglandiginda donguyu kir...
+        break
     default:
         print("ANY!")
 }
