@@ -13,7 +13,7 @@ var score : Float = (midterm + final)/2
 var modulus = Int(score) % 2
 ```
 
-## If Else 
+## if - else - else if Statements 
 In its simplest form, the "if" works when the desired condition is met. 
 Otherwise, it works when the "else if" conditions are met. 
 The "else" operation runs when no conditions are met.
@@ -43,7 +43,7 @@ else {
 CC
 ```
 
-## Switch - Case
+## switch - case Statement
 It is preferable to use a switch-case statement instead of writing if-else blocks one by one depending on the status of only one variable, 
 according to the value of that variable.
 ```swift
