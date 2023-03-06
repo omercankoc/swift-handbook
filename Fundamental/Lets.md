@@ -2,10 +2,10 @@
 It is used to specify the actions to be taken if the condition is not met.
 
 ```swift
-var toNumeric = "5"
+var isNumeric = "5"
 var notNumeric = "A"
 
-func convertToIntegerGuard(value : String) -> Int {
+func convertToInteger(value : String) -> Int {
     guard let result = Int(value) else {
         return 0
     }
@@ -13,8 +13,8 @@ func convertToIntegerGuard(value : String) -> Int {
 }
 ```
 ```swift
-print(convertToIntegerIf(value: toNumeric))
-print(convertToIntegerIf(value: notNumeric))
+convertToInteger(value: isNumeric)
+convertToInteger(value: notNumeric)
 ```
 ```
 5 0
@@ -24,10 +24,10 @@ print(convertToIntegerIf(value: notNumeric))
 It is used to separately specify the actions to be taken when the condition is met and when it is not met.
 
 ```swift
-var toNumeric = "5"
+var isNumeric = "5"
 var notNumeric = "O"
 
-func convertToIntegerIf(value : String) -> Int {
+func convertToInteger(value : String) -> Int {
     if let result = Int(value) {
         return result
     } else {
@@ -36,8 +36,8 @@ func convertToIntegerIf(value : String) -> Int {
 }
 ```
 ```swift
-print(convertToIntegerGuard(value: toNumeric))
-print(convertToIntegerGuard(value: notNumeric))
+convertToInteger(value: isNumeric)
+convertToInteger(value: notNumeric)
 ```
 ```
 5 0
