@@ -82,7 +82,7 @@ struct Person {
 }
 ```
 
-Let's create a Mail Object.
+Let's create a Person Object.
 ```swift
 var developer = Person(name: "developer")
 ```
