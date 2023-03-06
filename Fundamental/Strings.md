@@ -17,30 +17,22 @@ var language = "Swift"
 ``` swift
 var language : String = "Swift"
 ```
-- Define via the String Class
-``` swift
-var language : String
-```
-- Initialize via the String Class
+- Initialization with String Class
 ``` swift
 var language = String("Swift")
 ```
-- Define and Initialize via the String Class
+- Definition and Initialize with String Class
 ``` swift
 var language : String = String("Swift")
 ```
--  Definition via Multiline String Literals
-``` swift
-var language : Swift
-```
--  Initialize via Multiline String Literals
+-  Initialize Multiline String Literals
 ``` swift
 var language = """
     Swift Programming Languages
     By Apple
 """
 ```
--  Definition and Initialize via Multiline String Literals
+-  Definition and Initialize Multiline String Literals
 ``` swift
 var language : String = """
     Swift Programming Languages
@@ -56,7 +48,6 @@ if(language != nil){
     print("NIL")
 }
 ```
-
 - Show each character in the string
 ```swift
 for character in language {
@@ -75,20 +66,20 @@ Swift Programming Language
 - Insert
 ```swift
 var language : String = "Swift"
-language.insert("-", at: language.startIndex)
+language.insert(".", at: language.endIndex)
 ```
 ```
--Swift
+Swift.
 ```
 - Remove
 ```swift
 var language : String = "Swift"
-var index = language.index(language.startIndex, offsetBy: 0)
+var index = language.index(language.startIndex, offsetBy: 2)
 
 language.remove(at: index)
 ```
 ```
-wift
+Swft
 ```
 - Remove All
 ```swift
@@ -103,9 +94,7 @@ wift rogramming anguage
 - Drop First
 ```swift
 var language : String = "Swift"
-
 var dropFirst = language.dropFirst()
-print(dropFirst)
 ```
 ```
 wift
@@ -113,9 +102,7 @@ wift
 - Drop Last
 ```swift
 var language : String = "Swift"
-
 var dropLast = language.dropLast()
-print(dropLast)
 ```
 ```
 Swif
@@ -176,7 +163,6 @@ var result = language.split(separator: " ")
 ```
 ["Swift", "Programming", "Language"]
 ```
-
 - Elements Equal
 ```swift
 var language : String = "Swift"
@@ -195,7 +181,6 @@ var replacedMessage = message.replacingOccurrences(of: "came",with: "just")
 ```
 I just now!
 ```
-
 - Has Prefix
 ```swift
 var message : String = "I am Swift Developer"
