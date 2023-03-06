@@ -6,7 +6,6 @@
 - [Optionals](https://github.com/omercankoc/documents-swift/blob/master/Fundamental/Optionals.md)
 - [Operators](https://github.com/omercankoc/documents-swift/blob/master/Fundamental/Operators.md)
 - [Conditionals](https://github.com/omercankoc/documents-swift/blob/master/Fundamental/Conditionals.md)
-- [Lets](https://github.com/omercankoc/documents-swift/blob/master/Fundamental/Lets.md)
 - [Loops](https://github.com/omercankoc/documents-swift/blob/master/Fundamental/Loops.md)
 - [Functions](https://github.com/omercankoc/documents-swift/blob/master/Fundamental/Functions.md)
 - [Closures](https://github.com/omercankoc/documents-swift/blob/master/Fundamental/Closures.md)
