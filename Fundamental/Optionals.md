@@ -17,54 +17,42 @@ Unwrapping ile Optional olan değişken tiplerini normal tipteki değişkenlerim
 2. Implicit Unwrapping
 3. Optional Binding
 
-### 1. Force Unwrapping
-An optional variable "!" is the process of converting it to a variable of normal type using the condition. 
-It can be used if the variable needs to take a value, otherwise it will throw an error.
+- 1. Force Unwrapping
+Forced unwrapping extracts the value of the optional variable. Forced unwrapping assumes the value is definitely not-nil. Thus, it throws a fatal error if the variable is nil. Optionals can be forced unwrapped by placing ! after the variable name.
 ```swift
 var value : String? = nil
-var value = "5"
-var newValue = value!
-print("Value : \(value)")
-print("New Value : \(newValue)")
+value = "5"
+print(value!)
+print(value)
 ```
 ```
-Value : Optional("5")
-New Value 5
+5
+Optional("5")
+```
+- 2. Implicit Unwrapping
+Implicitly unwrapped optionals are similar to optionals since they’re allowed to have nil value but they do not need to be checked before accessing. It’s called implicitly unwrapped since Swift force unwraps it every time. The drawback of this is same as forced unwrapping - if the value is nil when accessing, it leads to a fatal error.
+```swift
+var value : String! = nil
+value = "Swift"
+print(value!)
+print(value)
+```
+```swift
+Swift
+Optional("Swift")
 ```
 
-### 2. Implicit Unwrapping
-The optional variable will take absolute value.
-If no value is assigned to the variable while using the variable, our application will throw a runtime error and crash.
-
+- 3. Optional Binding
+To safely unwrap the value of an Optional , use one of the optional binding control structures, including if let and guard let. Optional binding conditionally binds the wrapped value of an Optional instance to a new variable.
 ```swift
 var value : String? = nil
-value = "swift"
-print(value!.uppercased())
-```
-```swift
-SWIFT
-```
-
-### 3. Optional Binding
-The most important advantage over other types of Unwrapping is that even if the variable is nil, your application will continue to work without crashing.
-```swift
-var value : String? = nil
-value = "swift"
-print(value?.lowercased())
-```
-```
-Optional("swift")
-```
-```swift
-var value : String? = nil
-value = "swift"
 
 if let validatedValue = value {
     print("\(validatedValue)")
 } else { print("Value is Nil!") }
 ```
 ```
-swift
+Value is Nil!
 ```
 ## Nil Coalescing
 It is used if we want to return a default value for cases where the optional variable is nil.
