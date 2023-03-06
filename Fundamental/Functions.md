@@ -27,6 +27,7 @@ func Message(name : String){
 ```swift
 Message(name : "Omer")
 ```
+- Method Overloading is the provisioning of different versions of a method. These versions can be used for the same or different purposes or return different types of values.
 ```swift
 func Message(name : String, surname : String){
   print("Hello" \(name) \(surname))
@@ -35,7 +36,6 @@ func Message(name : String, surname : String){
 ```swift
 Message(name : "Omer", surname : "Koc")
 ```
-<b>Method Overloading</b> is the provisioning of different versions of a method. These versions can be used for the same or different purposes or return different types of values.
 - Return Value of Function
 ```swift
 func Calculate(base : Int, exponent : Int) -> Int {
