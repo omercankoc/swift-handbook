@@ -39,18 +39,18 @@ for item in base {
 
 - Get values between two values.
 ```swift
-for index in 0...limit {
-    print(index) 
+for value in 0...limit {
+    print(value) 
 }
 ```
 ```
 0 1 2 3 4 5 6 7 8 9 10
 ```
 
-- Get values between a values and condition.
+- Get values between two values and condition.
 ```swift
-for index in 0..<limit {
-    print(index)
+for value in 0..<limit {
+    print(value)
 }
 ```
 ```
