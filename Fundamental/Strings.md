@@ -176,10 +176,10 @@ true
 - Replacing Occurrences
 ```swift
 var message = "I came now!"
-var replacedMessage = message.replacingOccurrences(of: "came",with: "just")
+var replacedMessage = message.replacingOccurrences(of: "came",with: "go")
 ```
 ```
-I just now!
+I go now!
 ```
 - Has Prefix
 ```swift
