@@ -143,7 +143,7 @@ struct Messages {
         case 400:
             return "Client Error Responses"
         case 500:
-            return "Server Rrror Responses"
+            return "Server Error Responses"
         default:
             return "Unknown"
         }
