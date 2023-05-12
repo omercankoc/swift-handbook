@@ -1,8 +1,8 @@
 # Variables
 
-### Definition and Initialize
+### Declaration and Initialization
 
-- Definition : It is used to define a variable without assigning a value.
+- Declaration : It is used to define a variable without assigning a value.
 ```swift
 var language : String
 ```
@@ -10,7 +10,7 @@ var language : String
 ```swift
 var language = "Swift"
 ```
-- Definition and Initialization : It is the operation of defining the type of the variable and assigning a value.
+- Declaration and Initialization : It is the operation of defining the type of the variable and assigning a value.
 ```swift
 var language : String = "Swift"
 ```
