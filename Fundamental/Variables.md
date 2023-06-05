@@ -22,7 +22,7 @@ var language : String = "Swift"
 var platform : String = "iOS"
 ```
 
-- Inmutable Constants : The variable cannot be changed after it has received a value.
+- Immutable Constants : The variable cannot be changed after it has received a value.
 ```swift
 let language : String = "Swift"
 ```
