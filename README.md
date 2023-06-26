@@ -1,7 +1,7 @@
 # <img src="https://github.com/omercankoc/documents-swift/blob/master/swift.png" alt="Swift" width="24" height="24"> Swift
 
 ### Fundamental
-- [Variables](https://github.com/omercankoc/documents-swift/blob/master/Fundamental/Variables.md)
+- [Variables and Constants](https://github.com/omercankoc/documents-swift/blob/master/Fundamental/VariablesAndConstants.md)
 - [Strings](https://github.com/omercankoc/documents-swift/blob/master/Fundamental/Strings.md)
 - [Optionals](https://github.com/omercankoc/documents-swift/blob/master/Fundamental/Optionals.md)
 - [Operators](https://github.com/omercankoc/documents-swift/blob/master/Fundamental/Operators.md)
