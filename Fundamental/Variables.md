@@ -1,64 +1,64 @@
-# Variables
+## Variables and Constants
 
-### Declaration and Initialization
-
-- Declaration : It is used to define a variable without assigning a value.
-```swift
-var language : String
-```
-- Initialization : It is the operation of assigning a value without specifying the type of the variable.
-```swift
-var language = "Swift"
-```
-- Declaration and Initialization : It is the operation of defining the type of the variable and assigning a value.
-```swift
-var language : String = "Swift"
-```
-
-### Variables and Constants
-
-- Mutable Variables : The value of the variable can be changed later.
+- Mutable Variables
 ```swift
 var platform : String = "iOS"
 ```
 
-- Immutable Constants : The variable cannot be changed after it has received a value.
+- Immutable Constants
 ```swift
 let language : String = "Swift"
 ```
 
-### Types
+## Stored Variables
 
-- Integer : Integers are numbers that are not fractions. Integers are signed (positive, zero, or negative) or unsigned (positive or zero).
+- Type Annotation
+```swift
+var language : String
+```
+
+- Declaration
+```swift
+var language = "Swift"
+```
+
+- Type Annotations and Variable Declaration
+```swift
+var language : String = "Swift"
+```
+
+## Types
+
+- Integer
 ```swift
 var counter : Int = 0
 ```
 
-- Float : Represents a 32-bit floating-point number.
+- Float
 ```swift
 var euler : Float = 2.7182818
 ```
 
-- Double : Represents a 64-bit floating-point number.
+- Double
 ```swift
 var pi : Double = 3.14159265358979
 ```
 
-- Bool : Boolean values are called logical only because they can be true or false. Bool provides two constants true and false:
+- Bool
 ```swift
 var logic : Bool = true
 ```
 
-### Type Alias 
-Defines an alternative name for an existing type. It is defined by the keyword "typealias".
+## Type Alias 
+
 ```swift
 typealias Angle = Double
 var angle : Angle = 30.0;
 print("Angle = " , angle)
 ```
 
-### Type Conversion
-It is the process of converting a value with a type to another type.
+## Type Conversion
+
 ```swift
 var count : Int = 0
 var numeric : String = "5"
@@ -66,14 +66,14 @@ var text : String = "Swift"
 var euler : Float = 2.7182818
 var pi : Double = 3.14159265358979
 
-if let stringToIntegerNumeric = Int(numeric) {
-    print("String value converting to integer value : ", stringToIntegerNumeric)
+if let stringToInteger_Numeric = Int(numeric) {
+    print("String value converting to integer value : ", stringToInteger_Numeric)
 } else {
     print("String value not converting to integer value.")
 }
 
-if let stringToIntegerLanguage = Int(text) {
-    print("String value converting to integer value : ", stringToIntegerLanguage)
+if let stringToInteger_Text = Int(text) {
+    print("String value converting to integer value : ", stringToInteger_Text)
 } else {
     print("String value not converting to integer value.")
 }
