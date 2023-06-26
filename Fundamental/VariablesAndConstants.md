@@ -1,4 +1,4 @@
-## Variables and Constants
+# Variables and Constants
 
 - Mutable Variables
 ```swift
@@ -10,7 +10,7 @@ var platform : String = "iOS"
 let language : String = "Swift"
 ```
 
-## Stored Variables
+## Type Annotation and Declaration
 
 - Type Annotation
 ```swift
@@ -22,7 +22,7 @@ var language : String
 var language = "Swift"
 ```
 
-- Type Annotations and Variable Declaration
+- Type Annotation and Declaration
 ```swift
 var language : String = "Swift"
 ```
