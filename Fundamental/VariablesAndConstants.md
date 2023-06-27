@@ -10,7 +10,7 @@ var platform : String = "iOS"
 let language : String = "Swift"
 ```
 
-## Type Annotation, Assigning and Declaration
+### Type Annotation, Assigning and Declaration
 
 - Type Annotation
 ```swift
@@ -27,7 +27,7 @@ var language = "Swift"
 var language : String = "Swift"
 ```
 
-## Types
+### Types
 
 - Integer
 ```swift
@@ -49,7 +49,7 @@ var pi : Double = 3.14159265358979
 var logic : Bool = true
 ```
 
-## Type Alias 
+### Type Alias 
 
 ```swift
 typealias Angle = Double
@@ -57,7 +57,7 @@ var angle : Angle = 30.0;
 print("Angle = " , angle)
 ```
 
-## Type Conversion
+### Type Conversion
 
 ```swift
 var count : Int = 0
