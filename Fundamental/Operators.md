@@ -1,6 +1,6 @@
 # Operators
 
-## 1. Assignment Operator
+### 1. Assignment Operator
 Initializes or updates the value.
 ```swift
 let count = 10
@@ -13,7 +13,7 @@ print("Count : \(count) and Item :\(item)")
 Count : 10 and Item :0
 Count : 10 and Item :10
 ```
-## 2. Arithmetic Operators
+### 2. Arithmetic Operators
 Swift supports the four standard arithmetic operators for all number types:
 - Addition (+)
 - Subtraction (-)
