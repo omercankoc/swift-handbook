@@ -1,4 +1,4 @@
-# <img src="https://github.com/omercankoc/documents-swift/blob/master/swift.png" alt="Swift" width="24" height="24"> Swift
+# Swift Handbook
 
 ### Fundamental
 - [Variables and Constants](https://github.com/omercankoc/documents-swift/blob/master/Fundamental/VariablesAndConstants.md)
