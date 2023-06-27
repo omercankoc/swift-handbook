@@ -1,21 +1,17 @@
 ## Optionals
-In Swift, if a variable has no value, it must be declared as optional in order for it to have a value of "nil". 
-If a variable can take a null value, that variable is optional.
 
-### Definition Optional Variable
+- Decleration
 ```swift
 var value : String? = nil
 ```
-Assigning a value to an optional variable.
+- Assigning
 ```swift
 var value = "5"
 ```
 
 ## Unwrapping
-Optional variables are converted to regular type variables with Unwrapping.
 
-1. Force Unwrapping:
-Extracts the value of the optional variable. Forced unwrapping assumes the value is definitely not-nil. Thus, it throws a fatal error if the variable is nil. Optionals can be forced unwrapped by placing ! after the variable name.
+1. Force Unwrapping
 ```swift
 var value : String? = nil
 value = "5"
@@ -26,8 +22,7 @@ print(value)
 5
 Optional("5")
 ```
-2. Implicit Unwrapping:
-Optionals are similar to optionals since they’re allowed to have nil value but they do not need to be checked before accessing. It’s called implicitly unwrapped since Swift force unwraps it every time. The drawback of this is same as forced unwrapping - if the value is nil when accessing, it leads to a fatal error.
+2. Implicit Unwrapping
 ```swift
 var value : String! = nil
 value = "Swift"
@@ -39,8 +34,7 @@ Swift
 Optional("Swift")
 ```
 
-3. Optional Binding:
-To safely unwrap the value of an Optional , use one of the optional binding control structures, including if let and guard let. Optional binding conditionally binds the wrapped value of an Optional instance to a new variable.
+3. Optional Binding
 ```swift
 var value : String? = nil
 
@@ -51,8 +45,8 @@ if let validatedValue = value {
 ```
 Value is Nil!
 ```
+
 ## Nil Coalescing
-It is used if we want to return a default value for cases where the optional variable is nil.
 ```swift
 var value : Int? = nil
 let validatedValue = value ?? 0
