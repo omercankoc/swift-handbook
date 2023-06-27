@@ -1,34 +1,28 @@
 # Function
+
 - Function
 ```swift
-func Message(){
+func message(){
     print("Hello Swift!")
 }
 ```
 ```swift
-Message()
+message()
 ```
+
 - Parameter of Function
 ```swift
-func Message(name : String){
+func message(name : String){
     print("Hello",name)
 }
 ```
 ```swift
-Message(name : "Omer")
+message(name : "Omer")
 ```
-- Method Overloading is the provisioning of different versions of a method. These versions can be used for the same or different purposes or return different types of values.
-```swift
-func Message(name : String, surname : String){
-  print("Hello" \(name) \(surname))
-}
-```
-```swift
-Message(name : "Omer", surname : "Koc")
-```
+
 - Return Value of Function
 ```swift
-func Calculate(base : Int, exponent : Int) -> Int {
+func calculate(base : Int, exponent : Int) -> Int {
     var result : Int = 1
     var iterator : Int = 1
     while iterator <= exponent{
@@ -39,12 +33,27 @@ func Calculate(base : Int, exponent : Int) -> Int {
 }
 ```
 ```swift
-var exponent = Calculate(base: 3, exponent: 3)
+var exponent = calculate(base: 3, exponent: 3)
 ```
 
-Example of a function that takes an array instead of a parameter and returns multiple results.
+### Overloading
 ```swift
-func MinMax(array: [Int]) -> (min: Int, max: Int) {
+func show(name : String){
+  print("Hello" \(name))
+}
+
+func show(name : String, surname : String){
+  print("Hello" \(name) \(surname))
+}
+```
+```swift
+show(name : "Omer")
+show(name : "Omer", surname : "Koc")
+```
+
+### Multiple Results
+```swift
+func minMax(array: [Int]) -> (min: Int, max: Int) {
     var currentMin = array[0]
     var currentMax = array[0]
     for value in array[1..<array.count] {
@@ -58,9 +67,9 @@ func MinMax(array: [Int]) -> (min: Int, max: Int) {
 }
 ```
 ```swift
-MinMax(array: [1,1,2,3,5,8,13,21])
+minMax(array: [1,1,2,3,5,8,13,21])
 ```
-## Mutating Function
+### Mutating Function
 It is used when a structural change is desired in a particular method. It can only be used in Struct.
 ```swift
 struct Person {
@@ -71,7 +80,6 @@ struct Person {
     }
 }
 ```
-
 Let's create a Person Object.
 ```swift
 var developer = Person(name: "developer")
@@ -92,7 +100,7 @@ print("Name : \(developer.name)")
 ```
 Name : DEVELOPER
 ```
-## Functions with Variadic Parameters
+### Functions with Variadic Parameters
 It allows to enter as many parameters as desired into the function.
 ```swift
 func totalizer(values : Int...) -> Int {
