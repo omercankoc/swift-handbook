@@ -16,52 +16,54 @@ Hello!
 - Parameter of Function
 ```swift
 func message(name : String){
-    print("Hello",name,"!" )
+    print("Hello \(name)!" )
 }
 ```
 ```swift
 message(name : "Omer")
 ```
 ```
-Hello Omer !
+Hello Omer!
 ```
 
 - Return Value of Function
 ```swift
-func calculate(base : Int, exponent : Int) -> Int {
-    var result : Int = 1
-    var iterator : Int = 1
-    while iterator <= exponent{
-        result *= base
-        iterator += 1
-    }
-    return result
+func message(name: String, surname: String) -> String {
+    return "Hello \(name) \(surname)!"
 }
 ```
 ```swift
-var exponent = calculate(base: 3, exponent: 3)
+message(name: "Omer", surname: "Koc")
 ```
 ```
-27
+Hello Omer Koc!
 ```
 
 ### Overloading
 ```swift
-func message(name : String){
-  print("Hello \(name)!")
+func power(base: Int) -> Int {
+    return base * base
 }
 
-func message(name : String, surname : String){
-  print("Hello \(name) \(surname)!")
+func power(base: Int, exponent: Int) -> Int {
+    var result = 1
+    var iteration = 1
+    
+    while iteration <= exponent {
+        result *= base
+        iteration += 1
+    }
+    
+    return result
 }
 ```
 ```swift
-message(name : "Omer")
-message(name : "Omer", surname : "Koc")
+power(base: 2)
+power(base: 2, exponent: 3)
 ```
 ```
-Hello Omer!
-Hello Omer Koc !
+4
+8
 ```
 
 ### Multiple Results
