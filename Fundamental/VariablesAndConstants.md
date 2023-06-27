@@ -74,9 +74,62 @@ blue.0
 ### Type Alias 
 
 ```swift
-typealias Angle = Double
-var angle : Angle = 30.0;
-print("Angle = " , angle)
+typealias Celsius = Double
+typealias Fahrenheit = Double
+typealias Kelvin = Double
+
+extension Celsius {
+    func celsiusToFahrenheit() -> Fahrenheit {
+        return (self * 1.8) + 32
+    }
+    
+    func celsiusToKelvin() -> Kelvin {
+        return (self + 273.15)
+    }
+}
+
+extension Fahrenheit {
+    func fahrenheitToCelcius() -> Celsius {
+        return (self - 32) / 1.8
+    }
+    
+    func fahrenheitToKelvin() -> Kelvin {
+        return (self + 459.67) * (5/9)
+    }
+}
+
+extension Kelvin {
+    func kelvinToCelsius() -> Celsius {
+        return (self - 273.15)
+    }
+    
+    func kelvinToFahrenheit() -> Fahrenheit {
+        return (self / (5/9)) - 459.67
+    }
+}
+
+
+struct Temperature {
+    var celcius : Celsius
+    var fahrenheit : Fahrenheit
+    var kelvin : Kelvin
+    
+    init(celcius: Celsius) {
+        self.celcius = celcius
+        self.fahrenheit = celcius.celsiusToFahrenheit()
+        self.kelvin = celcius.celsiusToKelvin()
+    }
+}
+
+var temperature = Temperature(celcius: 34)
+temperature.celcius
+temperature.fahrenheit
+temperature.kelvin
+```
+```
+34.0
+93.2
+307.15
 ```
 
 ### Type Conversion
