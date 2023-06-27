@@ -4,7 +4,7 @@
 var language : String
 ```
 
-- Declaration without Type Annotation
+- Assigning
 ``` swift
 var language = "Swift"
 ```
