@@ -1,8 +1,4 @@
 # Loops
-Loops are used to simplify repetitive coding tasks. Loop codes, which can also be described as repeating conditional statements, 
-are used to repeat all pieces of code within a certain rule loop.
-
-Let's define the variables we will use for the examples.
 ```swift
 var base : [Int] = []
 var square : [Int] = []
