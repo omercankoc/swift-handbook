@@ -1,14 +1,4 @@
 # Function
-Functions are self-contained chunks of code that perform a specific task. 
-You give a function a name that identifies what it does, and this name is used to “call” the function to perform its task when needed.
-
-Swift’s unified function syntax is flexible enough to express anything from a simple C-style function with no parameter names to a complex Objective-C style method with names and argument labels for each parameter. 
-Parameters can provide default values to simplify function calls and can be passed as in-out parameters, which modify a passed variable once the function has completed its execution.
-
-Every function in Swift has a type, consisting of the function’s parameter types and return type. 
-You can use this type like any other type in Swift, which makes it easy to pass functions as parameters to other functions, and to return functions from functions. 
-Functions can also be written within other functions to encapsulate useful functionality within a nested function scope.
-
 - Function
 ```swift
 func Message(){
@@ -152,4 +142,112 @@ struct Messages {
 
 var response = Messages()
 var message = response.status(200)
+```
+
+# Closures
+Code blocks that can return a value, can be assigned to any variable and stored in the assigned variable are called "Closure". Closures can actually be thought of as specialized functions.
+
+1. Closures
+```swift
+let first = {
+    print(".")
+}
+```
+```swift
+first()
+```
+```
+.
+```
+
+2. Parameter of Closures
+```swift
+var equality = { (first : Int, second : Int) in
+    if first == second { print("Equal") }
+    else { print("Not Equal") }
+}
+
+var equality_ : (Int, Int) -> Void = { first, second in
+    if first == second { print("Equal") }
+    else { print("Not Equal") }
+}
+```
+```swift
+equality(3,3)
+equality_(4,1)
+```
+```
+Equal
+Not Equal
+```
+
+3. Return Value of Closures
+```swift
+let modulus = {
+    (first : Int, second : Int) -> Int in
+    return first % second
+}
+
+let modulus_ : (Int, Int) -> Int = { first, second in
+    return first % second
+}
+```
+```swift
+modulus(12, 5)
+modulus_(16, 9)
+```
+```
+2 7
+```
+
+4. Closures as Function Parameter : In Swift, we can create a function that accepts closure as its parameter.
+```swift
+func work(process: ()->()) {
+  print("Process Getting Ready...")
+  process()
+}
+```
+```swift
+work {
+    print("Processing...")
+}
+```
+```
+Process Getting Ready...
+Processing...
+```
+
+5. Trailing Closures : The closure becomes the last parameter of the function.
+```swift
+func action(status : Bool, onSuccess : (() -> ())? = nil, onFail : (() -> ())? = nil){
+    if status {
+        onSuccess?()
+    } else {
+        onFail?()
+    }
+}
+```
+```swift
+action(status: true) {
+    print("Connected!")
+} onFail: {
+    print("Not Connected!")
+}
+```
+```
+Connected!
+```
+6. Autoclosure : While calling a function, we can also pass the closure without using the braces {}.To pass the closure argument without using braces, we must use the @autoclosure keyword in function definition.
+```swift
+func work(process: @autoclosure ()->()) {
+  print("Process Getting Ready...")
+  process()
+}
+```
+```swift
+work(process: print("Processing..."))
+```
+```
+Process Getting Ready...
+Processing...
 ```
