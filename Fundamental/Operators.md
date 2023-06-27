@@ -14,7 +14,6 @@ Count : 10 and Item :0
 Count : 10 and Item :10
 ```
 ### 2. Arithmetic Operators
-Swift supports the four standard arithmetic operators for all number types:
 - Addition (+)
 - Subtraction (-)
 - Multiplication (*)
