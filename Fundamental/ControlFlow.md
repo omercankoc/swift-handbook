@@ -1,15 +1,14 @@
-# Control Flow
-
-### Loops
+# Loops
 ```swift
 var base : [Int] = []
 var square : [Int] = []
 
 var limit : Int = 10
 var iterator : Int = 0
+
 var repeater : Int = 0
 ```
-1. While
+### While
 ```swift
 while iterator <= limit {
     base.append(iterator)
@@ -20,7 +19,7 @@ while iterator <= limit {
 [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 ```
 
-2. For
+### For
 ```swift
 for item in base {
     if item == 0 { continue }
@@ -31,7 +30,7 @@ for item in base {
 [1, 4, 9, 16, 25, 36, 49, 64, 81, 100]
 ```
 
-- Get values between two values.
+- Between Two Values
 ```swift
 for value in 0...limit {
     print(value) 
@@ -41,7 +40,7 @@ for value in 0...limit {
 0 1 2 3 4 5 6 7 8 9 10
 ```
 
-- Get values between two values and condition.
+- Between Two Values and Condition
 ```swift
 for value in 0..<limit {
     print(value)
@@ -51,7 +50,7 @@ for value in 0..<limit {
 0 1 2 3 4 5 6 7 8 9
 ```
 
-- Get values by start index in Array.
+- Start Index in Array
 ```swift
 for index in base[2...]{
     print(index)
@@ -61,7 +60,7 @@ for index in base[2...]{
 2 3 4 5 6 7 8 9 10
 ```
 
-- Get values by end index in Array.
+- End Index in Array
 ```swift
 for index in base[...5]{
     print(index)
@@ -70,7 +69,7 @@ for index in base[...5]{
 ```
 0 1 2 3 4 5
 ```
-- Get values spaced between start and end value.
+- Stride
 ```swift
 for index in stride(from: 0, to: 60, by: 10){
     print(index)
@@ -80,7 +79,7 @@ for index in stride(from: 0, to: 60, by: 10){
 0 10 20 30 40 50
 ```
 
-3. Repeat-While
+### Repeat While
 ```swift
 repeat {
     repeater += limit
@@ -91,7 +90,7 @@ repeat {
 10 20 30 40 50 60 70 80 90 100 110
 ```
 
-4. ForEach
+### For Each
 ```swift
 var os : [String] = ["iOS","iPadOS","macOS","watchOS","tvOS"]
 os.forEach { item in print("\(item)") }
@@ -100,16 +99,16 @@ os.forEach { item in print("\(item)") }
 iOS iPadOS macOS watchOS tvOS
 ```
 
-### Conditional Statements
+# Conditional Statements
 ```swift
 var midterm : Float = 65
 var final : Float = 55
-var score : Float = (midterm + final)/2
+var score : Float = (midterm + final) / 2
 
 var modulus = Int(score) % 2
 ```
 
-1. If
+### If
 ```swift
 if(final >= 50){
     if(score >= 50 && score < 55){
@@ -136,7 +135,7 @@ else {
 CC
 ```
 
-2. Switch
+### Switch
 ```swift
 switch modulus {
     case 0:
@@ -152,7 +151,7 @@ switch modulus {
 ```
 Even
 ```
-- guard let
+- Guard Let
 ```swift
 var isNumeric = "5"
 var notNumeric = "A"
@@ -172,7 +171,7 @@ convertToInteger(value: notNumeric)
 5 0
 ```
 
-- if let
+- If Let
 ```swift
 var isNumeric = "5"
 var notNumeric = "O"
