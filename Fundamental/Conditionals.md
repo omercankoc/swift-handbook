@@ -1,10 +1,5 @@
 # Conditional Statements
-Swift provides two ways to add conditional branches to your code: the if statement and the switch statement. 
-Typically, you use the if statement to evaluate simple conditions with only a few possible outcomes. 
-The switch statement is better suited to more complex conditions with multiple possible permutations and is useful in situations 
-where pattern matching can help select an appropriate code branch to execute.
 
-Let's define the variables we will use first.
 ```swift
 var midterm : Float = 65
 var final : Float = 55
@@ -13,10 +8,7 @@ var score : Float = (midterm + final)/2
 var modulus = Int(score) % 2
 ```
 
-## if - else - else if Statements 
-In its simplest form, the "if" works when the desired condition is met. 
-Otherwise, it works when the "else if" conditions are met. 
-The "else" operation runs when no conditions are met.
+### if - else - else if Statements 
 ```swift
 if(final >= 50){
     if(score >= 50 && score < 55){
@@ -43,9 +35,7 @@ else {
 CC
 ```
 
-## switch - case Statements
-It is preferable to use a switch-case statement instead of writing if-else blocks one by one depending on the status of only one variable, 
-according to the value of that variable.
+### switch - case Statements
 ```swift
 switch modulus {
     case 0:
@@ -61,7 +51,7 @@ switch modulus {
 ```
 Even
 ```
-## guard let/var Statement
+### guard let Statement
 It is used to specify the actions to be taken if the condition is not met.
 
 ```swift
@@ -83,7 +73,7 @@ convertToInteger(value: notNumeric)
 5 0
 ```
 
-## if let/var Statement
+### if let Statement
 It is used to separately specify the actions to be taken when the condition is met and when it is not met.
 
 ```swift
