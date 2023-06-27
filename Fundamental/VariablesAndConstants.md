@@ -10,19 +10,19 @@ var platform : String = "iOS"
 let language : String = "Swift"
 ```
 
-## Type Annotation and Declaration
+## Type Annotation, Assigning and Declaration
 
 - Type Annotation
 ```swift
 var language : String
 ```
 
-- Declaration
+- Assigning
 ```swift
 var language = "Swift"
 ```
 
-- Type Annotation and Declaration
+- Declaration
 ```swift
 var language : String = "Swift"
 ```
