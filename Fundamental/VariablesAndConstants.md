@@ -54,17 +54,21 @@ var logic : Bool = true
 ```swift
 var red = (hex : "FF0101", rgb : [255,1,1], hsl : [0,100,50], cmyk : [0,100,100,0])
 ```
+```swift
+red.hex
+```
+```
+FF0101
+```
 
 ```swift
 var blue = ("0108FF",[1,8,255],[238,100,50],[100,97,0,0])
 ```
-
 ```swift
-print("Blue -> HEX Code : \(blue.0) RGB Code : \(blue.1) HSL Code : \(blue.2) CMYK Code : \(blue.3)")
+blue.0
 ```
-
 ```
-Blue -> HEX Code : 0108FF RGB Code : [1, 8, 255] HSL Code : [238, 100, 50] CMYK Code : [100, 97, 0, 0]
+0108FF
 ```
 
 ### Type Alias 
