@@ -1,4 +1,4 @@
-# String
+# Strings and Characters
 - Type Annotation
 ``` swift
 var language : String
