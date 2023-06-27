@@ -3,21 +3,27 @@
 - Function
 ```swift
 func message(){
-    print("Hello Swift!")
+    print("Hello!")
 }
 ```
 ```swift
 message()
 ```
+```
+Hello!
+```
 
 - Parameter of Function
 ```swift
 func message(name : String){
-    print("Hello",name)
+    print("Hello",name,"!" )
 }
 ```
 ```swift
 message(name : "Omer")
+```
+```
+Hello Omer !
 ```
 
 - Return Value of Function
@@ -35,73 +41,53 @@ func calculate(base : Int, exponent : Int) -> Int {
 ```swift
 var exponent = calculate(base: 3, exponent: 3)
 ```
+```
+27
+```
 
 ### Overloading
 ```swift
-func show(name : String){
-  print("Hello" \(name))
+func message(name : String){
+  print("Hello \(name)!")
 }
 
-func show(name : String, surname : String){
-  print("Hello" \(name) \(surname))
+func message(name : String, surname : String){
+  print("Hello \(name) \(surname)!")
 }
 ```
 ```swift
-show(name : "Omer")
-show(name : "Omer", surname : "Koc")
+message(name : "Omer")
+message(name : "Omer", surname : "Koc")
+```
+```
+Hello Omer!
+Hello Omer Koc !
 ```
 
 ### Multiple Results
 ```swift
-func minMax(array: [Int]) -> (min: Int, max: Int) {
-    var currentMin = array[0]
-    var currentMax = array[0]
+func endpoints(array: [Int]) -> (min: Int, max: Int) {
+    var minimum = array[0]
+    var maximum = array[0]
     for value in array[1..<array.count] {
-        if value < currentMin {
-            currentMin = value
-        } else if value > currentMax {
-            currentMax = value
+        if value < minimum {
+            minimum = value
+        } else if value > maximum {
+            maximum = value
         }
     }
-    return (currentMin, currentMax)
+    return (minimum, maximum)
 }
 ```
 ```swift
-minMax(array: [1,1,2,3,5,8,13,21])
+var max : Int = endpoints(array: [1,1,2,3,5,8,13,21]).max
+var min : Int = endpoints(array: [1,1,2,3,5,8,13,21]).min
 ```
-### Mutating Function
-It is used when a structural change is desired in a particular method. It can only be used in Struct.
-```swift
-struct Person {
-    var name : String
+```
+21 1
+```
 
-    mutating func uppercasedName(){
-        self.name = name.uppercased()
-    }
-}
-```
-Let's create a Person Object.
-```swift
-var developer = Person(name: "developer")
-```
-```swift
-print("Name : \(developer.name)")
-```
-```
-Name : developer
-```
-Now let's look at the Object after the Mutating Function is run.
-```swift
-developer.uppercasedName()
-```
-```swift
-print("Name : \(developer.name)")
-```
-```
-Name : DEVELOPER
-```
-### Functions with Variadic Parameters
-It allows to enter as many parameters as desired into the function.
+### Variadic Parameters
 ```swift
 func totalizer(values : Int...) -> Int {
     var total = 0
@@ -114,8 +100,40 @@ func totalizer(values : Int...) -> Int {
 ```swift
 var sum = totalizer(values: 1,2,3,4,5,6,7,8,9)
 ```
+```
+45
+```
+
+### Mutating Function
+```swift
+struct Person {
+    var name : String
+
+    mutating func uppercasedName(){
+        self.name = name.uppercased()
+    }
+}
+```
+```swift
+var developer = Person(name: "developer")
+```
+```swift
+print("Name : \(developer.name)")
+```
+```
+Name : developer
+```
+```swift
+developer.uppercasedName()
+```
+```swift
+print("Name : \(developer.name)")
+```
+```
+Name : DEVELOPER
+```
+
 ### Functions in "for" Keyword
-If there is a for keyword in front of the identifier of the parameter of the function, when the function is called from outside, it takes a value with the identifier "for", but is processed with the name of the identifier inside the function.
 ```swift
 struct Message {
     mutating func show(for type : Int) -> String {
@@ -127,7 +145,6 @@ var status = Message()
 var message = status.show(for: 200)
 ```
 ### Functions in "_" Keyword
-If the parameter identifier of the function has the keyword "_" in front of it, when the function is called from outside, it takes the value without needing the identifier, but is rendered with the name of the identifier inside the function.
 ```swift
 struct Messages {
     func status(_ code : Int) -> String {
@@ -208,7 +225,7 @@ modulus_(16, 9)
 2 7
 ```
 
-4. Closures as Function Parameter : In Swift, we can create a function that accepts closure as its parameter.
+4. Closures as Function Parameter
 ```swift
 func work(process: ()->()) {
   print("Process Getting Ready...")
@@ -225,7 +242,7 @@ Process Getting Ready...
 Processing...
 ```
 
-5. Trailing Closures : The closure becomes the last parameter of the function.
+5. Trailing Closures
 ```swift
 func action(status : Bool, onSuccess : (() -> ())? = nil, onFail : (() -> ())? = nil){
     if status {
@@ -245,7 +262,7 @@ action(status: true) {
 ```
 Connected!
 ```
-6. Autoclosure : While calling a function, we can also pass the closure without using the braces {}.To pass the closure argument without using braces, we must use the @autoclosure keyword in function definition.
+6. Autoclosure 
 ```swift
 func work(process: @autoclosure ()->()) {
   print("Process Getting Ready...")
