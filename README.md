@@ -7,7 +7,6 @@
 - [Operators](https://github.com/omercankoc/documents-swift/blob/master/Fundamental/Operators.md)
 - [Control Flow](https://github.com/omercankoc/documents-swift/blob/master/Fundamental/ControlFlow.md)
 - [Functions and Closures](https://github.com/omercankoc/documents-swift/blob/master/Fundamental/FunctionsAndClosures.md)
-- [Structs](https://github.com/omercankoc/documents-swift/blob/master/Fundamental/Structs.md)
 - [Properties](https://github.com/omercankoc/documents-swift/blob/master/Fundamental/Properties.md)
 
 ### Collection
@@ -16,7 +15,7 @@
 - [Dictionaries](https://github.com/omercankoc/documents-swift/blob/master/Collections/Dictionaries.md)
 
 ### Advanced
-- [Class](https://github.com/omercankoc/documents-swift/blob/master/Advanced/Class.md)
+- [Struct and Class](https://github.com/omercankoc/documents-swift/blob/master/Advanced/StructAndClass.md)
 - [Initialization and Deinitialization](https://github.com/omercankoc/documents-swift/blob/master/Advanced/InitializationAndDeinitialization.md)
 - [Enumeration](https://github.com/omercankoc/documents-swift/blob/master/Advanced/Enumeration.md)
 - [Inheritance](https://github.com/omercankoc/documents-swift/blob/master/Advanced/Inheritance.md)
