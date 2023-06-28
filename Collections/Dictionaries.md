@@ -5,10 +5,16 @@
 var languages: [String: String] = ["Swift":"Apple","Kotlin":"JetBrains","Go":"Google","Rust":"Mozilla","CSharp":"Microsoft"]
 ```
 ```swift
+var os : Dictionary<String, String> = ["Swift":"Apple","Kotlin":"JetBrains","Go":"Google","Rust":"Mozilla","CSharp":"Microsoft"]
+```
+```swift
 var languages: [String: Int] = [:]
 ```
+```swift
+var os : Dictionary<String, String> = [:]
+```
 
-- POST Key - Value in Dictionary
+- Post
 ```swift
 languages["Dart"] = "Google"
 ```
@@ -16,7 +22,7 @@ languages["Dart"] = "Google"
 ["Kotlin": "JetBrains", "Swift": "Apple", "Go": "Google", "Rust": "Mozilla", "CSharp": "Microsoft", "Dart": "Google"]
 ```
 
-- GET Keys - Values in the Dictionary
+- Get
 ```swift
 for (key,value) in languages {
   print("\(key): \(value)")
@@ -30,20 +36,21 @@ Swift: Apple
 Go: Google
 ```
 
-- GET the Keys in the Dictionary
+- Get Keys
 ```swift
 let languagesKeys = [String](languages.keys)
 ```
 ```
 ["Swift", "Kotlin", "Go", "Rust", "CSharp"]
 ```
-- GET Values in the Dictionary
+- Get Values
 ```swift
 let languagesValues = [String](languages.values)
 ```
 ```
 ["Google", "Apple", "JetBrains", "Mozilla", "Microsoft"]
 ```
+
 ## Methods
 
 - Count
