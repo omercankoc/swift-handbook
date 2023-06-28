@@ -66,6 +66,16 @@ Swift programming language developed by Apple.
 ```
 
 ## Methods
+
+- Count
+```swift
+var language : String = "Swift"
+var result = language.count
+```
+```
+5
+```
+
 - Append
 ```swift
 var language : String = "Swift"
@@ -124,42 +134,6 @@ var dropLast = language.dropLast()
 Swif
 ```
 
-- Count
-```swift
-var language : String = "Swift"
-var result = language.count
-```
-```
-5
-```
-
-- Reversed
-```Swift
-var language : String = "Swift"
-var result = String(language.reversed())
-```
-```
-tfiwS
-```
-
-- Contains
-```swift
-var language : String = "Swift"
-var result = language.contains("w")
-```
-```
-true
-```
-
-- Capitalized
-```swift
-var language : String = "swift"
-var result = language.capitalized
-```
-```
-Swift
-```
-
 - Lowercase
 ```swift
 var language : String = "SWIFT"
@@ -178,6 +152,24 @@ language.uppercased()
 SWIFT
 ```
 
+- Capitalized
+```swift
+var language : String = "swift"
+var result = language.capitalized
+```
+```
+Swift
+```
+
+- Reversed
+```Swift
+var language : String = "Swift"
+var result = String(language.reversed())
+```
+```
+tfiwS
+```
+
 - Split
 ```swift
 var language : String = "Swift Programming Language"
@@ -185,6 +177,15 @@ var result = language.split(separator: " ")
 ```
 ```
 ["Swift", "Programming", "Language"]
+```
+
+- Replacing Occurrences
+```swift
+var message = "I came now!"
+var replacedMessage = message.replacingOccurrences(of: "came",with: "go")
+```
+```
+I go now!
 ```
 
 - Elements Equal
@@ -198,13 +199,13 @@ var result = language.elementsEqual(verification)
 true
 ```
 
-- Replacing Occurrences
+- Contains
 ```swift
-var message = "I came now!"
-var replacedMessage = message.replacingOccurrences(of: "came",with: "go")
+var language : String = "Swift"
+var result = language.contains("w")
 ```
 ```
-I go now!
+true
 ```
 
 - Has Prefix
