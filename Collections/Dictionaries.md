@@ -2,7 +2,7 @@
 
 - Declaration
 ```swift
-var languages : [String:String] = ["Swift":"Apple","Kotlin":"JetBrains","Go":"Google","Rust":"Mozilla","CSharp":"Microsoft"]
+var languages: [String: String] = ["Swift":"Apple","Kotlin":"JetBrains","Go":"Google","Rust":"Mozilla","CSharp":"Microsoft"]
 ```
 ```swift
 var languages: [String: Int] = [:]
