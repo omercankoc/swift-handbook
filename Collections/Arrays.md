@@ -14,13 +14,13 @@ var os : [String] = []
 var os : Array<String> = []
 ```   
 
-- Iterating Over an Array
+- Elements in Array
 ```swift
 for iterator in os {
     print(iterator)
 }
 ```
-- Enumerated
+- Enumerated Elements in Array
 ```swift
 for (index,iterator) in os.enumerated() {
     print("\(index) : \(iterator)")
