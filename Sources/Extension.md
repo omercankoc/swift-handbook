@@ -19,12 +19,12 @@ print("\(variable) km. = \(10.km) m")
 - Using extension for Functions:
 ```swift
 extension String {
-    func createEMail(name : String) -> String {
-        return "\(name)@mail.com"
+    func createEMail() -> String {
+        return "\(self)@mail.com"
     }
 }
 
 var name : String = "developer"
-var mail = name.createEMail(name: name)
+var mail = name.createEMail()
 print(mail)
 ```
