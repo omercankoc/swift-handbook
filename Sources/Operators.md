@@ -52,3 +52,32 @@ let multiplication = multiplicationClousure(6,4) // 24
 let division = divisionClousure(6,4) // 1
 modulus(first: 6, second: 4)
 ```
+### Other Operators
+1. Ternary Operator
+```swift
+var os : [String] = ["macOS","iOS","iPadOS","watchOS","tvOS"]
+let result = os.isEmpty ? true : false
+print(result)
+```
+```
+false
+```
+
+2. Nil Coalescing
+```swift
+var value : Int? = nil
+let verify = value ?? 0
+print(verify)
+```
+```
+0
+```
+```swift
+var value : String? = nil
+var verify = value ?? "NIL"
+print(verify)
+
+```
+```
+NIL
+```
