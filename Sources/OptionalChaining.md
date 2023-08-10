@@ -4,7 +4,7 @@
 ```swift
 var value : String? = nil
 ```
-- Assigning
+- Assignment
 ```swift
 var value = "5"
 ```
