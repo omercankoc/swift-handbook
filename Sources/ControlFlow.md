@@ -110,20 +110,20 @@ var modulus = Int(score) % 2
 
 ### If
 ```swift
-if(final >= 50){
-    if(score >= 50 && score < 55){
+if final >= 50 {
+    if score >= 50 && score < 55 {
         print("DC")
-    } else if(score >= 55 && score < 60){
+    } else if score >= 55 && score < 60 {
         print("DD")
-    } else if(score >= 60 && score < 68){
+    } else if score >= 60 && score < 68 {
         print("CC")
-    } else if(score >= 68 && score < 76){
+    } else if score >= 68 && score < 76 {
         print("CB")
-    } else if(score >= 76 && score < 84){
+    } else if score >= 76 && score < 84 {
         print("BB")
-    } else if(score >= 84 && score < 92){
+    } else if score >= 84 && score < 92 {
         print("BA")
-    } else if (score >= 92 && score <= 100){
+    } else if score >= 92 && score <= 100 {
         print("AA")
     }
 }
@@ -174,7 +174,7 @@ convertToInteger(value: notNumeric)
 - If Let
 ```swift
 var isNumeric = "5"
-var notNumeric = "O"
+var notNumeric = "A"
 
 func convertToInteger(value : String) -> Int {
     if let result = Int(value) {
