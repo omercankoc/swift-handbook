@@ -22,6 +22,7 @@ print(value)
 5
 Optional("5")
 ```
+
 2. Implicit Unwrapping
 ```swift
 var value : String! = nil
@@ -38,29 +39,31 @@ Optional("Apple")
 ```swift
 var value : String? = nil
 
-if let validatedValue = value {
-    print("\(validatedValue)")
-} else { print("Value is Nil!") }
+if let verify = value {
+    print(verify)
+} else {
+    print("Value is Nil!")
+}
 ```
 ```
 Value is Nil!
 ```
 
-## Nil Coalescing
+### Nil Coalescing
 ```swift
 var value : Int? = nil
-let validatedValue = value ?? 0
-print(validatedValue)
+let verify = value ?? 0
+print(verify)
 ```
 ```
 0
 ```
 ```swift
 var value : String? = nil
-var validatedValue = value ?? ""
-print(validatedValue)
+var verify = value ?? "NIL"
+print(verify)
 
 ```
 ```
-
+NIL
 ```
