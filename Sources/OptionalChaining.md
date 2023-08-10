@@ -29,7 +29,7 @@ value = "Swift"
 print(value!)
 print(value)
 ```
-```swift
+```
 Swift
 Optional("Swift")
 ```
