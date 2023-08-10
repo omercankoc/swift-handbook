@@ -48,22 +48,3 @@ if let verify = value {
 ```
 Value is Nil!
 ```
-
-### Nil Coalescing
-```swift
-var value : Int? = nil
-let verify = value ?? 0
-print(verify)
-```
-```
-0
-```
-```swift
-var value : String? = nil
-var verify = value ?? "NIL"
-print(verify)
-
-```
-```
-NIL
-```
