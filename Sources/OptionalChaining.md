@@ -25,13 +25,13 @@ Optional("5")
 2. Implicit Unwrapping
 ```swift
 var value : String! = nil
-value = "Swift"
+value = "Apple"
 print(value!)
 print(value)
 ```
 ```
-Swift
-Optional("Swift")
+Apple
+Optional("Apple")
 ```
 
 3. Optional Binding
