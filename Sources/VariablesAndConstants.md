@@ -10,14 +10,14 @@ var platform : String = "iOS"
 let language : String = "Swift"
 ```
 
-### Type Annotation, Assigning and Declaration
+### Type Annotation, Assignment and Declaration
 
 - Type Annotation
 ```swift
 var language : String
 ```
 
-- Assigning
+- Assignment
 ```swift
 var language = "Swift"
 ```
@@ -72,7 +72,7 @@ blue.0
 ```
 
 ### Type Alias 
-
+- Usage
 ```swift
 typealias Celsius = Double
 typealias Fahrenheit = Double
@@ -133,7 +133,7 @@ temperature.kelvin
 ```
 
 ### Type Conversion
-
+- Usage
 ```swift
 var count : Int = 0
 var numeric : String = "5"
