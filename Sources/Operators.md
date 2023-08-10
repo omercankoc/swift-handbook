@@ -63,7 +63,7 @@ print(result)
 false
 ```
 
-2. Nil Coalescing
+2. Nil Coalescing Operator
 ```swift
 var value : Int? = nil
 let verify = value ?? 0
