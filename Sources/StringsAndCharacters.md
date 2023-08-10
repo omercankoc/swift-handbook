@@ -4,7 +4,7 @@
 var language : String
 ```
 
-- Assigning
+- Assignment
 ``` swift
 var language = "Swift"
 ```
@@ -24,7 +24,7 @@ var language = String()
 var language = String("Swift")
 ```
 
-- Multiline String Literals
+- Assignment Multiline String Literals
 ``` swift
 var language = """
     Swift Programming Languages
