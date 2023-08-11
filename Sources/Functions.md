@@ -107,44 +107,70 @@ var sum = totalizer(values: 1,2,3,4,5,6,7,8,9)
 ```
 
 ### Mutating Function
+Mutating cannot be used with classes as it is a reference type.
+The mutating keyword is only required if you are changing any properties contained within the struct. 
 ```swift
 struct Person {
+    
     var name : String
-
-    mutating func uppercasedName(){
-        self.name = name.uppercased()
+    var surname : String
+    
+    mutating func editName(_ name: String){
+        self.name = name
+    }
+    
+    mutating func editSurname(_ surname: String){
+        self.surname = surname
     }
 }
 ```
 ```swift
-var developer = Person(name: "developer")
+var person = Person(name: "Dennis", surname: "Ritchie")
 ```
 ```swift
-print("Name : \(developer.name)")
+print(person.name, person.surname)
 ```
 ```
-Name : developer
-```
-```swift
-developer.uppercasedName()
+print(person.name, person.surname)
 ```
 ```swift
-print("Name : \(developer.name)")
+person.editName("Ken")
+person.editSurname("Thompson")
+```
+```swift
+print(person.name, person.surname)
 ```
 ```
-Name : DEVELOPER
+Ken Thompson
 ```
 
 ### Functions in "for" Keyword
 ```swift
 struct Message {
     mutating func show(for type : Int) -> String {
-        return "Status Code : \(type)"
+        switch type {
+        case 100:
+            return "Information Responses"
+        case 200:
+            return "Successful Responses"
+        case 300:
+            return "Redirection Messages"
+        case 400:
+            return "Client Error Responses"
+        case 500:
+            return "Server Error Responses"
+        default:
+            return "Undefined"
+        }
     }
 }
 
 var status = Message()
 var message = status.show(for: 200)
+print(message)
+```
+```
+Successful Responses
 ```
 ### Functions in "_" Keyword
 ```swift
@@ -169,4 +195,7 @@ struct Messages {
 
 var response = Messages()
 var message = response.status(200)
+```
+```
+Successful Responses
 ```
