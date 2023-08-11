@@ -188,7 +188,7 @@ struct Messages {
         case 500:
             return "Server Error Responses"
         default:
-            return "Unknown"
+            return "Undefined"
         }
     }
 }
