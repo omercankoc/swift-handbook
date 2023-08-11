@@ -13,7 +13,7 @@ message()
 Hello!
 ```
 
-- Function Parameters
+- Function Parameter(s)
 ```swift
 func message(name : String){
     print("Hello \(name)!" )
@@ -26,7 +26,7 @@ message(name : "Omer")
 Hello Omer!
 ```
 
-- Return Values
+- Return Value(s)
 ```swift
 func message(name: String, surname: String) -> String {
     return "Hello \(name) \(surname)!"
