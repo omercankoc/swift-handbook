@@ -1,6 +1,6 @@
 # Function
 
-- Function
+- Declaration
 ```swift
 func message(){
     print("Hello!")
@@ -13,7 +13,7 @@ message()
 Hello!
 ```
 
-- Parameter of Function
+- Function Parameters
 ```swift
 func message(name : String){
     print("Hello \(name)!" )
@@ -26,7 +26,7 @@ message(name : "Omer")
 Hello Omer!
 ```
 
-- Return Value of Function
+- Return Values
 ```swift
 func message(name: String, surname: String) -> String {
     return "Hello \(name) \(surname)!"
