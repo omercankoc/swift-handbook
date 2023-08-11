@@ -14,7 +14,7 @@ var languages: [String: Int] = [:]
 var os : Dictionary<String, String> = [:]
 ```
 
-- Post
+- Add Key-Value
 ```swift
 languages["Dart"] = "Google"
 ```
@@ -22,7 +22,7 @@ languages["Dart"] = "Google"
 ["Kotlin": "JetBrains", "Swift": "Apple", "Go": "Google", "Rust": "Mozilla", "CSharp": "Microsoft", "Dart": "Google"]
 ```
 
-- Get
+- For Loop in Dictionary
 ```swift
 for (key,value) in languages {
   print("\(key): \(value)")
