@@ -1,7 +1,7 @@
 # Closures
 Code blocks that can return a value, can be assigned to any variable and stored in the assigned variable are called "Closure". Closures can actually be thought of as specialized functions.
 
-1. Closures
+1. Declaration
 ```swift
 let first = {
     print(".")
@@ -14,7 +14,7 @@ first()
 .
 ```
 
-2. Parameter of Closures
+2. Closures Parameters
 ```swift
 var equality = { (first : Int, second : Int) in
     if first == second { print("Equal") }
@@ -35,7 +35,7 @@ Equal
 Not Equal
 ```
 
-3. Return Value of Closures
+3. Return Values
 ```swift
 let modulus = {
     (first : Int, second : Int) -> Int in
