@@ -1,25 +1,63 @@
-# Struct
-- Structs work as Value Types.
-- They are kept in the memory with the stack logic, so when the data is wanted to be read, it is read faster.
-- There is no inheritance feature in the struct. (No Inheritance)
-- It cannot be used with Objective-C.
-- They are simple and fast.
-- They do not cause memory (RAM) problems.
-- They are Threadsafe.
-### Definition Syntax
+# Struct and Class
+- Both structs and classes can define properties to store values, and they can define functions.
+- They can define subscripts to provide access to values with subscript syntax.
+- They can define initializers to set up their initial state, with init().
+- They can be extended with extension.
+- They can conform to protocols, for example to support Protocol Oriented Programming.
+- They can work with generics to provide flexible and reusable types.
+
+Classes support a few more capabilities that structs don’t have.
+- Classes can inherit from another class, like you inherit from UIViewController to create your own view controller subclass.
+- Classes can be deinitialized, i.e. you can invoke a deinit() function before the class is destroyed.
+- Classes are reference types and structs are value types.
+
+Value Type: When you copy a value type (i.e., when it’s assigned, initialized or passed into a function), each instance keeps a unique copy of the data. If you change one instance, the other doesn’t change too.
+
+Reference Type: When you copy a reference type, each instance shares the data. The reference itself is copied, but not the data it references. When you change one, the other changes too.
+
+## Struct
+- Declaration
 ```swift
 struct User {
     var username : String
     var password : String
 }
 ```
-### Instance
+- Instance
 ```swift
 var omer = User(username : "omer", password: "********"
 ```
 ```
 omer ********
 ```
+
+## Class
+- Declaration
+```swift
+class Languages {    
+    var language : String?
+    var developer : String?
+    var year : Int?
+   
+    func message(language : String, developer : String, year : Int) -> String {
+        return "\(language) programming language started to be developed by \(developer) in \(String(year))."
+    }
+}
+```
+- Instance
+```swift
+var swift = Languages()
+swift.language = "Swift"
+swift.developer = "Apple"
+swift.year = 2014
+```
+```swift
+var message = swift.message(language: swift.language ?? "Language", developer: swift.developer ?? "Developer", year: swift.year ?? 0)
+```
+```
+Swift programming language started to be developed by Apple in 2014.
+```
+
 ## Composition
 A parameter of a class or struct can be another class or variable itself. This situation is called composition.
 ```swift
@@ -42,38 +80,6 @@ var omer = User(username: "omer", password: "********", contact: Contact(email: 
 omer ******** omer@mail.com +19876543210
 ```
 
-
-# Class
-Classes are general-purpose, flexible constructs that become the building blocks of your program code. 
-You define properties and methods to add functionality to your structures and classes using the same syntax you use to define constants, 
-variables, and methods. Classes are reference types.
-Objects have two properties, state and behavior.
-
-- Define the Properties and Methods of the Class:
-```swift
-class Languages {    
-    var language : String?
-    var developer : String?
-    var year : Int?
-   
-    func message(language : String, developer : String, year : Int) -> String {
-        return "\(language) programming language started to be developed by \(developer) in \(String(year))."
-    }
-}
-```
-- Instance of the Class:
-```swift
-var swift = Languages()
-swift.language = "Swift"
-swift.developer = "Apple"
-swift.year = 2014
-```
-```swift
-var message = swift.message(language: swift.language ?? "Language", developer: swift.developer ?? "Developer", year: swift.year ?? 0)
-```
-```
-Swift programming language started to be developed by Apple in 2014.
-```
 ## Static Variables and Methods
 Used to access a variable or method without an instance of the class or struct.
 ```swift
