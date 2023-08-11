@@ -77,10 +77,10 @@ var omer = User(username: "omer", password: "********", contact: Contact(email: 
 
 ```
 ```
-omer ******** omer@mail.com +19876543210
+omer ******** omer@mail.com +9876543210
 ```
 
-## Static Variables and Methods
+## Static Properties and Functions
 Used to access a variable or method without an instance of the class or struct.
 ```swift
 class Message {
@@ -93,7 +93,7 @@ class Message {
 ```
 ```swift
 Message.statusCode = "200"
-var message = Message.message(statusCode: "200")
+Message.message(statusCode: "200")
 ```
 ```
 Status Code : 200
