@@ -1,3 +1,71 @@
+# Function
+
+- Function
+```swift
+func message(){
+    print("Hello!")
+}
+```
+```swift
+message()
+```
+```
+Hello!
+```
+
+- Parameter of Function
+```swift
+func message(name : String){
+    print("Hello \(name)!" )
+}
+```
+```swift
+message(name : "Omer")
+```
+```
+Hello Omer!
+```
+
+- Return Value of Function
+```swift
+func message(name: String, surname: String) -> String {
+    return "Hello \(name) \(surname)!"
+}
+```
+```swift
+message(name: "Omer", surname: "Koc")
+```
+```
+Hello Omer Koc!
+```
+
+### Overloading
+```swift
+func power(base: Int) -> Int {
+    return base * base
+}
+
+func power(base: Int, exponent: Int) -> Int {
+    var result = 1
+    var iteration = 1
+    
+    while iteration <= exponent {
+        result *= base
+        iteration += 1
+    }
+    
+    return result
+}
+```
+```swift
+power(base: 2)
+power(base: 2, exponent: 3)
+```
+```
+4
+8
+```
+
 ### Multiple Results
 ```swift
 func endpoints(array: [Int]) -> (min: Int, max: Int) {
