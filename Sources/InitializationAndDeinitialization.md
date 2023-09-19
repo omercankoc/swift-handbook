@@ -12,7 +12,7 @@ the deinit method of that class is called for that object. The deinit method has
 In other words, we can use the deinit method to perform operations before our object is repositioned. 
 The deinit method runs before our object is repositioned.
 
-- Define the Properties and Methods of the Class
+- Declaration
 ```swift
 class Circle {
     var radius : Double
@@ -30,7 +30,7 @@ class Circle {
     }
     
     convenience init(){
-        self.init(radius_: 1.0)
+        self.init(radius_: 0.0)
     }
     
     deinit {
@@ -38,27 +38,34 @@ class Circle {
         self.perimeter = 0
         self.area = 0
         self.volume = 0
-        print("Radius : \(self.radius) - Perimeter : \(self.perimeter) - Area : \(self.area) - Volume : \(self.volume)")
-        
     }
     
-    func show(radius : Double, perimeter : Double, area : Double, volume : Double) -> String {
+    func show() -> String {
         return "Radius : \(self.radius) - Perimeter : \(self.perimeter) - Area : \(self.area) - Volume : \(self.volume)"
     }
 }
 ```
-- Instance of the Object
+
+- Instance
 ```swift
 var circle = Circle(radius_: 3.0)
-var first = circle.show(radius: circle.radius, perimeter: circle.perimeter, area: circle.area, volume: circle.volume)
+var show = circle.show()
 
-var undefined = Circle()
-var second = undefined.show(radius: undefined.radius, perimeter: undefined.perimeter, area: undefined.area, volume: undefined.volume)
+print(show)
 ```
 ```
 Radius : 3.0 - Perimeter : 18.849 - Area : 28.273500000000002 - Volume : 113.094
-Radius : 1.0 - Perimeter : 6.283 - Area : 3.1415 - Volume : 4.188666666666666
 ```
+```swift
+var circle = Circle()
+var show = circle.show()
+
+print(show)
+```
+```
+Radius : 0.0 - Perimeter : 0.0 - Area : 0.0 - Volume : 0.0
+```
+
 - Overload init()
 ```swift
 class Circle {
@@ -66,28 +73,26 @@ class Circle {
     let pi : Double = 3.1415
     
     init(perimeter radius : Double){
-        result = 2 * pi * radius
+        self.result = 2 * pi * radius
     }
 
     init(area radius : Double){
-        result = pi * pow(radius, 2.0)
+        self.result = pi * pow(radius, 2.0)
     }
 
     init(volume radius : Double){
-        result = (4 / 3) * pi * pow(radius, 3.0)
+        self.result = (4 / 3) * pi * pow(radius, 3.0)
     }
 }
-
+```
+- Instance
+```swift
 var perimeter = Circle(perimeter: 3.0)
 var area = Circle(area: 3.0)
 var volume = Circle(volume: 3.0)
 
-perimeter.result
-area.result
-volume.result
+print(perimeter.result, area.result, volume.result)
 ```
 ```
-18.849
-28.273500000000002
-113.094
+18.849 28.273500000000002 113.094
 ```
