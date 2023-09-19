@@ -12,6 +12,9 @@ the deinit method of that class is called for that object. The deinit method has
 In other words, we can use the deinit method to perform operations before our object is repositioned. 
 The deinit method runs before our object is repositioned.
 
+A deinitializer is called immediately before a class instance is deallocated. You write deinitializers with the deinit keyword, 
+similar to how initializers are written with the init keyword. Deinitializers are only available on class types.
+
 - Declaration
 ```swift
 class Circle {
