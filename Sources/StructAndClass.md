@@ -18,41 +18,57 @@ Reference Type: When you copy a reference type, each instance shares the data. T
 ## Struct
 - Declaration
 ```swift
-struct User {
-    var username : String
-    var password : String
-}
-```
-- Instance
-```swift
-var omer = User(username : "omer", password: "********"
-```
-```
-omer ********
-```
-
-## Class
-- Declaration
-```swift
-class Languages {    
+struct Language {
     var language : String?
     var developer : String?
     var year : Int?
    
-    func message(language : String, developer : String, year : Int) -> String {
-        return "\(language) programming language started to be developed by \(developer) in \(String(year))."
+    func message() -> String {
+        if self.language != nil && self.developer != nil && self.year != nil {
+            return "\(self.language!) programming language started to be developed by \(self.developer!) in \(self.year!)."
+        } else {
+            return ""
+        }
     }
 }
 ```
 - Instance
 ```swift
-var swift = Languages()
+var swift = Language(language: "Swift", developer: "Apple", year: 2014)
+var message = swift.message()
+print(message)
+```
+```
+Swift programming language started to be developed by Apple in 2014.
+```
+
+## Class
+- Declaration
+```swift
+class Language {
+    var language : String?
+    var developer : String?
+    var year : Int?
+   
+    func message() -> String {
+        if self.language != nil && self.developer != nil && self.year != nil {
+            return "\(self.language!) programming language started to be developed by \(self.developer!) in \(self.year!)."
+        } else {
+            return ""
+        }
+    }
+}
+```
+- Instance
+```swift
+var swift = Language()
 swift.language = "Swift"
 swift.developer = "Apple"
 swift.year = 2014
-```
-```swift
-var message = swift.message(language: swift.language ?? "Language", developer: swift.developer ?? "Developer", year: swift.year ?? 0)
+
+var message = swift.message()
+
+print(message)
 ```
 ```
 Swift programming language started to be developed by Apple in 2014.
