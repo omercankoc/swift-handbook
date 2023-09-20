@@ -64,8 +64,8 @@ class Swift : Language {
         print("speak() run in Subclass!")
     }
     
-    func message(language : String, developer : String, year : Int, type : LanguageType){
-        print("\(language) programming language was developed by \(developer) in \(year). (\(type)) ")
+    func message(){
+        print("\(self.language) programming language was developed by \(self.developer) in \(self.year). (\(self.type)) ")
     }
 }
 ```
@@ -85,7 +85,7 @@ let swift = Swift(type: .Compiled, language: "Swift", developer: "Apple", year: 
 
 swift.superSpeak()
 swift.speak()
-swift.message(language: swift.language, developer: swift.developer, year: swift.year, type: swift.type)
+swift.message()
 ```
 ```
 Created Language Object!
