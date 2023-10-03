@@ -89,7 +89,7 @@ extension Celsius {
 }
 
 extension Fahrenheit {
-    func fahrenheitToCelcius() -> Celsius {
+    func fahrenheitToCelsius() -> Celsius {
         return (self - 32) / 1.8
     }
     
@@ -110,26 +110,42 @@ extension Kelvin {
 
 
 struct Temperature {
-    var celcius : Celsius
+    var celsius : Celsius
     var fahrenheit : Fahrenheit
     var kelvin : Kelvin
     
     init(celcius: Celsius) {
-        self.celcius = celcius
+        self.celsius = celcius
         self.fahrenheit = celcius.celsiusToFahrenheit()
         self.kelvin = celcius.celsiusToKelvin()
     }
+    
+    init(fahrenheit: Fahrenheit){
+        self.celsius = fahrenheit.fahrenheitToCelsius()
+        self.fahrenheit = fahrenheit
+        self.kelvin = fahrenheit.fahrenheitToKelvin()
+    }
+    
+    init(kelvin: Kelvin){
+        self.celsius = kelvin.kelvinToCelsius()
+        self.fahrenheit = kelvin.kelvinToFahrenheit()
+        self.kelvin = kelvin
+    }
 }
 
-var temperature = Temperature(celcius: 34)
-temperature.celcius
-temperature.fahrenheit
-temperature.kelvin
+var celsius = Temperature(celcius: 30)
+print(celsius.celsius, "C =", celsius.fahrenheit, "F =", celsius.kelvin,"K")
+
+var fahrenheit = Temperature(fahrenheit: 60)
+print(fahrenheit.fahrenheit, "F =", fahrenheit.celsius, "C =", fahrenheit.kelvin, "K")
+
+var kelvin = Temperature(kelvin: 90)
+print(kelvin.kelvin, "K =", kelvin.celsius, "C =", kelvin.fahrenheit, "F")
 ```
 ```
-34.0
-93.2
-307.15
+30.0 C = 86.0 F = 303.15 K
+60.0 F = 15.555555555555555 C = 288.70555555555563 K
+90.0 K = -183.14999999999998 C = -297.67 F
 ```
 
 ### Type Conversion
