@@ -179,6 +179,15 @@ var result = language.split(separator: " ")
 ["Swift", "Programming", "Language"]
 ```
 
+- Joined
+```swift
+var keywords : [String] = ["Swift", "Programming", "Language"]
+var result = keywords.joined(separator: " ")
+```
+```
+Swift Programming Language
+```
+
 - Replacing Occurrences
 ```swift
 var message = "I came now!"
