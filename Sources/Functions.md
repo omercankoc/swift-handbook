@@ -131,7 +131,7 @@ var person = Person(name: "Dennis", surname: "Ritchie")
 print(person.name, person.surname)
 ```
 ```
-print(person.name, person.surname)
+Dennis Ritchie
 ```
 ```swift
 person.editName("Ken")
