@@ -214,7 +214,7 @@ print(filter ?? ["":""])
 (key: "Spain", value: "Madrid")
 ```
 
-- Map Value
+- Mapping
 ```swift
 var mapping = country.mapValues({ $0 + " City" })
 print(mapping)
