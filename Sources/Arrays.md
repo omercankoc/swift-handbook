@@ -135,6 +135,42 @@ print(numbers)
 []
 ```
 
+- Reverse
+```swift
+var os : [String] = ["macOS","iOS","iPadOS","watchOS","tvOS"]
+print(os)
+os.reverse()
+print(os)
+```
+```
+["macOS", "iOS", "iPadOS", "watchOS", "tvOS"]
+["tvOS", "watchOS", "iPadOS", "iOS", "macOS"]
+```
+
+- Swap
+```swift
+var os : [String] = ["macOS","iOS","iPadOS","watchOS","tvOS"]
+print(os)
+os.swapAt(1, 2)
+print(os)
+```
+```
+["macOS", "iOS", "iPadOS", "watchOS", "tvOS"]
+["macOS", "iPadOS", "iOS", "watchOS", "tvOS"]
+```
+
+- Shuffle
+```swift
+var os : [String] = ["macOS","iOS","iPadOS","watchOS","tvOS"]
+print(os)
+os.shuffle()
+print(os)
+```
+```
+["macOS", "iOS", "iPadOS", "watchOS", "tvOS"]
+["watchOS", "macOS", "iOS", "tvOS", "iPadOS"]
+```
+
 - Sort
 ```swift
 var numbers : [Int] = [9,3,1,2,0,4,7,5,6,8]
@@ -189,42 +225,6 @@ print(result)
 [9, 8, 7, 6, 5, 4, 3, 2, 1, 0]
 ```
 
-- Reverse
-```swift
-var os : [String] = ["macOS","iOS","iPadOS","watchOS","tvOS"]
-print(os)
-os.reverse()
-print(os)
-```
-```
-["macOS", "iOS", "iPadOS", "watchOS", "tvOS"]
-["tvOS", "watchOS", "iPadOS", "iOS", "macOS"]
-```
-
-- Swap
-```swift
-var os : [String] = ["macOS","iOS","iPadOS","watchOS","tvOS"]
-print(os)
-os.swapAt(1, 2)
-print(os)
-```
-```
-["macOS", "iOS", "iPadOS", "watchOS", "tvOS"]
-["macOS", "iPadOS", "iOS", "watchOS", "tvOS"]
-```
-
-- Shuffle
-```swift
-var os : [String] = ["macOS","iOS","iPadOS","watchOS","tvOS"]
-print(os)
-os.shuffle()
-print(os)
-```
-```
-["macOS", "iOS", "iPadOS", "watchOS", "tvOS"]
-["watchOS", "macOS", "iOS", "tvOS", "iPadOS"]
-```
-
 - Contains
 ```swift
 var os : [String] = ["macOS","iOS","iPadOS","watchOS","tvOS"]
@@ -238,8 +238,8 @@ TRUE
 ```swift
 var os : [String] = ["macOS","iOS","iPadOS","watchOS","tvOS"]
 print(os)
-var first = os.first
-print(first ?? "")
+var first = os.first ?? ""
+print(first)
 ```
 ```
 ["macOS", "iOS", "iPadOS", "watchOS", "tvOS"]
@@ -248,8 +248,8 @@ macOS
 ```swift
 var os : [String] = ["macOS","iOS","iPadOS","watchOS","tvOS"]
 print(os)
-var first = os.first(where: {$0.lowercased().hasPrefix("io".lowercased())})
-print(first ?? "")
+var first = os.first(where: {$0.lowercased().hasPrefix("io".lowercased())}) ?? ""
+print(first)
 ```
 ```
 ["macOS", "iOS", "iPadOS", "watchOS", "tvOS"]
@@ -258,8 +258,8 @@ iOS
 ```swift
 var os : [String] = ["macOS","iOS","iPadOS","watchOS","tvOS"]
 print(os)
-var first = os.first(where: {$0.lowercased().hasSuffix("dos".lowercased())})
-print(first ?? "")
+var first = os.first(where: {$0.lowercased().hasSuffix("dos".lowercased())}) ?? ""
+print(first)
 ```
 ```
 ["macOS", "iOS", "iPadOS", "watchOS", "tvOS"]
@@ -268,8 +268,8 @@ iPadOS
 ```swift
 var os : [String] = ["macOS","iOS","iPadOS","watchOS","tvOS"]
 print(os)
-var first = os.first(where: {$0.lowercased().contains("tch".lowercased())})
-print(first ?? "")
+var first = os.first(where: {$0.lowercased().contains("tch".lowercased())}) ?? ""
+print(first)
 ```
 ```
 ["macOS", "iOS", "iPadOS", "watchOS", "tvOS"]
@@ -280,8 +280,8 @@ watchOS
 ```swift
 var os : [String] = ["macOS","iOS","iPadOS","watchOS","tvOS"]
 print(os)
-var last = os.last
-print(last ?? "")
+var last = os.last ?? ""
+print(last)
 ```
 ```
 ["macOS", "iOS", "iPadOS", "watchOS", "tvOS"]
@@ -290,17 +290,18 @@ tvOS
 ```swift
 var os : [String] = ["macOS","iOS","iPadOS","watchOS","tvOS"]
 print(os)
-var last = os.last(where: {$0.lowercased().hasPrefix("ip".lowercased())})
-print(last ?? "")
+var last = os.last(where: {$0.lowercased().hasPrefix("ip".lowercased())}) ?? ""
+print(last)
 ```
 ```
-"iPadOS"
+["macOS", "iOS", "iPadOS", "watchOS", "tvOS"]
+iPadOS
 ```
 ```swift
 var os : [String] = ["macOS","iOS","iPadOS","watchOS","tvOS"]
 print(os)
-var last = os.last(where: {$0.lowercased().hasSuffix("vos".lowercased())})
-print(last ?? "")
+var last = os.last(where: {$0.lowercased().hasSuffix("vos".lowercased())}) ?? ""
+print(last)
 ```
 ```
 ["macOS", "iOS", "iPadOS", "watchOS", "tvOS"]
@@ -309,8 +310,8 @@ tvOS
 ```swift
 var os : [String] = ["macOS","iOS","iPadOS","watchOS","tvOS"]
 print(os)
-var last = os.last(where: {$0.lowercased().contains("aco".lowercased())})
-print(last ?? "")
+var last = os.last(where: {$0.lowercased().contains("aco".lowercased())}) ?? ""
+print(last)
 ```
 ```
 ["macOS", "iOS", "iPadOS", "watchOS", "tvOS"]
@@ -319,14 +320,43 @@ macOS
 
 - Filter
 ```swift
-var os : [String] = ["macOS","iOS","iPadOS","watchOS","tvOS"]
-print(os)
-var results = os.filter({$0.hasPrefix("i")})
+var country : [String] = ["Istanbul","Ankara","Trabzon","Izmir","Adana","Samsun","Hatay","Balikesir","Çanakkale","Bursa","Gazi Antep","Kahraman Maraş","Eskisehir","Sakarya","Kocaeli"]
+print(country)
+var results = country.filter({$0.lowercased().hasPrefix("b".lowercased())})
 print(results)
+var result = country.filter({$0.lowercased().hasPrefix("b".lowercased())}).first ?? ""
+print(result)
 ```
 ```
-["macOS", "iOS", "iPadOS", "watchOS", "tvOS"]
-["iOS", "iPadOS"]
+["Istanbul", "Ankara", "Trabzon", "Izmir", "Adana", "Samsun", "Hatay", "Balikesir", "Çanakkale", "Bursa", "Gazi Antep", "Kahraman Maraş", "Eskisehir", "Sakarya", "Kocaeli"]
+["Balikesir", "Bursa"]
+Balikesir
+```
+```swift
+var country : [String] = ["Istanbul","Ankara","Trabzon","Izmir","Adana","Samsun","Hatay","Balikesir","Çanakkale","Bursa","Gazi Antep","Kahraman Maras","Eskisehir","Sakarya","Kocaeli"]
+print(country)
+var results = country.filter({$0.lowercased().hasSuffix("a".lowercased())})
+print(results)
+var result = country.filter({$0.lowercased().hasSuffix("a".lowercased())}).first ?? ""
+print(result)
+```
+```
+["Istanbul", "Ankara", "Trabzon", "Izmir", "Adana", "Samsun", "Hatay", "Balikesir", "Çanakkale", "Bursa", "Gazi Antep", "Kahraman Maras", "Eskisehir", "Sakarya", "Kocaeli"]
+["Ankara", "Adana", "Bursa", "Sakarya"]
+Ankara
+```
+```swift
+var country : [String] = ["Istanbul","Ankara","Trabzon","Izmir","Adana","Samsun","Hatay","Balikesir","Çanakkale","Bursa","Gazi Antep","Kahraman Maras","Eskisehir","Sakarya","Kocaeli"]
+print(country)
+var results = country.filter({$0.lowercased().contains("an".lowercased())})
+print(results)
+var result = country.filter({$0.lowercased().contains("an".lowercased())}).first ?? ""
+print(result)
+```
+```
+["Istanbul", "Ankara", "Trabzon", "Izmir", "Adana", "Samsun", "Hatay", "Balikesir", "Çanakkale", "Bursa", "Gazi Antep", "Kahraman Maras", "Eskisehir", "Sakarya", "Kocaeli"]
+["Istanbul", "Ankara", "Adana", "Çanakkale", "Gazi Antep", "Kahraman Maras"]
+Istanbul
 ```
 ```swift
 var numbers : [Int] = [0,1,2,3,4,5,6,7,8,9]
@@ -353,12 +383,12 @@ print(result)
 ```swift
 let languages = ["C","C++","Objective C","Swift"]
 print(languages)
-let count = languages.reduce(0) { $0 + $1.count }
+let count = languages.reduce(1) { $0 + $1.count }
 print(count)
 ```
 ```
 ["C","C++","Objective C","Swift"]
-20
+21
 ```
 
 - Map
