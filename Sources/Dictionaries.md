@@ -2,53 +2,86 @@
 
 - Declaration
 ```swift
-var languages: [String: String] = ["Swift":"Apple","Kotlin":"JetBrains","Go":"Google","Rust":"Mozilla","CSharp":"Microsoft"]
+var country: [String: String] = ["USA":"Washington DC","UK":"London","France":"Paris","Italy":"Rome","Spain":"Madrid","Portugal":"Lizbon","Greece":"Atina","Russia":"Moscow","Sweden":"Stockholm","Norway":"Oslo","Finland":"Helsinki","Poland":"Warsaw","Ukraine":"Kyiv"]
 ```
 ```swift
-var os : Dictionary<String, String> = ["Swift":"Apple","Kotlin":"JetBrains","Go":"Google","Rust":"Mozilla","CSharp":"Microsoft"]
+var country: Dictionary<String, String> = ["USA":"Washington DC","UK":"London","France":"Paris","Italy":"Rome","Spain":"Madrid","Portugal":"Lizbon","Greece":"Atina","Russia":"Moscow","Sweden":"Stockholm","Norway":"Oslo","Finland":"Helsinki","Poland":"Warsaw","Ukraine":"Kyiv"]
 ```
 ```swift
-var languages: [String: Int] = [:]
+var country: [String: String] = [:]
 ```
 ```swift
-var os : Dictionary<String, String> = [:]
+var country: Dictionary<String, String> = [:]
 ```
 
 - Add Key-Value
 ```swift
-languages["Dart"] = "Google"
+country["Japan"] = "Tokyo"
+print(country)
 ```
 ```
-["Kotlin": "JetBrains", "Swift": "Apple", "Go": "Google", "Rust": "Mozilla", "CSharp": "Microsoft", "Dart": "Google"]
+["Norway": "Oslo", "Japan": "Tokyo", "Sweden": "Stockholm", "Poland": "Warsaw", "Italy": "Rome", "Ukraine": "Kyiv", "Greece": "Atina", "Finland": "Helsinki", "UK": "London", "Portugal": "Lizbon", "USA": "Washington DC", "France": "Paris", "Russia": "Moscow", "Spain": "Madrid"]
 ```
 
-- For Loop in Dictionary
+- Elements in Dictionary
 ```swift
-for (key,value) in languages {
-  print("\(key): \(value)")
+for (key,value) in country {
+    print(key, value)
 }
 ```
 ```
-Rust: Mozilla
-CSharp: Microsoft
-Kotlin: JetBrains
-Swift: Apple
-Go: Google
+France Paris
+UK London
+Norway Oslo
+Sweden Stockholm
+USA Washington DC
+Italy Rome
+Spain Madrid
+Russia Moscow
+Finland Helsinki
+Poland Warsaw
+Ukraine Kyiv
+Portugal Lizbon
+Greece Atina
+```
+
+- Enumerated Elements in Dictionary
+```swift
+for (index,item) in country.enumerated() {
+    print(index, item.key, item.value)
+}
+```
+```
+0 Spain Madrid
+1 Sweden Stockholm
+2 USA Washington DC
+3 Norway Oslo
+4 Portugal Lizbon
+5 Russia Moscow
+6 UK London
+7 Ukraine Kyiv
+8 Poland Warsaw
+9 Greece Atina
+10 Italy Rome
+11 France Paris
+12 Finland Helsinki
 ```
 
 - Get Keys
 ```swift
-let languagesKeys = [String](languages.keys)
+let keys = country.keys
+print(keys)
 ```
 ```
-["Swift", "Kotlin", "Go", "Rust", "CSharp"]
+["Greece", "Italy", "Spain", "UK", "Portugal", "Finland", "Poland", "USA", "Ukraine", "Russia", "France", "Sweden", "Norway"]
 ```
 - Get Values
 ```swift
-let languagesValues = [String](languages.values)
+let values = country.values
+print(values)
 ```
 ```
-["Google", "Apple", "JetBrains", "Mozilla", "Microsoft"]
+["Atina", "Rome", "Madrid", "London", "Lizbon", "Helsinki", "Warsaw", "Washington DC", "Kyiv", "Moscow", "Paris", "Stockholm", "Oslo"]
 ```
 
 ## Methods
@@ -69,78 +102,123 @@ languages.isEmpty
 false
 ```
 
-- Enumerated
-```swift
-for (index, item) in languages.enumerated(){
-    print(index, item.key, item.value)
-}
-```
-```
-0 C# Microsoft
-1 Java Oracle
-2 Swift Apple
-3 Kotlin JetBrains
-4 Go Google
-5 Rust Mozilla
-```
-
 - Update Value
 ```swift
-languages.updateValue("Google", forKey: "Dart")
+country.updateValue("Athens", forKey: "Greece")
+print(country)
 ```
 ```
-["Swift": "Apple", "Kotlin": "JetBrains", "Go": "Google", "CSharp": "Microsoft", "Dart": "Google", "Rust": "Mozilla"]
+["USA": "Washington DC", "Sweden": "Stockholm", "France": "Paris", "UK": "London", "Norway": "Oslo", "Ukraine": "Kyiv", "Greece": "Athens", "Spain": "Madrid", "Portugal": "Lizbon", "Italy": "Rome", "Finland": "Helsinki", "Poland": "Warsaw", "Russia": "Moscow"]
 ```
 
 - Remove Value
 ```swift
-languages.removeValue(forKey: "CSharp")
+country.removeValue(forKey: "Finland")
+print(country)
 ```
 ```
-["Kotlin": "JetBrains", "Go": "Google", "Rust": "Mozilla", "Swift": "Apple"]
+["UK": "London", "USA": "Washington DC", "Portugal": "Lizbon", "Greece": "Atina", "Sweden": "Stockholm", "Russia": "Moscow", "Poland": "Warsaw", "Spain": "Madrid", "France": "Paris", "Italy": "Rome", "Norway": "Oslo", "Ukraine": "Kyiv"]
 ```
 
 - Max
 ```swift
-var max = languages.max{$0.value.count < $1.value.count}
-print(max?.key ?? "")
+var max = country.max(by: {$0.key.count < $1.key.count})
+print(max ?? ["":""])
 ```
 ```
-CSharp
+(key: "Portugal", value: "Lizbon")
 ```
 
 - Min
 ```swift
-var min = languages.min{$0.value.count < $1.value.count}
-print(min?.key ?? "")
+var min = country.min(by: {$0.key.count < $1.key.count})
+print(min ?? ["":""])
 ```
 ```
-Swift
+UK London
 ```
 
 - Contains
 ```swift
-var contain = languages.contains{$0.key == "Swift"}
+var contain = country.contains(where: {$0.key.lowercased() == "italy".lowercased()})
 print(contain)
 ```
 ```
 true
 ```
 
+- First
+```swift
+var first = country.first
+print(first ?? ["":""])
+```
+```
+(key: "UK", value: "London")
+```
+```swift
+var first = country.first(where: {$0.key.lowercased() == "italy".lowercased()})
+print(first ?? ["":""])
+```
+```
+(key: "Italy", value: "Rome")
+```
+```swift
+var first = country.first(where: {$0.key.lowercased().contains("land".lowercased())})
+print(first ?? ["":""])
+```
+```
+(key: "Poland", value: "Warsaw")
+```
+```swift
+var first = country.first(where: {$0.key.lowercased().hasPrefix("s".lowercased())})
+print(first ?? ["":""])
+```
+```
+(key: "Sweden", value: "Stockholm")
+```
+```swift
+var first = country.first(where: {$0.key.lowercased().hasSuffix("e".lowercased())})
+print(first ?? ["":""])
+```
+```
+(key: "France", value: "Paris")
+```
+
 - Filter
 ```swift
-var filter = languages.filter{$0.key == "Swift"}.first?.value ?? "nil"
+var filter = country.filter({$0.key.lowercased().hasPrefix("u")})
 print(filter)
 ```
 ```
-Apple
+["UK": "London", "USA": "Washington DC", "Ukraine": "Kyiv"]
+```
+```swift
+var filter = country.filter({$0.key.lowercased().hasSuffix("land")})
+print(filter)
+```
+```
+["Finland": "Helsinki", "Poland": "Warsaw"]
+```
+```swift
+var filter = country.filter({$0.key.lowercased().contains("an")})
+print(filter)
+```
+```
+["Poland": "Warsaw", "Finland": "Helsinki", "France": "Paris"]
+```
+```swift
+var filter = country.filter({$0.key.lowercased().hasPrefix("s")}).first
+print(filter ?? ["":""])
+```
+```
+(key: "Spain", value: "Madrid")
 ```
 
 - Map Value
 ```swift
-var mapping = languages.mapValues{$0 + "."}
+var mapping = country.mapValues({ $0 + " City" })
 print(mapping)
 ```
 ```
-["C#": "Microsoft.", "Java": "Oracle.", "Swift": "Apple.", "Kotlin": "JetBrains.", "Go": "Google.", "Rust": "Mozilla."]
+["UK": "London City", "Greece": "Atina City", "Portugal": "Lizbon City", "Norway": "Oslo City", "Spain": "Madrid City", "Sweden": "Stockholm City", "Italy": "Rome City", "USA": "Washington DC City", "Russia": "Moscow City", "Ukraine": "Kyiv City", "France": "Paris City", "Poland": "Warsaw City", "Finland": "Helsinki City"]
 ```
