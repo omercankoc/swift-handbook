@@ -234,6 +234,24 @@ if os.contains("iOS") { print("TRUE") } else { print(false) }
 TRUE
 ```
 
+- Max
+```swift
+var numbers : [Int] = [9,3,1,2,4,7,5,6,8]
+print(numbers.max() ?? 0)
+```
+```
+9
+```
+
+- Min
+```swift
+var numbers : [Int] = [9,3,1,2,4,7,5,6,8]
+print(numbers.min() ?? 0)
+```
+```
+1
+```
+
 - First
 ```swift
 var os : [String] = ["macOS","iOS","iPadOS","watchOS","tvOS"]
