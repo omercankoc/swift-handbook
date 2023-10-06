@@ -188,30 +188,32 @@ print(first ?? ["":""])
 ```swift
 var filter = country.filter({$0.key.lowercased().hasPrefix("u")})
 print(filter)
+var first = filter.first
+print(first ?? ["":""])
 ```
 ```
-["UK": "London", "USA": "Washington DC", "Ukraine": "Kyiv"]
+["USA": "Washington DC", "UK": "London", "Ukraine": "Kyiv"]
+(key: "USA", value: "Washington DC")
 ```
 ```swift
 var filter = country.filter({$0.key.lowercased().hasSuffix("land")})
 print(filter)
+var first = filter.first
+print(first ?? ["":""])
 ```
 ```
-["Finland": "Helsinki", "Poland": "Warsaw"]
+["Poland": "Warsaw", "Finland": "Helsinki"]
+(key: "Poland", value: "Warsaw")
 ```
 ```swift
 var filter = country.filter({$0.key.lowercased().contains("an")})
 print(filter)
+var first = filter.first
+print(first ?? ["":""])
 ```
 ```
-["Poland": "Warsaw", "Finland": "Helsinki", "France": "Paris"]
-```
-```swift
-var filter = country.filter({$0.key.lowercased().hasPrefix("s")}).first
-print(filter ?? ["":""])
-```
-```
-(key: "Spain", value: "Madrid")
+["Poland": "Warsaw", "France": "Paris", "Finland": "Helsinki"]
+(key: "Poland", value: "Warsaw")
 ```
 
 - Mapping
