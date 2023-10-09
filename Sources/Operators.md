@@ -13,6 +13,28 @@ Count : 10 and Item :0
 Count : 10 and Item :10
 ```
 
+- Compound Assignment Operators
+```swift
+let value : Int = 3
+
+var first : Int = 1
+var second : Int = 2
+var third : Int = 3
+var fourth : Int = 4
+var fifth : Int = 5
+
+first += value
+second -= value
+third *= value
+fourth /= value
+fifth %= value
+
+print(first, second, third, fourth, fifth)
+```
+```
+4 -1 9 1 2
+```
+
 ### 2. Arithmetic Operators
 - Addition (+)
 - Subtraction (-)
@@ -45,8 +67,7 @@ let modulus = {
     (first : Int, second : Int) -> Int in
     return first % second
 }
-```
-```swift
+
 let first = addition(6,4)
 let second = subraction(6,4)
 let third = multiplication(6,4)
@@ -97,8 +118,7 @@ let lessThanOrEqualTo = {
     (first : Int, second : Int) -> Bool in
     return first <= second ? true : false
 }
-```
-```swift
+
 let first = equalTo(2, 2)
 let second = notEqualTo(3, 5)
 let third = greaterThan(2, 4)
