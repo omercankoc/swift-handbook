@@ -3,6 +3,29 @@ Properties associate values with a particular class, structure, or enumeration.
 Stored properties store constant and variable values as part of an instance, whereas computed properties calculate (rather than store) a value. 
 Computed properties are provided by classes, structures, and enumerations. Stored properties are provided only by classes and structures.
 
+### Property Observers
+```swift
+class Logic {
+    var status : Bool = false {
+        willSet {
+            print("WILL SET : Current Value -> \(status) : New Value -> \(newValue)")
+        }
+        
+        didSet {
+            print("DID SET : Current Value  -> \(status) : Old Value -> \(oldValue)")
+        }
+    }
+}
+
+var first = Logic()
+first.status = true
+```
+
+```
+WILL SET : Current Value -> false : New Value -> true
+DID SET : Current Value  -> true : Old Value -> false
+```
+
 ## Stored Properties
 In its simplest form, a stored property is a constant or variable that’s stored as part of an instance of a particular class or structure.
 
