@@ -19,37 +19,44 @@ Count : 10 and Item :10
 - Multiplication (*)
 - Division (/)
 - Remainder (%)
+
 ```swift
-let additionClousure = {
+let addition = {
     (first : Int, second : Int) -> Int in
     return first + second
 }
 
-let subractionClousure = {
+let subraction = {
     (first : Int, second : Int) -> Int in
     return first - second
 }
 
-let multiplicationClousure = {
+let multiplication = {
     (first : Int, second : Int) -> Int in
     return first * second
 }
 
-let divisionClousure = {
+let division = {
     (first : Int, second : Int) -> Int in
     return first / second
 }
 
-func modulus(first : Int, second : Int) -> Int {
+let modulus = {
+    (first : Int, second : Int) -> Int in
     return first % second
 }
 ```
 ```swift
-let addition = additionClousure(6,4) // 10
-let subraction = subractionClousure(6,4) // 2
-let multiplication = multiplicationClousure(6,4) // 24
-let division = divisionClousure(6,4) // 1
-modulus(first: 6, second: 4)
+let first = addition(6,4)
+let second = subraction(6,4)
+let third = multiplication(6,4)
+let fourth = division(6,4)
+let fifth = modulus(9,2)
+
+print(first, second, third, fourth, fifth)
+```
+```
+10 2 24 1 1
 ```
 
 ### 3. Comparison Operators
@@ -61,7 +68,48 @@ modulus(first: 6, second: 4)
 - Less than or Equal to (a<=b)
 
 ```swift
+let equalTo = {
+    (first : Int, second : Int) -> Bool in
+    return first == second ? true : false
+}
 
+let notEqualTo = {
+    (first : Int, second : Int) -> Bool in
+    return first != second ? false : true
+}
+
+let greaterThan = {
+    (first : Int, second : Int) -> Bool in
+    return first > second ? true : false
+}
+
+let lessThan = {
+    (first : Int, second : Int) -> Bool in
+    return first < second ? true : false
+}
+
+let greaterThanOrEqualTo = {
+    (first : Int, second : Int) -> Bool in
+    return first >= second ? true : false
+}
+
+let lessThanOrEqualTo = {
+    (first : Int, second : Int) -> Bool in
+    return first <= second ? true : false
+}
+```
+```swift
+let first = equalTo(2, 2)
+let second = notEqualTo(3, 5)
+let third = greaterThan(2, 4)
+let fourth = lessThan(5, 6)
+let fifth = greaterThanOrEqualTo(3, 2)
+let sixth = lessThanOrEqualTo(5, 4)
+
+print(first, second, third, fourth, fifth, sixth)
+```
+```
+true false false true true false
 ```
 
 ### Other Operators
