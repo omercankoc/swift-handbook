@@ -44,7 +44,6 @@ func modulus(first : Int, second : Int) -> Int {
     return first % second
 }
 ```
-
 ```swift
 let addition = additionClousure(6,4) // 10
 let subraction = subractionClousure(6,4) // 2
@@ -52,6 +51,19 @@ let multiplication = multiplicationClousure(6,4) // 24
 let division = divisionClousure(6,4) // 1
 modulus(first: 6, second: 4)
 ```
+
+### 3. Comparison Operators
+- Equal To (a==b)
+- Not Equal To (a!=b)
+- Greater Than (a>b)
+- Less Than (a<b)
+- Greater than or Equal to (a>=b)
+- Less than or Equal to (a<=b)
+
+```swift
+
+```
+
 ### Other Operators
 1. Ternary Operator
 ```swift
