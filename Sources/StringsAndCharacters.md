@@ -32,26 +32,49 @@ var language = """
 """
 ```
 
-- Nullability Control
+- Nullable
 ```swift
-if language != nil {
-    print(language!)
-} else {
-    print("NIL")
+func validateURL(_ url : String?) -> Bool {
+    if url == nil {
+        return false
+    } else {
+        return true
+    }
 }
+
+let url = validateURL("https://www.youtube.com")
+print(url)
+
+let url_ = validateURL(nil)
+print(url_)
 ```
 ```
-Swift
+true
+false
 ```
 
-- Character in the String
+- Elements in String
 ```swift
-for character in language {
-    print(character)
+for item in language {
+    print(item)
 }
 ```
 ```
 S w i f t
+```
+
+- Enumerated Elements in String
+```swift
+for (index,item) in language.enumerated(){
+    print(index, item)
+}
+```
+```
+0 S
+1 w
+2 i
+3 f
+4 t
 ```
 
 - String Interpolation
@@ -239,7 +262,7 @@ print(hasSuffix)
 true
 ```
 
-- Indices
+- Index
 ```swift
 var language : String = "Swift"
 ```
