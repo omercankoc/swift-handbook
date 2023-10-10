@@ -18,28 +18,30 @@ Reference Type: When you copy a reference type, each instance shares the data. T
 ## Struct
 - Declaration
 ```swift
-struct Language {
-    var language : String?
-    var developer : String?
-    var year : Int?
+struct Sphere {
+    var radius : Int?
+    var area : Double = 0.0
+    var volume : Double = 0.0
+    
+    let pi : Double = 3.14159265359
    
-    func message() -> String {
-        if self.language != nil && self.developer != nil && self.year != nil {
-            return "\(self.language!) programming language started to be developed by \(self.developer!) in \(self.year!)."
-        } else {
-            return ""
-        }
+    func calculate(_ radius : Int) -> (area: Double, volume: Double) {
+        var area = 4 * pi * pow(Double(radius),2)
+        var volume = (4 / 3) * pi * pow(Double(radius), 3)
+        return (area,volume)
     }
 }
 ```
 - Instance
 ```swift
-var swift = Language(language: "Swift", developer: "Apple", year: 2014)
-var message = swift.message()
-print(message)
+var sphere = Sphere(radius: 1)
+sphere.area = sphere.calculate(sphere.radius ?? 0).area
+sphere.volume = sphere.calculate(sphere.radius ?? 0).volume
+
+print(sphere)
 ```
 ```
-Swift programming language started to be developed by Apple in 2014.
+Sphere(radius: Optional(1), area: 12.56637061436, volume: 4.188790204786667, pi: 3.14159265359)
 ```
 
 ## Class
