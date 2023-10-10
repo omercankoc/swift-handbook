@@ -42,13 +42,13 @@ print(show)
 Radius : 3.0 - Perimeter : 18.849 - Area : 28.273500000000002 - Volume : 113.094
 ```
 ```swift
-var circle = Circle(radius_: 3)
+var circle = Circle()
 var show = circle.show()
 
 print(show)
 ```
 ```
-r -> 3.0 : C -> 18.849 : A -> 28.273500000000002
+r -> 0.0 : C -> 0.0 : A -> 0.0
 ```
 
 ### Overload Initialization
