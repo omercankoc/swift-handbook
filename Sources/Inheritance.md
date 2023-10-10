@@ -95,29 +95,6 @@ speak() run in Subclass!
 Override speak() run in Subclass!
 Swift programming language was developed by Apple in 2011. (Compiled)
 ```
-## Polymorphism
-
-```swift
-class Language {
-    func message(){
-        print("Superclass")
-    }
-}
-
-class Swift : Language {
-    override func message(){
-        print("Subclass")
-    }
-}
-```
-
-```swift
-var language : Language = Swift()
-language.message()
-```
-```
-Subclass
-```
 
 ## Downcasting and Upcasting
 The conversion of Superclass to Subclass is called Downcasting, conversion of Subclass to superclass is called Upcasting.
