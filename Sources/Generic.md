@@ -1,9 +1,5 @@
-# Generic
-Provides type independent operation.
-
-In some scenarios, it may be necessary to write more than one function that does the same job for different types. 
-In order not to write all these functions one by one, we use the generic mechanism and write a template, 
-and the compiler does the necessary operations for other types, independent of the type, for us.
+# Generic 
+Type independent operations.
 
 ```swift
 public struct Stack<T> {
@@ -27,27 +23,36 @@ public struct Stack<T> {
 }
 ```
 
+- Type : String
 ```swift
 var stringStack = Stack<String>()
 ```
 
 ```swift
-stringStack.push("Swift")
-stringStack.push("Objective-C")
+stringStack.push("First")
+stringStack.push("Second")
+stringStack.push("Third")
+
+print(stringStack)
 ```
 
 ```
-["Objective-C", "Swift"]
+Stack<String>(array: ["Third", "Second", "First"])
 ```
 
 ```swift
-stringStack.pop()
+var lastInFirstOut = stringStack.pop()
+
+print(lastInFirstOut as Any)
+print(stringStack)
 ```
 
 ```
-["Swift"]
+Optional("Third")
+Stack<String>(array: ["Second", "First"])
 ```
 
+- Type : Integer
 ```swift
 var integerStack = Stack<Int>()
 ```
@@ -55,18 +60,25 @@ var integerStack = Stack<Int>()
 ```swift
 integerStack.push(1)
 integerStack.push(2)
+integerStack.push(3)
+
+print(integerStack)
 ```
 
 ```
-[2, 1]
+Stack<Int>(array: [3, 2, 1])
 ```
 
 ```swift
-integerStack.pop()
+var lastInFirstOut = integerStack.pop()
+
+print(lastInFirstOut as Any)
+print(integerStack)
 ```
 
 ```
-[1]
+Optional(3)
+Stack<Int>(array: [2, 1])
 ```
 
 - Equatable Protocol:
