@@ -21,63 +21,67 @@ Reference Type: When you copy a reference type, each instance shares the data. T
 struct Sphere {
     var radius : Int?
     var area : Double = 0.0
+    var circumference : Double = 0.0
     var volume : Double = 0.0
     
     let pi : Double = 3.14159265359
    
-    func calculate(_ radius : Int) -> (area: Double, volume: Double) {
+    func calculate(_ radius : Int) -> (area: Double, circumference: Double, volume: Double) {
         var area = 4 * pi * pow(Double(radius),2)
+        var circumference = 2 * pi * Double(radius)
         var volume = (4 / 3) * pi * pow(Double(radius), 3)
-        return (area,volume)
+        return (area,circumference,volume)
     }
 }
 ```
 - Instance
 ```swift
-var sphere = Sphere(radius: 1)
+var sphere = Sphere(radius: 2)
 sphere.area = sphere.calculate(sphere.radius ?? 0).area
+sphere.circumference = sphere.calculate(sphere.radius ?? 0).circumference
 sphere.volume = sphere.calculate(sphere.radius ?? 0).volume
 
 print(sphere)
+
 ```
 ```
-Sphere(radius: Optional(1), area: 12.56637061436, volume: 4.188790204786667, pi: 3.14159265359)
+Sphere(radius: Optional(2), area: 50.26548245744, circumference: 12.56637061436, volume: 33.510321638293334, pi: 3.14159265359)
 ```
 
 ## Class
 - Declaration
 ```swift
-class Language {
-    var language : String?
-    var developer : String?
-    var year : Int?
+class Sphere {
+    var radius : Int?
+    var area : Double = 0.0
+    var circumference : Double = 0.0
+    var volume : Double = 0.0
+    
+    let pi : Double = 3.14159265359
    
-    func message() -> String {
-        if self.language != nil && self.developer != nil && self.year != nil {
-            return "\(self.language!) programming language started to be developed by \(self.developer!) in \(self.year!)."
-        } else {
-            return ""
-        }
+    func calculate(_ radius : Int) -> (area: Double, circumference: Double, volume: Double) {
+        var area = 4 * pi * pow(Double(radius),2)
+        var circumference = 2 * pi * Double(radius)
+        var volume = (4 / 3) * pi * pow(Double(radius), 3)
+        return (area,circumference,volume)
     }
 }
 ```
 - Instance
 ```swift
-var swift = Language()
-swift.language = "Swift"
-swift.developer = "Apple"
-swift.year = 2014
+var sphere = Sphere()
+sphere.radius = 2
+sphere.area = sphere.calculate(sphere.radius ?? 0).area
+sphere.circumference = sphere.calculate(sphere.radius ?? 0).circumference
+sphere.volume = sphere.calculate(sphere.radius ?? 0).volume
 
-var message = swift.message()
-
-print(message)
+print(sphere.radius as Any, sphere.area, sphere.circumference, sphere.volume)
 ```
 ```
-Swift programming language started to be developed by Apple in 2014.
+Optional(2) 50.26548245744 12.56637061436 33.510321638293334
 ```
 
-## Composition
-A parameter of a class or struct can be another class or variable itself. This situation is called composition.
+# Composition
 ```swift
 struct Contact {
     var email : String
@@ -92,14 +96,12 @@ struct User {
 ```
 ```swift
 var omer = User(username: "omer", password: "********", contact: Contact(email: "omer@mail.com", phone: "+19876543210"))
-
 ```
 ```
 omer ******** omer@mail.com +9876543210
 ```
 
-## Static Properties and Functions
-Used to access a variable or method without an instance of the class or struct.
+# Static Properties and Functions
 ```swift
 class Message {
     static var statusCode : String?
