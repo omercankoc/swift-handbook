@@ -1,5 +1,4 @@
-## Extension
-Extensions add new functionality to an existing class, structure, enumeration, or protocol type. This includes the ability to extend types for which you don’t have access to the original source code (known as retroactive modeling). Extensions are similar to categories in Objective-C. But unlike Objective-C categories, Swift extensions don’t have names.
+## Extension (CLASSES, STRUCTURES, ENUMERATIONS OR PROTOCOLS)
 
 - Using extension for Variables
 ```swift
