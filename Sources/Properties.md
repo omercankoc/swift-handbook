@@ -109,6 +109,7 @@ user.password = "password"
 print(user.username as Any, user.password as Any, user.authentication)
 
 user.delete()
+
 print(user.username as Any, user.password as Any, user.authentication)
 ```
 ```
