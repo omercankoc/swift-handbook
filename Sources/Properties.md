@@ -23,7 +23,7 @@ WILL SET : Current Value -> false : New Value -> true
 DID SET : Current Value  -> true : Old Value -> false
 ```
 
-## Stored Properties (CLASSES and STRUCTURES)
+## Stored Properties (CLASSES or STRUCTURES)
 A constant or variable stored as a property of an instance of the class or structure.
 
 - Lazy Stored Properties (ONLY VAR)
@@ -58,7 +58,7 @@ print(user)
 User(name: "Dennis", surname: "Ritchie", $__lazy_storage_$_username: Optional("dennis.ritchie"), $__lazy_storage_$_nickname: Optional("DR"))
 ```
 
-## Computed Properties (ENUMERATIONS, CLASSES and STRUCTURES)
+## Computed Properties (ENUMERATIONS, CLASSES or STRUCTURES)
 They provide a getter and an optional setter to retrieve and set properties indirectly.
 
 - Getter and Setter
