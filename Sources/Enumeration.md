@@ -1,5 +1,5 @@
 ## Enumeration
-Assigning a group of values ​​to a property.
+Declare values and assign to properties.
 
 - Declaration
 ```swift
@@ -15,12 +15,6 @@ struct Process {
     let id : Int
     let date : String
     let code : Code
-    
-    init(id: Int, date: String, code: Code) {
-        self.id = id
-        self.date = date
-        self.code = code
-    }
 }
 ```
 
