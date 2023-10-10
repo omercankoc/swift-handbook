@@ -1,6 +1,6 @@
 ## Extension (CLASSES, STRUCTURES, ENUMERATIONS OR PROTOCOLS)
 
-- Using extension for Variables
+- Extension for Variables
 ```swift
 extension Double {
     var km : Double { return self * 1000.0 }
@@ -16,7 +16,7 @@ var variable : Double = 10.0
 print("\(variable) km. = \(10.km) m")
 ```
 
-- Using extension for Functions
+- Extension for Functions
 ```swift
 extension String {
     func createEMail() -> String {
