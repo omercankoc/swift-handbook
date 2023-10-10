@@ -1,5 +1,5 @@
 ## Polymorphism
-From two classes with an inheritance relationship, the superclass behaving like a subclass is called polymorphism. It is used to achieve more inclusive results.
+
 ```swift
 class Language {
     func message(){
@@ -13,6 +13,7 @@ class Swift : Language {
     }
 }
 ```
+
 ```swift
 var language : Language = Swift()
 language.message()
