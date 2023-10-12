@@ -81,7 +81,7 @@ print(sphere.radius as Any, sphere.area, sphere.circumference, sphere.volume)
 Optional(2) 50.26548245744 12.56637061436 33.510321638293334
 ```
 
-# Composition
+### Composition
 ```swift
 struct Contact {
     var email : String
@@ -101,7 +101,7 @@ var omer = User(username: "omer", password: "********", contact: Contact(email: 
 omer ******** omer@mail.com +9876543210
 ```
 
-# Static Properties and Functions
+### Static Properties and Functions
 ```swift
 class Message {
     static var statusCode : String?
