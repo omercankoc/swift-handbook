@@ -1,19 +1,12 @@
 # Struct and Class
-- Both structs and classes can define properties to store values, and they can define functions.
-- They can define subscripts to provide access to values with subscript syntax.
-- They can define initializers to set up their initial state, with init().
-- They can be extended with extension.
-- They can conform to protocols, for example to support Protocol Oriented Programming.
-- They can work with generics to provide flexible and reusable types.
+- Definable, storage or computed properties and functions.
+- Classes are reference types and structures are value types.
+- Structures have automatic initialization. Classes has not automatic initialization, you have to develop initialization yourself.
+- A class or structure can inherit properties and functions from another class.
 
-Classes support a few more capabilities that structs don’t have.
-- Classes can inherit from another class, like you inherit from UIViewController to create your own view controller subclass.
-- Classes can be deinitialized, i.e. you can invoke a deinit() function before the class is destroyed.
-- Classes are reference types and structs are value types.
+Value Type: When you copy a value type (i.e., when it’s assigned, initialized or passed into a function) each instance keeps a unique copy of the data. If you change one instance, the other doesn’t change too. (Struct, Enum, Tuple, Array, Set, Dictionary, String, Int, Double, Float, ...)
 
-Value Type: When you copy a value type (i.e., when it’s assigned, initialized or passed into a function), each instance keeps a unique copy of the data. If you change one instance, the other doesn’t change too.
-
-Reference Type: When you copy a reference type, each instance shares the data. The reference itself is copied, but not the data it references. When you change one, the other changes too.
+Reference Type: When you copy a reference type, each instance shares the data. The reference itself is copied, but not the data it references. When you change one, the other changes too. (Class, Function, Closure, ...)
 
 ## Struct
 - Declaration
