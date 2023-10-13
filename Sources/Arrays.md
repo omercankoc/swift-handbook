@@ -67,10 +67,12 @@ print(even)
 
 numbers.append(contentsOf: even)
 print(numbers)
+
 numbers.append(contentsOf: odd)
 print(numbers)
 
-print(numbers.sorted())
+numbers = numbers.sorted()
+print(numbers)
 ```
 ```
 [0, 2, 4, 6, 8]
