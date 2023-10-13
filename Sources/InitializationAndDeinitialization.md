@@ -1,5 +1,4 @@
-# Initialization and Deinitialization
-Initialization, ...Deinitialization, (ONLY CLASSES) :
+# Initialization and Deinitialization (deinit -> ONLY CLASSES)
 
 - Declaration
 ```swift
@@ -53,6 +52,8 @@ r -> 0.0 : C -> 0.0 : A -> 0.0
 ```
 
 ### Overload Initialization
+
+- Declaration
 ```swift
 class Circle {
     var result : Double
