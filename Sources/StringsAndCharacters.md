@@ -34,6 +34,8 @@ var language = """
 
 - Nullable
 ```swift
+var url : String = "https://www.youtube.com"
+
 func validateURL(_ url : String?) -> Bool {
     if url == nil {
         return false
@@ -42,7 +44,7 @@ func validateURL(_ url : String?) -> Bool {
     }
 }
 
-let url = validateURL("https://www.youtube.com")
+let url = validateURL(url)
 print(url)
 
 let url_ = validateURL(nil)
