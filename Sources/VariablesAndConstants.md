@@ -50,6 +50,7 @@ var logic : Bool = true
 ```
 
 ### Tuples
+It allows us to declare multiple values in a single composite value.
 - Declaration
 ```swift
 var red = (hex : "FF0101", rgb : [255,1,1], hsl : [0,100,50], cmyk : [0,100,100,0])
@@ -71,7 +72,8 @@ blue.0
 0108FF
 ```
 
-### Type Alias 
+### Type Alias
+It is a structure that allows us to create aliases instead of our existing data types.
 - Usage
 ```swift
 typealias Celsius = Double
