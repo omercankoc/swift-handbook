@@ -44,11 +44,11 @@ func validateURL(_ url : String?) -> Bool {
     }
 }
 
-let url = validateURL(url)
-print(url)
+let first = validateURL(url)
+print(first)
 
-let url_ = validateURL(nil)
-print(url_)
+let second = validateURL(nil)
+print(second)
 ```
 ```
 true
