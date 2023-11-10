@@ -4,8 +4,8 @@ var base : [Int] = []
 var square : [Int] = []
 
 var limit : Int = 10
-var iterator : Int = 0
 
+var iterator : Int = 0
 var repeater : Int = 0
 ```
 ### While
@@ -19,38 +19,49 @@ while iterator <= limit {
 [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 ```
 
+### Repeat While
+```swift
+repeat {
+    repeater += 1
+    base.append(repeater)
+} while repeater <= limit
+```
+```
+[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]
+```
+
 ### For
 ```swift
-for item in base {
-    if item == 0 { continue }
-    square.append(base[item]*base[item])
+for index in base {
+    if index == 0 { continue }
+    square.append(base[index]*base[index])
 }
 ```
 ```
 [1, 4, 9, 16, 25, 36, 49, 64, 81, 100]
 ```
 
-- Between Two Values
+- Closed Range Operator
 ```swift
-for value in 0...limit {
-    print(value) 
+for index in 0...limit {
+    print(index) 
 }
 ```
 ```
 0 1 2 3 4 5 6 7 8 9 10
 ```
 
-- Between Two Values and Condition
+- Half-Open Range Operator
 ```swift
-for value in 0..<limit {
-    print(value)
+for index in 0..<limit {
+    print(index)
 }
 ```
 ```
 0 1 2 3 4 5 6 7 8 9
 ```
 
-- Start Index in Array
+- One-Sided Ranges
 ```swift
 for index in base[2...]{
     print(index)
@@ -60,7 +71,6 @@ for index in base[2...]{
 2 3 4 5 6 7 8 9 10
 ```
 
-- End Index in Array
 ```swift
 for index in base[...5]{
     print(index)
@@ -69,6 +79,16 @@ for index in base[...5]{
 ```
 0 1 2 3 4 5
 ```
+
+```swift
+for index in base[..<5]{
+    print(index)
+}
+```
+```
+0 1 2 3 4 
+```
+
 - Stride
 ```swift
 for index in stride(from: 0, to: 60, by: 10){
@@ -77,17 +97,6 @@ for index in stride(from: 0, to: 60, by: 10){
 ```
 ```
 0 10 20 30 40 50
-```
-
-### Repeat While
-```swift
-repeat {
-    repeater += limit
-    print(repeater) // 10 ... 110
-} while (repeater <= limit*limit)
-```
-```
-10 20 30 40 50 60 70 80 90 100 110
 ```
 
 ### For Each
