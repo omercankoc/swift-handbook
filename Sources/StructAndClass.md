@@ -216,3 +216,18 @@ Message.message(statusCode: "200")
 ```
 Status Code : 200
 ```
+
+## Access Control
+Access control restricts access to parts of your code from code in other source files and modules. This feature enables you to hide the implementation details of your code, 
+and to specify a preferred interface through which that code can be accessed and used. You can assign specific access levels to individual types (classes, structures, and enumerations), 
+as well as to properties, methods, initializers, and subscripts belonging to those types. Protocols can be restricted to a certain context, as can global constants, variables 
+and functions.
+
+1. Private: It makes a feature or function we define unusable outside the scope (Class, Struct, Enum) in which it is defined.
+2. File Private: It makes a feature or function we define unusable outside of the file in which it is defined.
+3. Internal: Normally when you define a property, your property uses “internal” by default. Features or functions defined with the “internal” element can be used anywhere in the “Target”.
+4. Open: The “open” element is an element used in “frameworks”. We can give the UIKit “framework” as an example. If you click on a “UIViewController” 
+element and click “Jump to Definition”, you will see that there is an “open” element at the beginning of most of the classes, features and methods there. 
+In order to access a method or property defined with “open”, we first need to go into the subclass of the module.
+5. public: The “public” element is very similar to the “open” element. The biggest difference between them is that while we can use the elements we define with "open" 
+outside the module (example: UIKit) as we use the -UIViewController element, we cannot use the elements we define with "public" outside the module.
