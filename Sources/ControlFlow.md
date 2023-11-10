@@ -22,12 +22,12 @@ while iterator <= limit {
 ### Repeat While
 ```swift
 repeat {
-    repeater += 1
     base.append(repeater)
+    repeater += 1
 } while repeater <= limit
 ```
 ```
-[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]
+[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 ```
 
 ### For
