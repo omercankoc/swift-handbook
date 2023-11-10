@@ -148,7 +148,7 @@ print(show)
 r -> 0.0 : C -> 0.0 : A -> 0.0
 ```
 
-### Overload Initialization
+### Initialization Parameters
 
 - Declaration
 ```swift
