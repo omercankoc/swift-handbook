@@ -35,6 +35,28 @@ print(first, second, third, fourth, fifth)
 4 -1 9 1 2
 ```
 
+- Unary Minus Operator
+```swift
+let value = -5
+let minusValue = -value
+
+print(value, minusValue)
+```
+```
+-5 5
+```
+
+- Unary Plus Operator
+```swift
+let value = -5
+let plusValue = +value
+
+print(value, plusValue)
+```
+```
+-5 -5
+```
+
 ### 2. Arithmetic Operators
 - Addition (+)
 - Subtraction (-)
@@ -132,15 +154,62 @@ print(first, second, third, fourth, fifth, sixth)
 true false false true true false
 ```
 
+### 4. Logical Operators
+1. NOT
+1. OR
+2. AND
+
+- NOT
+```swift
+var status : Bool = false
+
+if !status {
+    print("Denied")
+} else {
+    print("Allowed")
+}
+```
+```
+Denied
+```
+- OR
+```swift
+var before : Bool = true
+var after : Bool = false
+
+if before || after {
+    print("Stable")
+} else {
+    print("Unstable")
+}
+```
+```
+Stable
+```
+- AND
+```swift
+var before : Bool = true
+var after : Bool = false
+
+if before && after {
+    print("Stable")
+} else {
+    print("Unstable")
+}
+```
+```
+Unstable
+```
+
 ### Other Operators
 1. Ternary Operator
 ```swift
 var os : [String] = ["macOS","iOS","iPadOS","watchOS","tvOS"]
-let result = os.isEmpty ? true : false
+let result : String = os.isEmpty ? "Not Assigned" : "Assigned"
 print(result)
 ```
 ```
-false
+"Assigned"
 ```
 
 2. Nil Coalescing Operator
