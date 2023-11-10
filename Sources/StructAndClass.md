@@ -1,12 +1,27 @@
-# Struct and Class
-- Definable, storage or computed properties and functions.
+# Structures and Classes
+- Definable, storage or computed properties, functions and clousures.
+- Initial state can be defined with init().
+- Both can be used with subscript.
+- Both can inherit properties and functions.
+- Both can extend their functionality with the help of Extensions.
+- Both can comply with Protocols to provide functionality.
+
+But Classes have additional capabilities that Structures don’t have:
+- Classes can pass on their properties and functions with the help of inheritance.
+- Classes allows you to check and interpret a class instance at runtime.
 - Classes are reference types and structures are value types.
-- Structures have automatic initialization. Classes has not automatic initialization, you have to develop initialization yourself.
-- A class or structure can inherit properties and functions from another class.
+- Classes can be used with Objective C. Structs cannot be used with Objective-C.
 
-Value Type: When you copy a value type (i.e., when it’s assigned, initialized or passed into a function) each instance keeps a unique copy of the data. If you change one instance, the other doesn’t change too. (Struct, Enum, Tuple, Array, Set, Dictionary, String, Int, Double, Float, ...)
+However, Structures also have some advantages:
+- Structures are kept in memory with stack logic, so when data is wanted to be read, it is read faster. But classes are stored randomly in memory. When you try to read data due to irregular storage, it takes longer to read.
+- Structures do not cause RAM problems.
+- Structures are atomic (thread safe), Classes are non-atomic.
 
-Reference Type: When you copy a reference type, each instance shares the data. The reference itself is copied, but not the data it references. When you change one, the other changes too. (Class, Function, Closure, ...)
+Value Type: Get Stored on Stack Memory. Each instance keeps a unique copy of its data. A type that creates a new instance (copy) when assigned to a variable or constant, or when passed to a function. (Int, Float, Double, String, Tuple, Array, Dicitonary, Set, Struct, Enum.)
+
+Reference Type: Get Stored on Managed Heap Memory. Each instances share a single copy of the data. A type that once initialized, when assigned to a variable or constant, or when passed to a function, returns a reference to the same existing instance. (Class, Function, Closure)
+
+Stack is used for static memory allocation and Heap for dynamic memory allocation, both stored in the computer’s RAM. For reference types the reference is stored on the STACK while the object it refers to is stored on the HEAP. For value types, the object itself is stored on the STACK.
 
 ## Struct
 - Declaration
@@ -35,7 +50,6 @@ sphere.circumference = sphere.calculate(sphere.radius ?? 0).circumference
 sphere.volume = sphere.calculate(sphere.radius ?? 0).volume
 
 print(sphere)
-
 ```
 ```
 Sphere(radius: Optional(2), area: 50.26548245744, circumference: 12.56637061436, volume: 33.510321638293334, pi: 3.14159265359)
@@ -179,6 +193,7 @@ class Circle {
     }
 }
 ```
+
 - Instance
 ```swift
 var perimeter = Circle(perimeter: 3.0)
