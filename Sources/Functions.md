@@ -26,7 +26,7 @@ message(name : "Omer")
 Hello Omer!
 ```
 
-- Return Value(s)
+- Return Value
 ```swift
 func message(name: String, surname: String) -> String {
     return "Hello \(name) \(surname)!"
