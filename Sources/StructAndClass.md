@@ -24,6 +24,7 @@ Reference Type: Get Stored on Managed Heap Memory. Each instances share a single
 Stack is used for static memory allocation and Heap for dynamic memory allocation, both stored in the computer’s RAM. For reference types the reference is stored on the STACK while the object it refers to is stored on the HEAP. For value types, the object itself is stored on the STACK.
 
 ## Struct
+
 - Declaration
 ```swift
 struct Sphere {
@@ -42,6 +43,7 @@ struct Sphere {
     }
 }
 ```
+
 - Instance
 ```swift
 var sphere = Sphere(radius: 2)
@@ -56,6 +58,7 @@ Sphere(radius: Optional(2), area: 50.26548245744, circumference: 12.56637061436,
 ```
 
 ## Class
+
 - Declaration
 ```swift
 class Sphere {
@@ -74,6 +77,7 @@ class Sphere {
     }
 }
 ```
+
 - Instance
 ```swift
 var sphere = Sphere()
@@ -88,42 +92,10 @@ print(sphere.radius as Any, sphere.area, sphere.circumference, sphere.volume)
 Optional(2) 50.26548245744 12.56637061436 33.510321638293334
 ```
 
-## Composition
-```swift
-struct Contact {
-    var email : String
-    var phone : String
-}
+## Initialization and Deinitialization
+Initialization is the preparation process when we create an instance of Class, Enum or Struct. This process allows an initial value to be set for each stored property and necessary operations to be performed before it is ready for use.
 
-struct User {
-    var username : String
-    var password : String
-    var contact : Contact
-}
-```
-```swift
-var omer = User(username: "omer", password: "********", contact: Contact(email: "omer@mail.com", phone: "+19876543210"))
-```
-```
-omer ******** omer@mail.com +9876543210
-```
-
-## Static Properties and Functions
-```swift
-class Message {
-    static var statusCode : String?
-    
-    static func message(statusCode : String) -> String {
-        return "Status Code : \(statusCode)"
-    }
-}
-```
-```swift
-Message.statusCode = "200"
-Message.message(statusCode: "200")
-```
-
-## Initialization and Deinitialization (deinit -> ONLY CLASSES)
+Deinitalization, the object is called just before it is destroyed (deallocate) from the stack by the Automatic Reference Counter (ARC) mechanism. There is no return value. Used only with classes.
 
 - Declaration
 ```swift
@@ -205,6 +177,42 @@ print(perimeter.result, area.result)
 18.849 28.273500000000002
 ```
 
+## Composition
+Object composition is closely related ways to combine objects into more complex ones. They have an ownership (Has-A) relationship.
+```swift
+struct Contact {
+    var email : String
+    var phone : String
+}
+
+struct User {
+    var username : String
+    var password : String
+    var contact : Contact
+}
+```
+```swift
+var omer = User(username: "omer", password: "********", contact: Contact(email: "omer@mail.com", phone: "+19876543210"))
+```
+```
+omer ******** omer@mail.com +9876543210
+```
+
+## Static Properties and Functions
+It is used to access class features and functions without an instance of the class.
+```swift
+class Message {
+    static var statusCode : String?
+    
+    static func message(statusCode : String) -> String {
+        return "Status Code : \(statusCode)"
+    }
+}
+```
+```swift
+Message.statusCode = "200"
+Message.message(statusCode: "200")
+```
 ```
 Status Code : 200
 ```
