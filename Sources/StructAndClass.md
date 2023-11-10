@@ -15,7 +15,7 @@ But Classes have additional capabilities that Structures don’t have:
 However, Structures also have some advantages:
 - Structures are kept in memory with stack logic, so when data is wanted to be read, it is read faster. But classes are stored randomly in memory. When you try to read data due to irregular storage, it takes longer to read.
 - Structures do not cause RAM problems.
-- Structures are atomic (thread safe), Classes are non-atomic.
+- Structures are atomic (thread safe), Classes are non-atomic. Thread Safe; It is a concept that protects the current thread's resource against possible errors that may occur as a result of inconsistencies that may arise if more than one thread can access/use a single resource at the same time, and provides this for all threads using that resource.
 
 Value Type: Get Stored on Stack Memory. Each instance keeps a unique copy of its data. A type that creates a new instance (copy) when assigned to a variable or constant, or when passed to a function. (Int, Float, Double, String, Tuple, Array, Dicitonary, Set, Struct, Enum.)
 
