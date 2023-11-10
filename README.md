@@ -10,7 +10,6 @@
 - [Sets](https://github.com/omercankoc/documents-swift/blob/master/Sources/Sets.md)
 - [Dictionaries](https://github.com/omercankoc/documents-swift/blob/master/Sources/Dictionaries.md)
 - [Struct and Class](https://github.com/omercankoc/documents-swift/blob/master/Sources/StructAndClass.md)
-- [Encapsulation](https://github.com/omercankoc/documents-swift/blob/master/Sources/Encapsulation.md)
 - [Inheritance](https://github.com/omercankoc/documents-swift/blob/master/Sources/Inheritance.md)
 - [Polymorphism](https://github.com/omercankoc/documents-swift/blob/master/Sources/Polymorphism.md)
 - [Protocol](https://github.com/omercankoc/documents-swift/blob/master/Sources/Protocol.md)
