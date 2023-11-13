@@ -29,32 +29,29 @@ Stack is used for static memory allocation and Heap for dynamic memory allocatio
 ```swift
 struct Sphere {
     var radius : Int?
-    var area : Double = 0.0
-    var circumference : Double = 0.0
-    var volume : Double = 0.0
-    
-    let pi : Double = 3.14159265359
-   
-    func calculate(_ radius : Int) -> (area: Double, circumference: Double, volume: Double) {
-        var area = 4 * pi * pow(Double(radius),2)
-        var circumference = 2 * pi * Double(radius)
-        var volume = (4 / 3) * pi * pow(Double(radius), 3)
-        return (area,circumference,volume)
+    var area : Double?
+    var circumference : Double?
+    var volume : Double?
+       
+    mutating func parameters(radius : Int){
+        self.radius = radius
+        self.area = 4 * Double.pi * pow(Double(radius),2)
+        self.circumference = 2 * Double.pi * Double(radius)
+        self.volume = (4 / 3) * Double.pi * pow(Double(radius), 3)
     }
 }
 ```
-
 - Instance
 ```swift
-var sphere = Sphere(radius: 2)
-sphere.area = sphere.calculate(sphere.radius ?? 0).area
-sphere.circumference = sphere.calculate(sphere.radius ?? 0).circumference
-sphere.volume = sphere.calculate(sphere.radius ?? 0).volume
+var sphere = Sphere()
+print(sphere)
 
+sphere.parameters(radius: 2)
 print(sphere)
 ```
 ```
-Sphere(radius: Optional(2), area: 50.26548245744, circumference: 12.56637061436, volume: 33.510321638293334, pi: 3.14159265359)
+Sphere(radius: nil, area: nil, circumference: nil, volume: nil)
+Sphere(radius: Optional(2), area: Optional(50.26548245743669), circumference: Optional(12.566370614359172), volume: Optional(33.510321638291124))
 ```
 
 ## Class
@@ -201,20 +198,20 @@ omer ******** omer@mail.com +9876543210
 ## Static Properties and Functions
 It is used to access class features and functions without an instance of the class.
 ```swift
-class Message {
-    static var statusCode : String?
+struct Circle {
+    static let pi : Double = Double.pi
     
-    static func message(statusCode : String) -> String {
-        return "Status Code : \(statusCode)"
+    static func formulas(_ radius: Double) -> (radius: Double, perimeter: Double, area: Double) {
+        return (radius, Double.pi * 2 * radius, Double.pi * pow(radius, 2))
     }
 }
 ```
 ```swift
-Message.statusCode = "200"
-Message.message(statusCode: "200")
+var results = Circle.formulas(3)
+print(results.radius, results.perimeter, results.area, Circle.pi)
 ```
 ```
-Status Code : 200
+3.0 18.84955592153876 28.274333882308138 3.141592653589793
 ```
 
 ## Access Control
