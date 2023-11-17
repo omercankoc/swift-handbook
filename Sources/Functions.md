@@ -110,38 +110,30 @@ var sum = totalizer(values: 1,2,3,4,5,6,7,8,9)
 Mutating cannot be used with classes as it is a reference type.
 The mutating keyword is only required if you are changing any properties contained within the struct. 
 ```swift
-struct Person {
-    
-    var name : String
-    var surname : String
-    
-    mutating func editName(_ name: String){
-        self.name = name
-    }
-    
-    mutating func editSurname(_ surname: String){
-        self.surname = surname
+struct Sphere {
+    var radius : Int?
+    var area : Double?
+    var circumference : Double?
+    var volume : Double?
+       
+    mutating func parameters(radius : Int){
+        self.radius = radius
+        self.area = 4 * Double.pi * pow(Double(radius),2)
+        self.circumference = 2 * Double.pi * Double(radius)
+        self.volume = (4 / 3) * Double.pi * pow(Double(radius), 3)
     }
 }
 ```
 ```swift
-var person = Person(name: "Dennis", surname: "Ritchie")
-```
-```swift
-print(person.name, person.surname)
-```
-```
-Dennis Ritchie
-```
-```swift
-person.editName("Ken")
-person.editSurname("Thompson")
-```
-```swift
-print(person.name, person.surname)
+var sphere = Sphere(radius: 3, area: 113, circumference: 18, volume: 113)
+print(sphere)
+
+sphere.parameters(radius: 2)
+print(sphere)
 ```
 ```
-Ken Thompson
+Sphere(radius: Optional(3), area: Optional(113.0), circumference: Optional(18.0), volume: Optional(113.0))
+Sphere(radius: Optional(2), area: Optional(50.26548245743669), circumference: Optional(12.566370614359172), volume: Optional(33.510321638291124))
 ```
 
 ### Functions in "for" Keyword
