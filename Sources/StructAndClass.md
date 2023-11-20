@@ -262,5 +262,5 @@ and functions.
 4. Open: The “open” element is an element used in “frameworks”. We can give the UIKit “framework” as an example. If you click on a “UIViewController” 
 element and click “Jump to Definition”, you will see that there is an “open” element at the beginning of most of the classes, features and methods there. 
 In order to access a method or property defined with “open”, we first need to go into the subclass of the module.
-5. public: The “public” element is very similar to the “open” element. The biggest difference between them is that while we can use the elements we define with "open" 
+5. Public: The “public” element is very similar to the “open” element. The biggest difference between them is that while we can use the elements we define with "open" 
 outside the module (example: UIKit) as we use the -UIViewController element, we cannot use the elements we define with "public" outside the module.
