@@ -232,7 +232,7 @@ User(username: "omer", password: "********", contact: Board.Contact(email: "omer
 ```
 
 ## Static Properties and Functions
-It is used to access class features and functions without an instance of the class.
+It is used to access class or struct properties and functions without an instance of the class or struct.
 ```swift
 struct Circle {
     static let pi : Double = Double.pi
