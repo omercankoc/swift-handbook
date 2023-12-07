@@ -2,7 +2,7 @@
 
 When an object is created from a class, ARC remembers that this instance has been referenced exactly once. When this process is repeated, the number of references increases to two.
 
-- Memory Leak: Memory that is never freed and is no longer referenced by the application. Memory leaks in the application can be detected by the "Leaks" test in the menu that will be opened via the Product -> Profiles option.
+- Memory Leak: Memory that is never delete and is no longer referenced by the application. Memory leaks in the application can be detected by the "Leaks" test in the menu that will be opened via the Product -> Profiles option.
 
 - Retain Cycle: The situation when an object references a second object is called "Strong Reference". The situation where these two objects cannot be deleted from memory, which occurs when they reference each other, is called "retain cycle". By defining a "weak" or "unowned" variable instead of "strong", we ensure that the variable is deleted when the class in which it is located is deallocated.
 
