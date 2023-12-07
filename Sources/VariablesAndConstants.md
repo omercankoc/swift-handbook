@@ -50,7 +50,7 @@ var logic : Bool = true
 ```
 
 ### Tuples
-It allows us to declare multiple values in a single composite value.
+It allows us to declare multiple different types of values ​​in a single composite value.
 - Declaration
 ```swift
 var red = (hex : "FF0101", rgb : [255,1,1], hsl : [0,100,50], cmyk : [0,100,100,0])
