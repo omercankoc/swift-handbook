@@ -1,4 +1,4 @@
-# Swift Handbook
+# Swift
 - [Variables and Constants](https://github.com/omercankoc/documents-swift/blob/master/Sources/VariablesAndConstants.md)
 - [Strings and Characters](https://github.com/omercankoc/documents-swift/blob/master/Sources/StringsAndCharacters.md)
 - [Optional Chaining](https://github.com/omercankoc/documents-swift/blob/master/Sources/OptionalChaining.md)
