@@ -23,3 +23,8 @@
 - [Dispatch](https://github.com/omercankoc/documents-swift/blob/master/Sources/Dispatch.md)
 - [Combine](https://github.com/omercankoc/documents-swift/blob/master/Sources/Combine.md)
 
+### Others
+- [Design Patterns](https://github.com/omercankoc/documents-swift/blob/master/Sources/DesignPatterns.md)
+
+
+
