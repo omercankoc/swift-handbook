@@ -28,5 +28,6 @@
 ### Others
 - [Design Patterns](https://github.com/omercankoc/documents-swift/blob/master/Sources/DesignPatterns.md)
 
-
-
+### References
+https://docs.swift.org/swift-book/documentation/the-swift-programming-language
+https://developer.apple.com/documentation/technologies
