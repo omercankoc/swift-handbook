@@ -1,5 +1,7 @@
 # Automatic Reference Counting (ARC)
 When an object is created from a class, ARC remembers that this instance has been referenced exactly once. When this process is repeated, the number of references increases.
+
+References:
 - strong : Each Instance increments the reference count by one.
 - weak : Instance does not affect the reference count.
 - unowned : Instance does not affect the reference count but it must take a variable value. Even if the object is "deallocate", it continues to hold the reference of this object.
