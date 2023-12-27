@@ -22,8 +22,8 @@
 ## Frameworks
 - [Dispatch](https://github.com/omercankoc/documents-swift/blob/master/Sources/Dispatch.md)
 - [Combine](https://github.com/omercankoc/documents-swift/blob/master/Sources/Combine.md)
-- [URL Loading System](https://github.com/omercankoc/documents-swift/blob/master/Sources/URLLoadingSystem.md)
-- [Notifications](https://github.com/omercankoc/documents-swift/blob/master/Sources/Notifications.md)
+- [URL Loading System in Foundation](https://github.com/omercankoc/documents-swift/blob/master/Sources/URLLoadingSystem.md)
+- [Notifications in Foundation](https://github.com/omercankoc/documents-swift/blob/master/Sources/Notifications.md)
 
 ### Others
 - [Design Patterns](https://github.com/omercankoc/documents-swift/blob/master/Sources/DesignPatterns.md)
