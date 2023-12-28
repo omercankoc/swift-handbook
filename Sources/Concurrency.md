@@ -8,8 +8,8 @@ The additional scheduling flexibility from parallel or asynchronous code also co
 ### Async / Await
 
 - async: Indicates that the function can be suspended. If there is a need to wait in other places that call the function, those parts should also be defined as async.
-- throws:
-- try: 
+- throws: Indicates that the function may return an error.
+- try: It tries to run the function that may throw an error.
 - await: It holds the stream for the asynchronous function to run. Meanwhile, since the function is async, other tasks continue and are not affected by this process
 
 ```swift
@@ -67,3 +67,26 @@ Here’s how you can think about the differences between these two approaches:
 - In both cases, you mark the possible suspension point with await to indicate that execution will pause, if needed, until an asynchronous function has returned.
 - You can also mix both of these approaches in the same code.
 
+## Task and TaskGroup
+A task is a unit of work that can be run asynchronously as part of your program. All asynchronous code runs as part of some task. A task itself does only one thing at a time, but when you create multiple tasks, Swift can schedule them to run simultaneously.
+
+The async-let syntax described in the previous section implicitly creates a child task — this syntax works well when you already know what tasks your program needs to run. You can also create a task group (an instance of TaskGroup) and explicitly add child tasks to that group, which gives you more control over priority and cancellation, and lets you create a dynamic number of tasks.
+
+Tasks are arranged in a hierarchy. Each task in a given task group has the same parent task, and each task can have child tasks. Because of the explicit relationship between tasks and task groups, this approach is called structured concurrency. The explicit parent-child relationships between tasks has several advantages:
+
+- In a parent task, you can’t forget to wait for its child tasks to complete.
+- When setting a higher priority on a child task, the parent task’s priority is automatically escalated.
+- When a parent task is canceled, each of its child tasks is also automatically canceled.
+- Task-local values propagate to child tasks efficiently and automatically.
+
+```swift
+```
+
+```swift
+```
+
+```swift
+```
+
+```swift
+```
