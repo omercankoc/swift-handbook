@@ -27,8 +27,3 @@
    - Strategy
    - State
    - Visitor
-
-4. Software Architecture
-   - MVC
-   - MVVM
-   - VIPER
