@@ -28,7 +28,7 @@
 ### Others
 - [Design Patterns](https://github.com/omercankoc/documents-swift/blob/master/Sources/DesignPatterns.md)
 - [MVC](https://github.com/omercankoc/documents-swift/blob/master/Sources/MVC/MVC.md)
-- [MVVM](https://github.com/omercankoc/swift-handbook/blob/master/Sources/MVVM/mvvm.md)
+- [MVVM](https://github.com/omercankoc/swift-handbook/blob/master/Sources/MVVM/MVVM.md)
 - [VIPER](https://github.com/omercankoc/documents-swift/blob/master/Sources/VIPER/VIPER.md)
 
 ### References
