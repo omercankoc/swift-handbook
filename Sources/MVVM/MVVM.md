@@ -21,7 +21,6 @@ MVVM is a design pattern we use to separate layers from each other and manage re
 <table class="image-table">
     <tbody>
         <tr>
-            <td> <img src="https://github.com/omercankoc/swift-handbook/blob/master/Images/mvvm.png" stye="width:20%"></td>
             <td> <img src="https://github.com/omercankoc/swift-handbook/blob/master/Images/mvvm1.png" stye="width:20%"></td>
             <td> <img src="https://github.com/omercankoc/swift-handbook/blob/master/Images/mvvm2.png" stye="width:20%"></td>
             <td> <img src="https://github.com/omercankoc/swift-handbook/blob/master/Images/mvvm3.png" stye="width:20%"></td>
