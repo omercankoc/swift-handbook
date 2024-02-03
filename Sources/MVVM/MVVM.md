@@ -11,7 +11,7 @@ MVVM is a design pattern we use to separate layers from each other and manage re
 
 ### Content
 - [Model](https://github.com/omercankoc/swift-handbook/blob/master/Sources/MVVM/RickAndMorty/RickAndMorty/Model/CharactersModel.swift)
-- View
+- [View](https://github.com/omercankoc/swift-handbook/tree/master/Sources/MVVM/RickAndMorty/RickAndMorty/View)
 - - [List](https://github.com/omercankoc/swift-handbook/blob/master/Sources/MVVM/RickAndMorty/RickAndMorty/View/CharactersView.swift)
   - [Row](https://github.com/omercankoc/swift-handbook/blob/master/Sources/MVVM/RickAndMorty/RickAndMorty/View/Row/CharacterRow.swift)
   - [Display](https://github.com/omercankoc/swift-handbook/blob/master/Sources/MVVM/RickAndMorty/RickAndMorty/View/CharacterView.swift)
