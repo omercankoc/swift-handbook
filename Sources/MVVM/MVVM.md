@@ -9,14 +9,17 @@ MVVM is a design pattern we use to separate layers from each other and manage re
 
 <img src="https://github.com/omercankoc/swift-handbook/blob/master/Images/mvvm.png" style="width:50%">
 
-### Content
-- [Model](https://github.com/omercankoc/swift-handbook/blob/master/Sources/MVVM/RickAndMorty/RickAndMorty/Model/CharactersModel.swift)
-- [View](https://github.com/omercankoc/swift-handbook/tree/master/Sources/MVVM/RickAndMorty/RickAndMorty/View)
-- - [List](https://github.com/omercankoc/swift-handbook/blob/master/Sources/MVVM/RickAndMorty/RickAndMorty/View/CharactersView.swift)
-  - [Row](https://github.com/omercankoc/swift-handbook/blob/master/Sources/MVVM/RickAndMorty/RickAndMorty/View/Row/CharacterRow.swift)
-  - [Display](https://github.com/omercankoc/swift-handbook/blob/master/Sources/MVVM/RickAndMorty/RickAndMorty/View/CharacterView.swift)
-- [ViewModel](https://github.com/omercankoc/swift-handbook/blob/master/Sources/MVVM/RickAndMorty/RickAndMorty/ViewModel/CharactersViewModel.swift)
-- [Network](https://github.com/omercankoc/swift-handbook/blob/master/Sources/MVVM/RickAndMorty/RickAndMorty/Networking/RestAPI.swift)
+### using SwiftUI
+- [Model](https://github.com/omercankoc/swift-handbook/blob/master/Sources/MVVM/SWIFTUI/RickAndMorty/RickAndMorty/Model/CharactersModel.swift)
+- [View](https://github.com/omercankoc/swift-handbook/tree/master/Sources/MVVM/SWIFTUI/RickAndMorty/RickAndMorty/View)
+- [ViewModel](https://github.com/omercankoc/swift-handbook/blob/master/Sources/MVVM/SWIFTUI/RickAndMorty/RickAndMorty/ViewModel/CharactersViewModel.swift)
+- [Network](https://github.com/omercankoc/swift-handbook/blob/master/Sources/MVVM/SWIFTUI/RickAndMorty/RickAndMorty/Networking/RestAPIService.swift)
+
+### using UIKit
+- [Model]()
+- [View]()
+- [ViewModel]()
+- [Network]()
 
 <table class="image-table">
     <tbody>
