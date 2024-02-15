@@ -88,7 +88,7 @@ The metadata associated with the response to a URL load request, independent of 
 ## HTTPURLResponse
 The metadata associated with the response to an HTTP protocol URL load request.
 ```swift
-guard let httpResponse = response as? HTTPURLResponse, 200...300 ~= httpResponse.statusCode else {
+guard let httpURLResponse = response as? HTTPURLResponse, 200...300 ~= httpURLResponse.statusCode else {
     throw RestAPIError.invalidResponse
 }
 ```
