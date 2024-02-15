@@ -62,6 +62,7 @@ private func parameters(user: User) -> [String: Any]{
 
     object = ["images", images]
     return object
+}
 ```
 ```swift
 let parameters = self.parameters(user: user)
