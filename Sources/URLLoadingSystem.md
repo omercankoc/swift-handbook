@@ -15,9 +15,7 @@ Interact with URLs and communicate with servers using standard Internet protocol
 ## URLRequest
 A URL load request that is independent of protocol or URL scheme.
 ```swift
-guard let url = URL(string: URL) else {
-    throw NetworkError.invalidURL
-}
+guard let url = URL(string: URL) else { throw RestAPIError.invalidURL }
 
 var request = URLRequest(url: url, timeoutInterval: 10)
 request.addValue(clientCode, forHTTPHeaderField: "ClientCode")
