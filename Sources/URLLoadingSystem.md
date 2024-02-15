@@ -28,13 +28,12 @@ request.httpMethod = "POST"
 ```swift
 let parameters : [String: Any?] = [
     "contact": [
-        "phone": user.contact.phone ?? nil,
-        "email": user.contact.email ?? nil,
-        "address": user.contact.address ?? nil
+        "phone": passenger.contact.phone ?? nil,
+        "email": passenger.contact.email ?? nil,
     ] as [String: Any?],
-    "name": user.name ?? nil,
-    "surname": user.surname ?? nil,
-    "birthdate": user.birthdate ?? nil
+    "name": passenger.name ?? nil,
+    "surname": passenger.surname ?? nil,
+    "id": passenger.id ?? nil
     ] as [String: Any?]
 ]  
 ```
@@ -45,14 +44,14 @@ request.httpBody = body
 
 ### httpBody in Collection
 ```swift
-private func parameters(user: User) -> [String: Any]{
+private func parameters(passenger: Passenger) -> [String: Any]{
 
     var object: Dictionary<String, Any> = [:]
     var images: Array<Any> = []
 
-    for item in user.images {
+    for item in passenger.images {
         let image = [
-            "image": item.image,
+            "image": item.image.jpegData(compressionQuality: 0.25)?.base64EncodedString(),
             "date": item.date,
             "location": item.location
         ] as [String: Any]
@@ -65,7 +64,7 @@ private func parameters(user: User) -> [String: Any]{
 }
 ```
 ```swift
-let parameters = self.parameters(user: user)
+let parameters = self.parameters(passenger: passenger)
 
 let body = try JSONSerialization.data(withJSONObject: parameters, options: [.prettyPrinted, .withoutEscapingSlashes])
 request.httpBody = body
