@@ -1,31 +1,31 @@
 # Strings and Characters
 - Type Annotation
-``` swift
+```swift
 var language : String
 ```
 
 - Assignment
-``` swift
+```swift
 var language = "Swift"
 ```
 
 - Declaration
-``` swift
+```swift
 var language : String = "Swift"
 ```
 
 - Initializing an Empty String
-``` swift
+```swift
 var language = String()
 ```
 
 - Initializing an String
-``` swift
+```swift
 var language = String("Swift")
 ```
 
 - Assignment Multiline String Literals
-```
+```swift
 var language = """
     Swift Programming Languages
     By Apple
