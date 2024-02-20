@@ -24,22 +24,27 @@ request.addValue(token, forHTTPHeaderField: "Authorization")
 request.httpMethod = "POST"
 ```
 
-### httpBody in Object
+- Object Body
 ```swift
-let parameters : [String: Any?] = [
-    "contact": [
-        "phone": passenger.contact.phone ?? nil,
-        "email": passenger.contact.email ?? nil,
+let image : [String: Any?] = [
+    "metadata": [
+        "dimension": image.metadata.dimension ?? nil,
+        "width": image.metadata.width ?? nil,
+        "height": image.metadata.height ?? nil,
+        "horizontalResolution": image.metadata.horizontalResolution ?? nil,
+        "verticalResolution": image.metadata.verticalResolution ?? nil,
+        "bitDepth": image.metadata.bitDepth ?? nil,
+        "representation": image.metadata.representation ?? nil
     ] as [String: Any?],
-    "name": passenger.name ?? nil,
-    "surname": passenger.surname ?? nil,
-    "id": passenger.id ?? nil
-    ] as [String: Any?]
-]  
+    "date": image.date ?? nil,
+    "location": image.location ?? nil,
+    "id": image.id ?? nil,
+    "image": image.image.jpegData(compressionQuality: 0.25)?.base64EncodedString() ?? nil
+] as [String: Any?] 
 ```
 - JSON Serialization
 ```swift
-let body = try JSONSerialization.data(withJSONObject: parameters, options: [.prettyPrinted, .withoutEscapingSlashes])
+let body = try JSONSerialization.data(withJSONObject: image, options: [.prettyPrinted, .withoutEscapingSlashes])
 request.httpBody = body 
 ```
 - JSON Encoder
@@ -47,24 +52,33 @@ request.httpBody = body
 var encoder = JSONEncoder()
 encoder.outputFormatting = .prettyPrinted
 encoder.outputFormatting = .withoutEscapingSlashes
-let body = try encoder.encode(parameters)
+let body = try encoder.encode(image)
 request.httpBody = body 
 ```
 
-### httpBody in Collection
+- Collection Body
 ```swift
-private func parameters(passenger: Passenger) -> [String: Any]{
+private func body(images: [Image]) -> [String: Any]{
 
     var object: Dictionary<String, Any> = [:]
     var images: Array<Any> = []
 
-    for item in passenger.images {
-        let image = [
-            "image": item.image.jpegData(compressionQuality: 0.25)?.base64EncodedString(),
-            "date": item.date,
-            "location": item.location
-        ] as [String: Any]
-
+    for image in images {
+        let image : [String: Any?] = [
+            "metadata": [
+                "dimension": image.metadata.dimension ?? nil,
+                "width": image.metadata.width ?? nil,
+                "height": image.metadata.height ?? nil,
+                "horizontalResolution": image.metadata.horizontalResolution ?? nil,
+                "verticalResolution": image.metadata.verticalResolution ?? nil,
+                "bitDepth": image.metadata.bitDepth ?? nil,
+                "representation": image.metadata.representation ?? nil
+            ] as [String: Any?],
+            "date": image.date ?? nil,
+            "location": image.location ?? nil,
+            "id": image.id ?? nil,
+            "image": image.image.jpegData(compressionQuality: 0.25)?.base64EncodedString() ?? nil
+        ] as [String: Any?]
         images.append(image)
     }
 
@@ -72,19 +86,21 @@ private func parameters(passenger: Passenger) -> [String: Any]{
     return object
 }
 ```
+- JSON Serialization
 ```swift
-let parameters = self.parameters(passenger: passenger)
+let objects = self.body(images: images)
 
-let body = try JSONSerialization.data(withJSONObject: parameters, options: [.prettyPrinted, .withoutEscapingSlashes])
+let body = try JSONSerialization.data(withJSONObject: objects, options: [.prettyPrinted, .withoutEscapingSlashes])
 request.httpBody = body
 ```
+- JSON Encoder
 ```swift
-let parameters = self.parameters(passenger: passenger)
+let objects = self.body(images: images)
 
 var encoder = JSONEncoder()
 encoder.outputFormatting = .prettyPrinted
 encoder.outputFormatting = .withoutEscapingSlashes
-let body = try encoder.encode(parameters)
+let body = try encoder.encode(objects)
 request.httpBody = body
 ```
 
