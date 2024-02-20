@@ -37,8 +37,17 @@ let parameters : [String: Any?] = [
     ] as [String: Any?]
 ]  
 ```
+- JSON Serialization
 ```swift
 let body = try JSONSerialization.data(withJSONObject: parameters, options: [.prettyPrinted, .withoutEscapingSlashes])
+request.httpBody = body 
+```
+- JSON Encoder
+```swift
+var encoder = JSONEncoder()
+encoder.outputFormatting = .prettyPrinted
+encoder.outputFormatting = .withoutEscapingSlashes
+let body = try encoder.encode(parameters)
 request.httpBody = body 
 ```
 
@@ -67,6 +76,15 @@ private func parameters(passenger: Passenger) -> [String: Any]{
 let parameters = self.parameters(passenger: passenger)
 
 let body = try JSONSerialization.data(withJSONObject: parameters, options: [.prettyPrinted, .withoutEscapingSlashes])
+request.httpBody = body
+```
+```swift
+let parameters = self.parameters(passenger: passenger)
+
+var encoder = JSONEncoder()
+encoder.outputFormatting = .prettyPrinted
+encoder.outputFormatting = .withoutEscapingSlashes
+let body = try encoder.encode(parameters)
 request.httpBody = body
 ```
 
