@@ -119,6 +119,13 @@ language.insert(".", at: language.endIndex)
 ```
 Swift.
 ```
+```swift
+var language : String = "Swift"
+language.insert(".", at: language.startIndex)
+```
+```
+.Swift
+```
 
 - Remove
 ```swift
