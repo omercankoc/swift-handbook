@@ -25,13 +25,12 @@ var language = String("Swift")
 ```
 
 - Assignment Multiline String Literals
-```swift
+```
 var language = """
     Swift Programming Languages
     By Apple
 """
 ```
-
 - Nullable
 ```swift
 var url : String = "https://www.youtube.com"
