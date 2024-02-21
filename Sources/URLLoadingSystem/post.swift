@@ -1,4 +1,4 @@
-func postImage(endpoint: String) async throws {
+func postImage(endpoint: String, image: ImageModel) async throws {
     guard let url = URL(string: endpoint) else { throw RestAPIError.invalidURL }
 
     var request = URLRequest(url: url, timeoutInterval: 10)
