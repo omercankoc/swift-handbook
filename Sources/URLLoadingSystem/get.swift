@@ -1,4 +1,4 @@
-func getImages(endpoint: String) async throws -> [ImageModel] {
+func getImages(endpoint: String) async throws -> [PassengerModel] {
     guard let url = URL(string: endpoint) else { throw RestAPIError.invalidURL }
         
     var request = URLRequest(url: url, timeoutInterval: 10)
@@ -11,5 +11,6 @@ func getImages(endpoint: String) async throws -> [ImageModel] {
     let (data, response) = try await session.data(for: request)
         
     guard let httpURLResponse = response as? HTTPURLResponse, 200...300 ~= httpURLResponse.statusCode else { throw RestAPIError.invalidResponse }
-    return try JSONDecoder().decode([ImageModel].self, from: data)
+    let decoder = JSONDecoder()
+    return try decoder.decode([PassengerModel].self, from: data)
 }
