@@ -1,4 +1,4 @@
-func postImage(endpoint: String, image: ImageModel) async throws {
+func postPassenger(endpoint: String, passenger: PassengerModel) async throws {
     guard let url = URL(string: endpoint) else { throw RestAPIError.invalidURL }
 
     var request = URLRequest(url: url, timeoutInterval: 10)
@@ -7,26 +7,21 @@ func postImage(endpoint: String, image: ImageModel) async throws {
     request.addValue(token, forHTTPHeaderField: "Authorization")
     request.httpMethod = "POST"
 
-    let image : [String: Any?] = [
-        "metadata": [
-            "dimension": image.metadata.dimension ?? nil,
-            "width": image.metadata.width ?? nil,
-            "height": image.metadata.height ?? nil,
-            "horizontalResolution": image.metadata.horizontalResolution ?? nil,
-            "verticalResolution": image.metadata.verticalResolution ?? nil,
-            "bitDepth": image.metadata.bitDepth ?? nil,
-            "representation": image.metadata.representation ?? nil
+    let passenger : [String: Any?] = [
+        "contact": [
+            "phone": passenger.contact.phone ?? nil,
+            "email": passenger.contact.email ?? nil,
+            "address": passenger.contact.address ?? nil,
         ] as [String: Any?],
-        "date": image.date ?? nil,
-        "location": image.location ?? nil,
-        "id": image.id ?? nil,
-        "image": image.image.jpegData(compressionQuality: 0.25)?.base64EncodedString() ?? nil
+        "name": passenger.name ?? nil,
+        "surname": passenger.surname ?? nil,
+        "id": passenger.id ?? nil,
     ] as [String: Any?] 
 
     var encoder = JSONEncoder()
     encoder.outputFormatting = .prettyPrinted
     encoder.outputFormatting = .withoutEscapingSlashes
-    let body = try encoder.encode(image)
+    let body = try encoder.encode(passenger)
     request.httpBody = body
 
     let session = URLSession.shared
