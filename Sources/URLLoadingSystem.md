@@ -110,6 +110,15 @@ An object that coordinates a group of related, network data transfer tasks.
 let session = URLSession.shared
 let (data,response) = try await session.data(for: request)
 ```
+- JSON Serialization
+```swift
+let result = try JSONSerialization.jsonObject(with: data, options: []) as? [String:Any]
+```
+- JSON Decoder
+```swift
+var decoder = JSONDecoder()
+let result = try decoder.decode(ResultModel.self, from: data)
+```
 
 ## URLSessionTask
 A task, like downloading a specific resource, performed in a URL session.
