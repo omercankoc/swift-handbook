@@ -6,11 +6,12 @@ Interact with URLs and communicate with servers using standard Internet protocol
 - URLSessionTask
 - URLResponse
 - HTTPURLResponse
-- Requests
-  - [GET](https://github.com/omercankoc/swift-handbook/blob/master/Sources/URLLoadingSystem/get.swift)
-  - [POST](https://github.com/omercankoc/swift-handbook/blob/master/Sources/URLLoadingSystem/post.swift)
-  - [PUT](https://github.com/omercankoc/swift-handbook/blob/master/Sources/URLLoadingSystem/put.swift)
-  - [DELETE](https://github.com/omercankoc/swift-handbook/blob/master/Sources/URLLoadingSystem/delete.swift)
+
+### Samples
+- [GET](https://github.com/omercankoc/swift-handbook/blob/master/Sources/URLLoadingSystem/get.swift)
+- [POST](https://github.com/omercankoc/swift-handbook/blob/master/Sources/URLLoadingSystem/post.swift)
+- [PUT](https://github.com/omercankoc/swift-handbook/blob/master/Sources/URLLoadingSystem/put.swift)
+- [DELETE](https://github.com/omercankoc/swift-handbook/blob/master/Sources/URLLoadingSystem/delete.swift)
 
 ## URLRequest
 A URL load request that is independent of protocol or URL scheme.
