@@ -1,5 +1,5 @@
-func getImages(_ id: String) async throws -> [ImageModel] {
-    guard let url = URL(string: URL) else { throw RestAPIError.invalidURL }
+func getImages(endpoint: String) async throws -> [ImageModel] {
+    guard let url = URL(string: endpoint) else { throw RestAPIError.invalidURL }
         
     var request = URLRequest(url: url, timeoutInterval: 10)
     request.addValue(clientCode, forHTTPHeaderField: "ClientCode")
