@@ -1,4 +1,4 @@
-func postImage(endpoint: String, id: String) async throws {
+func deletePassenger(endpoint: String, id: String) async throws {
     guard let url = URL(string: endpoint) else { throw RestAPIError.invalidURL }
 
     var request = URLRequest(url: url, timeoutInterval: 10)
