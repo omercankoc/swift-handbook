@@ -1,4 +1,4 @@
-func getPassenger(endpoint: String) async throws -> [PassengerModel] {
+func getPassengers(endpoint: String) async throws -> [PassengerModel] {
     guard let url = URL(string: endpoint) else { throw RestAPIError.invalidURL }
         
     var request = URLRequest(url: url, timeoutInterval: 10)
