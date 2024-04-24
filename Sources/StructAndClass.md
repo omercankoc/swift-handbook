@@ -1,21 +1,21 @@
 # Structures and Classes
-- Definable, storage or computed properties, functions and clousures.
-- Initial state can be defined with init().
-- Both can be used with subscript.
-- Both can inherit properties and functions.
-- Both can extend their functionality with the help of Extensions.
-- Both can comply with Protocols to provide functionality.
+Can be used in both:
+- Storage or computed properties, functions and clousures.
+- Initialization and Deinitialization.
+- Inheritance and Protocols.
+- Extensions.
 
 But Classes have additional capabilities that Structures don’t have:
 - Classes can pass on their properties and functions with the help of inheritance.
 - Classes allows you to check and interpret a class instance at runtime.
-- Classes are reference types and structures are value types.
 - Classes can be used with Objective C. Structs cannot be used with Objective-C.
 
 However, Structures also have some advantages:
-- Structures are kept in memory with stack logic, so when data is wanted to be read, it is read faster. But classes are stored randomly in memory. When you try to read data due to irregular storage, it takes longer to read.
+- Structures are kept in memory with stack logic, so when data is wanted to be read, it is read faster (Value Type). But classes are stored randomly in memory (Referance Type). 
 - Structures do not cause RAM problems.
-- Structures are atomic (thread safe), Classes are non-atomic. Thread Safe; It is a concept that protects the current thread's resource against possible errors that may occur as a result of inconsistencies that may arise if more than one thread can access/use a single resource at the same time, and provides this for all threads using that resource.
+- Structures are atomic (thread safe), Classes are non-atomic.
+
+Thread Safe: It is a concept that protects the current thread's resource against possible errors that may occur as a result of inconsistencies that may arise if more than one thread can access/use a single resource at the same time, and provides this for all threads using that resource.
 
 Value Type: Get Stored on Stack Memory. Each instance keeps a unique copy of its data. A type that creates a new instance (copy) when assigned to a variable or constant, or when passed to a function. (Int, Float, Double, String, Tuple, Array, Dicitonary, Set, Struct, Enum.)
 
