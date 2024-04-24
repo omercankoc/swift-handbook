@@ -27,50 +27,45 @@ Stack is used for static memory allocation and Heap for dynamic memory allocatio
 - Declaration
 ```swift
 struct Sphere {
-    var radius: Double?
+    var radius: Double
     var area: Double?
     var volume: Double?
     
     mutating func surfaceAreaOfSphere(){
-        self.area = 4 * Double.pi * pow(radius ?? 0.0,2)
+        self.area = 4 * Double.pi * pow(radius,2)
     }
     
     mutating func volumeOfSphere(){
-        self.volume = (4 / 3) * Double.pi * pow(radius ?? 0.0,3)
+        self.volume = (4 / 3) * Double.pi * pow(radius,3)
     }
 }
 ```
 - Instance
 ```swift
 var sphere = Sphere(radius: 2)
-print(sphere)
-
 sphere.surfaceAreaOfSphere()
-print(sphere)
-
 sphere.volumeOfSphere()
-print(sphere)
 ```
 ```
-Sphere(radius: Optional(2.0), area: nil, volume: nil)
-Sphere(radius: Optional(2.0), area: Optional(50.26548245743669), volume: nil)
-Sphere(radius: Optional(2.0), area: Optional(50.26548245743669), volume: Optional(33.510321638291124))
+Sphere(radius: 2.0, area: nil, volume: nil)
+Sphere(radius: 2.0, area: Optional(50.26548245743669), volume: nil)
+Sphere(radius: 2.0, area: Optional(50.26548245743669), volume: Optional(33.510321638291124))
 ```
 
 ## Class
 - Declaration
 ```swift
 class Sphere {
-    var radius: Double?
+    var radius: Double = 0.0
     var area: Double?
     var volume: Double?
     
     func surfaceAreaOfSphere(){
-        self.area = 4 * Double.pi * pow(radius ?? 0.0,2)
+        self.area = 4 * Double.pi * pow(radius,2)
     }
     
     func volumeOfSphere(){
-        self.volume = (4 / 3) * Double.pi * pow(radius ?? 0.0,3)
+        self.volume = (4 / 3) * Double.pi * pow(radius,3)
     }
 }
 ```
@@ -78,18 +73,14 @@ class Sphere {
 ```swift
 var sphere = Sphere()
 sphere.radius = 2
-print(sphere.radius as Any)
-
 sphere.surfaceAreaOfSphere()
-print(sphere.area as Any)
-
 sphere.volumeOfSphere()
-print(sphere.volume as Any)
 ```
 ```
-Optional(2.0)
-Optional(50.26548245743669)
-Optional(33.510321638291124)
+0.0 nil nil
+2.0 nil nil
+2.0 Optional(50.26548245743669) nil
+2.0 Optional(50.26548245743669) Optional(33.510321638291124)
 ```
 
 ## Initialization and Deinitialization
@@ -125,14 +116,12 @@ class Sphere {
 - Instance
 ```swift
 var sphere = Sphere(radius: 2)
-print(sphere.radius, sphere.area, sphere.volume)
 ```
 ```
 2.0 50.26548245743669 33.510321638291124
 ```
 ```swift
 var sphere = Sphere()
-print(sphere.radius, sphere.area, sphere.volume)
 ```
 ```
 0.0 0.0 0.0
@@ -150,7 +139,7 @@ class Sphere {
     }
     
     init(volume radius : Double){
-        self.result = (4 / 3) * Double.pi * pow(radius, 3)
+        self.result = (4 / 3) * Double.pi * pow(radius,3)
     }
 }
 ```
@@ -159,8 +148,6 @@ class Sphere {
 ```swift
 var area = Sphere(area: 2)
 var volume = Sphere(volume: 2)
-
-print(area.result, volume.result)
 ```
 ```
 50.26548245743669 33.510321638291124
@@ -187,13 +174,12 @@ struct Sphere {
     init(radius: Radius) {
         self.radius = radius
         self.area = 4 * Double.pi * pow(radius.radius,2)
-        self.volume = (4 / 3) * Double.pi * pow(radius.radius, 3)
+        self.volume = (4 / 3) * Double.pi * pow(radius.radius,3)
     }
 }
 ```
 ```swift
 var sphere = Sphere(radius: Radius(radius: 2))
-print(sphere)
 ```
 ```
 Sphere(radius: Radius(radius: 2.0, diameter: 4.0), area: 50.26548245743669, volume: 33.510321638291124)
@@ -202,20 +188,20 @@ Sphere(radius: Radius(radius: 2.0, diameter: 4.0), area: 50.26548245743669, volu
 ## Static Properties and Functions
 It is used to access class or struct properties and functions without an instance of the class or struct.
 ```swift
-struct Circle {
-    static let pi : Double = Double.pi
+struct Sphere {
+    static var radius : Double = 0.0
     
-    static func formulas(_ radius: Double) -> (radius: Double, perimeter: Double, area: Double) {
-        return (radius, Double.pi * 2 * radius, Double.pi * pow(radius, 2))
+    static func solve(_ radius: Double) -> (diameter: Double, area: Double, volume: Double) {
+        return (radius * 2, 4 * Double.pi * pow(radius,2), (4 / 3) * Double.pi * pow(radius,3))
     }
 }
 ```
 ```swift
-var results = Circle.formulas(3)
-print(results.radius, results.perimeter, results.area, Circle.pi)
+Sphere.radius = 2.0
+Sphere.solve(Sphere.radius)
 ```
 ```
-3.0 18.84955592153876 28.274333882308138 3.141592653589793
+2.0 (diameter: 4.0, area: 50.26548245743669, volume: 33.510321638291124)
 ```
 
 ## Access Control
