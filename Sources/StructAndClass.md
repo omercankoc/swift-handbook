@@ -43,6 +43,7 @@ struct Sphere {
 - Instance
 ```swift
 var sphere = Sphere(radius: 2)
+
 sphere.surfaceAreaOfSphere()
 sphere.volumeOfSphere()
 ```
@@ -72,7 +73,9 @@ class Sphere {
 - Instance
 ```swift
 var sphere = Sphere()
+
 sphere.radius = 2
+
 sphere.surfaceAreaOfSphere()
 sphere.volumeOfSphere()
 ```
