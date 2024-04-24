@@ -24,20 +24,19 @@ Reference Type: Get Stored on Managed Heap Memory. Each instances share a single
 Stack is used for static memory allocation and Heap for dynamic memory allocation, both stored in the computer’s RAM. For reference types the reference is stored on the STACK while the object it refers to is stored on the HEAP. For value types, the object itself is stored on the STACK.
 
 ## Struct
-
 - Declaration
 ```swift
 struct Sphere {
-    var radius: Double
+    var radius: Double?
     var area: Double?
     var volume: Double?
     
     mutating func surfaceAreaOfSphere(){
-        self.area = 4 * Double.pi * pow(radius,2)
+        self.area = 4 * Double.pi * pow(radius ?? 0.0,2)
     }
     
     mutating func volumeOfSphere(){
-        self.volume = (4 / 3) * Double.pi * pow(radius, 3)
+        self.volume = (4 / 3) * Double.pi * pow(radius ?? 0.0,3)
     }
 }
 ```
@@ -53,35 +52,33 @@ sphere.volumeOfSphere()
 print(sphere)
 ```
 ```
-Sphere(radius: 2.0, area: nil, volume: nil)
-Sphere(radius: 2.0, area: Optional(50.26548245743669), volume: nil)
-Sphere(radius: 2.0, area: Optional(50.26548245743669), volume: Optional(33.510321638291124))
+Sphere(radius: Optional(2.0), area: nil, volume: nil)
+Sphere(radius: Optional(2.0), area: Optional(50.26548245743669), volume: nil)
+Sphere(radius: Optional(2.0), area: Optional(50.26548245743669), volume: Optional(33.510321638291124))
 ```
 
 ## Class
-
 - Declaration
 ```swift
 class Sphere {
-    var radius: Double = 0.0
+    var radius: Double?
     var area: Double?
     var volume: Double?
     
     func surfaceAreaOfSphere(){
-        self.area = 4 * Double.pi * pow(radius,2)
+        self.area = 4 * Double.pi * pow(radius ?? 0.0,2)
     }
     
     func volumeOfSphere(){
-        self.volume = (4 / 3) * Double.pi * pow(radius, 3)
+        self.volume = (4 / 3) * Double.pi * pow(radius ?? 0.0,3)
     }
 }
 ```
-
 - Instance
 ```swift
 var sphere = Sphere()
 sphere.radius = 2
-print(sphere.radius)
+print(sphere.radius as Any)
 
 sphere.surfaceAreaOfSphere()
 print(sphere.area as Any)
@@ -90,7 +87,7 @@ sphere.volumeOfSphere()
 print(sphere.volume as Any)
 ```
 ```
-2.0
+Optional(2.0)
 Optional(50.26548245743669)
 Optional(33.510321638291124)
 ```
@@ -114,7 +111,7 @@ class Sphere {
     init(radius: Double) {
         self.radius = radius
         self.area = 4 * Double.pi * pow(radius,2)
-        self.volume = (4 / 3) * Double.pi * pow(radius, 3)
+        self.volume = (4 / 3) * Double.pi * pow(radius,3)
     }
     
     deinit {
@@ -145,50 +142,61 @@ print(sphere.radius, sphere.area, sphere.volume)
 
 - Declaration
 ```swift
-class Circle {
-    var result : Double
-    
-    init(perimeter radius : Double){
-        self.result = 2 * Double.pi * radius
-    }
+class Sphere {
+    var result: Double
 
     init(area radius : Double){
-        self.result = Double.pi * pow(radius, 2.0)
+        self.result = 4 * Double.pi * pow(radius,2)
+    }
+    
+    init(volume radius : Double){
+        self.result = (4 / 3) * Double.pi * pow(radius, 3)
     }
 }
 ```
 
 - Instance
 ```swift
-var perimeter = Circle(perimeter: 3.0)
-var area = Circle(area: 3.0)
+var area = Sphere(area: 2)
+var volume = Sphere(volume: 2)
 
-print(perimeter.result, area.result)
+print(area.result, volume.result)
 ```
 ```
-18.84955592153876 28.274333882308138
+50.26548245743669 33.510321638291124
 ```
 
 ## Composition
 Object composition is closely related ways to combine objects into more complex ones. They have an ownership (Has-A) relationship.
 ```swift
-struct Contact {
-    var email : String
-    var phone : String
+struct Radius {
+    var radius: Double
+    var diameter: Double
+    
+    init(radius: Double){
+        self.radius = radius
+        self.diameter = radius * 2
+    }
 }
 
-struct User {
-    var username : String
-    var password : String
-    var contact : Contact
+struct Sphere {
+    var radius: Radius
+    var area: Double
+    var volume: Double
+    
+    init(radius: Radius) {
+        self.radius = radius
+        self.area = 4 * Double.pi * pow(radius.radius,2)
+        self.volume = (4 / 3) * Double.pi * pow(radius.radius, 3)
+    }
 }
 ```
 ```swift
-var user = User(username: "omer", password: "********", contact: Contact(email: "omer@mail.com", phone: "+19876543210"))
-print(user)
+var sphere = Sphere(radius: Radius(radius: 2))
+print(sphere)
 ```
 ```
-User(username: "omer", password: "********", contact: Board.Contact(email: "omer@mail.com", phone: "+19876543210"))
+Sphere(radius: Radius(radius: 2.0, diameter: 4.0), area: 50.26548245743669, volume: 33.510321638291124)
 ```
 
 ## Static Properties and Functions
