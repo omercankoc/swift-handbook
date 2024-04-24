@@ -134,6 +134,8 @@ class Sphere {
     }
 }
 ```
+
+### Initialization Parameters
 - Instance
 ```swift
 var sphere = Sphere(radius: 2)
