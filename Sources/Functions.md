@@ -111,29 +111,24 @@ Mutating cannot be used with classes as it is a reference type.
 The mutating keyword is only required if you are changing any properties contained within the struct. 
 ```swift
 struct Sphere {
-    var radius : Int?
+    var radius : Double
     var area : Double?
-    var circumference : Double?
     var volume : Double?
        
-    mutating func parameters(radius : Int){
+    mutating func solve(radius : Double){
         self.radius = radius
-        self.area = 4 * Double.pi * pow(Double(radius),2)
-        self.circumference = 2 * Double.pi * Double(radius)
-        self.volume = (4 / 3) * Double.pi * pow(Double(radius), 3)
+        self.area = 4 * Double.pi * pow(radius,2)
+        self.volume = (4 / 3) * Double.pi * pow(radius,3)
     }
 }
 ```
 ```swift
-var sphere = Sphere(radius: 3, area: 113, circumference: 18, volume: 113)
-print(sphere)
-
-sphere.parameters(radius: 2)
-print(sphere)
+var sphere = Sphere(radius: 2)
+sphere.solve(radius: sphere.radius)
 ```
 ```
-Sphere(radius: Optional(3), area: Optional(113.0), circumference: Optional(18.0), volume: Optional(113.0))
-Sphere(radius: Optional(2), area: Optional(50.26548245743669), circumference: Optional(12.566370614359172), volume: Optional(33.510321638291124))
+Sphere(radius: 2.0, area: nil, volume: nil)
+Sphere(radius: 2.0, area: Optional(50.26548245743669), volume: Optional(33.510321638291124))
 ```
 
 ### Functions in "for" Keyword
