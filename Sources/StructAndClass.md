@@ -27,112 +27,73 @@ Stack is used for static memory allocation and Heap for dynamic memory allocatio
 
 - Declaration
 ```swift
-struct User {
-    var username: String?
-    var password: String?
-    var rememberMe: Bool = false
+struct Sphere {
+    var radius: Double
+    var area: Double?
+    var volume: Double?
     
-    func authentication(){
-        if let username = username, let password = password {
-            if rememberMe {
-                UserDefaults.standard.setValue(username, forKey: "username")
-                UserDefaults.standard.setValue(password, forKey: "password")
-            }
-        }
+    mutating func surfaceAreaOfSphere(){
+        self.area = 4 * Double.pi * pow(radius,2)
     }
     
-    func unauthentication(){
-        UserDefaults.standard.removeObject(forKey: "username")
-        UserDefaults.standard.removeObject(forKey: "password")
-        UserDefaults.standard.synchronize()
-    }
-    
-    func remember() -> (username: String?, password: String?){
-        if let username = UserDefaults.standard.string(forKey: "username"), let password = UserDefaults.standard.string(forKey: "password") {
-            return (username, password)
-        } else {
-            return (nil, nil)
-        }
+    mutating func volumeOfSphere(){
+        self.volume = (4 / 3) * Double.pi * pow(radius, 3)
     }
 }
 ```
 - Instance
 ```swift
-var user = User(username: "omercankoc", password: "********", rememberMe: true)
-print(user)
+var sphere = Sphere(radius: 2)
+print(sphere)
 
-user.authentication()
-var username = user.remember().username
-var password = user.remember().password
-print(username as Any, password as Any)
+sphere.surfaceAreaOfSphere()
+print(sphere)
 
-user.unauthentication()
-username = user.remember().username
-password = user.remember().password
-print(username as Any, password as Any)
+sphere.volumeOfSphere()
+print(sphere)
 ```
 ```
-User(username: Optional("omercankoc"), password: Optional("********"), rememberMe: true)
-Optional("omercankoc") Optional("********")
-nil nil
+Sphere(radius: 2.0, area: nil, volume: nil)
+Sphere(radius: 2.0, area: Optional(50.26548245743669), volume: nil)
+Sphere(radius: 2.0, area: Optional(50.26548245743669), volume: Optional(33.510321638291124))
 ```
 
 ## Class
 
 - Declaration
 ```swift
-class User {
-    var username: String?
-    var password: String?
-    var rememberMe: Bool = false
+class Sphere {
+    var radius: Double = 0.0
+    var area: Double?
+    var volume: Double?
     
-    func authentication(){
-        if let username = username, let password = password {
-            if rememberMe {
-                UserDefaults.standard.setValue(username, forKey: "username")
-                UserDefaults.standard.setValue(password, forKey: "password")
-            }
-        }
+    func surfaceAreaOfSphere(){
+        self.area = 4 * Double.pi * pow(radius,2)
     }
     
-    func unauthentication(){
-        UserDefaults.standard.removeObject(forKey: "username")
-        UserDefaults.standard.removeObject(forKey: "password")
-        UserDefaults.standard.synchronize()
-    }
-    
-    func remember() -> (username: String?, password: String?){
-        if let username = UserDefaults.standard.string(forKey: "username"), let password = UserDefaults.standard.string(forKey: "password") {
-            return (username, password)
-        } else {
-            return (nil, nil)
-        }
+    func volumeOfSphere(){
+        self.volume = (4 / 3) * Double.pi * pow(radius, 3)
     }
 }
 ```
 
 - Instance
 ```swift
-var user = User()
-user.username = "omercankoc"
-user.password = "********"
-user.rememberMe = true
-print(user.username as Any, user.password as Any, user.rememberMe)
+var sphere = Sphere()
 
-user.authentication()
-var username = user.remember().username
-var password = user.remember().password
-print(username as Any, password as Any)
+sphere.radius = 2
+print(sphere.radius)
 
-user.unauthentication()
-username = user.remember().username
-password = user.remember().password
-print(username as Any, password as Any)
+sphere.surfaceAreaOfSphere()
+print(sphere.area as Any)
+
+sphere.volumeOfSphere()
+print(sphere.volume as Any)
 ```
 ```
-Optional("omercankoc") Optional("********") true
-Optional("omercankoc") Optional("********")
-nil nil
+2.0
+Optional(50.26548245743669)
+Optional(33.510321638291124)
 ```
 
 ## Initialization and Deinitialization
