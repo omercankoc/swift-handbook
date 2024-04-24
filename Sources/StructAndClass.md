@@ -1,9 +1,9 @@
 # Structures and Classes
 Can be used in both:
-- Storage or computed properties, functions and clousures.
-- Initialization and Deinitialization.
-- Inheritance and Protocols.
-- Extensions.
+- Storage or computed properties, functions and clousures,
+- Initialization,
+- Extensions,
+- Inheritance and Protocols (adopts or inherits).
 
 But Classes have additional capabilities that Structures don’t have:
 - Classes can pass on their properties and functions with the help of inheritance.
@@ -86,6 +86,25 @@ sphere.volumeOfSphere()
 2.0 Optional(50.26548245743669) Optional(33.510321638291124)
 ```
 
+### Static Properties and Functions
+It is used to access class or struct properties and functions without an instance of the class or struct.
+```swift
+struct Sphere {
+    static var radius : Double = 0.0
+    
+    static func solve(_ radius: Double) -> (diameter: Double, area: Double, volume: Double) {
+        return (radius * 2, 4 * Double.pi * pow(radius,2), (4 / 3) * Double.pi * pow(radius,3))
+    }
+}
+```
+```swift
+Sphere.radius = 2.0
+Sphere.solve(Sphere.radius)
+```
+```
+2.0 (diameter: 4.0, area: 50.26548245743669, volume: 33.510321638291124)
+```
+
 ## Initialization and Deinitialization
 Initialization is the preparation process when we create an instance of Class, Enum or Struct. This process allows an initial value to be set for each stored property and necessary operations to be performed before it is ready for use.
 
@@ -115,7 +134,6 @@ class Sphere {
     }
 }
 ```
-
 - Instance
 ```swift
 var sphere = Sphere(radius: 2)
@@ -129,9 +147,6 @@ var sphere = Sphere()
 ```
 0.0 0.0 0.0
 ```
-
-### Initialization Parameters
-
 - Declaration
 ```swift
 class Sphere {
@@ -146,7 +161,6 @@ class Sphere {
     }
 }
 ```
-
 - Instance
 ```swift
 var area = Sphere(area: 2)
@@ -186,25 +200,6 @@ var sphere = Sphere(radius: Radius(radius: 2))
 ```
 ```
 Sphere(radius: Radius(radius: 2.0, diameter: 4.0), area: 50.26548245743669, volume: 33.510321638291124)
-```
-
-## Static Properties and Functions
-It is used to access class or struct properties and functions without an instance of the class or struct.
-```swift
-struct Sphere {
-    static var radius : Double = 0.0
-    
-    static func solve(_ radius: Double) -> (diameter: Double, area: Double, volume: Double) {
-        return (radius * 2, 4 * Double.pi * pow(radius,2), (4 / 3) * Double.pi * pow(radius,3))
-    }
-}
-```
-```swift
-Sphere.radius = 2.0
-Sphere.solve(Sphere.radius)
-```
-```
-2.0 (diameter: 4.0, area: 50.26548245743669, volume: 33.510321638291124)
 ```
 
 ## Access Control
