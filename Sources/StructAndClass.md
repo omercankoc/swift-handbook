@@ -80,7 +80,6 @@ class Sphere {
 - Instance
 ```swift
 var sphere = Sphere()
-
 sphere.radius = 2
 print(sphere.radius)
 
@@ -103,40 +102,40 @@ Deinitialization is the object is called just before it is destroyed (deallocate
 
 - Declaration
 ```swift
-class Circle {
-    var radius : Double
-    var perimeter : Double
-    var area : Double
+class Sphere {
+    var radius: Double
+    var area: Double
+    var volume: Double
     
-    init(radius : Double){
-        self.radius = radius
-        self.perimeter = 2 * Double.pi * radius
-        self.area = Double.pi * pow(radius, 2.0)
-    }
-    
-    convenience init(){
+    convenience init() {
         self.init(radius: 0.0)
     }
     
+    init(radius: Double) {
+        self.radius = radius
+        self.area = 4 * Double.pi * pow(radius,2)
+        self.volume = (4 / 3) * Double.pi * pow(radius, 3)
+    }
+    
     deinit {
-        self.radius = 0
-        self.perimeter = 0
-        self.area = 0
+        self.radius = 0.0
+        self.area = 0.0
+        self.volume = 0.0
     }
 }
 ```
 
 - Instance
 ```swift
-var circle = Circle(radius: 3.0)
-print(circle.radius, circle.perimeter, circle.area)
+var sphere = Sphere(radius: 2)
+print(sphere.radius, sphere.area, sphere.volume)
 ```
 ```
-3.0 18.84955592153876 28.274333882308138
+2.0 50.26548245743669 33.510321638291124
 ```
 ```swift
-var circle = Circle()
-print(circle.radius, circle.perimeter, circle.area)
+var sphere = Sphere()
+print(sphere.radius, sphere.area, sphere.volume)
 ```
 ```
 0.0 0.0 0.0
