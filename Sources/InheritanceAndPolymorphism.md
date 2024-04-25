@@ -37,15 +37,7 @@ You can also add new characteristics to the subclass.
 The "super" identifier is used to access the properties and methods of the superclass.
 
 ### Override
-A subclass can provide its own custom implementation of an instance method, type method, instance property, type property, 
-or subscript that it would otherwise inherit from a superclass. This is known as overriding.
-
-To override a characteristic that would otherwise be inherited, you prefix your overriding definition with the override keyword. 
-Doing so clarifies that you intend to provide an override and haven’t provided a matching definition by mistake. 
-Overriding by accident can cause unexpected behavior, and any overrides without the override keyword are diagnosed as an error when your code is compiled.
-
-The override keyword also prompts the Swift compiler to check that your overriding class’s superclass (or one of its parents) 
-has a declaration that matches the one you provided for the override. This check ensures that your overriding definition is correct.
+Overriding means replacing a method belonging to a class with the method in the base class by defining a method with the same name in another class derived from that class. This process allows a method to perform different functions in different classes derived from the same class. The method in the base class is overridden by adding the override keyword before the name of the method in the derived class.
 
 ```swift
 enum Segment {
