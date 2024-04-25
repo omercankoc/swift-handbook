@@ -15,11 +15,11 @@ However, Structures also have some advantages:
 - Structures do not cause RAM problems.
 - Structures are atomic (thread safe), Classes are non-atomic.
 
-Thread Safe: It is a concept that protects the current thread's resource against possible errors that may occur as a result of inconsistencies that may arise if more than one thread can access/use a single resource at the same time, and provides this for all threads using that resource.
+<b>Thread Safe:</b> It is a concept that protects the current thread's resource against possible errors that may occur as a result of inconsistencies that may arise if more than one thread can access/use a single resource at the same time, and provides this for all threads using that resource.
 
-Value Type: Get Stored on Stack Memory. Each instance keeps a unique copy of its data. A type that creates a new instance (copy) when assigned to a variable or constant, or when passed to a function. (Int, Float, Double, String, Tuple, Array, Dicitonary, Set, Struct, Enum.)
+<b>Value Type:</b> Get Stored on Stack Memory. Each instance keeps a unique copy of its data. A type that creates a new instance (copy) when assigned to a variable or constant, or when passed to a function. (Int, Float, Double, String, Tuple, Array, Dicitonary, Set, Struct, Enum.)
 
-Reference Type: Get Stored on Managed Heap Memory. Each instances share a single copy of the data. A type that once initialized, when assigned to a variable or constant, or when passed to a function, returns a reference to the same existing instance. (Class, Function, Closure)
+<b>Reference Type:</b> Get Stored on Managed Heap Memory. Each instances share a single copy of the data. A type that once initialized, when assigned to a variable or constant, or when passed to a function, returns a reference to the same existing instance. (Class, Function, Closure)
 
 Stack is used for static memory allocation and Heap for dynamic memory allocation, both stored in the computer’s RAM. For reference types the reference is stored on the STACK while the object it refers to is stored on the HEAP. For value types, the object itself is stored on the STACK.
 
