@@ -3,7 +3,7 @@ A class can inherit methods, properties, and other characteristics from another 
 When one class inherits from another, the inheriting class is known as a subclass, and the class it inherits from is known as its superclass. 
 
 ### Superclass
-Any class that doesn’t inherit from another class is known as a base class.
+A class that does not inherit from another class and transfers its properties to subclasses is called a base class.
 ```swift
 enum Fuel {
     case GASOLINE,DIESEL,HYDROGEN,HYBRID,ELECTRIC
@@ -31,13 +31,10 @@ class Vehicle {
 }
 ```
 ### Subclass
-Subclassing is the act of basing a new class on an existing class. 
-The subclass inherits characteristics from the existing class, which you can then refine. 
-You can also add new characteristics to the subclass.
-The "super" identifier is used to access the properties and methods of the superclass.
+Subclassification is the process of basing a new class on an existing class. The subclass inherits features of the existing class, which you can later develop. You can also add new properties to the subclass.
 
-### Override
-Overriding means replacing a method belonging to a class with the method in the base class by defining a method with the same name in another class derived from that class. This process allows a method to perform different functions in different classes derived from the same class. The method in the base class is overridden by adding the override keyword before the name of the method in the derived class.
+- The "super" identifier is used to access the properties and methods of the superclass.
+- The "override" specifier means that a method of a class is replaced by the method in the base class by defining a method of the same name in another class derived from that class. This process allows a method to perform different functions in different classes derived from the same class. The method in the base class is overridden by adding the override keyword before the name of the method in the derived class.
 
 ```swift
 enum Segment {
