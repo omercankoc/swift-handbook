@@ -1,7 +1,7 @@
 # Strings and Characters
 - Type Annotation
 ```swift
-var language : String
+var language: String
 ```
 
 - Assignment
@@ -11,7 +11,7 @@ var language = "Swift"
 
 - Declaration
 ```swift
-var language : String = "Swift"
+var language: String = "Swift"
 ```
 
 - Initializing an Empty String
@@ -31,34 +31,10 @@ var language = """
     By Apple
 """
 ```
-- Nullable
-```swift
-var url : String = "https://www.youtube.com"
-
-func validateURL(_ url : String?) -> Bool {
-    if url == nil {
-        return false
-    } else {
-        return true
-    }
-}
-
-let first = validateURL(url)
-print(first)
-
-let second = validateURL(nil)
-print(second)
-```
-```
-true
-false
-```
 
 - Elements in String
 ```swift
-for item in language {
-    print(item)
-}
+for item in language { print(item) }
 ```
 ```
 S w i f t
@@ -66,9 +42,7 @@ S w i f t
 
 - Enumerated Elements in String
 ```swift
-for (index,item) in language.enumerated(){
-    print(index, item)
-}
+for (index,item) in language.enumerated(){ print(index, item) }
 ```
 ```
 0 S
@@ -83,7 +57,6 @@ for (index,item) in language.enumerated(){
 var language : String = "Swift"
 var developer : String = "Apple"
 var message : String = "\(language) programming language developed by \(developer)."
-
 print(message)
 ```
 ```
