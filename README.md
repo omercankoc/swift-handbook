@@ -4,7 +4,7 @@
 - [Optional Chaining](https://github.com/omercankoc/documents-swift/blob/master/Sources/OptionalChaining.md)
 - [Operators](https://github.com/omercankoc/documents-swift/blob/master/Sources/Operators.md)
 - [Control Flow](https://github.com/omercankoc/documents-swift/blob/master/Sources/ControlFlow.md)
-- [Functions And Closures](https://github.com/omercankoc/documents-swift/blob/master/Sources/FunctionsAndClosures.md)
+- [Functions](https://github.com/omercankoc/documents-swift/blob/master/Sources/Functions.md)
 - [Closures](https://github.com/omercankoc/documents-swift/blob/master/Sources/Closures.md)
 - [Arrays](https://github.com/omercankoc/documents-swift/blob/master/Sources/Arrays.md)
 - [Sets](https://github.com/omercankoc/documents-swift/blob/master/Sources/Sets.md)
