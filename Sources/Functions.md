@@ -107,31 +107,6 @@ var sum = totalizer(values: 1,2,3,4,5,6,7,8,9)
 45
 ```
 
-### Mutating Function
-Mutating cannot be used with classes as it is a reference type.
-The mutating keyword is only required if you are changing any properties contained within the struct. 
-```swift
-struct Sphere {
-    var radius : Double
-    var area : Double?
-    var volume : Double?
-       
-    mutating func solve(radius : Double){
-        self.radius = radius
-        self.area = 4 * Double.pi * pow(radius,2)
-        self.volume = (4 / 3) * Double.pi * pow(radius,3)
-    }
-}
-```
-```swift
-var sphere = Sphere(radius: 2)
-sphere.solve(radius: sphere.radius)
-```
-```
-Sphere(radius: 2.0, area: nil, volume: nil)
-Sphere(radius: 2.0, area: Optional(50.26548245743669), volume: Optional(33.510321638291124))
-```
-
 ### Functions in "for" Keyword
 ```swift
 struct Message {
@@ -160,6 +135,7 @@ print(message)
 ```
 Successful Responses
 ```
+
 ### Functions in "_" Keyword
 ```swift
 struct Messages {
@@ -188,110 +164,27 @@ var message = response.status(200)
 Successful Responses
 ```
 
-# Closures
-Code blocks that can return a value, can be assigned to any variable and stored in the assigned variable are called "Closure". Closures can actually be thought of as specialized functions.
-
-1. Declaration
+## Mutating Function
+Mutating cannot be used with classes as it is a reference type.
+The mutating keyword is only required if you are changing any properties contained within the struct. 
 ```swift
-let first = {
-    print(".")
-}
-```
-```swift
-first()
-```
-```
-.
-```
-
-2. Closures Parameters
-```swift
-var equality = { (first : Int, second : Int) in
-    if first == second { print("Equal") }
-    else { print("Not Equal") }
-}
-
-var equality_ : (Int, Int) -> Void = { first, second in
-    if first == second { print("Equal") }
-    else { print("Not Equal") }
-}
-```
-```swift
-equality(3,3)
-equality_(4,1)
-```
-```
-Equal
-Not Equal
-```
-
-3. Return Values
-```swift
-let modulus = {
-    (first : Int, second : Int) -> Int in
-    return first % second
-}
-
-let modulus_ : (Int, Int) -> Int = { first, second in
-    return first % second
-}
-```
-```swift
-modulus(12, 5)
-modulus_(16, 9)
-```
-```
-2 7
-```
-
-4. Closures as Function Parameter
-```swift
-func work(process: ()->()) {
-  print("Process Getting Ready...")
-  process()
-}
-```
-```swift
-work {
-    print("Processing...")
-}
-```
-```
-Process Getting Ready...
-Processing...
-```
-
-5. Trailing Closures
-```swift
-func action(status : Bool, onSuccess : (() -> ())? = nil, onFail : (() -> ())? = nil){
-    if status {
-        onSuccess?()
-    } else {
-        onFail?()
+struct Sphere {
+    var radius : Double
+    var area : Double?
+    var volume : Double?
+       
+    mutating func solve(radius : Double){
+        self.radius = radius
+        self.area = 4 * Double.pi * pow(radius,2)
+        self.volume = (4 / 3) * Double.pi * pow(radius,3)
     }
 }
 ```
 ```swift
-action(status: true) {
-    print("Connected!")
-} onFail: {
-    print("Not Connected!")
-}
+var sphere = Sphere(radius: 2)
+sphere.solve(radius: sphere.radius)
 ```
 ```
-Connected!
-```
-6. Autoclosure 
-```swift
-func work(process: @autoclosure ()->()) {
-  print("Process Getting Ready...")
-  process()
-}
-```
-```swift
-work(process: print("Processing..."))
-```
-```
-Process Getting Ready...
-Processing...
+Sphere(radius: 2.0, area: nil, volume: nil)
+Sphere(radius: 2.0, area: Optional(50.26548245743669), volume: Optional(33.510321638291124))
 ```
