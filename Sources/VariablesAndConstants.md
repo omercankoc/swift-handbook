@@ -2,46 +2,78 @@
 
 - Mutable Variables
 ```swift
-var platform : String = "iOS"
+var variable: Int = 0
 ```
 
 - Immutable Constants
 ```swift
-let language : String = "Swift"
+let constant: Int = 1
 ```
 
 ### Type Annotation, Assignment and Declaration
 
 - Type Annotation
 ```swift
-var language : String
+var base: Int
 ```
 
 - Assignment
 ```swift
-var language = "Swift"
+var base = 10
 ```
 
 - Declaration
 ```swift
-var language : String = "Swift"
+var base: Int = 10
 ```
 
 ### Types
 
 - Integer
 ```swift
-var counter : Int = 0
+var min: Int = Int.max
+var max: Int = Int.max
+print(min, max)
+
+var uint8Max: UInt8 = UInt8.max
+var uint8Min: UInt8 = UInt8.min
+print(uint8Min, uint8Max)
+
+var uint16Max: UInt16 = UInt16.max
+var uint16Min: UInt16 = UInt16.min
+print(uint16Min, uint16Max)
+
+var uint32Max: UInt32 = UInt32.max
+var uint32Min: UInt32 = UInt32.min
+print(uint32Min, uint32Max)
+
+var uint64Max: UInt64 = UInt64.max
+var uint64Min: UInt64 = UInt64.min
+print(uint64Min, uint64Max)
+```
+```
+9223372036854775807 9223372036854775807
+0 255
+0 65535
+0 4294967295
+0 18446744073709551615
 ```
 
 - Float
 ```swift
-var euler : Float = 2.7182818
+var pi: Float = Float.pi
+print(pi)
+```
+```
+3.1415925
 ```
 
 - Double
 ```swift
-var pi : Double = 3.14159265358979
+var pi : Double = Double.pi
+```
+```
+3.141592653589793
 ```
 
 - Bool
@@ -54,9 +86,7 @@ It allows us to declare multiple different types of values ​​in a single com
 - Declaration
 ```swift
 var red = (hex : "FF0101", rgb : [255,1,1], hsl : [0,100,50], cmyk : [0,100,100,0])
-```
-```swift
-red.hex
+print(red.hex)
 ```
 ```
 FF0101
@@ -64,10 +94,9 @@ FF0101
 
 ```swift
 var blue = ("0108FF",[1,8,255],[238,100,50],[100,97,0,0])
+print(blue.0)
 ```
-```swift
-blue.0
-```
+
 ```
 0108FF
 ```
@@ -153,33 +182,21 @@ print(kelvin.kelvin, "K =", kelvin.celsius, "C =", kelvin.fahrenheit, "F")
 ### Type Conversion
 - Usage
 ```swift
-var count : Int = 0
-var numeric : String = "5"
-var text : String = "Swift"
-var euler : Float = 2.7182818
-var pi : Double = 3.14159265358979
+var integerMax : Int = Int.max
+var floatPi : Float = Float.pi
+var doublePi : Double = Double.pi
 
-if let stringToInteger_Numeric = Int(numeric) {
-    print("String value converting to integer value : ", stringToInteger_Numeric)
-} else {
-    print("String value not converting to integer value.")
-}
-
-if let stringToInteger_Text = Int(text) {
-    print("String value converting to integer value : ", stringToInteger_Text)
-} else {
-    print("String value not converting to integer value.")
-}
-
-let integerToStringCount = String(count)
-print(integerToStringCount)
-
-let doubleToFloat = Float(pi)
-print(doubleToFloat)
-
-let floatToDouble = Double(euler)
+let floatToDouble = Float(floatPi)
 print(floatToDouble)
 
-let doubleToInteger = Int(pi)
+let doubleToFloat = Double(doublePi)
+print(doubleToFloat)
+
+let doubleToInteger = Int(doublePi)
 print(doubleToInteger)
+```
+```
+3.1415925
+3.141592653589793
+3
 ```
