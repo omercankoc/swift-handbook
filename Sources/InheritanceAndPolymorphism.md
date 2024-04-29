@@ -122,32 +122,73 @@ The load carrying capacity of this truck is 35 tons.
 ```
 
 # Polymorphism
+Polymorphism in Swift allows objects of different classes to be treated as objects of a common superclass or protocol. It enables objects of different types to be used interchangeably, as long as they conform to a common interface or protocol.
 
 ```swift
-class Language {
-    func message(){
-        print("Superclass")
-    }
-}
+let car = Car(segment: .B, passenger: 5, weight: 1120, width: 4065, height: 1450, length: 1750, fuel: .GASOLINE)
+let truck = Truck(axle: 3, tonnage: 35, weight: 2400, width: 5800, height: 3950, length: 1930, fuel: .DIESEL)
+let other = Car(segment: .S, passenger: 1, weight: 1100, width: 3100, height: 1200, length: 1650, fuel: .HYBRID)
 
-class Swift : Language {
-    override func message(){
-        print("Subclass")
-    }
+var vehicles: [Vehicle] = [car,truck,other]
+
+for vehicle in vehicles {
+    print(vehicle.dimensions())
 }
 ```
+```
+Created Vahicle
+Created Car
+Created Vahicle
+Created Truck
+Created Vahicle
+Created Car
+This car is B segment
+This truck has 3 axles.
+This car is S segment
+```
 
-```swift
-var language : Language = Swift()
-language.message()
-```
-```
-Subclass
-```
+## Type Casting
+The conversion of Superclass to Subclass is called <b>"DOWNCASTING"</b>, conversion of Subclass to superclass is called <b>"UPCASTING"</b>.
 
-## Downcasting and Upcasting
-The conversion of Superclass to Subclass is called Downcasting, conversion of Subclass to superclass is called Upcasting.
 - is : Used for type checking.
+```swift
+var carCount = 0
+var truckCount = 0
+
+for vehicle in vehicles {
+    if vehicle is Car {
+        carCount += 1
+    } else if vehicle is Truck {
+        truckCount += 1
+    }
+}
+
+print(carCount, truckCount)
+```
+```
+2 1
+```
+
 - as : It is used to convert one type to another.
+```swift
+
+```
+```
+
+```
+
 - as! (Force Downcasting) : It is used to convert one type to another type. Returns value if successful, error if unsuccessful.
-- as? (For Optinonal Downcasting) : It is used if there is an optional data during the conversion. Returns value if successful, nil if unsuccessful.
+```swift
+
+```
+```
+
+```
+
+- as? (Optinonal Downcasting) : It is used if there is an optional data during the conversion. Returns value if successful, nil if unsuccessful.
+```swift
+
+```
+```
+
+```
