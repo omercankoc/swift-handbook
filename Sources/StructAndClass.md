@@ -135,7 +135,6 @@ class Sphere {
 }
 ```
 
-### Initialization Parameters
 - Instance
 ```swift
 var sphere = Sphere(radius: 2)
@@ -149,6 +148,8 @@ var sphere = Sphere()
 ```
 0.0 0.0 0.0
 ```
+
+### Initialization Parameters
 - Declaration
 ```swift
 class Sphere {
@@ -163,6 +164,7 @@ class Sphere {
     }
 }
 ```
+
 - Instance
 ```swift
 var area = Sphere(area: 2)
