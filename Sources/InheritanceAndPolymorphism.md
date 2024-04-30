@@ -150,25 +150,7 @@ This car is S segment
 ## Type Casting
 The conversion of Superclass to Subclass is called <b>"DOWNCASTING"</b>, conversion of Subclass to superclass is called <b>"UPCASTING"</b>.
 
-- is: Used for type checking.
-```swift
-var carCount = 0
-var truckCount = 0
-
-for vehicle in vehicles {
-    if vehicle is Car {
-        carCount += 1
-    } else if vehicle is Truck {
-        truckCount += 1
-    }
-}
-
-print(carCount, truckCount)
-```
-```
-2 1
-```
-
-- as: It is used to convert one type to another.
-- as! (Force Downcasting): It is used to convert one type to another type. Returns value if successful, error if unsuccessful.
-- as? (Optinonal Downcasting): It is used if there is an optional data during the conversion. Returns value if successful, nil if unsuccessful.
+- is -> Used for type checking.
+- as -> It is used to convert one type to another.
+- as! (Force Downcasting) -> It is used to convert one type to another type. Returns value if successful, error if unsuccessful.
+- as? (Optinonal Downcasting) -> It is used if there is an optional data during the conversion. Returns value if successful, nil if unsuccessful.
