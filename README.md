@@ -11,7 +11,7 @@
 - [Dictionaries](https://github.com/omercankoc/documents-swift/blob/master/Sources/Dictionaries.md)
 - [Extension](https://github.com/omercankoc/documents-swift/blob/master/Sources/Extension.md)
 - [Enumeration](https://github.com/omercankoc/documents-swift/blob/master/Sources/Enumeration.md)
-- [Structures and Classes](https://github.com/omercankoc/documents-swift/blob/master/Sources/StructuresandClasses.md)
+- [Structures and Classes](https://github.com/omercankoc/documents-swift/blob/master/Sources/StructuresAndClasses.md)
 - [Inheritance and Polymorphism](https://github.com/omercankoc/documents-swift/blob/master/Sources/InheritanceAndPolymorphism.md)
 - [Protocols](https://github.com/omercankoc/documents-swift/blob/master/Sources/Protocols.md)
 - [Properties](https://github.com/omercankoc/documents-swift/blob/master/Sources/Properties.md)
