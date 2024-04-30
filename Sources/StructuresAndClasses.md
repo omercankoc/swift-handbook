@@ -1,14 +1,17 @@
 # Structures and Classes
-Can be used in both:
-- Storage or computed properties, functions and clousures,
-- Initialization,
-- Extensions,
-- Inheritance and Protocols (adopts or inherits).
+Structures and classes in Swift have many things in common. Both can:
+- Define properties to store values,
+- Define methods to provide functionality,
+- Define subscripts to provide access to their values using subscript syntax,
+- Define initializers to set up their initial state,
+- Be extended to expand their functionality beyond a default implementation,
+- Conform to protocols to provide standard functionality of a certain kin
 
-But Classes have additional capabilities that Structures don’t have:
-- Classes can pass on their properties and functions with the help of inheritance.
-- Classes allows you to check and interpret a class instance at runtime.
-- Classes can be used with Objective C. Structs cannot be used with Objective-C.
+Classes have additional capabilities that structures don’t have:
+- Inheritance enables one class to inherit the characteristics of another,
+- Type casting enables you to check and interpret the type of a class instance at runtime,
+- Deinitializers enable an instance of a class to free up any resources it has assigned,
+- Reference counting allows more than one reference to a class instance.
 
 However, Structures also have some advantages:
 - Structures are kept in memory with stack logic, so when data is wanted to be read, it is read faster (Value Type). But classes are stored randomly in memory (Referance Type). 
