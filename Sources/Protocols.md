@@ -1,5 +1,8 @@
 # Protocols 
+A protocol defines a blueprint of methods, properties, and other requirements that suit a particular task or piece of functionality. The protocol can then be adopted by a class, structure, or enumeration to provide an actual implementation of those requirements. Any type that satisfies the requirements of a protocol is said to conform to that protocol.
+In addition to specifying requirements that conforming types must implement, you can extend a protocol to implement some of these requirements or to implement additional functionality that conforming types can take advantage of.
 
+- Declaration
 ```swift
 protocol FirstProtocol {
     var firstInt : Int { get set }
@@ -18,6 +21,7 @@ protocol SecondProtocol {
 }
 ```
 
+- Implementation
 ```swift
 struct FirstStruct : FirstProtocol {
     var firstInt: Int
@@ -70,7 +74,8 @@ struct ThirdStruct : FirstProtocol, SecondProtocol {
     }
 }
 ```
-
+<b> Third Struct is an instance of Protocol Composition. </b>
+- Instance
 ```swift
 var first = FirstStruct(firstInt: 1, firstString: "First")
 print(first.firstInt, first.firstString, first.firstCustomMessage())
@@ -105,3 +110,6 @@ third.secondMessage()
 Third Struct using First Protocol
 Third Struct using Second Protocol
 ```
+
+### Delegation
+Delegation is a design pattern that enables a class or structure to hand off (or delegate) some of its responsibilities to an instance of another type. This design pattern is implemented by defining a protocol that encapsulates the delegated responsibilities, such that a conforming type (known as a delegate) is guaranteed to provide the functionality that has been delegated. Delegation can be used to respond to a particular action, or to retrieve data from an external source without needing to know the underlying type of that source.
