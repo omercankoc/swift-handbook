@@ -1,65 +1,63 @@
 # Properties
+Properties associate values with a particular class, structure, or enumeration. Stored properties store constant and variable values as part of an instance, whereas computed properties calculate a value. Computed properties are provided by classes, structures, and enumerations. Stored properties are provided only by classes and structures.
 
-- Property Observers (ONLY CLASSES)
-```swift
-class Logic {
-    var status : Bool = false {
-        willSet {
-            print("WILL SET : Current Value -> \(status) : New Value -> \(newValue)")
-        }
-        
-        didSet {
-            print("DID SET : Current Value  -> \(status) : Old Value -> \(oldValue)")
-        }
-    }
-}
+In addition, you can define property observers to monitor changes in a property’s value, which you can respond to with custom actions. Property observers can be added to stored properties you define yourself, and also to properties that a subclass inherits from its superclass.
 
-var first = Logic()
-first.status = true
-```
+## Stored Properties
+In its simplest form, a stored property is a constant or variable that’s stored as part of an instance of a particular class or structure. Stored properties can be either variable stored properties (introduced by the <b>var</b> keyword) or constant stored properties (introduced by the <b>let</b> keyword).
 
-```
-WILL SET : Current Value -> false : New Value -> true
-DID SET : Current Value  -> true : Old Value -> false
-```
-
-## Stored Properties (CLASSES or STRUCTURES)
-A constant or variable stored as a property of an instance of the class or structure.
-
-- Lazy Stored Properties (ONLY VAR)
 ```swift
 struct User {
-    var name : String
-    var surname : String
-    
-    lazy var username = {
-        return name.lowercased() + "." + surname.lowercased()
-    }()
-    
-    lazy var nickname = {
-        return "\(name[name.startIndex].uppercased())\(surname[surname.startIndex].uppercased())"
-    }()
+    var name: String
+    var surname: String
 }
-```
-```swift
-var user = User(name: "Dennis", surname: "Ritchie")
+
+var user = User(name: "Omer", surname: "Koc")
+print(user)
+
+user.name = "Omer Can"
 print(user)
 ```
 ```
-User(name: "Dennis", surname: "Ritchie", $__lazy_storage_$_username: nil, $__lazy_storage_$_nickname: nil)
+User(name: "Omer", surname: "Koc")
+User(name: "Omer Can", surname: "Koc")
+```
+
+### Lazy Stored Properties
+A lazy stored property is a property whose initial value is not calculated until the first time it’s used.
+
+You must always declare a lazy property as a variable (with the var keyword), because its initial value might not be retrieved until after instance initialization completes. Constant properties must always have a value before initialization completes, and therefore can’t be declared as lazy.
+
+Lazy properties are useful when the initial value for a property is dependent on outside factors whose values aren’t known until after an instance’s initialization is complete. Lazy properties are also useful when the initial value for a property requires complex or computationally expensive setup that shouldn’t be performed unless or until it’s needed.
+
+```swift
+struct User {
+    var name: String
+    var surname: String
+    
+    lazy var username: String = {
+        return (self.name.lowercased() + "." + self.surname.lowercased())
+            .replacingOccurrences(of: " ", with: "")
+    }()
+}
+```
+```swift
+var user = User(name: "Omer Can", surname: "KOC")
+print(user)
+```
+```
+User(name: "Omer Can", surname: "KOC", $__lazy_storage_$_username: nil)
 ```
 ```swift
 _ = user.username
-_ = user.nickname
-
 print(user)
 ```
 ```
-User(name: "Dennis", surname: "Ritchie", $__lazy_storage_$_username: Optional("dennis.ritchie"), $__lazy_storage_$_nickname: Optional("DR"))
+User(name: "Omer Can", surname: "KOC", $__lazy_storage_$_username: Optional("omercan.koc"))
 ```
 
 ## Computed Properties (ENUMERATIONS, CLASSES or STRUCTURES)
-They provide a getter and an optional setter to retrieve and set properties indirectly.
+In addition to stored properties, classes, structures, and enumerations can define computed properties, which don’t actually store a value. Instead, they provide a getter and an optional setter to retrieve and set other properties and values indirectly.
 
 - Getter and Setter
 ```swift
@@ -116,3 +114,30 @@ print(user.username as Any, user.password as Any, user.authentication)
 Optional("developer") Optional("password") true
 nil nil false
 ```
+
+## Property Observers (ONLY CLASSES)
+```swift
+class Logic {
+    var status : Bool = false {
+        willSet {
+            print("WILL SET : Current Value -> \(status) : New Value -> \(newValue)")
+        }
+        
+        didSet {
+            print("DID SET : Current Value  -> \(status) : Old Value -> \(oldValue)")
+        }
+    }
+}
+
+var first = Logic()
+first.status = true
+```
+
+```
+WILL SET : Current Value -> false : New Value -> true
+DID SET : Current Value  -> true : Old Value -> false
+```
+
+
+
+
