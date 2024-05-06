@@ -56,66 +56,118 @@ print(user)
 User(name: "Omer Can", surname: "KOC", $__lazy_storage_$_username: Optional("omercan.koc"))
 ```
 
-## Computed Properties (ENUMERATIONS, CLASSES or STRUCTURES)
+## Computed Properties
 In addition to stored properties, classes, structures, and enumerations can define computed properties, which don’t actually store a value. Instead, they provide a getter and an optional setter to retrieve and set other properties and values indirectly.
 
 - Getter and Setter
 ```swift
-struct User {
-    var username : String? {
+struct Body {
+    var area: Double = 0.0
+    var volume: Double = 0.0
+}
+
+struct Radius {
+    var radius: Double = 0.0
+}
+
+struct Sphere {
+    var radius = Radius()
+    var body : Body {
         get {
-            guard let storage = UserDefaults.standard.string(forKey: "username") else { return nil }
-            return storage
+            let area = 4 * Double.pi * pow(self.radius.radius,2)
+            let volume = (4 / 3) * Double.pi * pow(radius.radius,3)
+            return Body(area: area, volume: volume)
         }
         
-        set {
-            UserDefaults.standard.setValue(newValue, forKey: "username")
-        }
-    }
-    
-    var password : String? {
-        get {
-            guard let storage = UserDefaults.standard.string(forKey: "password") else { return nil }
-            return storage
-        }
-        
-        set {
-            UserDefaults.standard.setValue(newValue, forKey: "password")
-        }
-    }
-    
-    var authentication : Bool {
-        get {
-            if self.username != nil && self.password != nil {
-                return true
+        set(new) {
+            if new.area != 0.0 {
+                radius.radius = pow(new.area / (4 * Double.pi), 1/2)
+            } else if new.volume != 0.0 {
+                radius.radius = pow(new.volume / ((4/3) * Double.pi), 1/3)
             } else {
-                return false
+                radius.radius = 0.0
             }
         }
     }
-    
-    func delete(){
-        UserDefaults.standard.removeObject(forKey: "username")
-        UserDefaults.standard.removeObject(forKey: "password")
-    }
+}
+```
+```swift
+var sphere: Sphere = Sphere(radius: Radius(radius: 2.0))
+print(sphere, sphere.body.area, sphere.body.volume)
+
+sphere.body = Body(area: 50.26548245743669)
+print(sphere)
+
+sphere.body = Body(volume: 33.510321638291124)
+print(sphere)
+```
+```
+Sphere(radius: Console.Radius(radius: 2.0)) 50.26548245743669 33.510321638291124
+Sphere(radius: Console.Radius(radius: 2.0))
+Sphere(radius: Console.Radius(radius: 2.0))
+```
+
+### Shorthand Getter and Setter Declaration
+```swift
+struct Body {
+    var area: Double = 0.0
+    var volume: Double = 0.0
 }
 
-var user = User()
-user.username = "developer"
-user.password = "password"
+struct Radius {
+    var radius: Double = 0.0
+}
 
-print(user.username as Any, user.password as Any, user.authentication)
+struct Sphere {
+    var radius = Radius()
+    var body : Body {
+        get {
+            Body(area: 4 * Double.pi * pow(self.radius.radius,2), volume: (4 / 3) * Double.pi * pow(radius.radius,3))
+        }
+        
+        set {
+            if newValue.area != 0.0 {
+                radius.radius = pow(newValue.area / (4 * Double.pi), 1/2)
+            } else if newValue.volume != 0.0 {
+                radius.radius = pow(newValue.volume / ((4/3) * Double.pi), 1/3)
+            } else {
+                radius.radius = 0.0
+            }
+        }
+    }
+}
+```
+### Read-Only Computed Properties
+A computed property with a getter but no setter is known as a read-only computed property. A read-only computed property always returns a value, and can be accessed through dot syntax, but can’t be set to a different value.
+```swift
+struct Body {
+    var area: Double = 0.0
+    var volume: Double = 0.0
+}
 
-user.delete()
+struct Radius {
+    var radius: Double = 0.0
+}
 
-print(user.username as Any, user.password as Any, user.authentication)
+struct Sphere {
+    var radius = Radius()
+    var body : Body {
+        get {
+            Body(area: 4 * Double.pi * pow(self.radius.radius,2), volume: (4 / 3) * Double.pi * pow(radius.radius,3))
+        }
+    }
+}
+```
+```swift
+var sphere: Sphere = Sphere(radius: Radius(radius: 2.0))
+print(sphere, sphere.body.area, sphere.body.volume)
 ```
 ```
-Optional("developer") Optional("password") true
-nil nil false
+Sphere(radius: Console.Radius(radius: 2.0)) 50.26548245743669 33.510321638291124
 ```
 
-## Property Observers (ONLY CLASSES)
+## Property Observers
+Property observers observe and respond to changes in a property’s value. Property observers are called every time a property’s value is set, even if the new value is the same as the property’s current value.
 ```swift
 class Logic {
     var status : Bool = false {
@@ -138,6 +190,7 @@ WILL SET : Current Value -> false : New Value -> true
 DID SET : Current Value  -> true : Old Value -> false
 ```
 
+## Property Wrappers
 
 
 
