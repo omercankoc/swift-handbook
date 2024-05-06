@@ -56,6 +56,14 @@ print(user)
 User(name: "Omer Can", surname: "KOC", $__lazy_storage_$_username: Optional("omercan.koc"))
 ```
 
+Advantages:
+- It is an easy structure that we can use to store data.
+- It is a data storage structure that we can use directly without calculating each time.
+
+Disadvantages:
+- It can only have one value.
+- When we want to change its value, it must contain logic codes.
+
 ## Computed Properties
 In addition to stored properties, classes, structures, and enumerations can define computed properties, which don’t actually store a value. Instead, they provide a getter and an optional setter to retrieve and set other properties and values indirectly.
 
@@ -166,6 +174,14 @@ print(sphere, sphere.body.area, sphere.body.volume)
 Sphere(radius: Console.Radius(radius: 2.0)) 50.26548245743669 33.510321638291124
 ```
 
+Advantages:
+- It can dynamically calculate its value each time according to the results of the logic codes inside it.
+- It does not need data storage to keep the value from calculation when we need it.
+
+Disadvantages:
+- May affect performance as it needs to be calculated every time.
+- If the logic inside is faulty, the calculated value may also be faulty.
+
 ## Property Observers
 Property observers observe and respond to changes in a property’s value. Property observers are called every time a property’s value is set, even if the new value is the same as the property’s current value.
 ```swift
@@ -191,6 +207,19 @@ DID SET : Current Value  -> true : Old Value -> false
 ```
 
 ## Property Wrappers
+A property wrapper adds a layer of separation between code that manages how a property is stored and the code that defines a property. For example, if you have properties that provide thread-safety checks or store their underlying data in a database, you have to write that code on every property. When you use a property wrapper, you write the management code once when you define the wrapper, and then reuse that management code by applying it to multiple properties.
 
+```swift
+```
+```swift
+```
+```swift
+```
 
+Advantages:
+- It is a structure that we can use to store data.
+- Thanks to the logic codes inside, it can perform operations such as allowing data to change or checking the accuracy of the data.
+- We can use the same structure over and over again for different data.
 
+Disadvantages:
+- May affect performance and code complexity around it.
