@@ -80,7 +80,7 @@ struct Radius {
 
 struct Sphere {
     var radius = Radius()
-    var body : Body {
+    var body: Body {
         get {
             let area = 4 * Double.pi * pow(self.radius.radius,2)
             let volume = (4 / 3) * Double.pi * pow(radius.radius,3)
@@ -128,7 +128,7 @@ struct Radius {
 
 struct Sphere {
     var radius = Radius()
-    var body : Body {
+    var body: Body {
         get {
             Body(area: 4 * Double.pi * pow(self.radius.radius,2), volume: (4 / 3) * Double.pi * pow(radius.radius,3))
         }
@@ -159,7 +159,7 @@ struct Radius {
 
 struct Sphere {
     var radius = Radius()
-    var body : Body {
+    var body: Body {
         get {
             Body(area: 4 * Double.pi * pow(self.radius.radius,2), volume: (4 / 3) * Double.pi * pow(radius.radius,3))
         }
