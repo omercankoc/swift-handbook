@@ -222,3 +222,6 @@ Computer Deallocated...
 OS Deallocated...
 ```
 
+### Autoreleasepool 
+```swift
+```
