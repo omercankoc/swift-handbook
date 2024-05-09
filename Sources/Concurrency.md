@@ -5,6 +5,49 @@ Swift has built-in support for writing asynchronous and parallel code in a struc
 
 The additional scheduling flexibility from parallel or asynchronous code also comes with a cost of increased complexity. Swift lets you express your intent in a way that enables some compile-time checking — for example, you can use actors to safely access mutable state. However, adding concurrency to slow or buggy code isn’t a guarantee that it will become fast or correct. In fact, adding concurrency might even make your code harder to debug. However, using Swift’s language-level support for concurrency in code that needs to be concurrent means Swift can help you catch problems at compile time.
 
+- Synchronous: A situation in which operations are performed sequentially and step by step. The start of another process occurs with the completion of the previously started process.
+- Asynchronous: It is a programming paradigm that allows other operations to continue after starting a process without waiting for its result. The fact that an asynchronous operation is ongoing does not prevent other operations.
+- Thread: It is the smallest processing unit managed by an operating system. A thread has the ability and program counter to execute a specific task within a program. More than one thread can be run in a program.
+- Race Condition: It refers to the situation where multiple threads or processes try to access the same resource at the same time. In this case, undesirable results may occur because the order or priority of threads or processes is not clear. For example, when two threads try to increment the same variable at the same time.
+- Structured Concurrency: It is a concurrency model in which tasks are organized in a specific structure. This approach organizes subtasks within a given main task. Subtasks are parts of the main task and these parts can work in coordination with each other. The structured concurrency model helps make code more predictable and readable by streamlining the control flow of tasks and ensuring they work in harmony with each other.
+- Unstructured Concurrency: It is a concurrency model in which tasks run independently without a determining master task. In this model, tasks are independent of each other and are not coordinated by a parent task. This provides a more flexible but uncontrolled concurrency model.
+- Main Task: It is the basic business unit of a program. In the context of concurrency, this term refers to the primary task that initiates and coordinates other tasks that are executed simultaneously. It starts other tasks, waits for them to complete, and is usually started at the beginning of the program.
+
+```swift
+func parse() {
+    let data = download()
+    print(data, "and parsed." )
+}
+
+func download() -> String {
+    sleep(3)
+    return "Data was downloaded"
+}
+
+parse()
+```
+```
+Data was downloaded and parsed.
+```
+This code continues the parsing function after calling the download function. That is, other operations wait until the download function is completed.
+```swift
+func parse() async throws {
+    let data = try await download()
+    print(data, "Data was parsed.")
+}
+
+func download() async throws -> String {
+    try await Task.sleep(nanoseconds: UInt64(3 * 1_000_000_000))
+    return "Data was downloaded."
+}
+
+try await parse()
+```
+```
+Data was downloaded. Data was parsed.
+```
+Here, the download function is marked as async and an asynchronous operation is performed using await. The task.sleep function is used to perform an asynchronous wait operation. In this way, the parse function does not block other operations and continues until the data parse is completed.
+
 ### Async / Await
 
 - async: Indicates that the function can be suspended. If there is a need to wait in other places that call the function, those parts should also be defined as async.
