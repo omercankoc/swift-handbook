@@ -240,8 +240,7 @@ print(victory)
 Victory(username: "victory", _score: Console.Positive(wrappedValue: 0))
 ```
 
-
-
+### Property Wrapper Properties
 ```swift
 @propertyWrapper
 struct Storage<T> {
