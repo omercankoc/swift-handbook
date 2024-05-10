@@ -210,10 +210,80 @@ DID SET : Current Value  -> true : Old Value -> false
 A property wrapper adds a layer of separation between code that manages how a property is stored and the code that defines a property. For example, if you have properties that provide thread-safety checks or store their underlying data in a database, you have to write that code on every property. When you use a property wrapper, you write the management code once when you define the wrapper, and then reuse that management code by applying it to multiple properties.
 
 ```swift
+@propertyWrapper
+struct Positive {
+    var wrappedValue: Int
+    
+    init(wrappedValue: Int) {
+        if wrappedValue < 0 { self.wrappedValue = 0 }
+        else { self.wrappedValue = wrappedValue }
+    }
+}
+
+struct Victory {
+    var winner: String
+    @Positive var score: Int
+}
 ```
 ```swift
+var victory = Victory(username: "victory", score: 120)
+print(victory)
+```
+```
+Victory(username: "victory", _score: Console.Positive(wrappedValue: 120))
 ```
 ```swift
+var victory = Victory(username: "victory", score: -120)
+print(victory)
+```
+```
+Victory(username: "victory", _score: Console.Positive(wrappedValue: 0))
+```
+
+
+
+```swift
+@propertyWrapper
+struct Storage<T> {
+    var storageKey: String
+    var storageValue: T
+    let storage: UserDefaults = .standard
+    
+    var wrappedValue: T {
+        get {
+            let value = storage.value(forKey: storageKey) as? T
+            return value ?? storageValue
+        }
+        
+        set {
+            storage.setValue(newValue, forKey: storageKey)
+        }
+    }
+}
+
+struct LastWinner {
+    @Storage(storageKey: "username", storageValue: "guest") var username: String
+    @Storage(storageKey: "score", storageValue: 0) var score: Int
+}
+```
+
+```swift
+var lastWinner = LastWinner()
+lastWinner.username = "lastWinner"
+lastWinner.score = 95
+
+print(lastWinner.username, lastWinner.score)
+```
+```
+lastWinner 95
+```
+```swift
+var lastWinner = LastWinner()
+
+print(lastWinner.username, lastWinner.score)
+```
+```
+lastWinner 95
 ```
 
 Advantages:
