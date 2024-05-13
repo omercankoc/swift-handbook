@@ -32,7 +32,7 @@ first = nil
 second = nil
 ```
 ```
-
+// No Output
 ```
 
 ```swift
@@ -104,7 +104,7 @@ parent!.addChild(name: "Joanna")
 parent = nil
 ```
 ```
-// No Output: MEMORY LEAK!
+// No Output -> MEMORY LEAK!
 ```
 
 - Solved
@@ -161,65 +161,65 @@ The situation when an object references a second object is called "Strong Refere
 
 - Problem
 ```swift
-class Computer {
-    var os: OS?
+class Before {
+    var after: After?
     
     deinit {
-        print("Computer Deallocated...")
+        print("Before is Deallocated.")
     }
 }
 
-class OS {
-    var computer: Computer?
+class After {
+    var before: Before?
     
     deinit {
-        print("OS Deallocated...")
+        print("After is Deallocated.")
     }
 }
 
-var proM1: Computer? = Computer()
-var sonoma: OS? = OS()
+var first: Before? = Before()
+var second: After? = After()
 
-proM1?.os = sonoma
-sonoma?.computer = proM1
+first?.after = second
+second?.before = first
 
-proM1 = nil
-sonoma = nil
+first = nil
+second = nil
 ```
 ```
-// No Output: RETAIN CYCLE!
+// No Output -> RETAIN CYCLE!
 ```
 
 - Solved
 ```swift
-class Computer {
-    var os: OS?
+class Before {
+    var after: After?
     
     deinit {
-        print("Computer Deallocated...")
+        print("Before is Deallocated.")
     }
 }
 
-class OS {
-    weak var computer: Computer?
+class After {
+    weak var before: Before?
     
     deinit {
-        print("OS Deallocated...")
+        print("After is Deallocated.")
     }
 }
 
-var proM1: Computer? = Computer()
-var sonoma: OS? = OS()
+var first: Before? = Before()
+var second: After? = After()
 
-proM1?.os = sonoma
-sonoma?.computer = proM1
+first?.after = second
+second?.before = first
 
-proM1 = nil
-sonoma = nil
+first = nil
+second = nil
 ```
 ```
-Computer Deallocated...
-OS Deallocated...
+Before is Deallocated.
+After is Deallocated.
 ```
 
 ### Autoreleasepool 
