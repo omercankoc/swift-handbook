@@ -32,7 +32,7 @@ first = nil
 second = nil
 ```
 ```
-// No Output
+-> No Output <-
 ```
 
 ```swift
@@ -104,7 +104,7 @@ parent!.addChild(name: "Joanna")
 parent = nil
 ```
 ```
-// No Output -> MEMORY LEAK!
+-> MEMORY LEAK <-
 ```
 
 - Solved
@@ -187,7 +187,7 @@ first = nil
 second = nil
 ```
 ```
-// No Output -> RETAIN CYCLE!
+-> RETAIN CYCLE <-
 ```
 
 - Solved
