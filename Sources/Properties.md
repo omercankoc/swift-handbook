@@ -1,10 +1,5 @@
-# Properties
-Properties associate values with a particular class, structure, or enumeration. Stored properties store constant and variable values as part of an instance, whereas computed properties calculate a value. Computed properties are provided by classes, structures, and enumerations. Stored properties are provided only by classes and structures.
-
-In addition, you can define property observers to monitor changes in a property’s value, which you can respond to with custom actions. Property observers can be added to stored properties you define yourself, and also to properties that a subclass inherits from its superclass.
-
-## Stored Properties
-In its simplest form, a stored property is a constant or variable that’s stored as part of an instance of a particular class or structure. Stored properties can be either variable stored properties (introduced by the <b>var</b> keyword) or constant stored properties (introduced by the <b>let</b> keyword).
+# Stored Properties
+A constant or variable stored as part of an instance of a class or structure. Stored properties can be mutable stored properties (declared with the var keyword) or immutable stored properties (declared with the let keyword).
 
 ```swift
 struct User {
@@ -24,11 +19,7 @@ User(name: "Omer Can", surname: "Koc")
 ```
 
 ### Lazy Stored Properties
-A lazy stored property is a property whose initial value is not calculated until the first time it’s used.
-
-You must always declare a lazy property as a variable (with the var keyword), because its initial value might not be retrieved until after instance initialization completes. Constant properties must always have a value before initialization completes, and therefore can’t be declared as lazy.
-
-Lazy properties are useful when the initial value for a property is dependent on outside factors whose values aren’t known until after an instance’s initialization is complete. Lazy properties are also useful when the initial value for a property requires complex or computationally expensive setup that shouldn’t be performed unless or until it’s needed.
+It is a feature that has no value until first use. They cannot be used with immutable (let) and computed properties.
 
 ```swift
 struct User {
@@ -56,18 +47,10 @@ print(user)
 User(name: "Omer Can", surname: "KOC", $__lazy_storage_$_username: Optional("omercan.koc"))
 ```
 
-Advantages:
-- It is an easy structure that we can use to store data.
-- It is a data storage structure that we can use directly without calculating each time.
-
-Disadvantages:
-- It can only have one value.
-- When we want to change its value, it must contain logic codes.
-
 ## Computed Properties
-In addition to stored properties, classes, structures, and enumerations can define computed properties, which don’t actually store a value. Instead, they provide a getter and an optional setter to retrieve and set other properties and values indirectly.
+They are variables that take value as a result of operations determined within a class, structure or enumeration. They implement the "get" method for access and the optional "set" method for assignment.
 
-- Getter and Setter
+### Getter and Setter Declaration
 ```swift
 struct Body {
     var area: Double = 0.0
@@ -146,7 +129,6 @@ struct Sphere {
 }
 ```
 ### Read-Only Computed Properties
-A computed property with a getter but no setter is known as a read-only computed property. A read-only computed property always returns a value, and can be accessed through dot syntax, but can’t be set to a different value.
 ```swift
 struct Body {
     var area: Double = 0.0
@@ -174,16 +156,8 @@ print(sphere, sphere.body.area, sphere.body.volume)
 Sphere(radius: Console.Radius(radius: 2.0)) 50.26548245743669 33.510321638291124
 ```
 
-Advantages:
-- It can dynamically calculate its value each time according to the results of the logic codes inside it.
-- It does not need data storage to keep the value from calculation when we need it.
-
-Disadvantages:
-- May affect performance as it needs to be calculated every time.
-- If the logic inside is faulty, the calculated value may also be faulty.
-
 ## Property Observers
-Property observers observe and respond to changes in a property’s value. Property observers are called every time a property’s value is set, even if the new value is the same as the property’s current value.
+Adds a layer for before and/or after the property's value is changed.
 ```swift
 class Logic {
     var status : Bool = false {
@@ -207,7 +181,7 @@ DID SET : Current Value  -> true : Old Value -> false
 ```
 
 ## Property Wrappers
-A property wrapper adds a layer of separation between code that manages how a property is stored and the code that defines a property. For example, if you have properties that provide thread-safety checks or store their underlying data in a database, you have to write that code on every property. When you use a property wrapper, you write the management code once when you define the wrapper, and then reuse that management code by applying it to multiple properties.
+It adds a layer of separation between the code that manages how the property is stored and the code that defines a property. When you use a feature wrapper, you write management code once when you define the wrapper and then reuse that management code by applying it to multiple features.
 
 ```swift
 @propertyWrapper
@@ -284,11 +258,3 @@ print(lastWinner.username, lastWinner.score)
 ```
 lastWinner 95
 ```
-
-Advantages:
-- It is a structure that we can use to store data.
-- Thanks to the logic codes inside, it can perform operations such as allowing data to change or checking the accuracy of the data.
-- We can use the same structure over and over again for different data.
-
-Disadvantages:
-- May affect performance and code complexity around it.
