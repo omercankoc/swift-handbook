@@ -157,7 +157,7 @@ Sphere(radius: Console.Radius(radius: 2.0)) 50.26548245743669 33.510321638291124
 ```
 
 ## Property Observers
-Adds a layer for before and/or after the property's value is changed.
+Property observers observe and respond to changes in a property’s value. Property observers are called every time a property’s value is set, even if the new value is the same as the property’s current value.
 ```swift
 class Logic {
     var status : Bool = false {
