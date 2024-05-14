@@ -47,7 +47,7 @@ print(user)
 User(name: "Omer Can", surname: "KOC", $__lazy_storage_$_username: Optional("omercan.koc"))
 ```
 
-## Computed Properties
+# Computed Properties
 They are variables that take value as a result of operations determined within a class, structure or enumeration. They implement the "get" method for access and the optional "set" method for assignment.
 
 ### Getter and Setter Declaration
