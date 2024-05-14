@@ -19,7 +19,7 @@ User(name: "Omer Can", surname: "Koc")
 ```
 
 ### Lazy Stored Properties
-It is a feature that has no value until first use. They cannot be used with immutable (let) and computed properties.
+It is a property that has no value until first use. They cannot be used with immutable (let) and computed properties.
 
 ```swift
 struct User {
