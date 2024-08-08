@@ -23,45 +23,45 @@
 - [URL Loading System in Foundation Framework](https://github.com/omercankoc/documents-swift/blob/master/Sources/URLLoadingSystem.md)
 - [Notifications in Foundation Framework](https://github.com/omercankoc/documents-swift/blob/master/Sources/Notifications.md)
 - [SwiftUI]()
-- [SwiftData]()
-- [SwiftTest]()
-- [Dispatch Framework](https://github.com/omercankoc/documents-swift/blob/master/Sources/Dispatch.md)
-- [Combine Framework](https://github.com/omercankoc/documents-swift/blob/master/Sources/Combine.md)
+- SwiftData
+- SwiftTest
+- Dispatch Framework
+- Combine Framework
 
 ### Design Patterns
 
 1. Creational
-   - [Factory]()
-   - [Abstract]()
-   - [Builder]()
-   - [Singleton]()
-   - [Prototype]()
+   - Factory
+   - Abstract
+   - Builder
+   - Singleton
+   - Prototype
   
 2. Structural
-   - [Adapter]()
-   - [Bridge]()
-   - [Facede]()
-   - [Decorator]()
-   - [Composite]()
-   - [Flyweight]()
-   - [Proxy]()
+   - Adapter
+   - Bridge
+   - Facede
+   - Decorator
+   - Composite
+   - Flyweight
+   - Proxy
   
 3. Behavioural
-   - [Chain of Responsibility]()
-   - [Template Method]()
-   - [Command]()
-   - [Iterator]()
-   - [Mediator]()
-   - [Momento]()
-   - [Observer]()
-   - [Strategy]()
-   - [State]()
-   - [Visitor]()
+   - Chain of Responsibility
+   - Template Method
+   - Command
+   - Iterator
+   - Mediator
+   - Momento
+   - Observer
+   - Strategy
+   - State
+   - Visitor
 
 ### Architecture
-- [MVC](https://github.com/omercankoc/documents-swift/blob/master/Sources/MVC/MVC.md)
+- MVC
 - [MVVM](https://github.com/omercankoc/swift-handbook/blob/master/Sources/MVVM/MVVM.md)
-- [VIPER](https://github.com/omercankoc/documents-swift/blob/master/Sources/VIPER/VIPER.md)
+- VIPER
 
 ### References
 https://docs.swift.org/swift-book/documentation/the-swift-programming-language
