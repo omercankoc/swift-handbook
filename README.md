@@ -24,9 +24,9 @@
 - [Notifications in Foundation Framework](https://github.com/omercankoc/documents-swift/blob/master/Sources/Notifications.md)
 - [SwiftUI]()
 - SwiftData
-- SwiftTest
-- Dispatch Framework
-- Combine Framework
+- Swift Testing
+- Dispatch
+- Combine
 
 ### Design Patterns
 
