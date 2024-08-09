@@ -23,7 +23,7 @@
 
 ## Frameworks
 - [SwiftUI]()
-- SwiftData
+- Swift Data
 - Swift Testing
 - Dispatch
 - Combine
