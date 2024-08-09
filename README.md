@@ -18,15 +18,20 @@
 - [Generic](https://github.com/omercankoc/documents-swift/blob/master/Sources/Generic.md)
 - [Automatic Reference Counting](https://github.com/omercankoc/documents-swift/blob/master/Sources/AutomaticReferenceCounting.md)
 - [Concurrency](https://github.com/omercankoc/documents-swift/blob/master/Sources/Concurrency.md)
+- [URL Loading System](https://github.com/omercankoc/documents-swift/blob/master/Sources/URLLoadingSystem.md)
+- [Notifications](https://github.com/omercankoc/documents-swift/blob/master/Sources/Notifications.md)
 
 ## Frameworks
-- [URL Loading System in Foundation Framework](https://github.com/omercankoc/documents-swift/blob/master/Sources/URLLoadingSystem.md)
-- [Notifications in Foundation Framework](https://github.com/omercankoc/documents-swift/blob/master/Sources/Notifications.md)
 - [SwiftUI]()
 - SwiftData
 - Swift Testing
 - Dispatch
 - Combine
+
+### Architecture
+- MVC
+- [MVVM](https://github.com/omercankoc/swift-handbook/blob/master/Sources/MVVM/MVVM.md)
+- VIPER
 
 ### Design Patterns
 
@@ -57,11 +62,6 @@
    - Strategy
    - State
    - Visitor
-
-### Architecture
-- MVC
-- [MVVM](https://github.com/omercankoc/swift-handbook/blob/master/Sources/MVVM/MVVM.md)
-- VIPER
 
 ### References
 https://docs.swift.org/swift-book/documentation/the-swift-programming-language
