@@ -15,7 +15,7 @@ Views.md
 - [Popover](https://github.com/omercankoc/swift-development/blob/master/Sources/SwiftUI//Navigation.md#popover)
 - [Navigation Stack](https://github.com/omercankoc/swift-development/blob/master/Sources/SwiftUI//Navigation.md#navigation-stack)
 - [Toolbar](https://github.com/omercankoc/swift-development/blob/master/Sources/SwiftUI/Navigation.md#toolbar)
-- [Tab View](https://github.com/omercankoc/swift-development/blob/master/Sources/SwiftUI/Navigation.md#tab-view)
+- [Tab View](https://github.com/omercankoc/swift-development/blob/master/Sources/SwiftUI/Navigation.md##tab-view)
 
 ### Data and Storage
 - [@State](https://github.com/omercankoc/swift-development/blob/master/Sources/SwiftUI/DataAndStorage.md#state)
