@@ -13,7 +13,7 @@ Views.md
 - [Sheet](https://github.com/omercankoc/swift-development/blob/master/Sources/SwiftUI/Navigation.md#sheet)
 - [Full Screen Cover](https://github.com/omercankoc/swift-development/blob/master/Sources/SwiftUI/Navigation.md#full-screen-cover)
 - [Popover](https://github.com/omercankoc/swift-development/blob/master/Sources/SwiftUI//Navigation.md#popover)
-- [Navigation Stack](https://github.com/omercankoc/swift-development/blob/master/Sources/SwiftUI//Navigation.md#navigation-stack)
+- [Navigation Stack](https://github.com/omercankoc/swift-development/blob/master/Sources/SwiftUI/Navigation.md#navigation-stack)
 - [Toolbar](https://github.com/omercankoc/swift-development/blob/master/Sources/SwiftUI/Navigation.md#toolbar)
 - [Tab View](https://github.com/omercankoc/swift-development/blob/master/Sources/SwiftUI/Navigation.md#tab-view)
 
