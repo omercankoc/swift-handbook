@@ -1,5 +1,5 @@
 # Swift
-- [Variables and Constants](https://github.com/omercankoc/documents-swift/blob/master/Sources/VariablesAndConstants.md)
+- [Variables](https://github.com/omercankoc/documents-swift/blob/master/Sources/Variables.md)
 - [Strings and Characters](https://github.com/omercankoc/documents-swift/blob/master/Sources/StringsAndCharacters.md)
 - [Optional Chaining](https://github.com/omercankoc/documents-swift/blob/master/Sources/OptionalChaining.md)
 - [Operators](https://github.com/omercankoc/documents-swift/blob/master/Sources/Operators.md)
