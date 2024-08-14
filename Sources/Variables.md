@@ -1,11 +1,11 @@
-# Variables and Constants
+# Variables
 
-- Mutable Variables
+- Mutable
 ```swift
 var variable: Int = 0
 ```
 
-- Immutable Constants
+- Immutable
 ```swift
 let constant: Int = 1
 ```
