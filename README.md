@@ -33,36 +33,6 @@
 - [MVVM](https://github.com/omercankoc/swift-handbook/blob/master/Sources/MVVM/MVVM.md)
 - VIPER
 
-### Design Patterns
-
-1. Creational
-   - Factory
-   - Abstract
-   - Builder
-   - Singleton
-   - Prototype
-  
-2. Structural
-   - Adapter
-   - Bridge
-   - Facede
-   - Decorator
-   - Composite
-   - Flyweight
-   - Proxy
-  
-3. Behavioural
-   - Chain of Responsibility
-   - Template Method
-   - Command
-   - Iterator
-   - Mediator
-   - Momento
-   - Observer
-   - Strategy
-   - State
-   - Visitor
-
 ### References
 https://docs.swift.org/swift-book/documentation/the-swift-programming-language
 https://developer.apple.com/documentation/technologies
