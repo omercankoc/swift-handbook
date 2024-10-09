@@ -1,7 +1,7 @@
 # Structures and Classes
 Structures and classes in Swift have many things in common.
 - Definable calculated and stored properties,
-- Functions and closures can be created for functionality,
+- Methods and closures can be created for functionality,
 - Subscripts can be created for get and set operations in collections,
 - Initialization states can be set (init),
 - Extension can be defined to add new functionality,
@@ -89,7 +89,7 @@ sphere.volumeOfSphere()
 2.0 Optional(50.26548245743669) Optional(33.510321638291124)
 ```
 
-### Static Properties and Functions
+### Static Properties and Methods
 It is used to access class or struct properties and functions without an instance of the class or struct.
 ```swift
 struct Sphere {
