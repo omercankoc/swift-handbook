@@ -34,7 +34,9 @@ var language = """
 
 - Elements in String
 ```swift
-for item in language { print(item) }
+for item in language {
+    print(item)
+}
 ```
 ```
 S w i f t
@@ -42,7 +44,9 @@ S w i f t
 
 - Enumerated Elements in String
 ```swift
-for (index,item) in language.enumerated(){ print(index, item) }
+for (index,item) in language.enumerated(){
+    print(index, item)
+}
 ```
 ```
 0 S
