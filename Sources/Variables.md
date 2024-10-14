@@ -31,31 +31,51 @@ var base: Int = 10
 
 - Integer
 ```swift
-var min: Int = Int.max
+var min: Int = Int.min
 var max: Int = Int.max
 print(min, max)
 
-var uint8Max: UInt8 = UInt8.max
-var uint8Min: UInt8 = UInt8.min
-print(uint8Min, uint8Max)
+var int8Min: Int8 = Int8.min
+var int8Max: Int8 = Int8.max
+print(int8Min, int8Max)
 
-var uint16Max: UInt16 = UInt16.max
-var uint16Min: UInt16 = UInt16.min
-print(uint16Min, uint16Max)
+var uInt8Max: UInt8 = UInt8.max
+var uInt8Min: UInt8 = UInt8.min
+print(uInt8Min, uInt8Max)
 
-var uint32Max: UInt32 = UInt32.max
-var uint32Min: UInt32 = UInt32.min
-print(uint32Min, uint32Max)
+var int16Min: Int16 = Int16.min
+var int16Max: Int16 = Int16.max
+print(int16Min, int16Max)
 
-var uint64Max: UInt64 = UInt64.max
-var uint64Min: UInt64 = UInt64.min
-print(uint64Min, uint64Max)
+var uInt16Max: UInt16 = UInt16.max
+var uInt16Min: UInt16 = UInt16.min
+print(uInt16Min, uInt16Max)
+
+var int32Min: Int32 = Int32.min
+var int32Max: Int32 = Int32.max
+print(int32Min, int32Max)
+
+var uInt32Max: UInt32 = UInt32.max
+var uInt32Min: UInt32 = UInt32.min
+print(uInt32Min, uInt32Max)
+
+var int64Min: Int64 = Int64.min
+var int64Max: Int64 = Int64.max
+print(int64Min, int64Max)
+
+var uInt64Max: UInt64 = UInt64.max
+var uInt64Min: UInt64 = UInt64.min
+print(uInt64Min, uInt64Max)
 ```
 ```
-9223372036854775807 9223372036854775807
+-9223372036854775808 9223372036854775807
+-128 127
 0 255
+-32768 32767
 0 65535
+-2147483648 2147483647
 0 4294967295
+-9223372036854775808 9223372036854775807
 0 18446744073709551615
 ```
 
@@ -63,14 +83,27 @@ print(uint64Min, uint64Max)
 ```swift
 var pi: Float = Float.pi
 print(pi)
+
+var pi32: Float32 = Float32.pi
+print(pi32)
+
+var pi64: Float64 = Float64.pi
+print(pi64)
+
+var pi80: Float80 = Float80.pi
+print(pi80)
 ```
 ```
 3.1415925
+3.1415925
+3.141592653589793
+3.1415926535897932385
 ```
 
 - Double
 ```swift
-var pi : Double = Double.pi
+var pi: Double = Double.pi
+print(pi)
 ```
 ```
 3.141592653589793
@@ -78,14 +111,14 @@ var pi : Double = Double.pi
 
 - Bool
 ```swift
-var logic : Bool = true
+var logic: Bool = true
 ```
 
 ### Tuples
 It allows us to declare multiple different types of values ​​in a single composite value.
 - Declaration
 ```swift
-var red = (hex : "FF0101", rgb : [255,1,1], hsl : [0,100,50], cmyk : [0,100,100,0])
+var red = (hex: "FF0101", rgb: [255,1,1], hsl: [0,100,50], cmyk: [0,100,100,0])
 print(red.hex)
 ```
 ```
@@ -141,9 +174,9 @@ extension Kelvin {
 
 
 struct Temperature {
-    var celsius : Celsius
-    var fahrenheit : Fahrenheit
-    var kelvin : Kelvin
+    var celsius: Celsius
+    var fahrenheit: Fahrenheit
+    var kelvin: Kelvin
     
     init(celcius: Celsius) {
         self.celsius = celcius
@@ -182,9 +215,9 @@ print(kelvin.kelvin, "K =", kelvin.celsius, "C =", kelvin.fahrenheit, "F")
 ### Type Conversion
 - Usage
 ```swift
-var integerMax : Int = Int.max
-var floatPi : Float = Float.pi
-var doublePi : Double = Double.pi
+var integerMax: Int = Int.max
+var floatPi: Float = Float.pi
+var doublePi: Double = Double.pi
 
 let floatToDouble = Float(floatPi)
 print(floatToDouble)
