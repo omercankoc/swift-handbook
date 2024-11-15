@@ -156,35 +156,47 @@ struct ContentView: View {
     var body: some View {
         NavigationStack {
             VStack(spacing: 10) {
-                NavigationLink(value: person) {
-                    Text("Show Detail to \(person.name ?? "Guest")")
+                NavigationLink {
+                    DetailView(person: person)
+                } label: {
+                    RowView(person: person)
                 }
             }
             .navigationTitle("Content View")
             .navigationBarTitleDisplayMode(.inline)
-            .navigationDestination(for: Person.self) { person in
-                DetailView(person: person)
-            }
             .task {
-                person = Person(name: "Chris", 
-                                surname: "Lattner",
-                                email: "chrislattner@mail.com",
-                                phone: "+1234567890")
+                person = Person(
+                    name: "Chris",
+                    surname: "Lattner",
+                    email: "chrislattner@mail.com",
+                    phone: "+1234567890"
+                )
             }
         }
     }
 }
 
-struct DetailView : View {
+struct DetailView: View {
     var person = Person()
     
     var body: some View {
         VStack{
-            Text("Hello \(person.name ?? "") \(person.surname ?? "")! ")
-            Text("To Contact Me \(person.email ?? "") or \(person.phone ?? "")")
+            Text("His name is \(person.name ?? "") \(person.surname ?? "")")
+            Text("Mail Address: \(person.email ?? "unknown")")
+            Text("Phone Number: \(person.phone ?? "unknown")")
         }
         .navigationTitle("Detail")
         .navigationBarTitleDisplayMode(.inline)
+    }
+}
+
+struct RowView: View {
+    var person = Person()
+    
+    var body: some View {
+        VStack {
+            Text("Contact \(person.name ?? "Guest")")
+        }
     }
 }
 ```
