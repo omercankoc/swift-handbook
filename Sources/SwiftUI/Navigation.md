@@ -3,11 +3,10 @@ Presents a sheet when a binding to a Boolean value that you provide is true.
 
 ```swift
 struct ContentView: View {
-    @State private var sheet : Bool = false
-    @State var message : String = ""
+    @State private var sheet: Bool = false
+    @State var message: String = ""
         
     var body: some View {
-        
         VStack {
             TextField("Enter Message",text: $message)
                 .padding(.leading,10)
@@ -21,20 +20,21 @@ struct ContentView: View {
                 self.sheet.toggle()
             } label: {
                 Text("Show Sheet")
-            }.sheet(isPresented: $sheet) {
-                DetailView(message: message)
             }
+        }
+        .sheet(isPresented: $sheet){
+            DetailView(message: message)
         }
     }
 }
 
-struct DetailView : View {
-    var message : String?   
+struct DetailView: View {
+    var message: String?
     @Environment(\.presentationMode) var detailView
  
     var body: some View {
         VStack{
-            Text("\(message!)")
+            Text(message ?? "")
             
             Button {
                 self.detailView.wrappedValue.dismiss()
@@ -51,35 +51,38 @@ Presents a modal view that covers as much of the screen as possible when binding
 
 ```swift
 struct ContentView: View {
-    @State private var cover : Bool = false
-    @State private var message : String = ""
+    @State private var fullScreen: Bool = false
+    @State private var message: String = ""
         
     var body: some View {
-        
         VStack {
             TextField("Enter Message",text: $message)
                 .padding(.leading,10)
                 .frame(width: 300, height: 40, alignment: .center)
-                .background { RoundedRectangle(cornerRadius: 10).stroke(.black) }
+                .background {
+                    RoundedRectangle(cornerRadius: 10)
+                        .stroke(.black)
+                }
             
             Button {
-                self.cover.toggle()
+                self.fullScreen.toggle()
             } label: {
                 Text("Show Full Screen Cover")
-            }.fullScreenCover(isPresented: $cover) {
-                DetailView(message: message)
             }
+        }
+        .fullScreenCover(isPresented: $fullScreen){
+            DetailView(message: message)
         }
     }
 }
 
-struct DetailView : View {
-    var message : String?
+struct DetailView: View {
+    var message: String?
     @Environment(\.presentationMode) var detailView
     
     var body: some View {
         VStack{
-            Text("\(message!)")
+            Text(message ?? "")
             
             Button {
                 self.detailView.wrappedValue.dismiss()
@@ -96,11 +99,10 @@ Presents a popover when a given condition is true.
 
 ```swift
 struct ContentView: View {
-    @State private var popover : Bool = false
-    @State var message : String = ""
+    @State private var popover: Bool = false
+    @State var message: String = ""
         
     var body: some View {
-        
         VStack {
             TextField("Enter Message",text: $message)
                 .padding(.leading,10)
@@ -111,20 +113,21 @@ struct ContentView: View {
                 self.popover.toggle()
             } label: {
                 Text("Show Popover")
-            }.popover(isPresented: $popover) {
-                DetailView(message: message)
             }
+        }
+        .popover(isPresented: $popover) {
+            DetailView(message: message)
         }
     }
 }
 
 struct DetailView : View {
-    var message : String?
+    var message: String?
     @Environment(\.presentationMode) var detailView
    
     var body: some View {
         VStack{
-            Text("\(message!)")
+            Text(message ?? "")
             
             Button {
                 self.detailView.wrappedValue.dismiss()
