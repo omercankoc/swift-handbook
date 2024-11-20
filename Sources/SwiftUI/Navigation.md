@@ -221,6 +221,7 @@ struct ContentView: View {
                         Text("Help")
                     }
                 }
+
                 ToolbarItemGroup(placement: .navigationBarTrailing) {
                     Button {
                         print("FOLDER")
