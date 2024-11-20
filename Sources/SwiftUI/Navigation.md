@@ -227,6 +227,7 @@ struct ContentView: View {
                     } label: {
                         Image(systemName: "folder")
                     }
+
                     Button {
                         print("TRASH")
                     } label: {
