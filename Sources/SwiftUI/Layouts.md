@@ -338,34 +338,97 @@ struct ContentView: View {
 A container that presents rows of data arranged in a single column, optionally providing the ability to select one or more members.
 
 ```swift
+struct ContentView: View {
+    @State private var languages: [String] = []
+    @State private var searchable: String = ""
+    
+    var body: some View {
+        NavigationStack {
+            List {
+                ForEach(self.languages, id: \.self){ language in
+                    NavigationLink {
+                        DetailView(language: language)
+                    } label: {
+                        RowView(language: language)
+                    }
+                }
+            }
+            .listStyle(.inset)
+            .navigationTitle("Languages")
+            .navigationBarTitleDisplayMode(.inline)
+        }
+        .searchable(text: $searchable)
+        .onAppear {
+            self.languages = self.fetch()
+        }
+        .onChange(of: searchable){ oldValue, newValue in
+            self.languages = search(newValue)
+        }
+    }
+        
+    func search(_ searchable: String) -> [String] {
+        if searchable == "" {
+            return self.fetch()
+        } else {
+            return self.fetch().filter(
+                {
+                    $0.lowercased().hasPrefix(searchable.lowercased())
+                }
+            )
+        }
+    }
+    
+    func fetch() -> [String]{
+        return ["C","C++","Objective-C","Java","C#","Swift","Kotlin","Rust","Go","Python","Ruby","Perl","PHP","JavaScript","Scala","Basic","Assembly","Fortran","Dart"]
+    }
+}
 
+struct RowView: View {
+    var language: String?
+    
+    var body: some View {
+        Text(language ?? "Not Found")
+    }
+}
+
+struct DetailView: View {
+    var language: String?
+    
+    var body: some View {
+        HStack {
+            Text(language ?? "Not Found")
+        }
+    }
+}
 ```
 
 ## Section
 A container view that you can use to add hierarchy within certain views.
 
 ```swift
-struct Procedure : Identifiable, Hashable {
+struct Procedure: Identifiable, Hashable {
     var id = UUID()
-    var procedure : String
-    var languages : [Language]
+    var procedure: String
+    var languages: [Language]
 }
 
-struct Language : Identifiable, Hashable {
+struct Language: Identifiable, Hashable {
     var id = UUID()
-    var language : String
+    var language: String
 }
 
 struct ContentView: View {
-    @State var sections : [Procedure] = []
+    @State var sections: [Procedure] = []
     
     var body: some View {
         NavigationStack {
             List {
-                ForEach(self.sections) { languages in
+                ForEach(self.sections){ languages in
                     Section(header: Text(languages.procedure)){
                         ForEach(languages.languages){ language in
-                            NavigationLink(value: language) {
+                            NavigationLink {
+                                DetailsView(language: language)
+                            } label: {
                                 Text(language.language)
                             }
                         }
@@ -373,9 +436,6 @@ struct ContentView: View {
                 }
             }
             .navigationBarTitle("Languages")
-            .navigationDestination(for: Language.self) { language in
-                DetailsView(language: language)
-            }
         }
         .onAppear {
             self.sections = fetch()
@@ -405,7 +465,7 @@ struct ContentView: View {
 }
 
 struct DetailsView: View {
-    var language : Language
+    var language: Language
     
     var body: some View {
         VStack {
