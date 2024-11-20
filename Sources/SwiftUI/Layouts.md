@@ -3,9 +3,10 @@ A view that arranges its subviews in a horizontal line.
 ```swift
 struct ContentView: View {
     var body: some View {
-        HStack(spacing: 10) {
+        HStack(spacing: 10){
             Text("SwiftUI")
                 .foregroundColor(Color.blue)
+            
             Text("UIKit")
                 .foregroundColor(Color.green)
         }
@@ -18,9 +19,10 @@ A view that arranges its subviews in a vertical line.
 ```swift
 struct ContentView: View {
     var body: some View {
-        VStack(spacing: 10) {
+        VStack(spacing: 10){
             Text("Swift")
                 .foregroundColor(Color.blue)
+
             Text("Objective-C")
                 .foregroundColor(Color.green)
         }
@@ -41,6 +43,7 @@ struct ContentView: View {
     }
 }
 ```
+
 ```swift
 struct ContentView: View {
     var body: some View {
@@ -61,6 +64,7 @@ struct ContentView: View {
         ZStack {
             Text("Hello")
                 .foregroundColor(Color.blue)
+
             Text("World")
                 .foregroundColor(Color.green)
         }
@@ -76,15 +80,17 @@ struct ContentView: View {
         Grid {
             GridRow {
                 Text("Red")
-                ForEach(0..<4) { _ in Color.red }
+                ForEach(0..<4){ _ in Color.red }
             }
+
             GridRow {
                 Text("Green")
-                ForEach(0..<2) { _ in Color.green }
+                ForEach(0..<2){ _ in Color.green }
             }
+
             GridRow {
                 Text("Blue")
-                ForEach(0..<3) { _ in Color.blue }
+                ForEach(0..<3){ _ in Color.blue }
             }
         }
         .frame(width: 300, height: 300, alignment: .center)
@@ -99,13 +105,15 @@ struct ContentView: View {
     var body: some View {
         Text("First")
         Spacer()
-        Text("Second")    }
+        Text("Second")
+    }
 }
 ```
+
 ```swift
 struct ContentView: View {
     var body: some View {
-        VStack{
+        VStack {
              Text("First")
              Spacer().frame(height: 10)
              Text("Second")
@@ -113,10 +121,11 @@ struct ContentView: View {
     }
 }
 ```
+
 ```swift
 struct ContentView: View {
     var body: some View {
-        HStack{
+        HStack {
              Text("First")
              Spacer().frame(width: 10)
              Text("Second")
@@ -130,7 +139,7 @@ Adds an equal padding amount to specific edges of this view.
 ```swift
 struct ContentView: View {
     var body: some View {
-        HStack{
+        HStack {
             Text("First").padding(.top,10)
             Text("Second").padding(.bottom,10)
             Text("Third").padding(.leading,10)
@@ -165,7 +174,7 @@ struct ContentView: View {
                 Text("C++")
                 Text("C")
             }
-            .frame(width: geometry.size.width, height: geometry.size.height,  alignment: .center)
+            .frame(width: geometry.size.width, height: geometry.size.height, alignment: .center)
         }
     }
 }
@@ -177,11 +186,11 @@ A scrollable view.
 struct ContentView: View {
     var body: some View {
         GeometryReader { geometry in
-            ScrollView(.vertical) {
+            ScrollView(.vertical){
                 ForEach(0...25, id: \.self){ iterator in
                     Text("ITEM : \(iterator)")
+                        .frame(width: geometry.size.width, height: geometry.size.height * 0.1, alignment: .center)
                         .font(.body)
-                        .frame(width: geometry.size.width, height: geometry.size.height / 5, alignment: .center)
                         .background(Color.green)
                 }
             }
@@ -201,21 +210,21 @@ struct ContentView: View {
     var body: some View {
         ScrollViewReader { proxy in
             ScrollView {
-                Button("Scroll to Bottom") {
+                Button("Scroll to Bottom"){
                     withAnimation {
                         proxy.scrollTo(bottomID)
                     }
                 }
                 .id(topID)
 
-                VStack(spacing: 0) {
-                    ForEach(0..<100) { i in
+                VStack(spacing: 0){
+                    ForEach(0..<100){ i in
                         color(fraction: Double(i) / 100)
                             .frame(height: 32)
                     }
                 }
 
-                Button("Top") {
+                Button("Top"){
                     withAnimation {
                         proxy.scrollTo(topID)
                     }
@@ -236,11 +245,11 @@ A view that arranges its children in a line that grows horizontally, creating it
 ```swift
 struct ContentView: View {
     var body: some View {
-        ScrollView(.horizontal) {
-            LazyHStack(alignment: .center, spacing: 10) {
-                ForEach(1...100, id: \.self) {
-                    Text("\($0)")
-                        .frame(width: 50, height: 50, alignment: .center)
+        ScrollView(.horizontal){
+            LazyHStack(alignment: .center, spacing: 10){
+                ForEach(1...100, id: \.self){
+                    Text(String($0))
+                        .frame(width: 150, height: 150, alignment: .center)
                         .background {
                             RoundedRectangle(cornerRadius: 10)
                                 .stroke(lineWidth: 1)
@@ -258,11 +267,11 @@ A view that arranges its children in a line that grows vertically, creating item
 ```swift
 struct ContentView: View {
     var body: some View {
-        ScrollView(.vertical) {
-            LazyVStack(alignment: .center, spacing: 10) {
-                ForEach(1...100, id: \.self) {
-                    Text("\($0)")
-                        .frame(width: 50, height: 50, alignment: .center)
+        ScrollView(.vertical){
+            LazyVStack(alignment: .center, spacing: 10){
+                ForEach(1...100, id: \.self){
+                    Text(String($0))
+                        .frame(width: 150, height: 150, alignment: .center)
                         .background {
                             RoundedRectangle(cornerRadius: 10)
                                 .stroke(lineWidth: 1)
@@ -282,9 +291,9 @@ struct ContentView: View {
     let rows = [GridItem(.fixed(30)), GridItem(.fixed(30))]
 
     var body: some View {
-        ScrollView(.horizontal) {
-            LazyHGrid(rows: rows) {
-                ForEach(0x1f600...0x1f679, id: \.self) { value in
+        ScrollView(.horizontal){
+            LazyHGrid(rows: rows){
+                ForEach(0x1f600...0x1f679, id: \.self){ value in
                     Text(String(format: "%x", value))
                     Text(emoji(value))
                         .font(.largeTitle)
@@ -307,9 +316,9 @@ struct ContentView: View {
     let columns = [GridItem(.flexible()), GridItem(.flexible())]
     
     var body: some View {
-        ScrollView(.vertical) {
-            LazyVGrid(columns: columns) {
-                ForEach(0x1f600...0x1f679, id: \.self) { value in
+        ScrollView(.vertical){
+            LazyVGrid(columns: columns){
+                ForEach(0x1f600...0x1f679, id: \.self){ value in
                     Text(String(format: "%x", value))
                     Text(emoji(value))
                         .font(.largeTitle)
@@ -329,69 +338,7 @@ struct ContentView: View {
 A container that presents rows of data arranged in a single column, optionally providing the ability to select one or more members.
 
 ```swift
-struct ContentView: View {
-    @State private var languages: [String] = []
-    @State private var searchable: String = ""
-    
-    var body: some View {
-        NavigationStack {
-            List {
-                ForEach(self.languages, id: \.self){ language in
-                    NavigationLink(value: language){
-                        RowView(language: language)
-                    }
-                }
-            }
-            .listStyle(.inset)
-            .navigationTitle("Languages")
-            .navigationBarTitleDisplayMode(.inline)
-            .navigationDestination(for: String.self) { language in
-                DetailView(language: language)
-            }
-        }
-        .searchable(text: $searchable)
-        .onAppear {
-            self.languages = self.fetch()
-        }
-        .onChange(of: searchable) { oldValue, newValue in
-            self.languages = search(newValue)
-        }
-    }
-        
-    func search(_ searchable : String) -> [String] {
-        if searchable == "" {
-            return self.fetch()
-        } else {
-            return self.fetch().filter(
-                {
-                    $0.lowercased().hasPrefix(searchable.lowercased())
-                }
-            )
-        }
-    }
-    
-    func fetch() -> [String]{
-        return ["C","C++","Objective-C","Java","C#","Swift","Kotlin","Rust","Go","Python","Ruby","Perl","PHP","JavaScript","Scala","Basic","Assembly","Fortran","Dart"]
-    }
-}
 
-struct RowView : View {
-    var language : String?
-    
-    var body: some View {
-        Text(language ?? "Not Found")
-    }
-}
-
-struct DetailView : View {
-    var language : String?
-    
-    var body: some View {
-        HStack {
-            Text(language ?? "Not Found")
-        }
-    }
-}
 ```
 
 ## Section
