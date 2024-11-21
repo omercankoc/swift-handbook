@@ -38,7 +38,7 @@ A control that displays an editable text interface.
 
 ```swift
 struct ContentView: View {
-    @State private var username : String = ""
+    @State private var username: String = ""
     
     var body: some View {
         VStack {
@@ -59,7 +59,7 @@ A control into which the user securely enters private text.
 
 ```swift
 struct ContentView: View {
-    @State private var password : String = ""
+    @State private var password: String = ""
          
     var body: some View {
         VStack {
@@ -146,7 +146,7 @@ A control that toggles between on and off states.
 
 ```swift
 struct ContentView: View {
-    @State private var logic : Bool = false
+    @State private var logic: Bool = false
     
     var body: some View {
         HStack {
@@ -172,7 +172,7 @@ A control for selecting from a set of mutually exclusive values.
 ```swift
 struct ContentView: View {
     
-    @State private var select : Int = 1
+    @State private var select: Int = 1
     
     var body: some View {
         VStack {
@@ -204,7 +204,7 @@ A control that performs increment and decrement actions.
 
 ```swift
 struct ContentView: View {
-    @State private var value : Int = 0
+    @State private var value: Int = 0
     
     var body: some View {
         VStack {
@@ -228,7 +228,7 @@ A control for selecting a value from a bounded linear range of values.
 
 ```swift
 struct ContentView: View {
-    @State private var value : Double = 0
+    @State private var value: Double = 0
     
     var body: some View {
         VStack {
@@ -329,8 +329,8 @@ A control for presenting a menu of actions.
 ```swift
 struct ContentView: View {
    
-    @State var menuLabel : String = "Share"
-    @State var menuImage : String = "paperplane"
+    @State var menuLabel: String = "Share"
+    @State var menuImage: String = "paperplane"
    
     var body: some View {
         Menu {
@@ -389,7 +389,7 @@ struct ContentView: View {
         }
     }
     
-    func log(_ key : String){
+    func log(_ key: String){
         print(key)
     }
 }
