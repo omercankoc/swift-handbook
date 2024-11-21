@@ -30,7 +30,6 @@
 
 ### Architecture
 - MVC
-- MVP
 - [MVVM](https://github.com/omercankoc/swift-handbook/blob/master/Sources/MVVM/MVVM.md)
 - VIPER
 - Clean Architecture
