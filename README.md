@@ -1,7 +1,7 @@
 # Swift
 - [Variables](https://github.com/omercankoc/documents-swift/blob/master/Sources/Fundamentals/Variables.md)
 - [Strings and Characters](https://github.com/omercankoc/documents-swift/blob/master/Sources/Fundamentals/StringsAndCharacters.md)
-- [Optional Chaining](https://github.com/omercankoc/documents-swift/blob/master/Sources/Fundamentals/OptionalChaining.md)
+- [Optionals](https://github.com/omercankoc/documents-swift/blob/master/Sources/Fundamentals/Optionals.md)
 - [Operators](https://github.com/omercankoc/documents-swift/blob/master/Sources/Fundamentals/Operators.md)
 - [Control Flow](https://github.com/omercankoc/documents-swift/blob/master/Sources/Fundamentals/ControlFlow.md)
 - [Functions](https://github.com/omercankoc/documents-swift/blob/master/Sources/Fundamentals/Functions.md)
