@@ -1,11 +1,21 @@
 # Variables
 
 - Mutable
+
+[EN] These are variables whose assigned values ​​can be changed.
+
+[TR] Atanan değerleri değiştirilebilen değişkenlerdir.
+
 ```swift
 var variable: Int = 0
 ```
 
 - Immutable
+
+[EN] These are constants whose assigned values ​​cannot be changed.
+
+[TR] Atanan değerleri değiştirilemeyen sabitlerdir.
+
 ```swift
 let constant: Int = 1
 ```
@@ -13,16 +23,31 @@ let constant: Int = 1
 ### Type Annotation, Assignment and Declaration
 
 - Type Annotation
+
+[EN] These are variables that are defined but not assigned a value.
+
+[TR] Tanımlanmış ancak değer atanmamış değişkenlerdir.
+
 ```swift
 var base: Int
 ```
 
 - Assignment
+
+[EN] It is the situation of assigning a value to variable.
+
+[TR] Değişkene değer atanması durumudur.
+  
 ```swift
 var base = 10
 ```
 
 - Declaration
+
+[EN] This example is a variable defined and assigned a value.
+
+[TR] Bu örnek tanımlanan ve değer atanan bir değişkendir.
+  
 ```swift
 var base: Int = 10
 ```
@@ -115,7 +140,11 @@ var logic: Bool = true
 ```
 
 ### Tuples
-It allows us to declare multiple different types of values ​​in a single composite value.
+
+[EN] Allows us to declare multiple different types of values ​​in a single composite value.
+
+[TR] Tek bir bileşik değerde birden fazla farklı türde değer beyan etmemizi sağlar.
+
 - Declaration
 ```swift
 var red = (hex: "FF0101", rgb: [255,1,1], hsl: [0,100,50], cmyk: [0,100,100,0])
@@ -135,7 +164,11 @@ print(blue.0)
 ```
 
 ### Type Alias
-It is a structure that allows us to create aliases instead of our existing data types.
+
+[EN] It is a structure that allows us to create aliases instead of our existing data types.
+
+[TR] Mevcut veri tiplerimiz yerine takma adlar oluşturmamızı sağlayan bir yapıdır.
+
 - Usage
 ```swift
 typealias Celsius = Double
@@ -213,6 +246,11 @@ print(kelvin.kelvin, "K =", kelvin.celsius, "C =", kelvin.fahrenheit, "F")
 ```
 
 ### Type Conversion
+
+[EN] It is the conversion of one data type to a different data type at compile time.
+
+[TR] Derleme zamanında bir veri tipinin farklı bir veri tipine dönüştürülmesidir.
+
 - Usage
 ```swift
 var integerMax: Int = Int.max
