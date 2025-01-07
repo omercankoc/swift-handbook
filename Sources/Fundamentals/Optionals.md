@@ -70,15 +70,33 @@ Optional(3)
 ### Unwrapping
 
 1. Force Unwrapping
+
+[EN]
+
+[TR]
+
 ```swift
-var value: String? = nil
-print(value as Any)
+var message: String? = nil
+message = "Hello"
+
+print(message as Any)
+print(type(of: message))
+print(message!)
+print(type(of: message!))
 ```
 ```
-nil
+Optional("Hello")
+Optional<String>
+Hello
+String
 ```
 
 2. Implicit Unwrapping
+
+[EN]
+
+[TR]
+
 ```swift
 var value: String! = nil
 print(value as Any)
