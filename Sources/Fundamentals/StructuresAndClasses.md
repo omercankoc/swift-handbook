@@ -1,32 +1,25 @@
-# Structures and Classes
-Structures and classes in Swift have many things in common.
-- Definable calculated and stored properties,
-- Methods and closures can be created for functionality,
-- Subscripts can be created for get and set operations in collections,
-- Initialization states can be set (init),
-- Extension can be defined to add new functionality,
-- They can work with protocols.
-
-Classes have additional capabilities that structures don’t have.
-- Inheritance enables one class to inherit the characteristics of another,
-- Type casting enables you to check and interpret the type of a class instance at runtime,
-- Deinitializers enable an instance of a class to free up any resources it has assigned,
-- Reference counting allows more than one reference to a class instance.
-
-However, Structures also have some advantages:
-- Structures are kept in memory with stack logic, so when data is wanted to be read, it is read faster (Value Type). But classes are stored randomly in memory (Referance Type). 
-- Structures do not cause RAM problems.
-- Structures are atomic (thread safe), Classes are non-atomic.
-
-<b>Thread Safe:</b> It is a concept that protects the current thread's resource against possible errors that may occur as a result of inconsistencies that may arise if more than one thread can access/use a single resource at the same time, and provides this for all threads using that resource.
-
-<b>Value Type:</b> Get Stored on Stack Memory. Each instance keeps a unique copy of its data. A type that creates a new instance (copy) when assigned to a variable or constant, or when passed to a function. (Int, Float, Double, String, Tuple, Array, Dicitonary, Set, Struct, Enum.)
-
-<b>Reference Type:</b> Get Stored on Managed Heap Memory. Each instances share a single copy of the data. A type that once initialized, when assigned to a variable or constant, or when passed to a function, returns a reference to the same existing instance. (Class, Function, Closure, Actor)
-
-Stack is used for static memory allocation and Heap for dynamic memory allocation, both stored in the computer’s RAM. For reference types the reference is stored on the STACK while the object it refers to is stored on the HEAP. For value types, the object itself is stored on the STACK.
-
 ## Struct
+
+[EN]
+1. Definable calculated and stored properties.
+2. Methods and closures can be created for functionality.
+3. Subscripts can be created for get and set operations in collections.
+4. Initialization states can be set (init).
+5. Extension can be defined to add new functionality.
+6. They can work with protocols.
+7. They are Value Type. Each instance stores a unique copy. They are stored in the STACK area of ​​memory. (Int, Float, Double, String, Tuple, Array, Set, Dictionary, Enum)
+8. They are thread safe. It is a concept that ensures the security of the resource and all threads using that resource to prevent inconsistencies that may arise when multiple threads access a single resource at the same time.
+
+[TR]
+1. Computed ve Stored propertyler tanımlanabilir.
+2. İşlevsellik eklemek için methodlar ve closurelar oluşturulabilir.
+3. Koleksiyonlarda get ve set işlemleri için subscriptler oluşturulabilir.
+4. Başlangıç durumları ayarlanabilir (init).
+5. Yeni işlevsellikler eklemek için extensionlar tanımlanabilir.
+6. Protokollerle çalışabilirler.
+7. Değer türüdürler. Her örnek benzersiz bir kopya depolar. Belleğin STACK alanında depolanırlar. (Int, Float, Double, String, Tuple, Array, Set, Dictionary, Enum)
+8. Atomiktirler. Birden fazla iş parçacığının aynı anda tek bir kaynağa erişmesi durumunda ortaya çıkabilecek tutarsızlıkları önlemek için kaynağın ve o kaynağı kullanan tüm iş parçacıklarının güvenliğini sağlayan bir kavramdır.
+
 - Declaration
 ```swift
 struct Sphere {
@@ -57,6 +50,34 @@ Sphere(radius: 2.0, area: Optional(50.26548245743669), volume: Optional(33.51032
 ```
 
 ## Class
+
+[EN]
+1. Definable calculated and stored properties.
+2. Methods and closures can be created for functionality.
+3. Subscripts can be created for get and set operations in collections.
+4. Initialization states can be set (init).
+5. Extension can be defined to add new functionality.
+6. They can work with protocols.
+7. Inheritance allows a class to inherit the properties and methods of another class.
+8. Type casting, allows you to check and interpret the type of a class instance at runtime.
+9. Automatic Reference Counting allows multiple references to a class instance.
+10. Their pre-deallocate status can be set (deinit).
+11. Each instance stores a unique copy. REFERENCE is stored in the STACK area of ​​memory. OBJECT is stored in the HEAD area of ​​memory. STACK is used to allocate static memory, while HEAD is used to allocate dynamic memory.
+
+[TR]
+1. Computed ve Stored propertyler tanımlanabilir.
+2. İşlevsellik eklemek için methodlar ve closurelar oluşturulabilir.
+3. Koleksiyonlarda get ve set işlemleri için subscriptler oluşturulabilir.
+4. Başlangıç durumları ayarlanabilir (init).
+5. Yeni işlevsellikler eklemek için extensionlar tanımlanabilir.
+6. Protokollerle çalışabilirler.
+7. Kalıtım, bir sınıfın başka bir sınıfın özelliklerini ve yöntemlerini miras almasına izin verir.
+8. Type Casting, bir sınıf örneğinin türünü çalışma zamanında kontrol etmenize ve yorumlamanıza izin verir.
+9. ARC, bir sınıf örneğine birden fazla referans yapılmasına izin verir.
+10. Deallocate öncesi durumları ayarlanabilir (deinit).
+11. Her örnek benzersiz bir kopya depolar. REFERENCE, belleğin STACK alanında saklanır. OBJECT, belleğin HEAD alanında saklanır. STACK statik belleği ayırmak için kullanılırken, HEAD dinamik belleği ayırmak için kullanılır.
+
+
 - Declaration
 ```swift
 class Sphere {
