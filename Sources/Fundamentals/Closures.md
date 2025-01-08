@@ -2,7 +2,7 @@
 
 [EN] Code blocks that can return a value, can be assigned to any variable and stored in the assigned variable are called "Closure". Closures can actually be thought of as specialized functions.
 
-[TR] Herhangi bir değişkene atanabilen ve atanan değişkenin içinde saklanabilen, değer döndürebilen kod bloklarına "Closure" denir. Closure aslında uzmanlaşmış fonksiyonlar olarak düşünülebilir.
+[TR] Herhangi bir değişkene atanabilen ve atanan değişkenin içinde saklanabilen, değer döndürebilen kod bloklarına "Closure" denir. Closure aslında özelleşmiş fonksiyonlar olarak düşünülebilir.
 
 
 1. Declaration
