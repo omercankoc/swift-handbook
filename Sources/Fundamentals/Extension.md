@@ -1,5 +1,8 @@
 ## Extension
-Extensions add new functionality to an existing class, structure, enumeration, or protocol type. This includes the ability to extend types for which you don’t have access to the original source code (known as retroactive modeling). Extensions are similar to categories in Objective-C. (Unlike Objective-C categories, Swift extensions don’t have names.)
+
+[EN] Extensions add new functionality to an existing class, structure, enumeration, or protocol type. This includes the ability to extend types for which you don’t have access to the original source code.
+
+[TR] Mevcut bir sınıfa, yapıya, numaralandırmaya veya protokol türüne yeni işlevler ekler. Kaynak koduna erişiminizin olmadığı türleri genişletme yeteneğini de içerir.
 
 - Extension for Variables
 ```swift
