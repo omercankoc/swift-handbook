@@ -4,24 +4,24 @@
 ```swift
 let count = 10
 var item = 0
-print("Count : \(count) and Item :\(item)")
+print("Count: \(count) and Item :\(item)")
 item = count
-print("Count : \(count) and Item :\(item)")
+print("Count: \(count) and Item :\(item)")
 ```
 ```
-Count : 10 and Item :0
-Count : 10 and Item :10
+Count: 10 and Item :0
+Count: 10 and Item :10
 ```
 
 - Compound Assignment Operators
 ```swift
-let value : Int = 3
+let value: Int = 3
 
-var first : Int = 1
-var second : Int = 2
-var third : Int = 3
-var fourth : Int = 4
-var fifth : Int = 5
+var first: Int = 1
+var second: Int = 2
+var third: Int = 3
+var fourth: Int = 4
+var fifth: Int = 5
 
 first += value
 second -= value
@@ -66,27 +66,27 @@ print(value, plusValue)
 
 ```swift
 let addition = {
-    (first : Int, second : Int) -> Int in
+    (first: Int, second: Int) -> Int in
     return first + second
 }
 
 let subraction = {
-    (first : Int, second : Int) -> Int in
+    (first: Int, second: Int) -> Int in
     return first - second
 }
 
 let multiplication = {
-    (first : Int, second : Int) -> Int in
+    (first: Int, second: Int) -> Int in
     return first * second
 }
 
 let division = {
-    (first : Int, second : Int) -> Int in
+    (first: Int, second: Int) -> Int in
     return first / second
 }
 
 let modulus = {
-    (first : Int, second : Int) -> Int in
+    (first: Int, second: Int) -> Int in
     return first % second
 }
 
@@ -112,32 +112,32 @@ print(first, second, third, fourth, fifth)
 
 ```swift
 let equalTo = {
-    (first : Int, second : Int) -> Bool in
+    (first: Int, second: Int) -> Bool in
     return first == second ? true : false
 }
 
 let notEqualTo = {
-    (first : Int, second : Int) -> Bool in
+    (first: Int, second: Int) -> Bool in
     return first != second ? false : true
 }
 
 let greaterThan = {
-    (first : Int, second : Int) -> Bool in
+    (first: Int, second: Int) -> Bool in
     return first > second ? true : false
 }
 
 let lessThan = {
-    (first : Int, second : Int) -> Bool in
+    (first: Int, second: Int) -> Bool in
     return first < second ? true : false
 }
 
 let greaterThanOrEqualTo = {
-    (first : Int, second : Int) -> Bool in
+    (first: Int, second: Int) -> Bool in
     return first >= second ? true : false
 }
 
 let lessThanOrEqualTo = {
-    (first : Int, second : Int) -> Bool in
+    (first: Int, second: Int) -> Bool in
     return first <= second ? true : false
 }
 
@@ -161,7 +161,7 @@ true false false true true false
 
 - NOT
 ```swift
-var status : Bool = false
+var status: Bool = false
 
 if !status {
     print("Denied")
@@ -174,8 +174,8 @@ Denied
 ```
 - OR
 ```swift
-var before : Bool = true
-var after : Bool = false
+var before: Bool = true
+var after: Bool = false
 
 if before || after {
     print("Stable")
@@ -188,8 +188,8 @@ Stable
 ```
 - AND
 ```swift
-var before : Bool = true
-var after : Bool = false
+var before: Bool = true
+var after: Bool = false
 
 if before && after {
     print("Stable")
