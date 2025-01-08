@@ -1,5 +1,8 @@
 # Functions
-Functions are self-contained chunks of code that perform a specific task. You give a function a name that identifies what it does, and this name is used to “call” the function to perform its task when needed.
+
+[EN] These are blocks of code that perform a specific task, can take parameters and/or return values.
+
+[TR] Belirli bir görevi gerçekleştiren, parametre alabilen ve/veya değer döndürebilen kod bloklarıdır.
 
 - Declaration
 ```swift
@@ -165,8 +168,11 @@ Successful Responses
 ```
 
 ## Mutating Function
-Mutating cannot be used with classes as it is a reference type.
-The mutating keyword is only required if you are changing any properties contained within the struct. 
+
+[EN] It makes it possible to change the properties values of structures.
+
+[TR] Struct'ların property'lerinin değerlerini değiştirebilmeyi mümkün kılar.
+ 
 ```swift
 struct Sphere {
     var radius : Double
