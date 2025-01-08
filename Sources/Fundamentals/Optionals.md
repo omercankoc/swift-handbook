@@ -12,9 +12,9 @@ var value : String? = nil
 
 - Optional Binding
 
-[EN] Checks whether the value of the variable is "nil".
+[EN] These are structures that check whether the value of the variable is "nil".
 
-[TR] Değişkenin değerinin "nil" olup olmadığını kontrol eder.
+[TR] Değişkenin değerinin "nil" olup olmadığını kontrol eden yapılardır.
 
 ```swift
 func optionalBinding(value: Int?) -> Int {
