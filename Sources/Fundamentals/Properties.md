@@ -25,7 +25,7 @@ User(name: "Omer Can", surname: "Koc")
 
 [EN] Property that has no value until first use. They cannot be used with immutable (let) and computed properties.
 
-[TR] İlk kullanıma kadar değer almayan özellik. Bunlar, sabitler (let) ve computed properties ile kullanılamaz.
+[TR] İlk kullanıma kadar değer almayan özellik. Bunlar, sabitler (let) ve computed propertyler ile kullanılamaz.
 
 ```swift
 struct User {
