@@ -25,7 +25,7 @@ User(name: "Omer Can", surname: "Koc")
 
 [EN] Property that has no value until first use. They cannot be used with immutable (let) and computed properties.
 
-[TR] İlk kullanıma kadar değer almayan özellik. Bunlar, sabitler (let) ve computed propertyler ile kullanılamaz.
+[TR] İlk kullanıma kadar değer almayan property. Bunlar, sabitler (let) ve computed propertyler ile kullanılamaz.
 
 ```swift
 struct User {
@@ -197,7 +197,7 @@ DID SET : Current Value  -> true : Old Value -> false
 
 [EN] It adds a layer of separation between the code that manages how the property is stored and the code that defines a property. When you use a feature wrapper, you write management code once when you define the wrapper and then reuse that management code by applying it to multiple features.
 
-[TR] Property'nin depolandığını yöneten katman ile tanımlandığı katman arasında bir ayrım katmanı ekler. Bir property wrapper  tanımlandığında birden fazla proprty için yeniden kullanılabilir.
+[TR] Property'nin depolandığını yöneten katman ile tanımlandığı katman arasında bir ayrım katmanı ekler. Bir property wrapper  tanımlandığında birden fazla property için yeniden kullanılabilir.
 
 ```swift
 @propertyWrapper
