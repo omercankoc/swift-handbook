@@ -1,6 +1,6 @@
 # Operators
 
-### 1. Assignment Operator
+### Assignment Operator
 ```swift
 let count = 10
 var item = 0
@@ -14,6 +14,7 @@ Count: 10 and Item :10
 ```
 
 - Compound Assignment Operators
+
 ```swift
 let value: Int = 3
 
@@ -36,6 +37,7 @@ print(first, second, third, fourth, fifth)
 ```
 
 - Unary Minus Operator
+
 ```swift
 let value = -5
 let minusValue = -value
@@ -47,6 +49,7 @@ print(value, minusValue)
 ```
 
 - Unary Plus Operator
+
 ```swift
 let value = -5
 let plusValue = +value
@@ -57,7 +60,7 @@ print(value, plusValue)
 -5 -5
 ```
 
-### 2. Arithmetic Operators
+### Arithmetic Operators
 - Addition (+)
 - Subtraction (-)
 - Multiplication (*)
@@ -102,7 +105,7 @@ print(first, second, third, fourth, fifth)
 10 2 24 1 1
 ```
 
-### 3. Comparison Operators
+### Comparison Operators
 - Equal To (a==b)
 - Not Equal To (a!=b)
 - Greater Than (a>b)
@@ -154,12 +157,10 @@ print(first, second, third, fourth, fifth, sixth)
 true false false true true false
 ```
 
-### 4. Logical Operators
-1. NOT
-1. OR
-2. AND
+### Logical Operators
 
 - NOT
+
 ```swift
 var status: Bool = false
 
@@ -172,7 +173,9 @@ if !status {
 ```
 Denied
 ```
+
 - OR
+
 ```swift
 var before: Bool = true
 var after: Bool = false
@@ -186,7 +189,9 @@ if before || after {
 ```
 Stable
 ```
+
 - AND
+
 ```swift
 var before: Bool = true
 var after: Bool = false
@@ -202,7 +207,8 @@ Unstable
 ```
 
 ### Other Operators
-1. Ternary Operator
+
+- Ternary Operator
 ```swift
 var os : [String] = ["macOS","iOS","iPadOS","watchOS","tvOS"]
 let result : String = os.isEmpty ? "Not Assigned" : "Assigned"
@@ -212,7 +218,8 @@ print(result)
 "Assigned"
 ```
 
-2. Nil Coalescing Operator
+- Nil Coalescing Operator
+
 ```swift
 var value : Int? = nil
 let verify = value ?? 0
