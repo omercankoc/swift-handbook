@@ -1,8 +1,6 @@
 # Functions
 
-[EN] These are blocks of code that perform a specific task, can take parameters and/or return values.
-
-[TR] Belirli bir görevi gerçekleştiren, parametre alabilen ve/veya değer döndürebilen kod bloklarıdır.
+Belirli bir görevi gerçekleştiren, parametre alabilen ve/veya değer döndürebilen kod bloklarıdır.
 
 - Declaration
 ```swift
@@ -169,9 +167,7 @@ Successful Responses
 
 ## Mutating Function
 
-[EN] It makes it possible to change the properties values of structures.
-
-[TR] Struct'ların property'lerinin değerlerini değiştirebilmeyi mümkün kılar.
+Struct'ların property'lerinin değerlerini değiştirebilmeyi mümkün kılar.
  
 ```swift
 struct Sphere {
