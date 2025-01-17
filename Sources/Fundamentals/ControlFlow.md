@@ -1,48 +1,81 @@
 # Loops
-```swift
-var base : [Int] = []
-var square : [Int] = []
+Bir işlemin birden fazla kez çalıştırılması gerektiğinde kullanılan kod bloklarıdır.
 
-var limit : Int = 10
-
-var iterator : Int = 0
-var repeater : Int = 0
-```
 ### While
+
+Şart ifadesinin doğruluğu döngünün başında her defasında kontrol edilir ve belirtilen koşul sağlandığı sürece döngü devam eder. Sayaç, döngü içerisinde değer alır ve koşul sağlanmadığı takdirde döngüden çıkılır.
+
 ```swift
+var iterator: Int = 1
+var limit: Int = 20
+var even: [Int] = []
+var odd: [Int] = []
+
 while iterator <= limit {
-    base.append(iterator)
+    if iterator % 2 == 0 {
+        even.append(iterator)
+    } else {
+        odd.append(iterator)
+    }
+    
     iterator += 1
 }
 ```
 ```
-[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+Even Number: [2, 4, 6, 8, 10, 12, 14, 16, 18, 20]
+Odd Number: [1, 3, 5, 7, 9, 11, 13, 15, 17, 19]
 ```
 
 ### Repeat While
+
+Koşul durumu dikkate alınmadan önce döngü bloğunda yazılı olan işlem bir kereliğine çalıştırılır. Daha sonra koşul yanlış olana kadar döngü tekrarlanmaya devam eder.
+
 ```swift
+var iterator: Int = 1
+var limit: Int = 20
+var even: [Int] = []
+var odd: [Int] = []
+
 repeat {
-    base.append(repeater)
-    repeater += 1
-} while repeater <= limit
+    if iterator % 2 == 0 {
+        even.append(iterator)
+    } else {
+        odd.append(iterator)
+    }
+    
+    iterator += 1
+} while iterator <= limit
 ```
 ```
-[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+[2, 4, 6, 8, 10, 12, 14, 16, 18, 20]
+[1, 3, 5, 7, 9, 11, 13, 15, 17, 19]
 ```
 
-### For
+### For In
+
+İşlemlerin koleksiyon elemanları veya belirli bir aralıktaki elemanlar üzerinde tekrarlanmasını sağlayan kod bloklarıdır.
+
 ```swift
+var index: Int = 0
+var base: [Int] = [0,1,1,2,3,5,7,13,15,21,34,55,89,144]
+var square: [Int] = []
+
 for index in base {
     if index == 0 { continue }
-    square.append(base[index]*base[index])
+    if index == 13 { break }
+    square.append(index * index)
 }
 ```
 ```
-[1, 4, 9, 16, 25, 36, 49, 64, 81, 100]
+[1, 1, 4, 9, 25, 49]
 ```
 
 - Closed Range Operator
+
 ```swift
+var index: Int = 0
+var limit: Int = 10
+
 for index in 0...limit {
     print(index) 
 }
@@ -52,7 +85,11 @@ for index in 0...limit {
 ```
 
 - Half-Open Range Operator
+
 ```swift
+var index: Int = 0
+var limit: Int = 10
+
 for index in 0..<limit {
     print(index)
 }
@@ -62,7 +99,11 @@ for index in 0..<limit {
 ```
 
 - One-Sided Ranges
+
 ```swift
+var index: Int = 0
+var base: [Int] = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+
 for index in base[2...]{
     print(index)
 }
@@ -72,6 +113,9 @@ for index in base[2...]{
 ```
 
 ```swift
+var index: Int = 0
+var base: [Int] = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+
 for index in base[...5]{
     print(index)
 }
@@ -81,6 +125,9 @@ for index in base[...5]{
 ```
 
 ```swift
+var index: Int = 0
+var base: [Int] = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+
 for index in base[..<5]{
     print(index)
 }
@@ -90,7 +137,10 @@ for index in base[..<5]{
 ```
 
 - Stride
+
 ```swift
+var index: Int = 0
+
 for index in stride(from: 0, to: 60, by: 10){
     print(index)
 }
@@ -100,6 +150,9 @@ for index in stride(from: 0, to: 60, by: 10){
 ```
 
 ### For Each
+
+Koleksiyonların (array, set, dictionary) elemanları üzerinde ilerleyen ve bu elemanlar üzerinde işlem yapmayı mümkün kılar.
+
 ```swift
 var os : [String] = ["iOS","iPadOS","macOS","watchOS","tvOS"]
 os.forEach { item in print("\(item)") }
@@ -109,6 +162,9 @@ iOS iPadOS macOS watchOS tvOS
 ```
 
 # Conditional Statements
+
+Koşul ve bu koşula ait süreçlerin belirtildiği temel kontrol yapılarıdır.
+
 ```swift
 var midterm : Float = 65
 var final : Float = 55
@@ -117,7 +173,10 @@ var score : Float = (midterm + final) / 2
 var modulus = Int(score) % 2
 ```
 
-### If
+### If Else
+
+Koşulları ve bu koşulların sağlanması durumunda işlenecek kod bloklarını tanımlamak için kullanılır.
+
 ```swift
 if final >= 50 {
     if score >= 50 && score < 55 {
@@ -144,23 +203,10 @@ else {
 CC
 ```
 
-### Switch
-```swift
-switch modulus {
-    case 0:
-        print("Even")
-        break
-    case 1:
-        print("Odd")
-        break
-    default:
-        print("ANY!")
-}
-```
-```
-Even
-```
 - Guard Let
+
+Sağlanmayan koşulu ifade etmek için kullanılan yapıdır.
+
 ```swift
 var isNumeric = "5"
 var notNumeric = "A"
@@ -181,6 +227,9 @@ convertToInteger(value: notNumeric)
 ```
 
 - If Let
+
+Sağlanan ve sağlanmayan koşulu ayrı ayrı ifade etmek için kullanılan yapıdır.
+
 ```swift
 var isNumeric = "5"
 var notNumeric = "A"
@@ -199,4 +248,24 @@ convertToInteger(value: notNumeric)
 ```
 ```
 5 0
+```
+
+### Switch Case
+
+Değerlerin eşleşmesi durumunda işlenecek kod bloklarını tanımlamak için kullanılır.
+
+```swift
+switch modulus {
+    case 0:
+        print("Even")
+        break
+    case 1:
+        print("Odd")
+        break
+    default:
+        print("ANY!")
+}
+```
+```
+Even
 ```
