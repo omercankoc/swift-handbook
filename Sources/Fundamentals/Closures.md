@@ -34,7 +34,24 @@ Equal
 Not Equal
 ```
 
-- Return Value(s)
+- Return Value
+```swift
+let minimum: () -> Int = {
+    return Int.min
+}
+
+let maximum = { () -> Int in
+    return Int.max
+}
+
+let values = (min: minimum(), max: maximum())
+print(values.min, values.max)
+```
+```
+-9223372036854775808 9223372036854775807
+```
+
+- Closure Parameter(s) and Return Value(s)
 ```swift
 let modulus = {(first: Int, second: Int) -> Int in
     return first % second
@@ -68,7 +85,10 @@ Process Getting Ready...
 Processing...
 ```
 
-- Trailing Closures
+- Trailing Closure
+
+Bir fonksiyonun son parametrelerinden birinin veya daha fazlasının fonksiyon olması durumudur. 
+
 ```swift
 func action(status : Bool, onSuccess : (() -> ())? = nil, onFail : (() -> ())? = nil){
     if status {
