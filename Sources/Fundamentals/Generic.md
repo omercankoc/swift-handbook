@@ -1,6 +1,7 @@
 # Generic 
 Generic allows us to specify type-independent, general-purpose, and non-duplicative functions and types.
 
+
 ```swift
 public struct Stack<T> {
     private var array : [T] = []
