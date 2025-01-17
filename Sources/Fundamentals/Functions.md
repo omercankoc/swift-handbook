@@ -17,12 +17,12 @@ Hello!
 
 - Function Parameter(s)
 ```swift
-func message(name : String){
+func message(name: String){
     print("Hello \(name)!" )
 }
 ```
 ```swift
-message(name : "Omer")
+message(name: "Omer")
 ```
 ```
 Hello Omer!
@@ -84,8 +84,8 @@ func endpoints(array: [Int]) -> (min: Int, max: Int) {
 }
 ```
 ```swift
-var max : Int = endpoints(array: [1,1,2,3,5,8,13,21]).max
-var min : Int = endpoints(array: [1,1,2,3,5,8,13,21]).min
+var max: Int = endpoints(array: [1,1,2,3,5,8,13,21]).max
+var min: Int = endpoints(array: [1,1,2,3,5,8,13,21]).min
 ```
 ```
 21 1
@@ -93,7 +93,7 @@ var min : Int = endpoints(array: [1,1,2,3,5,8,13,21]).min
 
 ### Variadic Parameters
 ```swift
-func totalizer(values : Int...) -> Int {
+func totalizer(values: Int...) -> Int {
     var total = 0
     for value in values {
         total += value
@@ -111,7 +111,7 @@ var sum = totalizer(values: 1,2,3,4,5,6,7,8,9)
 ### Functions in "for" Keyword
 ```swift
 struct Message {
-    mutating func show(for type : Int) -> String {
+    mutating func show(for type: Int) -> String {
         switch type {
         case 100:
             return "Information Responses"
@@ -140,9 +140,9 @@ Successful Responses
 ### Functions in "_" Keyword
 ```swift
 struct Messages {
-    func status(_ code : Int) -> String {
+    func status(_ code: Int) -> String {
         switch code {
-        case 100 :
+        case 100:
             return "Informational Responses"
         case 200:
             return "Successful Responses"
@@ -171,11 +171,11 @@ Struct'ların property'lerinin değerlerini değiştirebilmeyi mümkün kılar.
  
 ```swift
 struct Sphere {
-    var radius : Double
-    var area : Double?
-    var volume : Double?
+    var radius: Double
+    var area: Double?
+    var volume: Double?
        
-    mutating func solve(radius : Double){
+    mutating func solve(radius: Double){
         self.radius = radius
         self.area = 4 * Double.pi * pow(radius,2)
         self.volume = (4 / 3) * Double.pi * pow(radius,3)
