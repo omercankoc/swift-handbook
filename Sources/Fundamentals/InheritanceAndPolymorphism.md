@@ -121,6 +121,44 @@ This truck has 3 axles.
 The load carrying capacity of this truck is 35 tons.
 ```
 
+### Static, Class ve Final Keywords
+
+- Static: Subclass'da override edilemezler. Superclass ve subclass üzerinden çağrılabilir fakat nesneler üzerinden çağrılamazlar. Struct ve Class için geçerlidir.
+
+```swift
+struct Sphere {
+    static var radius : Double = 0.0
+    
+    static func solve(_ radius: Double) -> (diameter: Double, area: Double, volume: Double) {
+        return (radius * 2, 4 * Double.pi * pow(radius,2), (4 / 3) * Double.pi * pow(radius,3))
+    }
+}
+
+Sphere.radius = 2.0
+Sphere.solve(Sphere.radius)
+```
+```
+2.0 (diameter: 4.0, area: 50.26548245743669, volume: 33.510321638291124)
+```
+
+- Class: Subclass'da override edilebilirler. Superclass ve subclass üzerinden çağrılabilir fakat nesneler üzerinden çağrılamazlar. Sadece Class için geçerlidir.
+
+```swift
+
+```
+```
+
+```
+
+- Final: Subclass'da override edilemezler. Super ve Sub object üzerinden çağrılabilirler fakat class üzerinden çağrılamazlar. Sadece Class için geçerlidir.
+
+```swift
+
+```
+```
+
+```
+
 # Polymorphism
 Farklı sınıflardaki nesnelerin ortak bir üst sınıf veya protokolün nesneleri olarak ele alınmasına olanak tanır. Ortak bir arayüze veya protokole uydukları sürece farklı türlerdeki nesnelerin birbirinin yerine kullanılabilmesini sağlar.
 
