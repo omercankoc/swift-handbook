@@ -1,9 +1,9 @@
 # Inheritance
-A class can inherit methods, properties, and other characteristics from another class. 
-When one class inherits from another, the inheriting class is known as a subclass, and the class it inherits from is known as its superclass. 
+Bir sınıfın veya yapının, başka bir sınıftan özellikleri ve metotları miras almasına "inheritance" denir. Bir sınıf başka bir sınıftan miras aldığında, miras alan sınıfa "subclass", miras aldığı sınıfa ise "superclass" denir.
 
 ### Superclass
-A class that does not inherit from another class and transfers its properties to subclasses is called a base class.
+Başka bir sınıftan miras almayan ve özelliklerini ve metotlarını subclass'lara aktaran sınıfa "superclass" denir.
+
 ```swift
 enum Fuel {
     case GASOLINE,DIESEL,HYDROGEN,HYBRID,ELECTRIC
@@ -31,10 +31,10 @@ class Vehicle {
 }
 ```
 ### Subclass
-Subclassification is the process of basing a new class on an existing class. The subclass inherits features of the existing class, which you can later develop. You can also add new properties to the subclass.
+Yeni bir sınıfı var olan bir sınıfa dayandırma sürecidir. Subclass, daha sonra genişletebileceğiniz veya değiştirebileceğiniz var olan sınıfın özelliklerini devralır. Ayrıca subclass'a yeni özellikler veya metotlar eklenebilir.
 
-- The "super" identifier is used to access the properties and methods of the superclass.
-- The "override" specifier means that a method of a class is replaced by the method in the base class by defining a method of the same name in another class derived from that class. This process allows a method to perform different functions in different classes derived from the same class. The method in the base class is overridden by adding the override keyword before the name of the method in the derived class.
+- "super" belirteci, superclass'ın özelliklerine ve metotlarına erişmek için kullanılır.
+- "override" belirteci, bir sınıfın metotlarının, o sınıftan türetilen başka bir sınıfta aynı adlı bir metodu tanımlayarak superclass'daki metotla değiştirilmesi anlamına gelir. Bu işlem, bir metodun aynı class'dan türetilen farklı classlarda farklı işlevler gerçekleştirmesine olanak tanır. Superclass'daki metot, subclass'daki metodun adından önce override anahtar sözcüğünin eklenmesi ile geçersiz kılınır.
 
 ```swift
 enum Segment {
@@ -122,7 +122,7 @@ The load carrying capacity of this truck is 35 tons.
 ```
 
 # Polymorphism
-Polymorphism in Swift allows objects of different classes to be treated as objects of a common superclass or protocol. It enables objects of different types to be used interchangeably, as long as they conform to a common interface or protocol.
+Farklı sınıflardaki nesnelerin ortak bir üst sınıf veya protokolün nesneleri olarak ele alınmasına olanak tanır. Ortak bir arayüze veya protokole uydukları sürece farklı türlerdeki nesnelerin birbirinin yerine kullanılabilmesini sağlar.
 
 ```swift
 let car = Car(segment: .B, passenger: 5, weight: 1120, width: 4065, height: 1450, length: 1750, fuel: .GASOLINE)
@@ -148,9 +148,9 @@ This car is S segment
 ```
 
 ## Type Casting
-The conversion of Superclass to Subclass is called <b>"DOWNCASTING"</b>, conversion of Subclass to superclass is called <b>"UPCASTING"</b>.
+Üst sınıfın alt sınıfa dönüştürülmesine <b>"DOWNCASTING"</b>, alt sınıfın üst sınıfa dönüştürülmesine <b>"UPCASTING"</b> denir.
 
-- is -> Used for type checking.
-- as -> It is used to convert one type to another.
-- as! (Force Downcasting) -> It is used to convert one type to another type. Returns value if successful, error if unsuccessful.
-- as? (Optinonal Downcasting) -> It is used if there is an optional data during the conversion. Returns value if successful, nil if unsuccessful.
+- is -> Tip kontrolü için kullanılır.
+- as -> Bir tipi diğerine dönüştürmek için kullanılır.
+- as! (Force Downcasting) -> Bir tipi diğerine dönüştürmek için kullanılır. Başarılı ise değer, başarısız ise hata döndürür.
+- as? (Optional Downcasting) -> Dönüştürme sırasında isteğe bağlı bir veri varsa kullanılır. Başarılı ise değer, başarısız ise nil döndürür.
