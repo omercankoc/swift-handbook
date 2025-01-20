@@ -1,8 +1,6 @@
 ## Enumeration
 
-[EN] It is used to represent literal values ​​of a particular data type.
-
-[TR] Belirli bir veri tipindeki sabit değerleri temsil etmek için kullanılır.
+Belirli bir veri tipindeki sabit değerleri temsil etmek için kullanılır.
 
 - Declaration
 ```swift
