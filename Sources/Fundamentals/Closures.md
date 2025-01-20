@@ -4,34 +4,44 @@ Herhangi bir değişkene atanabilen ve atanan değişkenin içinde saklanabilen,
 
 - Declaration
 ```swift
-let closure = {
-    print("Hello Closure!")
+let random = {
+    print(Int.random(in: 0...9))
 }
 
-closure()
+let minimum = { () -> Void in
+    print(Int.min)
+}
+
+let maximum: () -> Void = {
+    print(Int.max)
+}
+
+random()
+minimum()
+maximum()
 ```
 ```
-Hello Closure!
+5
+-9223372036854775808
+9223372036854775807
 ```
 
 - Closure Parameter(s)
 ```swift
-var equality = {(first: Int, second: Int) in
-    if first == second { print("Equal")}
-    else { print("Not Equal")}
+var lessThan = {(first: Int, second: Int) in
+    first < second ? print(first): print(second)
 }
 
-var otherEquality: (Int, Int) -> Void = { first, second in
-    if first == second { print("Equal")}
-    else { print("Not Equal")}
+var greaterThan: (Int, Int) -> Void = { first, second in
+    first > second ? print(first): print(second)
 }
 
-equality(3,3)
-otherEquality(4,1)
+lessThan(5,7)
+greaterThan(5,7)
 ```
 ```
-Equal
-Not Equal
+5
+7
 ```
 
 - Return Value
@@ -53,19 +63,21 @@ print(values.min, values.max)
 
 - Closure Parameter(s) and Return Value(s)
 ```swift
-let modulus = {(first: Int, second: Int) -> Int in
-    return first % second
+var lessThan = {(first: Int, second: Int) -> Int in
+    return first < second ? first: second
 }
 
-let otherModulus: (Int, Int) -> Int = { first, second in
-    return first % second
+var greaterThan: (Int, Int) -> Int = { first, second in
+    return first > second ? first : second
 }
 
-let first = modulus(12, 5)
-let second = otherModulus(16, 9)
+let less = lessThan(5,7)
+let greater = greaterThan(5,7)
+
+print(less, greater)
 ```
 ```
-2 7
+5 7
 ```
 
 - Closure as Function Parameter
@@ -109,17 +121,34 @@ action(status: true) {
 Connected!
 ```
 
-- Autoclosure 
+- @autoclosure
+
+Closure'dan farklı olarak autoclosure ile çalışan bir fonksiyona parametre olarak bir argument vermek yerine bir "statement" verilir.  Autoclosure kendisine verilen bu statement'ı arka planda otomatik olarak bir closure’a dönüştürür.
+
 ```swift
-func work(process: @autoclosure ()->()) {
+func closure(process: () -> ()){
+    print("Process Getting Ready!")
+    process()
+}
+
+closure {
+    print("Processing...")
+}
+
+func autoclosure(process: @autoclosure ()->()) {
   print("Process Getting Ready...")
   process()
 }
+
+autoclosure(process: print("Processing..."))
 ```
-```swift
-work(process: print("Processing..."))
 ```
-```
+Process Getting Ready!
+Processing...
 Process Getting Ready...
 Processing...
 ```
+
+- @escaping
+
+...
