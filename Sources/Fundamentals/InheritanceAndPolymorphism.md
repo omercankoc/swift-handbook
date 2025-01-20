@@ -2,7 +2,7 @@
 Bir sınıfın veya yapının, başka bir sınıftan özellikleri ve metotları miras almasına "inheritance" denir. Bir sınıf başka bir sınıftan miras aldığında, miras alan sınıfa "subclass", miras aldığı sınıfa ise "superclass" denir.
 
 ### Superclass
-Başka bir sınıftan miras almayan ve özelliklerini ve metotlarını subclass'lara aktaran sınıfa "superclass" denir.
+Başka bir sınıftan miras almayan, özelliklerini ve metotlarını subclass'lara aktaran sınıfa "superclass" denir.
 
 ```swift
 enum Fuel {
