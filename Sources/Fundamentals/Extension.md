@@ -1,8 +1,6 @@
 ## Extension
 
-[EN] Extensions add new functionality to an existing class, structure, enumeration, or protocol type. This includes the ability to extend types for which you don’t have access to the original source code.
-
-[TR] Mevcut bir sınıfa, yapıya, numaralandırmaya veya protokol türüne yeni işlevler ekler. Kaynak koduna erişiminizin olmadığı türleri genişletme yeteneğini de içerir.
+Mevcut bir sınıfa, yapıya, numaralandırmaya veya protokol türüne yeni işlevler ekler. Kaynak koduna erişiminizin olmadığı türleri genişletme yeteneğini de içerir.
 
 ```swift
 typealias Meter = Double
