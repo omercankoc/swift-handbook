@@ -80,44 +80,6 @@ sphere.volumeOfSphere()
 2.0 Optional(50.26548245743669) Optional(33.510321638291124)
 ```
 
-### Static, Class ve Final
-
-- Static: Subclass'da override edilemezler. Superclass ve subclass üzerinden çağrılabilir fakat nesneler üzerinden çağrılamazlar. Struct ve Class için geçerlidir.
-
-```swift
-struct Sphere {
-    static var radius : Double = 0.0
-    
-    static func solve(_ radius: Double) -> (diameter: Double, area: Double, volume: Double) {
-        return (radius * 2, 4 * Double.pi * pow(radius,2), (4 / 3) * Double.pi * pow(radius,3))
-    }
-}
-
-Sphere.radius = 2.0
-Sphere.solve(Sphere.radius)
-```
-```
-2.0 (diameter: 4.0, area: 50.26548245743669, volume: 33.510321638291124)
-```
-
-- Class: Subclass'da override edilebilirler. Superclass ve subclass üzerinden çağrılabilir fakat nesneler üzerinden çağrılamazlar. Sadece Class için geçerlidir.
-
-```swift
-
-```
-```
-
-```
-
-- Final: Subclass'da override edilemezler. Super ve Sub object üzerinden çağrılabilirler fakat class üzerinden çağrılamazlar. Sadece Class için geçerlidir.
-
-```swift
-
-```
-```
-
-```
-
 ## Initialization and Deinitialization
 Initialization, bir class, enum veya struct instance'ı oluşturduğumuzdaki hazırlık sürecidir. Bu süreç, her depolanan özellik için bir başlangıç ​​değeri ayarlanmasına ve kullanıma hazır hale gelmeden önce gerekli işlemlerin gerçekleştirilmesine olanak tanır.
 
@@ -188,7 +150,6 @@ var volume = Sphere(volume: 2)
 ```
 
 ## Composition
-
 Nesneleri daha karmaşık olanlara birleştirmenin yollarıyla yakından ilgilidir. Bir sahiplik (Has-A) ilişkisi vardır.
 
 ```swift
