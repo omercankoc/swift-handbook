@@ -1,24 +1,12 @@
 ## Struct
 
-[EN]
-1. Definable calculated and stored properties.
-2. Methods and closures can be created for functionality.
-3. Subscripts can be created for get and set operations in collections.
-4. Initialization states can be set (init).
-5. Extension can be defined to add new functionality.
-6. They can work with protocols.
-7. They are Value Type. Each instance stores a unique copy. They are stored in the STACK area of ​​memory. (Int, Float, Double, String, Tuple, Array, Set, Dictionary, Enum)
-8. They are thread safe. It is a concept that ensures the security of the resource and all threads using that resource to prevent inconsistencies that may arise when multiple threads access a single resource at the same time.
-
-[TR]
 1. Computed ve Stored propertyler tanımlanabilir.
 2. İşlevsellik eklemek için methodlar ve closurelar oluşturulabilir.
-3. Koleksiyonlarda get ve set işlemleri için subscriptler oluşturulabilir.
-4. Başlangıç durumları ayarlanabilir (init).
-5. Yeni işlevsellikler eklemek için extensionlar tanımlanabilir.
-6. Protokollerle çalışabilirler.
-7. Değer türüdürler. Her örnek benzersiz bir kopya depolar. Belleğin STACK alanında depolanırlar. (Int, Float, Double, String, Tuple, Array, Set, Dictionary, Enum)
-8. Atomiktirler. Birden fazla iş parçacığının aynı anda tek bir kaynağa erişmesi durumunda ortaya çıkabilecek tutarsızlıkları önlemek için kaynağın ve o kaynağı kullanan tüm iş parçacıklarının güvenliğini sağlayan bir kavramdır.
+3. Başlangıç durumları ayarlanabilir (init).
+4. Yeni işlevsellikler eklemek için extensionlar tanımlanabilir.
+5. Protokollerle çalışabilirler.
+6. Değer türüdürler. Her örnek benzersiz bir kopya depolar. Belleğin STACK alanında depolanırlar. (Int, Float, Double, String, Tuple, Array, Set, Dictionary, Enum)
+7. Atomiktirler. Birden fazla iş parçacığının aynı anda tek bir kaynağa erişmesi durumunda ortaya çıkabilecek tutarsızlıkları önlemek için kaynağın ve o kaynağı kullanan tüm iş parçacıklarının güvenliğini sağlayan bir kavramdır.
 
 - Declaration
 ```swift
@@ -51,29 +39,13 @@ Sphere(radius: 2.0, area: Optional(50.26548245743669), volume: Optional(33.51032
 
 ## Class
 
-[EN]
-1. Definable calculated and stored properties.
-2. Methods and closures can be created for functionality.
-3. Subscripts can be created for get and set operations in collections.
-4. Initialization states can be set (init).
-5. Extension can be defined to add new functionality.
-6. They can work with protocols.
-7. Inheritance allows a class to inherit the properties and methods of another class.
-8. Type casting, allows you to check and interpret the type of a class instance at runtime.
-9. Automatic Reference Counting allows multiple references to a class instance and their pre-deallocate status can be set (deinit).
-10. Each instance stores a unique copy. REFERENCE is stored in the STACK area of ​​memory. OBJECT is stored in the HEAD area of ​​memory. STACK is used to allocate static memory, while HEAD is used to allocate dynamic memory.
-
-[TR]
 1. Computed ve Stored propertyler tanımlanabilir.
 2. İşlevsellik eklemek için methodlar ve closurelar oluşturulabilir.
-3. Koleksiyonlarda get ve set işlemleri için subscriptler oluşturulabilir.
-4. Başlangıç durumları ayarlanabilir (init).
-5. Yeni işlevsellikler eklemek için extensionlar tanımlanabilir.
-6. Protokollerle çalışabilirler.
-7. Kalıtım, bir sınıfın başka bir sınıfın özelliklerini ve yöntemlerini miras almasına izin verir.
-8. Type Casting, bir sınıf örneğinin türünü çalışma zamanında kontrol etmenize ve yorumlamanıza izin verir.
-9. ARC, bir sınıf örneğine birden fazla referans yapılmasına izin verir ve deallocate öncesi durumları ayarlanabilir (deinit).
-10. Her örnek benzersiz bir kopya depolar. REFERENCE, belleğin STACK alanında saklanır. OBJECT, belleğin HEAD alanında saklanır. STACK statik belleği ayırmak için kullanılırken, HEAD dinamik belleği ayırmak için kullanılır.
+3. Başlangıç durumları (init) ve deallocate öncesi durumları ayarlanabilir (deinit).
+4. Yeni işlevsellikler eklemek için extensionlar tanımlanabilir.
+5. Protokollerle çalışabilirler.
+6. Kalıtım, bir sınıfın başka bir sınıfın özelliklerini ve yöntemlerini miras almasına izin verir.
+7. Her örnek benzersiz bir kopya depolar. REFERENCE, belleğin STACK alanında saklanır. OBJECT, belleğin HEAP alanında saklanır. STACK statik belleği ayırmak için kullanılırken, HEAP dinamik belleği ayırmak için kullanılır.
 
 
 - Declaration
@@ -108,37 +80,10 @@ sphere.volumeOfSphere()
 2.0 Optional(50.26548245743669) Optional(33.510321638291124)
 ```
 
-### Static Properties and Methods
-
-[EN] Used to access class or struct properties and functions without an instance.
-
-[TR] Instance olmadan class veya struct propertylerine ve metotlarına erişmek için kullanılır.
-
-```swift
-struct Sphere {
-    static var radius : Double = 0.0
-    
-    static func solve(_ radius: Double) -> (diameter: Double, area: Double, volume: Double) {
-        return (radius * 2, 4 * Double.pi * pow(radius,2), (4 / 3) * Double.pi * pow(radius,3))
-    }
-}
-```
-```swift
-Sphere.radius = 2.0
-Sphere.solve(Sphere.radius)
-```
-```
-2.0 (diameter: 4.0, area: 50.26548245743669, volume: 33.510321638291124)
-```
-
 ## Initialization and Deinitialization
-[EN] Initialization is the preparation process when we create an instance of Class, Enum or Struct. This process allows an initial value to be set for each stored property and necessary operations to be performed before it is ready for use.
+Initialization, bir class, enum veya struct instance'ı oluşturduğumuzdaki hazırlık sürecidir. Bu süreç, her depolanan özellik için bir başlangıç ​​değeri ayarlanmasına ve kullanıma hazır hale gelmeden önce gerekli işlemlerin gerçekleştirilmesine olanak tanır.
 
-[TR] Initialization, bir class, enum veya struct instance'ı oluşturduğumuzdaki hazırlık sürecidir. Bu süreç, her depolanan özellik için bir başlangıç ​​değeri ayarlanmasına ve kullanıma hazır hale gelmeden önce gerekli işlemlerin gerçekleştirilmesine olanak tanır.
-
-[EN] Deinitialization is the object is called just before it is destroyed (deallocate) from the stack by the Automatic Reference Counter (ARC) mechanism. There is no return value. Used only with classes.
-
-[TR] Deinitialization, nesnenin Otomatik Referans Sayacı (ARC) mekanizması tarafından yığından yok edilmesinden (deallocate) hemen önce çağrılmasıdır. Geri dönüş değeri yoktur. Yalnızca class ile kullanılır.
+Deinitialization, nesnenin Otomatik Referans Sayacı (ARC) mekanizması tarafından yığından yok edilmesinden (deallocate) hemen önce çağrılmasıdır. Geri dönüş değeri yoktur. Yalnızca class ile kullanılır.
 
 - Declaration
 ```swift
@@ -185,11 +130,11 @@ var sphere = Sphere()
 class Sphere {
     var result: Double
 
-    init(area radius : Double){
+    init(area radius: Double){
         self.result = 4 * Double.pi * pow(radius,2)
     }
     
-    init(volume radius : Double){
+    init(volume radius: Double){
         self.result = (4 / 3) * Double.pi * pow(radius,3)
     }
 }
@@ -204,11 +149,47 @@ var volume = Sphere(volume: 2)
 50.26548245743669 33.510321638291124
 ```
 
+### Static, Class ve Final
+
+- Static: Subclass'da override edilemezler. Superclass ve subclass üzerinden çağrılabilir fakat nesneler üzerinden çağrılamazlar. Struct ve Class için geçerlidir.
+
+```swift
+struct Sphere {
+    static var radius : Double = 0.0
+    
+    static func solve(_ radius: Double) -> (diameter: Double, area: Double, volume: Double) {
+        return (radius * 2, 4 * Double.pi * pow(radius,2), (4 / 3) * Double.pi * pow(radius,3))
+    }
+}
+
+Sphere.radius = 2.0
+Sphere.solve(Sphere.radius)
+```
+```
+2.0 (diameter: 4.0, area: 50.26548245743669, volume: 33.510321638291124)
+```
+
+- Class: Subclass'da override edilebilirler. Superclass ve subclass üzerinden çağrılabilir fakat nesneler üzerinden çağrılamazlar. Sadece Class için geçerlidir.
+
+```swift
+
+```
+```
+
+```
+
+- Final: Subclass'da override edilemezler. Super ve Sub object üzerinden çağrılabilirler fakat class üzerinden çağrılamazlar. Sadece Class için geçerlidir.
+
+```swift
+
+```
+```
+
+```
+
 ## Composition
 
-[EN] Object composition is closely related ways to combine objects into more complex ones. They have an ownership (Has-A) relationship.
-
-[TR] Nesneleri daha karmaşık olanlara birleştirmenin yollarıyla yakından ilgilidir. Bir sahiplik (Has-A) ilişkisi vardır.
+Nesneleri daha karmaşık olanlara birleştirmenin yollarıyla yakından ilgilidir. Bir sahiplik (Has-A) ilişkisi vardır.
 
 ```swift
 struct Radius {
