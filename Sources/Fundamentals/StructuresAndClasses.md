@@ -1,9 +1,9 @@
 ## Struct
 
 1. Computed ve Stored propertyler tanımlanabilir.
-2. İşlevsellik eklemek için methodlar ve closurelar oluşturulabilir.
+2. Method ve Closure ile işlevsellik eklenebilir.
 3. Başlangıç durumları ayarlanabilir (init).
-4. Yeni işlevsellikler eklemek için extensionlar tanımlanabilir.
+4. Extension ile yeni işlevler eklenebilir.
 5. Protokollerle çalışabilirler.
 6. Değer türüdürler. Her örnek benzersiz bir kopya depolar. Belleğin STACK alanında depolanırlar. (Int, Float, Double, String, Tuple, Array, Set, Dictionary, Enum)
 7. Atomiktirler. Birden fazla iş parçacığının aynı anda tek bir kaynağa erişmesi durumunda ortaya çıkabilecek tutarsızlıkları önlemek için kaynağın ve o kaynağı kullanan tüm iş parçacıklarının güvenliğini sağlayan bir kavramdır.
@@ -40,9 +40,9 @@ Sphere(radius: 2.0, area: Optional(50.26548245743669), volume: Optional(33.51032
 ## Class
 
 1. Computed ve Stored propertyler tanımlanabilir.
-2. İşlevsellik eklemek için methodlar ve closurelar oluşturulabilir.
+2. Method ve Closure ile işlevsellik eklenebilir.
 3. Başlangıç durumları (init) ve deallocate öncesi durumları ayarlanabilir (deinit).
-4. Yeni işlevsellikler eklemek için extensionlar tanımlanabilir.
+4. Extension ile yeni işlevler eklenebilir.
 5. Protokollerle çalışabilirler.
 6. Kalıtım, bir sınıfın başka bir sınıfın özelliklerini ve yöntemlerini miras almasına izin verir.
 7. Referans türüdürler. Her örnek aynı referansdan kopyalanır. REFERENCE, belleğin STACK alanında saklanır. OBJECT, belleğin HEAP alanında saklanır. STACK statik belleği ayırmak için kullanılırken, HEAP dinamik belleği ayırmak için kullanılır.
@@ -64,6 +64,7 @@ class Sphere {
     }
 }
 ```
+
 - Instance
 ```swift
 var sphere = Sphere()
@@ -125,6 +126,7 @@ var sphere = Sphere()
 ```
 
 ### Initialization Parameters
+
 - Declaration
 ```swift
 class Sphere {
