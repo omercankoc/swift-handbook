@@ -1,8 +1,6 @@
 # Stored Properties
 
-[EN] A constant or variable stored as part of an instance of a class or structure.
-
-[TR] Bir class'ın veya struct'ın bir örneğinin parçası olarak saklanan sabit veya değişken.
+Bir class'ın veya struct'ın bir örneğinin parçası olarak saklanan sabit veya değişken.
 
 ```swift
 struct User {
@@ -23,9 +21,7 @@ User(name: "Omer Can", surname: "Koc")
 
 ### Lazy Stored Properties
 
-[EN] Property that has no value until first use. They cannot be used with immutable (let) and computed properties.
-
-[TR] İlk kullanıma kadar değer almayan property. Bunlar, sabitler (let) ve computed propertyler ile kullanılamaz.
+İlk kullanıma kadar değer almayan property. Bunlar, sabitler (let) ve computed propertyler ile kullanılamaz.
 
 ```swift
 struct User {
@@ -55,9 +51,7 @@ User(name: "Omer Can", surname: "KOC", $__lazy_storage_$_username: Optional("ome
 
 # Computed Properties
 
-[EN] They are variables that take value as a result of operations determined within a class, structure or enumeration. They implement the "get" method for access and the optional "set" method for assignment.
-
-[TR] Class, struct veya enum içinde belirlenen işlemlerin sonucu olarak değer alan değişkenlerdir. Erişim için "get" yöntemini ve atama için isteğe bağlı "set" yöntemini uygularlar.
+Class, struct veya enum içinde belirlenen işlemlerin sonucu olarak değer alan değişkenlerdir. Erişim için "get" yöntemini ve atama için isteğe bağlı "set" yöntemini uygularlar.
 
 ### Getter and Setter Declaration
 ```swift
@@ -167,9 +161,7 @@ Sphere(radius: Console.Radius(radius: 2.0)) 50.26548245743669 33.510321638291124
 
 ## Property Observers
 
-[EN] Property observers observe and respond to changes in a property’s value. Property observers are called every time a property’s value is set, even if the new value is the same as the property’s current value.
-
-[TR] Değişkenin değerindeki değişiklikleri gözlemler ve bunlara yanıt verir. Yeni değer mevcut değer ile aynı olsa bile her defasında çağrılır.
+Değişkenin değerindeki değişiklikleri gözlemler ve bunlara yanıt verir. Yeni değer mevcut değer ile aynı olsa bile her defasında çağrılır.
 
 ```swift
 class Logic {
@@ -195,9 +187,7 @@ DID SET : Current Value  -> true : Old Value -> false
 
 ## Property Wrappers
 
-[EN] It adds a layer of separation between the code that manages how the property is stored and the code that defines a property. When you use a feature wrapper, you write management code once when you define the wrapper and then reuse that management code by applying it to multiple features.
-
-[TR] Property'nin depolandığını yöneten katman ile tanımlandığı katman arasında bir ayrım katmanı ekler. Bir property wrapper  tanımlandığında birden fazla property için yeniden kullanılabilir.
+Property'nin depolandığını yöneten katman ile tanımlandığı katman arasında bir ayrım katmanı ekler. Bir property wrapper  tanımlandığında birden fazla property için yeniden kullanılabilir.
 
 ```swift
 @propertyWrapper
