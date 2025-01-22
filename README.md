@@ -18,6 +18,8 @@
 - [Generic](https://github.com/omercankoc/documents-swift/blob/master/Sources/Fundamentals/Generic.md)
 - [Automatic Reference Counting](https://github.com/omercankoc/documents-swift/blob/master/Sources/Fundamentals/AutomaticReferenceCounting.md)
 - [Concurrency](https://github.com/omercankoc/documents-swift/blob/master/Sources/Fundamentals/Concurrency.md)
+
+### Other
 - [URL Loading System](https://github.com/omercankoc/swift-development/blob/master/Sources/URLLoadingSystem/URLLoadingSystem.md)
 - [Notification Center](https://github.com/omercankoc/documents-swift/blob/master/Sources/Notifications.md)
 
