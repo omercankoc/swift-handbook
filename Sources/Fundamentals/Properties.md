@@ -160,7 +160,6 @@ Sphere(radius: Console.Radius(radius: 2.0)) 50.26548245743669 33.510321638291124
 ```
 
 ## Property Observers
-
 Property'nin değerindeki değişiklikleri gözlemler ve bunlara yanıt verir. Yeni değer mevcut değer ile aynı olsa bile her defasında çağrılır.
 
 ```swift
@@ -186,8 +185,7 @@ DID SET : Current Value  -> true : Old Value -> false
 ```
 
 ## Property Wrappers
-
-Property'nin depolandığını yöneten katman ile tanımlandığı katman arasında bir ayrım katmanı ekler. Bir property wrapper  tanımlandığında birden fazla property için yeniden kullanılabilir.
+Property'nin depolandığını yöneten katman ile tanımlandığı katman arasında bir ayrım katmanı ekler. Bir property wrapper tanımlandığında birden fazla property için yeniden kullanılabilir.
 
 ```swift
 @propertyWrapper
