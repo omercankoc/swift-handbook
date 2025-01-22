@@ -142,4 +142,4 @@ func getMin<T: Comparable>(heightArray: [T]) -> T{
 ```
 
 ### Delegation
-Delegation, bir class'ın veya struct'ın sorumluluklarının bir kısmını başka bir türün örneğine devretmesini sağlayan bir design pattern'dir (tasarım örüntüsü). Bu design pattern, devredilen sorumlulukları kapsayan bir protocol tanımlayarak uygulanır, böylece uyumlu bir türün devredilen işlevselliği sağlaması garanti edilir. Delege etme, belirli bir eyleme yanıt vermek veya o kaynağın altta yatan türünü bilmeye gerek kalmadan harici bir kaynaktan veri almak için kullanılabilir.
+Delegation, bir class'ın veya struct'ın sorumluluklarının bir kısmını başka bir türün örneğine devretmesini sağlayan bir design pattern'dir (tasarım örüntüsü). Bu design pattern, devredilen sorumlulukları kapsayan bir protocol tanımlayarak uygulanır, böylece uyumlu bir türün devredilen işlevselliği sağlaması garanti edilir. Delegate etme, belirli bir eyleme yanıt vermek veya o kaynağın altta yatan türünü bilmeye gerek kalmadan harici bir kaynaktan veri almak için kullanılabilir.
