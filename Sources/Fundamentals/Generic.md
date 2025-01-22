@@ -1,6 +1,5 @@
 # Generic 
-Generic allows us to specify type-independent, general-purpose, and non-duplicative functions and types.
-
+Tür bağımsız, genel amaçlı ve tekrarlanmayan fonksiyon ve türleri belirtmemize olanak tanır.
 
 ```swift
 public struct Stack<T> {
