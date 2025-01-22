@@ -1,8 +1,8 @@
 # Inheritance
-Bir class'ın veya struct'un, başka bir sınıftan özellikleri ve metotları miras almasına "inheritance" denir. Bir class başka bir class'dan miras aldığında, miras alan class'a "subclass", miras aldığı class'a ise "superclass" denir.
+Bir class'ın veya struct'un, başka bir class'dan özellikleri ve metotları miras almasına "inheritance" denir. Bir class başka bir class'dan miras aldığında, miras alan class'a "subclass", miras aldığı class'a ise "superclass" denir.
 
 ### Superclass
-Başka bir class'dan miras almayan, propertylerini ve methodlarını subclass'lara aktaran class'a "superclass" denir.
+Başka bir class'dan miras almayan, özelliklerini ve metotlarını subclass'lara aktaran class'a "superclass" denir.
 
 ```swift
 enum Fuel {
@@ -33,8 +33,8 @@ class Vehicle {
 ### Subclass
 Yeni bir class'ı var olan bir class'a dayandırma sürecidir. Subclass, daha sonra genişletebileceğiniz veya değiştirebileceğiniz var olan class'ın özelliklerini devralır. Ayrıca subclass'a yeni özellikler veya metotlar eklenebilir.
 
-- "super" belirteci, superclass'ın propertylerine ve metholarına erişmek için kullanılır.
-- "override" belirteci, bir class'ın methodlarına, o class'dan türetilen başka bir class'a aynı adlı bir method tanımlayarak superclass'daki methodla değiştirilmesi anlamına gelir. Bu işlem, bir method'un aynı class'dan türetilen farklı classlarda farklı işlevler gerçekleştirmesine olanak tanır. Superclass'daki method, subclass'daki method'un adından önce override anahtar sözcüğünin eklenmesi ile geçersiz kılınır.
+- "super" belirteci, superclass'ın özelliklerine ve metotlarına erişmek için kullanılır.
+- "override" belirteci, bir class'ın metotlarına, o class'dan türetilen başka bir class'a aynı adlı bir metot tanımlayarak superclass'daki metotla değiştirilmesi anlamına gelir. Bu işlem, bir metodun aynı class'dan türetilen farklı classlarda farklı işlevler gerçekleştirmesine olanak tanır. Superclass'daki metot, subclass'daki metodun adından önce override anahtar sözcüğünin eklenmesi ile geçersiz kılınır.
 
 ```swift
 enum Segment {
@@ -123,7 +123,7 @@ The load carrying capacity of this truck is 35 tons.
 
 ### Static, Class ve Final Keywords
 
-- Static: Subclass'da override edilemezler. Superclass ve subclass üzerinden çağrılabilir fakat object üzerinden çağrılamazlar. Struct ve Class için geçerlidir.
+- Static: Subclass'da override edilemezler. Superclass ve subclass üzerinden çağrılabilir fakat nesne üzerinden çağrılamazlar. Struct ve Class için geçerlidir.
 
 ```swift
 struct Sphere {
@@ -141,7 +141,7 @@ Sphere.solve(Sphere.radius)
 2.0 (diameter: 4.0, area: 50.26548245743669, volume: 33.510321638291124)
 ```
 
-- Class: Subclass'da override edilebilirler. Superclass ve subclass üzerinden çağrılabilir fakat object üzerinden çağrılamazlar. Sadece Class için geçerlidir.
+- Class: Subclass'da override edilebilirler. Superclass ve subclass üzerinden çağrılabilir fakat nesne üzerinden çağrılamazlar. Sadece Class için geçerlidir.
 
 ```swift
 
@@ -150,7 +150,7 @@ Sphere.solve(Sphere.radius)
 
 ```
 
-- Final: Subclass'da override edilemezler. Superclass ve Subclass'dan instance edilen object üzerinden çağrılabilirler fakat class üzerinden çağrılamazlar. Sadece Class için geçerlidir.
+- Final: Subclass'da override edilemezler. Superclass ve Subclass'dan instance edilen nesne üzerinden çağrılabilirler fakat class üzerinden çağrılamazlar. Sadece Class için geçerlidir.
 
 ```swift
 
@@ -160,7 +160,7 @@ Sphere.solve(Sphere.radius)
 ```
 
 # Polymorphism
-Farklı class'lardaki object'lerin ortak bir superclass veya protocol nesneleri olarak ele alınmasına olanak tanır. Ortak bir arayüze veya protocol'e uydukları sürece farklı türlerdeki object'lerin birbirinin yerine kullanılabilmesini sağlar.
+Farklı class'lardaki nesnelerin ortak bir superclass veya protocol nesneleri olarak ele alınmasına olanak tanır. Ortak bir arayüze veya protocol'e uydukları sürece farklı türlerdeki nesnelerin birbirinin yerine kullanılabilmesini sağlar.
 
 ```swift
 let car = Car(segment: .B, passenger: 5, weight: 1120, width: 4065, height: 1450, length: 1750, fuel: .GASOLINE)
