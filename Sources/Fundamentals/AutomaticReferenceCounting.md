@@ -1,7 +1,7 @@
 # Automatic Reference Counting (ARC)
 Referans sayımlarını yöneterek bellek tahsis ve serbest bırakma işlemlerini otomatikleştirir.
 
-Refarans türleri,
+Refarans türleri:
 - strong: Her instance referans sayısını bir artırır.
 - weak: Instance referans sayısını etkilemez.
 - unowned: Instance referans sayısını etkilemez ancak değişken bir değer almak zorundadır. Object "deallocate" olsa bile, bu nesnenin referansını tutmaya devam eder.
