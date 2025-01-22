@@ -1,10 +1,10 @@
 # Automatic Reference Counting (ARC)
-Apple has developed ARC (Automatic Reference Counter) to ensure memory management. ARC is a memory management feature of the Clang compiler that provides Automatic Reference Counting for the Objective-C and Swift programming languages. When you create an object from a class, ARC remembers that this instance has been referenced exactly once. When you then assign that object to another variable, ARC increases the reference count to 2 because the two variables point to the same object. Now if you destroy the first variable, ARC pulls the reference count back to 1. If the other variable we assign is defined as "strong" and a cycle is somehow formed, the object cannot be deallocated.
+Referans sayımlarını yöneterek bellek tahsis ve serbest bırakma işlemlerini otomatikleştirir.
 
-References:
-- STRONG -> Each Instance increments the reference count by one.
-- WEAK -> Instance does not affect the reference count.
-- UNOWNED -> Instance does not affect the reference count but it must take a variable value. Even if the object is "deallocate", it continues to hold the reference of this object.
+Refarans türleri,
+- strong: Her instance referans sayısını bir artırır.
+- weak: Instance referans sayısını etkilemez.
+- unowned: Instance referans sayısını etkilemez ancak değişken bir değer almak zorundadır. Object "deallocate" olsa bile, bu nesnenin referansını tutmaya devam eder.
 
 ```swift
 class User {
@@ -43,7 +43,7 @@ third = nil
 ```
 User Class deleted Memory!
 ```
-After deleting all objects the memory was cleared.
+Tüm object'ler silindiktan sonra hafıza temizlendi.
 
 ```swift
 var first: User? = User(username: "first", password: "********")
@@ -56,10 +56,11 @@ first = nil
 ```
 User Class deleted Memory!
 ```
-After deleting the strong reference the memory was cleared.
+"strong" referans silindikten sonra hafıza temizlendi.
 
 ## Memory Leak 
-Memory that is allocated at some point but is never released and is no longer referenced by your application is called a "Memory Leak".
+Bir noktada instance edilen ve artık uygulama tarafından kullanılmayan object'in hafızadan silinememe durumudur.
+
 - Issue
 ```swift
 class Child {
@@ -156,7 +157,7 @@ Child Joanna is being deinitialized
 ```
 
 ## Retain Cycle
-The situation of not being deleted from memory, which occurs when two objects reference each other, is called "Retain Cycle".
+İki object'in birbirine referans vermesiyle oluşan, hafızadan silinmeme durumuna "Retain Cycle" denir.
 
 - Issue
 ```swift
@@ -221,6 +222,16 @@ Before is Deallocated.
 After is Deallocated.
 ```
 
-### Autoreleasepool 
+## Autoreleasepool 
+Geçici object'lerin (kısa yaşam döngüsüne sahip object'ler) bellekte çok uzun süre kalmasını önlemek için ve belirli yoğun bellek işlemlerinde (büyük döngüler, arka plan operasyonları) verimliliği artırmak için kullanılır. "autoreleasepool" olarak işaretlenen object, autopool boşaltığında serbest bırakılır. Bu süre zarfında ilgili object yaşamına devam eder. 
+
 ```swift
+for i in imageArray {
+    autoreleasepool {
+        let image = getImage()
+        ...
+        // Geçici nesnelerin oluşturulduğu alan.
+    }
+    // Her döngü sonunda object'lerin serbest bırakıldığı alan.
+}
 ```
