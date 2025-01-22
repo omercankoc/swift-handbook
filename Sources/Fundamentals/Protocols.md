@@ -112,4 +112,4 @@ Third Struct using Second Protocol
 ```
 
 ### Delegation
-Delegation is a design pattern that enables a class or structure to hand off (or delegate) some of its responsibilities to an instance of another type. This design pattern is implemented by defining a protocol that encapsulates the delegated responsibilities, such that a conforming type (known as a delegate) is guaranteed to provide the functionality that has been delegated. Delegation can be used to respond to a particular action, or to retrieve data from an external source without needing to know the underlying type of that source.
+Delegation, bir class'ın veya struct'ın sorumluluklarının bir kısmını başka bir türün örneğine devretmesini sağlayan bir design pattern'dir (tasarım örüntüsü). Bu design pattern, devredilen sorumlulukları kapsayan bir protocol tanımlayarak uygulanır, böylece uyumlu bir türün devredilen işlevselliği sağlaması garanti edilir. Delege etme, belirli bir eyleme yanıt vermek veya o kaynağın altta yatan türünü bilmeye gerek kalmadan harici bir kaynaktan veri almak için kullanılabilir.
