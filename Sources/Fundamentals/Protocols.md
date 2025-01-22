@@ -111,5 +111,35 @@ Third Struct using First Protocol
 Third Struct using Second Protocol
 ```
 
+- Equatable Protocol:
+Equatable protokolü bize “==” ve “!=” operatörlerini verir. Bu iki operatörü bu protokolü eklediğimiz genel tiplerimizde kullanabiliriz.
+
+```swift
+func getDifferent<T: Equatable>(array: [T], char: T) -> Bool {
+    for item in array{
+        if char != item{
+            return true
+        }
+    }
+    return false
+}
+```
+
+- Comparable Protocol:
+Comparable protokolü bize karşılaştırma yapmak için kullandığımız “<“, “>”, “<=”, “>=" operatörlerini verir. Ayrıca, bu protokol Equatable protokolünden miras aldığı için "==" ve "!=" operatörlerine de izin verir.
+
+```swift
+func getMin<T: Comparable>(heightArray: [T]) -> T{
+    var min = heightArray[0]
+    for (i,_) in heightArray.enumerated(){
+        if min > heightArray[i]{
+            min = heightArray[i]
+        }
+    }
+    return min
+}
+
+```
+
 ### Delegation
 Delegation, bir class'ın veya struct'ın sorumluluklarının bir kısmını başka bir türün örneğine devretmesini sağlayan bir design pattern'dir (tasarım örüntüsü). Bu design pattern, devredilen sorumlulukları kapsayan bir protocol tanımlayarak uygulanır, böylece uyumlu bir türün devredilen işlevselliği sağlaması garanti edilir. Delege etme, belirli bir eyleme yanıt vermek veya o kaynağın altta yatan türünü bilmeye gerek kalmadan harici bir kaynaktan veri almak için kullanılabilir.
