@@ -81,31 +81,3 @@ print(integerStack)
 Optional(3)
 Stack<Int>(array: [2, 1])
 ```
-
-- Equatable Protocol:
-The Equatable protocol gives us the operators “==” and “!=”. We can use these two operators in our generic types to which we add this protocol.
-```swift
-func getDifferent<T: Equatable>(array: [T], char: T) -> Bool {
-    for item in array{
-        if char != item{
-            return true
-        }
-    }
-    return false
-}
-```
-- Comparable Protocol:
-The Comparable protocol gives us the “<“, “>”, “<=”, “>=” operators that we use to compare. 
-In addition, since this protocol inherits from the Equatable protocol, it also allows the "==" and "!=" operators.
-```swift
-func getMin<T: Comparable>(heightArray: [T]) -> T{
-    var min = heightArray[0]
-    for (i,_) in heightArray.enumerated(){
-        if min > heightArray[i]{
-            min = heightArray[i]
-        }
-    }
-    return min
-}
-
-```
