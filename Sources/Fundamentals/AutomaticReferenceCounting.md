@@ -7,7 +7,7 @@ Refarans türleri:
 - unowned: Instance referans sayısını etkilemez ancak değişken bir değer almak zorundadır. Nesne "deallocate" olsa bile, bu nesnenin referansını tutmaya devam eder.
 
 ```swift
-class AnythingClass {
+class Anything {
     var firstProperty: String?
     var secondProperty: String?
     
@@ -17,15 +17,15 @@ class AnythingClass {
     }
     
     deinit {
-        print("Anything Class deleted Memory!")
+        print("Deleted Memory!")
     }
 }
 ```
 
 ```swift
-var firstObject: AnythingClass? = AnythingClass(firstProperty: "First", secondProperty: "Second")
-var secondObject: AnythingClass? = firstObject
-var thirdObject: AnythingClass? = firstObject
+var firstObject: Anything? = Anything(firstProperty: "First", secondProperty: "Second")
+var secondObject: Anything? = firstObject
+var thirdObject: Anything? = firstObject
 ```
 ```swift
 firstObject = nil
@@ -41,20 +41,20 @@ secondObject = nil
 thirdObject = nil
 ```
 ```
-Anything Class deleted Memory!
+Deleted Memory!
 ```
 Tüm nesneler silindiktan sonra hafıza temizlendi.
 
 ```swift
-var firstObject: AnythingClass? = AnythingClass(firstProperty: "First", secondProperty: "Second")
-weak var secondObject: AnythingClass? = firstObject
-unowned var thirdObject: AnythingClass? = firstObject
+var firstObject: Anything? = Anything(firstProperty: "First", secondProperty: "Second")
+weak var secondObject: Anything? = firstObject
+unowned var thirdObject: Anything? = firstObject
 ```
 ```swift
 firstObject = nil
 ```
 ```
-Anything Class deleted Memory!
+Deleted Memory!
 ```
 "strong" referans silindikten sonra hafıza temizlendi.
 
