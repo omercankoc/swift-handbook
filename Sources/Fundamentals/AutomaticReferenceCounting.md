@@ -7,54 +7,54 @@ Refarans türleri:
 - unowned: Instance referans sayısını etkilemez ancak değişken bir değer almak zorundadır. Object "deallocate" olsa bile, bu nesnenin referansını tutmaya devam eder.
 
 ```swift
-class User {
-    var username: String?
-    var password: String?
+class AnythingClass {
+    var firstProperty: String?
+    var secondProperty: String?
     
-    init(username: String, password: String) {
-        self.username = username
-        self.password = password
+    init(firstProperty: String, secondProperty: String) {
+        self.firstProperty = firstProperty
+        self.secondProperty = secondProperty
     }
     
     deinit {
-        print("User Class deleted Memory!")
+        print("Anything Class deleted Memory!")
     }
 }
 ```
 
 ```swift
-var first: User? = User(username: "first", password: "********")
-var second: User? = first
-var third: User? = first
+var firstObject: AnythingClass? = AnythingClass(firstProperty: "First", secondProperty: "Second")
+var secondObject: AnythingClass? = firstObject
+var thirdObject: AnythingClass? = firstObject
 ```
 ```swift
-first = nil
-second = nil
+firstObject = nil
+secondObject = nil
 ```
 ```
 -> No Output <-
 ```
 
 ```swift
-first = nil
-second = nil
-third = nil
+firstObject = nil
+secondObject = nil
+thirdObject = nil
 ```
 ```
-User Class deleted Memory!
+Anything Class deleted Memory!
 ```
 Tüm object'ler silindiktan sonra hafıza temizlendi.
 
 ```swift
-var first: User? = User(username: "first", password: "********")
-weak var second: User? = first
-unowned var third: User? = first
+var firstObject: AnythingClass? = AnythingClass(firstProperty: "First", secondProperty: "Second")
+weak var secondObject: AnythingClass? = firstObject
+unowned var thirdObject: AnythingClass? = firstObject
 ```
 ```swift
-first = nil
+firstObject = nil
 ```
 ```
-User Class deleted Memory!
+Anything Class deleted Memory!
 ```
 "strong" referans silindikten sonra hafıza temizlendi.
 
@@ -157,7 +157,7 @@ Child Joanna is being deinitialized
 ```
 
 ## Retain Cycle
-İki object'in birbirine referans vermesiyle oluşan, hafızadan silinmeme durumuna "Retain Cycle" denir.
+İki object'in birbirine referans vermesiyle oluşan, hafızadan silinememe durumuna "Retain Cycle" denir.
 
 - Issue
 ```swift
