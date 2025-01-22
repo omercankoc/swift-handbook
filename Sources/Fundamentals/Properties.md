@@ -161,7 +161,7 @@ Sphere(radius: Console.Radius(radius: 2.0)) 50.26548245743669 33.510321638291124
 
 ## Property Observers
 
-Değişkenin değerindeki değişiklikleri gözlemler ve bunlara yanıt verir. Yeni değer mevcut değer ile aynı olsa bile her defasında çağrılır.
+Property'nin değerindeki değişiklikleri gözlemler ve bunlara yanıt verir. Yeni değer mevcut değer ile aynı olsa bile her defasında çağrılır.
 
 ```swift
 class Logic {
