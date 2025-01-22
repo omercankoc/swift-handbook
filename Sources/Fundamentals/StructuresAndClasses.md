@@ -152,7 +152,7 @@ var volume = Sphere(volume: 2)
 ```
 
 ## Composition
-Nesneleri daha karmaşık olanlara birleştirmenin yollarıyla yakından ilgilidir. Bir sahiplik (Has-A) ilişkisi vardır.
+Class'ları ve struct'ları daha karmaşık olanlarla birleştirmenin yollarıyla yakından ilgilidir. Bir sahiplik (Has-A) ilişkisi vardır.
 
 ```swift
 struct Radius {
