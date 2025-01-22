@@ -4,7 +4,7 @@ Referans sayımlarını yöneterek bellek tahsis ve serbest bırakma işlemlerin
 Refarans türleri:
 - strong: Her instance referans sayısını bir artırır.
 - weak: Instance referans sayısını etkilemez.
-- unowned: Instance referans sayısını etkilemez ancak değişken bir değer almak zorundadır. Object "deallocate" olsa bile, bu nesnenin referansını tutmaya devam eder.
+- unowned: Instance referans sayısını etkilemez ancak değişken bir değer almak zorundadır. Nesne "deallocate" olsa bile, bu nesnenin referansını tutmaya devam eder.
 
 ```swift
 class AnythingClass {
@@ -43,7 +43,7 @@ thirdObject = nil
 ```
 Anything Class deleted Memory!
 ```
-Tüm object'ler silindiktan sonra hafıza temizlendi.
+Tüm nesneler silindiktan sonra hafıza temizlendi.
 
 ```swift
 var firstObject: AnythingClass? = AnythingClass(firstProperty: "First", secondProperty: "Second")
@@ -59,7 +59,7 @@ Anything Class deleted Memory!
 "strong" referans silindikten sonra hafıza temizlendi.
 
 ## Memory Leak 
-Bir noktada instance edilen ve artık uygulama tarafından kullanılmayan object'in hafızadan silinememe durumudur.
+Bir noktada instance edilen ve artık uygulama tarafından kullanılmayan nesnelerin hafızadan silinememe durumudur.
 
 - Issue
 ```swift
@@ -157,7 +157,7 @@ Child Joanna is being deinitialized
 ```
 
 ## Retain Cycle
-İki object'in birbirine referans vermesiyle oluşan, hafızadan silinememe durumuna "Retain Cycle" denir.
+İki nesnenin birbirine referans vermesiyle oluşan, hafızadan silinememe durumuna "Retain Cycle" denir.
 
 - Issue
 ```swift
@@ -223,7 +223,7 @@ After is Deallocated.
 ```
 
 ## Autoreleasepool 
-Geçici object'lerin (kısa yaşam döngüsüne sahip object'ler) bellekte çok uzun süre kalmasını önlemek için ve belirli yoğun bellek işlemlerinde (büyük döngüler, arka plan operasyonları) verimliliği artırmak için kullanılır. "autoreleasepool" olarak işaretlenen object, autopool boşaltığında serbest bırakılır. Bu süre zarfında ilgili object yaşamına devam eder. 
+Geçici nesnelerin (kısa yaşam döngüsüne sahip nesneler) bellekte çok uzun süre kalmasını önlemek için ve belirli yoğun bellek işlemlerinde (büyük döngüler, arka plan operasyonları) verimliliği artırmak için kullanılır. "autoreleasepool" olarak işaretlenen object, autopool boşaltığında serbest bırakılır. Bu süre zarfında ilgili nesne yaşamına devam eder. 
 
 ```swift
 for i in imageArray {
