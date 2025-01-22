@@ -143,3 +143,30 @@ func getMin<T: Comparable>(heightArray: [T]) -> T{
 
 ### Delegation
 Delegation, bir class'ın veya struct'ın sorumluluklarının bir kısmını başka bir türün örneğine devretmesini sağlayan bir design pattern'dir (tasarım örüntüsü). Bu design pattern, devredilen sorumlulukları kapsayan bir protocol tanımlayarak uygulanır, böylece uyumlu bir türün devredilen işlevselliği sağlaması garanti edilir. Delegate etme, belirli bir eyleme yanıt vermek veya o kaynağın altta yatan türünü bilmeye gerek kalmadan harici bir kaynaktan veri almak için kullanılabilir.
+
+```swift
+protocol Process {
+    func repair()
+}
+
+struct Craftsman: Process {
+    func repair(){
+        print("Repaired!")
+    }
+}
+
+struct Apprentice {
+    var delegate: Process?
+}
+
+var craftsman: Craftsman = Craftsman()
+craftsman.repair()
+
+var apprentice: Apprentice = Apprentice()
+apprentice.delegate = craftsman
+apprentice.delegate?.repair()
+```
+```
+Repaired!
+Repaired!
+```
