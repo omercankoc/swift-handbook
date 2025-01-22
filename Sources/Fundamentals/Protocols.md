@@ -1,6 +1,5 @@
 # Protocols 
-A protocol defines a blueprint of methods, properties, and other requirements that suit a particular task or piece of functionality. The protocol can then be adopted by a class, structure, or enumeration to provide an actual implementation of those requirements. Any type that satisfies the requirements of a protocol is said to conform to that protocol.
-In addition to specifying requirements that conforming types must implement, you can extend a protocol to implement some of these requirements or to implement additional functionality that conforming types can take advantage of.
+Bir protocol, belirli bir göreve veya işlevsellik parçasına uyan method, property ve diğer gereksinimlerin bir taslağını tanımlar. Protocol daha sonra bu gereksinimlerin gerçek bir uygulamasını sağlamak için bir class, struct veya enum tarafından benimsenebilir. Bir protocol'un gereksinimlerini karşılayan herhangi bir türün o protocol'e uygun olduğu söylenir. Uygun türlerin uygulaması gereken gereksinimleri belirtmenin yanı sıra, bu gereksinimlerden bazılarını uygulamak veya uygun türlerin yararlanabileceği ek işlevleri uygulamak için bir protocol'u genişletebilirsiniz.
 
 - Declaration
 ```swift
@@ -74,6 +73,7 @@ struct ThirdStruct : FirstProtocol, SecondProtocol {
     }
 }
 ```
+
 <b> Third Struct is an instance of Protocol Composition. </b>
 - Instance
 ```swift
