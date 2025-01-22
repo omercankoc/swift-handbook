@@ -1,8 +1,8 @@
 # Inheritance
-Bir sınıfın veya yapının, başka bir sınıftan özellikleri ve metotları miras almasına "inheritance" denir. Bir sınıf başka bir sınıftan miras aldığında, miras alan sınıfa "subclass", miras aldığı sınıfa ise "superclass" denir.
+Bir class'ın veya struct'un, başka bir sınıftan özellikleri ve metotları miras almasına "inheritance" denir. Bir class başka bir class'dan miras aldığında, miras alan class'a "subclass", miras aldığı class'a ise "superclass" denir.
 
 ### Superclass
-Başka bir sınıftan miras almayan, özelliklerini ve metotlarını subclass'lara aktaran sınıfa "superclass" denir.
+Başka bir class'dan miras almayan, propertylerini ve methodlarını subclass'lara aktaran class'a "superclass" denir.
 
 ```swift
 enum Fuel {
@@ -31,10 +31,10 @@ class Vehicle {
 }
 ```
 ### Subclass
-Yeni bir sınıfı var olan bir sınıfa dayandırma sürecidir. Subclass, daha sonra genişletebileceğiniz veya değiştirebileceğiniz var olan sınıfın özelliklerini devralır. Ayrıca subclass'a yeni özellikler veya metotlar eklenebilir.
+Yeni bir class'ı var olan bir class'a dayandırma sürecidir. Subclass, daha sonra genişletebileceğiniz veya değiştirebileceğiniz var olan class'ın özelliklerini devralır. Ayrıca subclass'a yeni özellikler veya metotlar eklenebilir.
 
-- "super" belirteci, superclass'ın özelliklerine ve metotlarına erişmek için kullanılır.
-- "override" belirteci, bir sınıfın metotlarının, o sınıftan türetilen başka bir sınıfta aynı adlı bir metodu tanımlayarak superclass'daki metotla değiştirilmesi anlamına gelir. Bu işlem, bir metodun aynı class'dan türetilen farklı classlarda farklı işlevler gerçekleştirmesine olanak tanır. Superclass'daki metot, subclass'daki metodun adından önce override anahtar sözcüğünin eklenmesi ile geçersiz kılınır.
+- "super" belirteci, superclass'ın propertylerine ve metholarına erişmek için kullanılır.
+- "override" belirteci, bir class'ın methodlarına, o class'dan türetilen başka bir class'a aynı adlı bir method tanımlayarak superclass'daki methodla değiştirilmesi anlamına gelir. Bu işlem, bir method'un aynı class'dan türetilen farklı classlarda farklı işlevler gerçekleştirmesine olanak tanır. Superclass'daki method, subclass'daki method'un adından önce override anahtar sözcüğünin eklenmesi ile geçersiz kılınır.
 
 ```swift
 enum Segment {
@@ -123,7 +123,7 @@ The load carrying capacity of this truck is 35 tons.
 
 ### Static, Class ve Final Keywords
 
-- Static: Subclass'da override edilemezler. Superclass ve subclass üzerinden çağrılabilir fakat nesneler üzerinden çağrılamazlar. Struct ve Class için geçerlidir.
+- Static: Subclass'da override edilemezler. Superclass ve subclass üzerinden çağrılabilir fakat object üzerinden çağrılamazlar. Struct ve Class için geçerlidir.
 
 ```swift
 struct Sphere {
@@ -141,7 +141,7 @@ Sphere.solve(Sphere.radius)
 2.0 (diameter: 4.0, area: 50.26548245743669, volume: 33.510321638291124)
 ```
 
-- Class: Subclass'da override edilebilirler. Superclass ve subclass üzerinden çağrılabilir fakat nesneler üzerinden çağrılamazlar. Sadece Class için geçerlidir.
+- Class: Subclass'da override edilebilirler. Superclass ve subclass üzerinden çağrılabilir fakat object üzerinden çağrılamazlar. Sadece Class için geçerlidir.
 
 ```swift
 
@@ -150,7 +150,7 @@ Sphere.solve(Sphere.radius)
 
 ```
 
-- Final: Subclass'da override edilemezler. Super ve Sub object üzerinden çağrılabilirler fakat class üzerinden çağrılamazlar. Sadece Class için geçerlidir.
+- Final: Subclass'da override edilemezler. Superclass ve Subclass'dan instance edilen object üzerinden çağrılabilirler fakat class üzerinden çağrılamazlar. Sadece Class için geçerlidir.
 
 ```swift
 
@@ -160,7 +160,7 @@ Sphere.solve(Sphere.radius)
 ```
 
 # Polymorphism
-Farklı sınıflardaki nesnelerin ortak bir üst sınıf veya protokolün nesneleri olarak ele alınmasına olanak tanır. Ortak bir arayüze veya protokole uydukları sürece farklı türlerdeki nesnelerin birbirinin yerine kullanılabilmesini sağlar.
+Farklı class'lardaki object'lerin ortak bir superclass veya protocol nesneleri olarak ele alınmasına olanak tanır. Ortak bir arayüze veya protocol'e uydukları sürece farklı türlerdeki object'lerin birbirinin yerine kullanılabilmesini sağlar.
 
 ```swift
 let car = Car(segment: .B, passenger: 5, weight: 1120, width: 4065, height: 1450, length: 1750, fuel: .GASOLINE)
@@ -186,7 +186,7 @@ This car is S segment
 ```
 
 ## Type Casting
-Üst sınıfın alt sınıfa dönüştürülmesine <b>"DOWNCASTING"</b>, alt sınıfın üst sınıfa dönüştürülmesine <b>"UPCASTING"</b> denir.
+Superclass'ın subclass'a dönüştürülmesine <b>"DOWNCASTING"</b>, subclass'ın superclass'a dönüştürülmesine <b>"UPCASTING"</b> denir.
 
 - is -> Tip kontrolü için kullanılır.
 - as -> Bir tipi diğerine dönüştürmek için kullanılır.
