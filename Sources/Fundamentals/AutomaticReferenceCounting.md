@@ -1,5 +1,5 @@
 # Automatic Reference Counting (ARC)
-Referans sayımlarını yöneterek bellek tahsis ve serbest bırakma işlemlerini otomatikleştirir.
+Referans sayımlarını yöneterek bellek tahsis ve serbest bırakma işlemlerini otomatikleştiren yapıdır.
 
 Refarans türleri:
 - strong: Her instance referans sayısını bir artırır.
