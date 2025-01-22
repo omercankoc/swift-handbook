@@ -186,9 +186,9 @@ Sphere(radius: Radius(radius: 2.0, diameter: 4.0), area: 50.26548245743669, volu
 
 ## Access Control
 
-1. Private: Tanımladığımız bir property veya method, tanımlandığı kapsam (Class, Struct, Enum) dışında kullanılamaz hale getirir.
-2. File Private: Tanımladığımız bir property veya method, tanımlandığı dosya dışında kullanılamaz hale getirir.
-3. Internal: Normalde bir property tanımladığınızda, varsayılan olarak “internal” kullanır. “Internal” öğesiyle tanımlanan propertyler veya methodlar “Target” içindeki herhangi bir yerde kullanılabilir.
+1. Private: Tanımlandığı kapsam (Class, Struct, Enum) dışında kullanılamaz.
+2. File Private: Tanımlandığı dosya dışında kullanılamaz.
+3. Internal: (Default) Target içindeki herhangi bir yerde kullanılabilir.
 4. Open: “open” öğesi “framework”lerde kullanılan bir öğedir. Örnek olarak UIKit “framework”ü verebiliriz. Bir “UIViewController”
 öğesine tıklayıp “Jump to Definition”a tıklarsanız, oradaki çoğu sınıfın, propertynin ve methodun başında bir “open” öğesi olduğunu göreceksiniz. “open” ile tanımlanan bir method veya property'ye erişmek için öncelikle modülün alt sınıfına girmemiz gerekir.
 5. Public: “public” öğesi “open” öğesine çok benzer. Aralarındaki en büyük fark, -UIViewController öğesini kullandığımız gibi “open” ile tanımladığımız öğeleri modülün dışında (örneğin: UIKit) kullanabilmemize rağmen, “public” ile tanımladığımız öğeleri modülün dışında kullanamamamızdır.
