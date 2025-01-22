@@ -1,5 +1,5 @@
 # Protocols 
-Bir protocol, belirli bir göreve veya işlevsellik parçasına uyan method, property ve diğer gereksinimlerin bir taslağını tanımlar. Protocol daha sonra bu gereksinimlerin gerçek bir uygulamasını sağlamak için bir class, struct veya enum tarafından benimsenebilir. Bir protocol'un gereksinimlerini karşılayan herhangi bir türün o protocol'e uygun olduğu söylenir. Uygun türlerin uygulaması gereken gereksinimleri belirtmenin yanı sıra, bu gereksinimlerden bazılarını uygulamak veya uygun türlerin yararlanabileceği ek işlevleri uygulamak için bir protocol'u genişletebilirsiniz.
+Bir protocol, belirli bir göreve veya işlevsellik parçasına uyan metot, özellik ve diğer gereksinimlerin bir taslağını tanımlar. Protocol daha sonra bu gereksinimlerin gerçek bir uygulamasını sağlamak için bir class, struct veya enum tarafından benimsenebilir. Bir protocol'un gereksinimlerini karşılayan herhangi bir türün o protocol'e uygun olduğu söylenir. Uygun türlerin uygulaması gereken gereksinimleri belirtmenin yanı sıra, bu gereksinimlerden bazılarını uygulamak veya uygun türlerin yararlanabileceği ek işlevleri uygulamak için bir protocol'u genişletebilirsiniz.
 
 - Declaration
 ```swift
