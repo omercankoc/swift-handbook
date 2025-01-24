@@ -80,6 +80,57 @@ func images() async throws -> [UIImage?]{
 
 Bu örnekte, decodeImage(base64:)'a yapılan üç çağrının tümü, öncekinin tamamlanmasını beklemeden başlar. Yeterli sistem kaynağı mevcutsa aynı anda çalışabilirler. Bu işlev çağrılarının hiçbiri await ile işaretlenmez çünkü kod, işlevin sonucunu beklemek için askıya alınmaz. Bunun yerine, fotoğrafların tanımlandığı satıra kadar devam eder. Bu noktada, programın bu asenkron çağrılardan elde edilen sonuçlara ihtiyacı vardır, bu nedenle, dört fotoğrafın da indirilmesi bitene kadar yürütmeyi duraklatmak için await yazarsınız.
 
+### Asynchronous Sequences
+
+Asynchronous Sequence, zamanla gelen verileri sırayla döndürmek için kullanılan bir protokoldür. AsynchronousSequence protokolü, IteratorProtocol'un asenkron bir versiyonudur ve genellikle bir dizi olay, veri veya işin gerçekleşmesini temsil eder.
+
+Bu yapı, özellikle aşağıdaki durumlarda faydalıdır:
+- Ağ üzerinden veri akışı (ör. bir sunucudan gelen mesajlar).
+- Kullanıcı etkileşimleri (ör. bir düğmeye basma olayları).
+- Büyük veri işleme (ör. veri setlerini parça parça işleme).
+
+```swift
+struct AsyncTimerSequence: AsyncSequence {
+    typealias Element = Int
+    let count: Int
+
+    func makeAsyncIterator() -> AsyncIterator {
+        return AsyncIterator(count: count)
+    }
+
+    struct AsyncIterator: AsyncIteratorProtocol {
+        let count: Int
+        var current = 0
+
+        mutating func next() async -> Int? {
+            guard current < count else { return nil }
+            try? await Task.sleep(nanoseconds: 1_000_000_000) // 1 saniye bekle
+            current += 1
+            return current
+        }
+    }
+}
+
+Task {
+    let timerSequence = AsyncTimerSequence(count: 5)
+    
+    for await value in timerSequence {
+        print("Timer value: \(value)")
+    }
+    
+    print("Timer sequence completed.")
+}
+```
+
+```
+Timer value: 1
+Timer value: 2
+Timer value: 3
+Timer value: 4
+Timer value: 5
+Timer sequence completed.
+```
+
 ## Task and TaskGroup
 
 Bir Task, asenkron bir iş birimini ifade eder. async işlevlerini çağırmak veya eşzamanlı iş parçacıkları oluşturmak için bir kapsayıcıdır. Task, yeni bir iş parçacığı başlatır ve bu işin ne zaman ve nasıl yürütüleceğini yönetir.
